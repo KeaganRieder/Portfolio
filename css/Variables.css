@@ -1,0 +1,39 @@
+/* 
+----------------------------------------------------------------    
+    declares and defines all variables for the portfolio. which 
+    includes things like colors and type faces
+
+----------------------------------------------------------------    
+*/
+
+/* setting up variables */
+:root {
+    /*
+    ----------------------------------------
+        colors
+    ----------------------------------------
+    */
+    --SideBarBG: #1c1c1c;
+    --SideBarHover: #1c232b;
+    --SideBarActive: #2B394d;
+
+    --SectionBG: #374962;
+    --WorkOverviewBG: #5C7DAC;
+    --ContentBg: #1c232b;
+
+    --textColor1: #F2F0F0;
+    --textColor2: #C4C4C4;
+
+    --black: #0D0D0D;
+
+    --lightBlue: #4F87D5; /* figure out maybe get rid of*/
+
+
+
+    /*
+    ----------------------------------------
+        Topography
+    ----------------------------------------
+    */
+
+}
