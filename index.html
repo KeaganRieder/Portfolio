@@ -1,45 +1,56 @@
-<!-- main page of my portfolio -->
-
-<!DOCTYPE html>
-<html>
+<!-- 
+this is the main html document, and will act as the 
+portfolio sites home page
+-->
 
 <head>
-    <title>Home</title>
+    <title>portfolio</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/Style.css">
-    <script src="java_script/Sidebar.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- style data -->
+    <link rel="stylesheet" href="css/PortfolioStyle.css">
+    <link rel="SidebarStyleSheet" href="css/SideBarStyle.css">
 </head>
 
 <body>
-    <!-- side bar section -->
+    <!-- computer frame/interaction sections -->
     <section>
-        <div class="sideBar">
-            <h1>Keagan Rieder</h1>
-
-            <nav class= "PrimaryTabs">
-                <a href="index.html" class= "PrimaryTabs active"> Home</a>
-                <a href="aboutMe.html"> About Me</a>
-            </nav>
-
-            <!-- portfolio Tab -->
-            <div class="PrimaryTabs" onclick="ToggleSection('workSections')">  <!--  need to make java script stuff-->
-                <span>My Work</span>
-            </div>
-
-            <!-- portfolio sections -->
-            <div class="SubTabs" id="workSections">
-                <a href="#">Current Projects</a>
-                <a href="#">Games</a>
-                <a href="#">Interactive Art</a>
-                <a href="#">Puzzle Solvers</a>
-                <a href="#">Pixel Art</a>
-            </div>
-        </div>
+        <img src="assets/images/computerFrame.png" class="computerFrame foreground">
     </section>
 
-     <!-- content section -->
-     <section>
-        
+    <!-- computer screen -->
+    <section class="computerScreen">
+        <!-- the background of the computer screen -->
+        <img src="assets/images/Background.png" class="background screenSize">
+
+        <!--side bar -->
+        <div class="screenSize">
+            <nav class="sideNavBar ">
+                <!-- about me -->
+                <a href="#">
+                    <img src="assets/images/TextDoc.png">
+                </a>
+
+                <!-- github -->
+                <a href="https://github.com/KeaganRieder">
+                    <img src="assets/images/GitHub.png">
+                </a>
+
+                <!-- email -->
+                <a href="Keagan@rieder.ca">
+                    <img src="assets/images/Email.png">
+                </a>
+                <!-- linkedin -->
+                <a href="https://www.linkedin.com/in/keagan-rieder/">
+                    linkdin
+                </a>
+
+                <!-- portfolio -->
+                <a href="#">
+                    <img src="assets/images/Folder.png">
+                </a>
+            </nav>
+        </div>
     </section>
 
 </body>

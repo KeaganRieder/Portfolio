@@ -1,39 +1,25 @@
 /* 
-----------------------------------------------------------------    
-    declares and defines all variables for the portfolio. which 
-    includes things like colors and type faces
-
-----------------------------------------------------------------    
+-----------------------------------------------------------
+defines variables, that effect the sites margins,
+ padding ect.
+-----------------------------------------------------------
 */
+/* 
+-----------------------------------------------------------
+importing things
+-----------------------------------------------------------
+*/
+@import url(Colors.css);
 
-/* setting up variables */
-:root {
-    /*
-    ----------------------------------------
-        colors
-    ----------------------------------------
-    */
-    --SideBarBG: #1c1c1c;
-    --SideBarHover: #1c232b;
-    --SideBarActive: #2B394d;
+:root{
+    --ComputerTopMargin: 80px;
+    --ComputerBotMargin: 110px;
+    --ComputerLeftMargin: 180px;
+    --ComputerRightMargin: 190px;
 
-    --SectionBG: #374962;
-    --WorkOverviewBG: #5C7DAC;
-    --ContentBg: #1c232b;
-
-    --textColor1: #F2F0F0;
-    --textColor2: #C4C4C4;
-
-    --black: #0D0D0D;
-
-    --lightBlue: #4F87D5; /* figure out maybe get rid of*/
-
-
-
-    /*
-    ----------------------------------------
-        Topography
-    ----------------------------------------
-    */
+    --ComputerTopPadding: 10px;
+    --ComputerBotPadding: 100px;
+    --ComputerLeftPadding: 60px;
+    --ComputerRightPadding: 60px;
 
 }
