@@ -47,7 +47,7 @@ styling the screen
     position: relative;
 
     /* setting background*/
-    /* background-image: url(../assets/images/Background.png); */
+    background-image: url(../assets/images/Background.png);
 
     background-position: center;
     background-size: cover;
