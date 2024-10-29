@@ -4,20 +4,27 @@ defines variables, that effect the sites margins,
  padding ect.
 -----------------------------------------------------------
 */
-:root{
+:root {
 
     /* Backgrounds */
     --mainBg: #374962;
 
-    --sideBarBG: #1c1c1c;
-    --navTabBG: #2B394D;
+    --shadowColor: #1c1c1c;
 
-    --workOverviewBg: #5C7DAC;
+    /* --workOverviewBg: #5C7DAC; */
 
-    --headerBg: #1c1c1c; 
+    --headerBg: #1c1c1c;
+
+    /* top bar colors */
+    --topBarBg: #1c1c1c;
+    --topBarBg2: #2e2e2e;
+
+    --topBarTab: #464646;
+    --topBarUnderline: #C4C4C4;
 
     /* sidebar Nav Tabs */
-    --navTabHover: #2B394d;
+    --navTabBG: #1c1c1c;
+    --navTabHover: #333333;
     --navTabActive: #2B394d;
 
     /* text colors */
@@ -31,5 +38,5 @@ defines variables, that effect the sites margins,
     --ComputerLeftMargin: 100px;
     --ComputerRightMargin: 100px;
 
-   
+
 }

@@ -8,7 +8,7 @@ portfolio sites home page
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- style data -->
-    <link rel="stylesheet" href="css/PortfolioStyle.css">
+    <link rel="stylesheet" href="css/PortfolioSiteStyle.css">
 </head>
 
 <body>
@@ -20,12 +20,10 @@ portfolio sites home page
     <section class="screenContainer">
 
         <!-- sites navigation to different aspects -->
-        <nav class="sideNavBar">
+        <nav class="FileSideBar">
             <!-- about me -->
             <div class="NavApps">
-                <button onclick="ToggleWindow('AboutMe')">
-                    <img src="assets/images/TextDoc.png">
-                </button>
+                <img onclick="OpenFile('AboutMe')" src="assets/images/TextDoc.png">
                 <p>AboutMe.txt</p>
             </div>
 
@@ -45,17 +43,17 @@ portfolio sites home page
                 <p>Email</p>
             </div>
 
-            <!-- linkedin link
+            <!-- linkedin link -->
             <div class="NavApps">
                 <a href="https://www.linkedin.com/in/keagan-rieder/" target="_blank">
                     <img src="assets/images/linkedin.png" alt="linkedin">
                 </a>
                 <p>Linkedin</p>
-            </div> -->
+            </div>
 
             <!-- portfolio -->
             <div class="NavApps">
-                <img src="assets/images/Folder.png" onclick="ToggleWindow('portfolio')">
+                <img src="assets/images/Folder.png" onclick="OpenFile('portfolio')">
                 <p>My Work</p>
             </div>
         </nav>
@@ -64,16 +62,17 @@ portfolio sites home page
         <div class="taskBar"> </div>
 
         <!-- about me content section-->
-        <section id="AboutMe" class="contentContainer">
-            <!-- can be used to exit the cur -->
-            <div class="ContentNav">
-                <p>About Me.txt</p>
-
-                <img src="" alt="Close Doc" class="ContentXButton" onclick="ToggleWindow('AboutMe')">
+        <section id="AboutMe" class="fileContainer">
+            <!-- top bar of the file listing what it is and allowing viewer to exit-->
+            <div class="TopBar">
+                <div>
+                    <p>About Me.txt</p>
+                </div>
+                <img src="" alt="Close Doc" onclick="CloseFile('AboutMe')">
             </div>
 
-            <!-- whats inside current section -->
-            <div class="portfolioContent">
+            <!-- content of portfolio file-->
+            <div class="AboutMeContent">
                 <!-- profile -->
                 <img src="assets/images/Logo.gif" alt="picture of me" class="logoStyle">
                 <!-- biography -->
@@ -139,11 +138,8 @@ portfolio sites home page
                     </div>
                 </div>
 
-                <!-- <div class="aboutMeSkills">
-                </div> -->
-                <!-- artist statement -->
+                <h3> Artist Statement <br><br></h3>
                 <p>
-                    Artist Statement <br><br>
                     I’ve always enjoyed creating digital works of art that are static images but rather change either on
                     their own or by the action of the viewer, often achieved by having some degree of programming part
                     of the work. The programming aspects of my work can range from accompanying pixel art pieces or
@@ -162,16 +158,86 @@ portfolio sites home page
                 </p>
             </div>
 
-            <div class="ContentBottomBar"> </div>
+            <div class="bottomBar"> </div>
         </section>
 
-        <section id="portfolio" class="contentContainer">
-            portfolio
+        <section id="portfolio" class="fileContainer">
+            <!-- top bar of the file listing what it is and allowing viewer to exit-->
+            <div class="TopBar">
+                <!-- different tabs -->
+                <section>
+                    <div>
+                        <p>My Work</p>
+                    </div>
+                    <div id ="Current projects tab">
+                        <p>Current projects</p>
+                    </div>
+                    <div id ="Video Games tab">
+                        <p> Video Games</p>
+                    </div>
+                    <div id ="interactive Art tab">
+                        <p>interactive Art</p>
+                    </div>
+                    <div id ="Puzzle Solvers tab">
+                        <p> Puzzle Solvers</p>
+                    </div>
+                    <div id ="Pixel Art tab">
+                        <p>Pixel Art</p>
+                    </div>
+                </section>
+                <img src="" alt="Close Doc" onclick="CloseFile('portfolio')">
+
+            </div>
+
+            <nav class="sectionSideNav">
+                <div>
+                    <img src="" alt="arrow">
+                    <h1>My Work</h1>
+                </div>
+                <div>
+                    <p>Current projects</p>
+                </div>
+                <div>
+                    <p> Video Games</p>
+                </div>
+                <div>
+                    <p>interactive Art</p>
+                </div>
+                <div>
+                    <p> Puzzle Solvers</p>
+                </div>
+                <div>
+                    <p>Pixel Art</p>
+                </div>
+            </nav>
+
+            <!-- section of work folder  -->
+            <div class="PortfolioContentSection">
+                
+                <div id ="Current projects">
+                    <p>Current projects</p>
+                </div>
+                <div id ="Video Games">
+                    <p> Video Games</p>
+                </div>
+                <div id ="interactive Art">
+                    <p>interactive Art</p>
+                </div>
+                <div id ="Puzzle Solvers">
+                    <p> Puzzle Solvers</p>
+                </div>
+                <div id ="Pixel Art">
+                    <p>Pixel Art</p>
+                </div>
+
+
+            </div>
+        
         </section>
     </section>
 
     <!-- loading JavaScript scripts -->
     </script>
-    <script src="js/SiteNav.js" type="text/JavaScript"></script>
+    <script src="scripts/SiteNav.js" type="text/JavaScript"></script>
 
 </body>

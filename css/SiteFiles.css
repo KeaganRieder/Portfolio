@@ -1,0 +1,172 @@
+/* 
+-----------------------------------------------------------
+defines styles used to determine the look of 'files' in
+the site which are what is used to display content in
+-----------------------------------------------------------
+*/
+@import url(Variables.css);
+
+/* 
+-----------------------------------------------------------
+portfolio content style 
+-----------------------------------------------------------
+*/
+.fileContainer {
+    overflow: hidden;
+    display: none;
+    z-index: 1;
+
+    /* aligning and setting anchors */
+    /* top: 0;
+    left: 0; */
+
+    position: relative;
+
+    /* setting background */
+    background-color: var(--mainBg);
+    background-position: center;
+    background-size: cover;
+    box-shadow: 2px 2px 10px var(--shadowColor);
+
+
+    /* setting size */
+    width: 70%;
+    height: 85%;
+
+    /* setting margins and padding */
+    margin-top: 40px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+/* 
+top bar on file styles
+ */
+.TopBar {
+    /* setting background */
+    background-color: var(--topBarBg);
+
+    border-bottom: 20px solid var(--topBarTab);
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0px 4px 10px var(--shadowColor);
+
+    /* setting size */
+    height: 80px;
+}
+
+.TopBar section {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    float: left;
+
+    position: relative;
+    /* setting size */
+    height: 80px;
+    width: 90%;
+
+    /* setting background */
+    background: var(--topBarBg2);
+
+    /* setting scroll bar style */
+    scrollbar-width: none;
+    scrollbar-color: var(--topBarTab);
+
+}
+
+.TopBar Div {
+    /* setting anchors */
+    display: inline-block;
+    bottom: 0;
+
+    /* setting size */
+    /* width: 200px; */
+    height: 50%;
+
+    /* setting background */
+    background-color: var(--topBarTab);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    /* box-shadow: -4px 0px 10px var(--shadowColor); */
+
+    /* setting font */
+    font-size: 30px;
+    color: var(--textColor1);
+
+
+    /* setting margins and padding */
+    margin-top: 30px;
+    margin-left: 20px;
+    padding-bottom: 10px;
+}
+
+/* .TopBar section Div { figure out how to make apply to only ceratin  divs
+    display: none;
+} */
+
+.TopBar  Div p {
+    /* setting anchors */
+
+    /* setting font */
+    font-size: 30px;
+    color: var(--textColor1);
+
+    /* setting margins and padding */
+    margin: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+.TopBar h1 {
+    /* setting anchors */
+
+    float: left;
+
+    /* setting font */
+    font-size: 30px;
+    color: var(--textColor1);
+
+    /* setting margins and padding */
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 30px;
+
+}
+
+.TopBar img {
+    /* setting anchors */
+    float: right;
+    /* position: relative; */
+
+    /* setting height */
+    height: 50px;
+
+    background-size: 50px 100%;
+    background-color: white;
+
+    /* setting margins and padding */
+    margin-top: 15px;
+    margin-bottom: 10px;
+    /* margin-left: 10px; */
+    margin-right: 30px;
+
+}
+
+.bottomBar {
+
+    /* setting background */
+    background-color: var(--topBarBg);
+    box-shadow: 0px -4px 10px var(--shadowColor);
+
+    border-top: 5px solid var(--topBarTab);
+
+    /* setting size */
+    height: 50%;
+
+
+
+}
