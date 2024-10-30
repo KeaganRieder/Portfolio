@@ -107,3 +107,35 @@ shown off in my portfolio
     margin-right: 10px;
 
 }
+
+.workFolderStyle section {
+    /* setting anchor */
+    display: none;
+
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+
+    /* setting background */
+    background-color: var(--topBarTab);
+
+    /* setting size */
+    height: 100%;
+
+    /* setting padding */
+    padding: 10px;
+}
+
+.workContainer div {
+    /* setting margins */
+    margin-left: 15px;
+}
+.workContainer div p {
+    /* setting text stuff */
+    font-size: 15px;
+}
+
+.workFolderStyle div img {
+    /* width: 200px; */
+    height: 20%;
+    
+}

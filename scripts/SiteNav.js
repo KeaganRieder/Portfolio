@@ -5,15 +5,6 @@ defines functionality for navigating the site like:
 -----------------------------------------------------------
 */
 
-// toggles a content section in the site on/off
-function ToggleWindow(id) {
-    var window = document.getElementById(id);
-    if (window.style.display === "none" || window.style.display === "") {
-        window.style.display = "block";
-    } else {
-        window.style.display = "none";
-    }
-}
 
 // gives functionality to side bar/files to make them open the different 
 // sections in the portfolio
@@ -29,4 +20,22 @@ function CloseFile(sectionId){
     var section = document.getElementById(sectionId);
     section.style.display = "none";
 
+}
+
+// gives functionality to move between different sections in portfolio
+function ToggleSection(sectionId, sectionTabId){
+    var section = document.getElementById(sectionId);
+    var sectionTab =  document.getElementById(sectionTabId);
+
+    if (section.style.display == "none" || section.style.display == "") {
+        section.style.display = "grid";
+    } else {
+        section.style.display = "none";
+    }
+
+    if (sectionTab.style.display == "none" || sectionTab.style.display == "") {
+        sectionTab.style.display = "inline-block";
+    } else {
+        sectionTab.style.display = "none";
+    }
 }

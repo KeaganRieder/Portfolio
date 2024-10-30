@@ -64,7 +64,7 @@ portfolio sites home page
         <!-- about me content section-->
         <section id="AboutMe" class="fileContainer">
             <!-- top bar of the file listing what it is and allowing viewer to exit-->
-            <div class="TopBar">
+            <div class="topBar">
                 <div>
                     <p>About Me.txt</p>
                 </div>
@@ -163,25 +163,26 @@ portfolio sites home page
 
         <section id="portfolio" class="fileContainer">
             <!-- top bar of the file listing what it is and allowing viewer to exit-->
-            <div class="TopBar">
+            <div class="topBar">
+                <div>
+                    <p>My Work</p>
+                </div>
+
                 <!-- different tabs -->
-                <section>
-                    <div>
-                        <p>My Work</p>
-                    </div>
-                    <div id ="Current projects tab">
+                <section>                    
+                    <div id ="Current projects tab" class="TopBarHiddenTab">
                         <p>Current projects</p>
                     </div>
-                    <div id ="Video Games tab">
+                    <div id ="Video Games tab" >
                         <p> Video Games</p>
                     </div>
                     <div id ="interactive Art tab">
                         <p>interactive Art</p>
                     </div>
-                    <div id ="Puzzle Solvers tab">
+                    <div id ="Puzzle Solvers tab" >
                         <p> Puzzle Solvers</p>
                     </div>
-                    <div id ="Pixel Art tab">
+                    <div id ="Pixel Art tab" >
                         <p>Pixel Art</p>
                     </div>
                 </section>
@@ -194,42 +195,54 @@ portfolio sites home page
                     <img src="" alt="arrow">
                     <h1>My Work</h1>
                 </div>
-                <div>
+                <div onclick="ToggleSection('Current projects','Current projects tab')">
                     <p>Current projects</p>
                 </div>
-                <div>
+                <div onclick="ToggleSection('Video Games','Video Games tab')">
                     <p> Video Games</p>
                 </div>
-                <div>
+                <div onclick="ToggleSection('interactive Art','interactive Art tab')">
                     <p>interactive Art</p>
                 </div>
-                <div>
+                <div onclick="ToggleSection('Puzzle Solvers','Puzzle Solvers tab')">
                     <p> Puzzle Solvers</p>
                 </div>
-                <div>
+                <div onclick="ToggleSection('Pixel Art','Pixel Art tab')">
                     <p>Pixel Art</p>
                 </div>
             </nav>
 
             <!-- section of work folder  -->
-            <div class="PortfolioContentSection">
+            <div class="PortfolioContentSection workFolderStyle ">
                 
-                <div id ="Current projects">
-                    <p>Current projects</p>
-                </div>
-                <div id ="Video Games">
-                    <p> Video Games</p>
-                </div>
-                <div id ="interactive Art">
-                    <p>interactive Art</p>
-                </div>
-                <div id ="Puzzle Solvers">
-                    <p> Puzzle Solvers</p>
-                </div>
-                <div id ="Pixel Art">
-                    <p>Pixel Art</p>
-                </div>
+                <section id ="Current projects">
+                    <p>Current projects Go here</p>
+                    <div> Automation</div>
 
+                </section>
+                <section id ="Video Games">
+                    <p> Video Games Go here</p>
+                </section>
+                <section id ="interactive Art" >
+                    <p>interactive Art Go here</p>
+                </section>
+                <section id ="Puzzle Solvers" >
+                    <p> Puzzle Solvers Go here</p>
+                </section>
+                <section id ="Pixel Art">
+                    <div>
+                        <H2>Home Among The stars</H2>
+                        <img src="assets/portfolio_work/PixelArt/Home among the stars.png" alt="Home Amoung The stars">
+                        <p>Description</p>
+                    </div>
+
+                    <div>
+                        <H2>Sunset</H2>
+                        <img src="assets/portfolio_work/PixelArt/Sunset.png" alt="Sunset">
+                        <p>Description</p>
+                    </div>
+
+                </section>
 
             </div>
         
