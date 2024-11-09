@@ -6,37 +6,33 @@ defines variables, that effect the sites margins,
 */
 :root {
 
-    /* Backgrounds */
+    /* site background */
     --mainBg: #374962;
-
     --shadowColor: #1c1c1c;
-
-    /* --workOverviewBg: #5C7DAC; */
 
     --headerBg: #1c1c1c;
 
-    /* top bar colors */
     --topBarBg: #1c1c1c;
     --topBarBg2: #2e2e2e;
-
     --topBarTab: #464646;
-    --topBarUnderline: #C4C4C4;
+    --topBarBorderBg: #464646;
 
-    /* sidebar Nav Tabs */
+    --bottomBarBG: #374962;
+    --bottomBarShadowBG: #7a7a7a;
+
+    /* work section colors */
     --navTabBG: #1c1c1c;
-    --navTabHover: #333333;
-    --navTabActive: #2B394d;
+    --navTabHoverBg: #333333;
+    --navTabActiveBG: #2B394d;
+
+    --workBg: #4F87D5;
+
+    /* about me section */
+    --skillsBG: #2e2e2e;
 
     /* text colors */
     --textColor1: #F2F0F0;
     --textColor2: #C4C4C4;
     --textColor3: #4F87D5;
-
-    /* margins */
-    --ComputerTopMargin: 80px;
-    --ComputerBotMargin: 80px;
-    --ComputerLeftMargin: 100px;
-    --ComputerRightMargin: 100px;
-
 
 }

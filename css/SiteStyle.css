@@ -1,0 +1,140 @@
+/* 
+-----------------------------------------------------------
+file defines the main style guide for the portfolio site
+-----------------------------------------------------------
+*/
+
+@import url(Variables.css);
+@import url(TextStyle.css);
+
+@import url(AboutMeStyle.css);
+@import url(PortfolioStyle.css);
+
+
+/* setting up main container */
+.body {
+    /* setting layout and anchors */
+    overflow: hidden;
+
+    /* setting size */
+    width: 100vw;
+    height: 100vh;
+
+    margin: 0px;
+    padding: 0px;
+}
+
+/* container used to store sites contents */
+.gridContainer {
+    /* setting display*/
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 12fr 1fr;
+    grid-gap: 10px;
+
+    /* setting background */
+    background-image: url(../assets/images/Background.png);
+    background-position: center;
+    background-size: cover;
+
+    /* setting size */
+    height: 90%;
+
+    /* setting borders, margins and padding */
+    border-top: 30px solid black;
+    border-bottom: 70px solid black;
+    border-left: 70px solid black;
+    border-right: 70px solid black;
+
+}
+
+.rowSpan {
+    grid-column: span 2;
+}
+
+
+/* 
+-----------------------------------------------------------
+site navigation
+-----------------------------------------------------------
+*/
+
+/* sites side bar */
+.sideBar {
+    /* setting display */
+    z-index: 10;
+    /* setting background */
+
+    /* setting size */
+    /* setting borders, margins and padding */
+    margin: 20px;
+}
+
+/* style site tabs */
+.NavApps {
+    /* setting display */
+    text-align: center;
+
+    /* setting text */
+    font-size: 20px;
+    text-shadow: 1px 1px 5px black;
+    color: var(--textColor1);
+    /* setting padding and margin */
+    padding: 10px;
+}
+
+.BottomBar {
+    /* setting display */
+    z-index: 10;
+    align-self: center;
+
+    /* setting background */
+    background-color: var(--bottomBarBG);
+    box-shadow: 0 -2px 15px var(--bottomBarShadowBG);
+
+    /* setting size */
+    height: 100%;
+    width: 100%;
+}
+
+/* 
+-----------------------------------------------------------
+site section general style
+-----------------------------------------------------------
+*/
+
+.sectionTopBar {
+    /* setting display */
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.5fr 6fr 1fr;
+
+    /* setting background */
+    background-color: var(--topBarBg);
+    box-shadow: 0px 4px 10px var(--shadowColor);
+    border-bottom: 4px solid var(--topBarBorderBg);
+
+    /* setting size */
+    height: 100%;
+    width: auto;
+
+    /* setting borders,margins,padding */
+
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+.closeFileImage {
+    /* setting display */
+    float: right;
+
+    /* setting size   */
+    width: 60px;
+    height: 60px;
+
+    /* setting margins */
+    margin-top: 10px;
+}

@@ -1,0 +1,37 @@
+/* 
+-----------------------------------------------------------
+file defines the sites text styles
+-----------------------------------------------------------
+*/
+h1 {
+    /* setting text */
+    font-size: 40px;
+    text-shadow: 1px 1px 5px black;
+    color: var(--textColor1);
+}
+
+h2 {
+    /* setting text */
+    font-size: 30px;
+    text-shadow: 1px 1px 5px black;
+    color: var(--textColor1);
+}
+
+h3 {
+    /* setting text */
+    font-size: 20px;
+    text-shadow: 1px 1px 5px black;
+    color: var(--textColor1);
+
+    /* setting padding and margin */
+    padding: 0px;
+    margin: 0px;
+
+}
+
+p {
+    /* setting text */
+    font-size: 20px;
+    color: var(--textColor1);
+    
+}

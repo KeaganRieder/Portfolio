@@ -1,0 +1,177 @@
+/* 
+-----------------------------------------------------------
+file defines the styles for the my portfolio page
+-----------------------------------------------------------
+*/
+
+#Portfolio {
+    /* setting display*/
+    overflow-y: hidden;
+
+    display: none;
+    grid-template-rows: 1fr 8fr;
+
+    /* setting background */
+    background-color: var(--mainBg);
+    box-shadow: 0 0px 15px black;
+
+    /* setting size */
+    width: auto;
+    height: 700px;
+
+    /* setting borders, margins and padding */
+    margin-right: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.portfolioContainer {
+    /* setting display */
+    display: grid;
+    grid-template-columns: 1fr 3.5fr;
+}
+
+/* 
+-----------------------------------------------------------
+portfolio section nav
+-----------------------------------------------------------
+*/
+.portfolioNav {
+    /* setting display*/
+    display: grid;
+    grid-template-columns: 1fr;
+
+    /* setting background*/
+    background-color: var(--headerBg);
+
+    /* setting borders, margins and padding */
+    padding-left: 20px;
+    padding-right: 20px;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+.portfolioNav div {
+    /* setting display */
+    align-items: center;
+
+    /* setting color */
+    background-color: var(--navTabBG);
+}
+
+.portfolioNav div:hover {
+
+    /* setting color */
+    background-color: var(--navTabHoverBg);
+}
+
+.portfolioNav div:active {
+
+    /* setting color */
+    background-color: var(--navTabActiveBG);
+}
+
+.portfolioNav h2 {
+    /* font info */
+    font-size: px;
+    color: var(--textColor1);
+
+    /* setting margins */
+    margin: 20px;
+    /* padding-left: 10px; */
+}
+
+.workTabContainer {
+    /* setting display */
+    overflow-y: hidden;
+    overflow-x: scroll;
+
+    /* setting background */
+    background-color: var(--topBarBg2);
+    width: 100%;
+
+    /* setting margins, padding and borders */
+    margin: 0px;
+    margin-top: 10px;
+}
+
+.workTabContainer section {
+    /* setting display */
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+
+    /* setting size */
+    width: 200%;
+    height: auto;
+}
+
+.workTabContainer section div {
+    /* setting display */
+
+    /* setting background */
+
+    background-color: var(--topBarTab);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    /* setting size */
+    /* height: 50%; */
+
+    /* setting font */
+    font-size: 10px;
+    color: var(--textColor1);
+
+    /* setting margins and padding */
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.workTabContainer section div h2 {
+    /* setting display */
+    margin: 20px;
+    margin-left: 20px;
+}
+
+/*
+-----------------------------------------------------------
+ portfolio sections 
+-----------------------------------------------------------
+*/
+.workContainer {
+    /* setting display info */
+    overflow-y: scroll;
+
+    /* setting padding and margins */
+    padding: 20px;
+}
+
+.workContainer section {
+    /* setting display info */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+
+}
+
+.workContainer section div {
+    /* setting display info */
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+
+    /* setting background */
+    background-color: var(--workBg);
+
+    /* setting size */
+    height: auto;
+}
+
+.workContainer section div img {
+    /* setting size */
+    width: auto;
+    height: 200px;
+}

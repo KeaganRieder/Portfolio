@@ -1,30 +1,30 @@
 <!-- 
-this is the main html document, and will act as the 
-portfolio sites home page
+this is the main html file for my portfolio site. it controls navigation and 
+displaying of the portfolio content.
 -->
 
 <head>
-    <title>portfolio</title>
+    <title>Keagan Rieder Portfolio</title>
     <meta charset="UTF-8">
+
+    <!-- viewport data -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- style data -->
-    <link rel="stylesheet" href="css/PortfolioSiteStyle.css">
+    <link rel="stylesheet" href="css/SiteStyle.css">
 </head>
 
-<body>
+<!-- the sites body -->
 
-    <!-- sites frame? -->
-    <!-- <img src="assets/images/computerFrame.png" class="ComputerFrame"> -->
+<body class="body">
 
-    <!-- section containing the computer screen -->
-    <section class="screenContainer">
+    <!-- main section of the portfolio site -->
+    <section class="gridContainer">
 
-        <!-- sites navigation to different aspects -->
-        <nav class="FileSideBar">
-            <!-- about me -->
+        <!-- sites navigation -->
+        <nav class="sideBar">
             <div class="NavApps">
                 <img onclick="OpenFile('AboutMe')" src="assets/images/TextDoc.png">
-                <p>AboutMe.txt</p>
+                <h3>AboutMe.txt</h3>
             </div>
 
             <!-- github link -->
@@ -32,7 +32,7 @@ portfolio sites home page
                 <a href="https://github.com/KeaganRieder" target="_blank">
                     <img src="assets/images/GitHub.png">
                 </a>
-                <p>GitHub</p>
+                <h3>GitHub</h3>
             </div>
 
             <!-- email -->
@@ -40,7 +40,7 @@ portfolio sites home page
                 <a href="mailto:Keagan@rieder.ca">
                     <img src="assets/images/Email.png">
                 </a>
-                <p>Email</p>
+                <h3>Email</h3>
             </div>
 
             <!-- linkedin link -->
@@ -48,209 +48,247 @@ portfolio sites home page
                 <a href="https://www.linkedin.com/in/keagan-rieder/" target="_blank">
                     <img src="assets/images/linkedin.png" alt="linkedin">
                 </a>
-                <p>Linkedin</p>
+                <h3>Linkedin</h3>
             </div>
 
             <!-- portfolio -->
             <div class="NavApps">
-                <img src="assets/images/Folder.png" onclick="OpenFile('portfolio')">
-                <p>My Work</p>
+                <img src="assets/images/Folder.png" onclick="OpenFile('Portfolio')">
+                <h3>My Work</h3>
             </div>
         </nav>
 
-        <!-- task bar -->
-        <div class="taskBar"> </div>
+        <!-- section for the content of the site-->
+        <section>
 
-        <!-- about me content section-->
-        <section id="AboutMe" class="fileContainer">
-            <!-- top bar of the file listing what it is and allowing viewer to exit-->
-            <div class="topBar">
-                <div>
-                    <p>About Me.txt</p>
-                </div>
-                <img src="" alt="Close Doc" onclick="CloseFile('AboutMe')">
-            </div>
-
-            <!-- content of portfolio file-->
-            <div class="AboutMeContent">
-                <!-- profile -->
-                <img src="assets/images/Logo.gif" alt="picture of me" class="logoStyle">
-                <!-- biography -->
-                <p>
-                    Hello I’m Keagan Rieder!<br><br>
-
-                    I’m a programmer and artist, currently attending the University of Lethbridge for a BFA in New Media
-                    and a BSC in Computer Science. I enjoy working with various programming languages and tools to
-                    create software that solves problems or generates and makes interactive artwork. When I’m not
-                    writing
-                    programs to make or solve problems, I’m drawing pixel art pieces or tile sets and character models
-                    that can be used for games. <br><br>
-
-                    Programming is a hobby and passion of mine, which I’ve had since middle school. I was introduced and
-                    fell in love with the problem-solving aspects and the ability to create things with it. This passion
-                    led me to attend the University of Lethbridge to expand my programming skills. Well, there, I would
-                    find
-                    out about the new media program that covered various skills and topics, including video game design
-                    and
-                    development. Having a hobby of playing video games and a desire to develop and create games, I added
-                    new media as a second major. <br><br>
-
-                    Besides doing school, I’m currently working on a game called Automation, which combines elements
-                    from automation games and colony sims to create different experiences. The game’s developer is
-                    currently more of a hobby, a way to practice and learn new skills.
-                </p>
-
-                <!-- skills -->
-                <div class="aboutMeSkills">
+            <!-- about me page -->
+            <section id="AboutMe" class="hiddinOnStart">
+                <!-- top bar of about me -->
+                <div class="sectionTopBar">
                     <div>
-                        <h1>Skills</h1>
+                        <h2>AboutMe.txt</h2>
                     </div>
-                    <!-- Languages I know -->
                     <div>
-                        <h2>Languages</h2>
-                        <ul>
-                            <li>Java</li>
-                            <li>C#</li>
-                            <li>C++</li>
-                        </ul>
-
+                        <!-- this is empty mainly used for spacing -->
                     </div>
-
-                    <!-- Engines I know -->
                     <div>
-                        <h2>Engines</h2>
-                        <ul>
-                            <li>Unity</li>
-                            <li>Godot</li>
-                        </ul>
-                    </div>
-
-                    <!-- Tools/software I use and know -->
-                    <div>
-                        <h2>Tools</h2>
-                        <ul>
-                            <li>Blender</li>
-                            <li>Aesprite</li>
-                            <li>Git & GitHub</li>
-                            <li>Visual Studio Code</li>
-                            <li>Processing</li>
-                        </ul>
+                        <img src="" alt="Close Doc" class="closeFileImage" onclick="CloseFile('AboutMe')">
                     </div>
                 </div>
 
-                <h3> Artist Statement <br><br></h3>
-                <p>
-                    I’ve always enjoyed creating digital works of art that are static images but rather change either on
-                    their own or by the action of the viewer, often achieved by having some degree of programming part
-                    of the work. The programming aspects of my work can range from accompanying pixel art pieces or
-                    other digital artworks to a program utilizing procedural generation techniques to create new work
-                    from something semi or fully random. <br><br>
+                <!-- AboutMe scroll/contents -->
+                <div class="aboutMeContainer">
+                    <!-- biography -->
+                    <p>
+                        Hello I’m Keagan Rieder!<br><br>
 
-                    The ability to create something with meaning from something semi or purely random is one of many
-                    things that inspire my work. Sense-creating works from randomness can allow for a piece with
-                    elements that can unpredictably change, creating an entirely different experience. Especially when
-                    accompanied by adding interactivity through code, it can lead to the work being able to change based
-                    on the viewer.<br><br>
+                        I’m a programmer and artist, currently attending the University
+                        of Lethbridge for a BFA in New Media and a BSC in Computer Science.
+                        I enjoy working with various programming languages and tools to
+                        create software that solves problems or generates and makes interactive artwork. When I’m not
+                        writing programs to make or solve problems, I’m drawing pixel art pieces or tile sets and
+                        character
+                        models that can be used for games. <br><br>
 
-                    Overall, I strive to create pieces that combine digital art with the strengths code to create works
-                    that can be interacted with and experienced in many ways.
-                    <br><br>
-                </p>
-            </div>
+                        Programming is a hobby and passion of mine, which I’ve had since middle school.
+                        I was introduced and
+                        fell in love with the problem-solving aspects and the ability to create things with it. This
+                        passion
+                        led me to attend the University of Lethbridge to expand my programming skills. Well, there, I
+                        would
+                        find
+                        out about the new media program that covered various skills and topics, including video game
+                        design
+                        and
+                        development. Having a hobby of playing video games and a desire to develop and create games, I
+                        added
+                        new media as a second major. <br><br>
 
-            <div class="bottomBar"> </div>
+                        Besides doing school, I’m currently working on a game called Automation, which combines elements
+                        from automation games and colony sims to create different experiences. The game’s developer is
+                        currently more of a hobby, a way to practice and learn new skills.
+                    </p>
+                    <img src="assets/images/Logo.gif" alt="picture of me" class="logoStyle">
+
+                    <!-- skills section -->
+                    <div class="rowSpan skillsContainer">
+                        <h1 class="">Skills</h1>
+
+                        <!-- Languages I know -->
+                        <div>
+                            <h2>Languages</h2>
+                            <ul>
+                                <li>Java</li>
+                                <li>C#</li>
+                                <li>C++</li>
+                            </ul>
+
+                        </div>
+
+                        <!-- Engines I know -->
+                        <div>
+                            <h2>Engines</h2>
+                            <ul>
+                                <li>Unity</li>
+                                <li>Godot</li>
+                            </ul>
+                        </div>
+
+                        <!-- Tools/software I use and know -->
+                        <div>
+                            <h2>Tools</h2>
+                            <ul>
+                                <li>Blender</li>
+                                <li>Aesprite</li>
+                                <li>Git & GitHub</li>
+                                <li>Visual Studio Code</li>
+                                <li>Processing</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- artist statement -->
+                    <div class="rowSpan">
+                        <h3> Artist Statement <br><br></h3>
+                        <p>
+
+                            I’ve always enjoyed creating digital works of art that are static images but rather change
+                            either on
+                            their own or by the action of the viewer, often achieved by having some degree of
+                            programming
+                            part
+                            of the work. The programming aspects of my work can range from accompanying pixel art pieces
+                            or
+                            other digital artworks to a program utilizing procedural generation techniques to create new
+                            work
+                            from something semi or fully random. <br><br>
+
+                            The ability to create something with meaning from something semi or purely random is one of
+                            many
+                            things that inspire my work. Sense-creating works from randomness can allow for a piece with
+                            elements that can unpredictably change, creating an entirely different experience.
+                            Especially
+                            when
+                            accompanied by adding interactivity through code, it can lead to the work being able to
+                            change
+                            based
+                            on the viewer.<br><br>
+
+                            Overall, I strive to create pieces that combine digital art with the strengths code to
+                            create
+                            works
+                            that can be interacted with and experienced in many ways.
+                            <br><br>
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- my work showcase page -->
+            <section id="Portfolio">
+                <!-- top bar -->
+                <div class="sectionTopBar">
+                    <div>
+                        <h2>My Work</h2>
+                    </div>
+                    <!-- current sections open -->
+                    <div class="workTabContainer">
+                        <section>
+                            <div id="Current projects tab" class="TopBarHiddenTab">
+                                <h2>Current projects</h2>
+                            </div>
+                            <div id="Video Games tab">
+                                <h2> Video Games</h2>
+                            </div>
+                            <div id="interactive Art tab">
+                                <h2>interactive Art</h2>
+                            </div>
+                            <div id="Puzzle Solvers tab">
+                                <h2> Puzzle Solvers</h2>
+                            </div>
+                            <div id="Pixel Art tab">
+                                <h2>Pixel Art</h2>
+                            </div>
+                            </sections>
+                    </div>
+
+                    <div>
+                        <img src="" alt="Close Doc" class="closeFileImage" onclick="CloseFile('Portfolio')">
+                    </div>
+                </div>
+
+                <section class="portfolioContainer">
+                    <!-- side nav -->
+                    <nav class="portfolioNav">
+                        <div>
+                            <h2>My Work</h2>
+                        </div>
+                        <div onclick="ToggleSection('Current projects','Current projects tab')">
+                            <h2>Current projects</h2>
+                        </div>
+                        <div onclick="ToggleSection('Video Games','Video Games tab')">
+                            <h2> Video Games</h2>
+                        </div>
+                        <div onclick="ToggleSection('interactive Art','interactive Art tab')">
+                            <h2>interactive Art</h2>
+                        </div>
+                        <div onclick="ToggleSection('Puzzle Solvers','Puzzle Solvers tab')">
+                            <h2> Puzzle Solvers</h2>
+                        </div>
+                        <div onclick="ToggleSection('Pixel Art','Pixel Art tab')">
+                            <h2>Pixel Art</h2>
+                        </div>
+                    </nav>
+
+                    <!-- content -->
+                    <div class="workContainer">
+                        <!-- <section id="Current projects">
+                            <p>Current projects Go here</p>
+                            <div> Automation</div>
+
+                        </section>
+                        <section id="Video Games">
+                            <p> Video Games Go here</p>
+                        </section>
+                        <section id="interactive Art">
+                            <p>interactive Art Go here</p>
+                        </section>
+                        <section id="Puzzle Solvers">
+                            <p> Puzzle Solvers Go here</p>
+                        </section> -->
+
+                        <section id="Pixel Art">
+                            <div>
+                                <H2>Home Among The stars</H2>
+                                <img src="assets/portfolio_work/PixelArt/Home among the stars.png"
+                                    alt="Home Among The stars">
+                                <p>Description</p>
+                            </div>
+
+                            <div>
+                                <H2>Sunset</H2>
+                                <img src="assets/portfolio_work/PixelArt/Sunset.png" alt="Sunset">
+                                <p>Description</p>
+                            </div>
+
+                        </section>
+
+                    </div>
+                </section>
+
+            </section>
+
         </section>
 
-        <section id="portfolio" class="fileContainer">
-            <!-- top bar of the file listing what it is and allowing viewer to exit-->
-            <div class="topBar">
-                <div>
-                    <p>My Work</p>
-                </div>
+        <!-- bottom nav bar -->
+        <section class="rowSpan BottomBar">
 
-                <!-- different tabs -->
-                <section>                    
-                    <div id ="Current projects tab" class="TopBarHiddenTab">
-                        <p>Current projects</p>
-                    </div>
-                    <div id ="Video Games tab" >
-                        <p> Video Games</p>
-                    </div>
-                    <div id ="interactive Art tab">
-                        <p>interactive Art</p>
-                    </div>
-                    <div id ="Puzzle Solvers tab" >
-                        <p> Puzzle Solvers</p>
-                    </div>
-                    <div id ="Pixel Art tab" >
-                        <p>Pixel Art</p>
-                    </div>
-                </section>
-                <img src="" alt="Close Doc" onclick="CloseFile('portfolio')">
-
-            </div>
-
-            <nav class="sectionSideNav">
-                <div>
-                    <img src="" alt="arrow">
-                    <h1>My Work</h1>
-                </div>
-                <div onclick="ToggleSection('Current projects','Current projects tab')">
-                    <p>Current projects</p>
-                </div>
-                <div onclick="ToggleSection('Video Games','Video Games tab')">
-                    <p> Video Games</p>
-                </div>
-                <div onclick="ToggleSection('interactive Art','interactive Art tab')">
-                    <p>interactive Art</p>
-                </div>
-                <div onclick="ToggleSection('Puzzle Solvers','Puzzle Solvers tab')">
-                    <p> Puzzle Solvers</p>
-                </div>
-                <div onclick="ToggleSection('Pixel Art','Pixel Art tab')">
-                    <p>Pixel Art</p>
-                </div>
-            </nav>
-
-            <!-- section of work folder  -->
-            <div class="PortfolioContentSection workFolderStyle ">
-                
-                <section id ="Current projects">
-                    <p>Current projects Go here</p>
-                    <div> Automation</div>
-
-                </section>
-                <section id ="Video Games">
-                    <p> Video Games Go here</p>
-                </section>
-                <section id ="interactive Art" >
-                    <p>interactive Art Go here</p>
-                </section>
-                <section id ="Puzzle Solvers" >
-                    <p> Puzzle Solvers Go here</p>
-                </section>
-                <section id ="Pixel Art">
-                    <div>
-                        <H2>Home Among The stars</H2>
-                        <img src="assets/portfolio_work/PixelArt/Home among the stars.png" alt="Home Amoung The stars">
-                        <p>Description</p>
-                    </div>
-
-                    <div>
-                        <H2>Sunset</H2>
-                        <img src="assets/portfolio_work/PixelArt/Sunset.png" alt="Sunset">
-                        <p>Description</p>
-                    </div>
-
-                </section>
-
-            </div>
-        
         </section>
+
+
     </section>
 
-    <!-- loading JavaScript scripts -->
-    </script>
-    <script src="scripts/SiteNav.js" type="text/JavaScript"></script>
-
+    <!-- getting scripts -->
+    <script src="scripts/NavScripts.js" type="text/JavaScript"></script>
 </body>
