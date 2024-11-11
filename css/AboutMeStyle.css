@@ -8,7 +8,7 @@ file defines the styles for the about me page
 #AboutMe {
     /* setting display*/
     overflow-y: hidden;
-
+    overflow-x: hidden;
     display: none;
     
     position: absolute;
@@ -20,7 +20,7 @@ file defines the styles for the about me page
 
     /* setting size */
     width: 70vw;
-    height: 75vh;
+    height: 80vh;
 
     /* setting borders, margins and padding */
     margin-right: 30px;
@@ -30,7 +30,7 @@ file defines the styles for the about me page
 
 .aboutMeContainer {
     /* setting display*/
-    overflow-y: scroll;
+    overflow-y: auto;
     display: grid;
     grid-template-columns: 2fr 1fr;
     /* grid-template-rows: 1fr 1fr 1fr 1fr; */
@@ -118,4 +118,13 @@ file defines the styles for the about me page
 
     /* setting padding and margins */
     margin-top: 10px;
+}
+
+/* 
+-----------------------------------------------------------
+ responsive design sections 
+-----------------------------------------------------------
+*/
+@media screen and (max-width: 1000px) {
+    
 }

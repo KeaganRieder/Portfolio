@@ -26,6 +26,8 @@ defines variables, that effect the sites margins,
     --navTabActiveBG: #2B394d;
 
     --workBg: #355b91;
+    --workButtonBG: #1c1c1c;
+    --workButtonHoverBG: #333333;
 
     /* about me section */
     --skillsBG: #2e2e2e;

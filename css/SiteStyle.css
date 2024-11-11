@@ -54,7 +54,13 @@ file defines the main style guide for the portfolio site
     grid-column: span 2;
 }
 
-
+iframe{
+    /* setting size */
+    width: 100%;
+    height: 100%;
+    /* setting padding,border, and margins */
+    border: none;
+}
 /* 
 -----------------------------------------------------------
 site navigation
@@ -65,11 +71,9 @@ site navigation
 .sideBar {
     /* setting display */
     z-index: 10;
-    /* setting background */
-
-    /* setting size */
+   
     /* setting borders, margins and padding */
-    margin: 20px;
+    margin: 10px;
 }
 
 /* style site tabs */
@@ -85,19 +89,6 @@ site navigation
     padding: 10px;
 }
 
-.BottomBar {
-    /* setting display */
-    z-index: 10;
-    align-self: center;
-
-    /* setting background */
-    background-color: var(--bottomBarBG);
-    box-shadow: 0 -2px 15px var(--bottomBarShadowBG);
-
-    /* setting size */
-    height: 100%;
-    width: 100%;
-}
 
 /* 
 -----------------------------------------------------------

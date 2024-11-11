@@ -18,7 +18,7 @@ file defines the styles for the my portfolio page
 
     /* setting size */
     width: 70vw;
-    height: 75vh;
+    height: 80vh;
 
     /* setting borders, margins and padding */
     margin-right: 30px;
@@ -32,6 +32,7 @@ file defines the styles for the my portfolio page
 
     display: grid;
     grid-template-columns: 1fr 3.5fr;
+    grid-template-rows: 1fr;
 
     /* setting size */
     height: 100%;
@@ -51,7 +52,7 @@ portfolio section nav
     /* setting background*/
     background-color: var(--headerBg);
 
-    /* height: 700px; */
+    height: auto;
 
     /* setting borders, margins and padding */
     padding-left: 20px;
@@ -65,8 +66,6 @@ portfolio section nav
 .portfolioNav div {
     /* setting display */
     align-items: center;
-
-    /* height: 100px; */
 
     /* setting color */
     background-color: var(--navTabBG);
@@ -184,25 +183,53 @@ portfolio section nav
     /* setting size */
 }
 
-.workContainer section a {
+.workContainer section h4 {
+    /* setting background */
+    background-color: var(--workButtonBG);
+
     /* setting font stuff */
     color: var(--textColor1);
     font-size: 40px;
 
     /* setting margins,padding and borders */
+    padding-left: 10px;
+    padding-right: 10px;
     margin: 10px;
+
 }
 
-.workContainer section a:hover {
+.workContainer section h4:hover {
+    /* setting background */
+    background-color: var(--workButtonHoverBG);
+
     /* setting font stuff */
     color: var(--textColor3);
     font-size: 40px;
+
+    /* setting padding,margins,bounding */
 }
 
 .workContainer section div img {
     /* setting size */
     width: auto;
     height: 200px;
+}
+
+.focusedWork{
+    /* setting display */
+    overflow: hidden;
+    overflow-y: hidden;
+    display: none;
+
+    /* setting size */
+    height: 100%;
+    width: 100%;
+}
+
+
+.focusedWork section {
+    display: none;
+   
 }
 
 /* 
