@@ -7,10 +7,11 @@ file defines the styles for the about me page
 /* setting up main container */
 #AboutMe {
     /* setting display*/
-    /* z-index: 1; */
     overflow-y: hidden;
 
     display: none;
+    
+    position: absolute;
     grid-template-rows: 1fr 10fr;
 
     /* setting background */
@@ -18,8 +19,8 @@ file defines the styles for the about me page
     box-shadow: 0 0px 15px black;
 
     /* setting size */
-    width: auto;
-    height: 600px;
+    width: 70vw;
+    height: 75vh;
 
     /* setting borders, margins and padding */
     margin-right: 30px;

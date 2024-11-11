@@ -7,8 +7,9 @@ file defines the styles for the my portfolio page
 #Portfolio {
     /* setting display*/
     overflow-y: hidden;
-
     display: none;
+
+    position: absolute;
     grid-template-rows: 1fr 8fr;
 
     /* setting background */
@@ -16,8 +17,8 @@ file defines the styles for the my portfolio page
     box-shadow: 0 0px 15px black;
 
     /* setting size */
-    width: auto;
-    height: 700px;
+    width: 70vw;
+    height: 75vh;
 
     /* setting borders, margins and padding */
     margin-right: 30px;
@@ -27,8 +28,13 @@ file defines the styles for the my portfolio page
 
 .portfolioContainer {
     /* setting display */
+    overflow: hidden;
+
     display: grid;
     grid-template-columns: 1fr 3.5fr;
+
+    /* setting size */
+    height: 100%;
 }
 
 /* 
@@ -38,24 +44,29 @@ portfolio section nav
 */
 .portfolioNav {
     /* setting display*/
+    overflow-y: auto;
     display: grid;
     grid-template-columns: 1fr;
 
     /* setting background*/
     background-color: var(--headerBg);
 
+    /* height: 700px; */
+
     /* setting borders, margins and padding */
     padding-left: 20px;
     padding-right: 20px;
 
     padding-top: 20px;
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
 
 }
 
 .portfolioNav div {
     /* setting display */
     align-items: center;
+
+    /* height: 100px; */
 
     /* setting color */
     background-color: var(--navTabBG);
@@ -75,64 +86,65 @@ portfolio section nav
 
 .portfolioNav h2 {
     /* font info */
-    font-size: px;
     color: var(--textColor1);
 
     /* setting margins */
     margin: 20px;
-    /* padding-left: 10px; */
+
 }
+
 
 .workTabContainer {
     /* setting display */
     overflow-y: hidden;
-    overflow-x: scroll;
 
     /* setting background */
     background-color: var(--topBarBg2);
-    width: 100%;
 
     /* setting margins, padding and borders */
     margin: 0px;
     margin-top: 10px;
 }
 
+/* for displaying content */
 .workTabContainer section {
     /* setting display */
     z-index: 1;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
+    height: 100%;
 
-    /* setting size */
-    width: 200%;
-    height: auto;
 }
 
 .workTabContainer section div {
     /* setting display */
+    display: none;
 
     /* setting background */
-
     background-color: var(--topBarTab);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-
-    /* setting size */
-    /* height: 50%; */
 
     /* setting font */
     font-size: 10px;
     color: var(--textColor1);
 
+    /* setting size */
+    width: 200px;
+
     /* setting margins and padding */
-    margin-top: 20px;
-    margin-left: 10px;
+    margin: 5px;
+    margin-top: 10px;
+    margin-bottom: 0px;
 }
 
 .workTabContainer section div h2 {
-    /* setting display */
-    margin: 20px;
+    /* setting font */
+    font-size: 20px;
+
+    /* setting margins */
+    padding-right: 20px;
     margin-left: 20px;
 }
 
@@ -143,18 +155,21 @@ portfolio section nav
 */
 .workContainer {
     /* setting display info */
-    overflow-y: scroll;
+    overflow-y: auto;
 
     /* setting padding and margins */
-    padding: 20px;
+    margin: 20px;
+
 }
 
 .workContainer section {
     /* setting display info */
-    display: grid;
+    display: none;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
 
+    /* setting margins,padding and border */
+    margin-bottom: 20px;
 }
 
 .workContainer section div {
@@ -167,7 +182,21 @@ portfolio section nav
     background-color: var(--workBg);
 
     /* setting size */
-    height: auto;
+}
+
+.workContainer section a {
+    /* setting font stuff */
+    color: var(--textColor1);
+    font-size: 40px;
+
+    /* setting margins,padding and borders */
+    margin: 10px;
+}
+
+.workContainer section a:hover {
+    /* setting font stuff */
+    color: var(--textColor3);
+    font-size: 40px;
 }
 
 .workContainer section div img {
@@ -175,3 +204,11 @@ portfolio section nav
     width: auto;
     height: 200px;
 }
+
+/* 
+-----------------------------------------------------------
+ responsive design sections 
+-----------------------------------------------------------
+*/
+
+@media screen and (max-width: 1000px) {}

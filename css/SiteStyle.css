@@ -138,3 +138,60 @@ site section general style
     /* setting margins */
     margin-top: 10px;
 }
+
+/* 
+-----------------------------------------------------------
+ responsive design sections 
+-----------------------------------------------------------
+*/
+@media screen and (max-width: 1000px) {
+    .gridContainer {
+        /* setting display*/
+        overflow: hidden;
+
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+        grid-template-rows: 12fr 1fr;
+        grid-gap: 10px;
+
+        /* setting background */
+        background-image: url(../assets/images/Background.png);
+        background-position: center;
+        background-size: cover;
+
+        /* setting size */
+        height: 90%;
+
+        /* setting borders, margins and padding */
+        border-top: 20px solid black;
+        border-bottom: 100px solid black;
+        border-left: 30px solid black;
+        border-right: 30px solid black;
+
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    .gridContainer {
+        /* setting display*/
+        overflow: hidden;
+
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+        grid-template-rows: 12fr 1fr;
+        grid-gap: 10px;
+
+        /* setting background */
+        background-image: url(../assets/images/Background.png);
+        background-position: center;
+        background-size: cover;
+
+        /* setting size */
+        height: 100%;
+
+        /* setting borders, margins and padding */
+        border: none;
+
+    }
+}
