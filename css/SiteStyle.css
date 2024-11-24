@@ -6,7 +6,7 @@ file defines the main style guide for the portfolio site
 
 @import url(Variables.css);
 @import url(TextStyle.css);
-
+@import url(WorkAppMaterialStyles.css);
 @import url(AboutMeStyle.css);
 @import url(PortfolioStyle.css);
 
@@ -15,12 +15,26 @@ file defines the main style guide for the portfolio site
 .body {
     /* setting layout and anchors */
     overflow: hidden;
+    background-image: none;
 
     /* setting size */
     width: 100vw;
     height: 100vh;
 
     margin: 0px;
+    padding: 0px;
+}
+
+.sectionContainer {
+    /* setting layout and anchors */
+    display: none;
+    position: relative;
+
+    /* setting size */
+    width: 90%;
+    height: 100%;
+
+    margin-right: 10px;
     padding: 0px;
 }
 
@@ -47,20 +61,20 @@ file defines the main style guide for the portfolio site
     border-bottom: 70px solid black;
     border-left: 70px solid black;
     border-right: 70px solid black;
-
 }
 
 .rowSpan {
     grid-column: span 2;
 }
 
-iframe{
+iframe {
     /* setting size */
     width: 100%;
     height: 100%;
     /* setting padding,border, and margins */
     border: none;
 }
+
 /* 
 -----------------------------------------------------------
 site navigation
@@ -70,8 +84,12 @@ site navigation
 /* sites side bar */
 .sideBar {
     /* setting display */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* row-gap: ; */
+    grid-gap: 10px;
     z-index: 10;
-   
+
     /* setting borders, margins and padding */
     margin: 10px;
 }
@@ -88,7 +106,6 @@ site navigation
     /* setting padding and margin */
     padding: 10px;
 }
-
 
 /* 
 -----------------------------------------------------------
@@ -112,10 +129,16 @@ site section general style
     width: auto;
 
     /* setting borders,margins,padding */
+    padding-top: 10px;
 
     padding-left: 20px;
     padding-right: 20px;
 
+}
+
+.sectionTopBar div {
+    padding-top: 10px;
+    padding-right: 20px;
 }
 
 .closeFileImage {
@@ -125,9 +148,6 @@ site section general style
     /* setting size   */
     width: 60px;
     height: 60px;
-
-    /* setting margins */
-    margin-top: 10px;
 }
 
 /* 
@@ -135,6 +155,12 @@ site section general style
  responsive design sections 
 -----------------------------------------------------------
 */
+@media screen and (max-width: 1100px) {
+    .rowSpan {
+        grid-column: span 1;
+    }
+}
+
 @media screen and (max-width: 1000px) {
     .gridContainer {
         /* setting display*/
@@ -162,7 +188,7 @@ site section general style
     }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
 
     .gridContainer {
         /* setting display*/
@@ -184,5 +210,18 @@ site section general style
         /* setting borders, margins and padding */
         border: none;
 
+    }
+
+    /* sites side bar */
+    .sideBar {
+        /* setting display */
+        display: grid;
+        grid-template-columns: 1fr;
+        /* row-gap: ; */
+        grid-gap: 10px;
+        z-index: 10;
+
+        /* setting borders, margins and padding */
+        margin: 10px;
     }
 }

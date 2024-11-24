@@ -21,7 +21,21 @@ function CloseFile(sectionId) {
 
 }
 
-// gives functionality to move between different sections in portfolio
+// toggles the display of the section
+function ToggleSection(sectionId) {
+    var section = document.getElementById(sectionId);
+
+    if (section.style.display == "none" || section.style.display == "") {
+        section.style.display = "grid";
+    }
+
+    else {
+        section.style.display = "none";
+    }
+
+}
+// toggles the display of the section and it's corresponding top 
+// bar nav tab
 function ToggleSection(sectionId, sectionTabId) {
     var section = document.getElementById(sectionId);
     var sectionTab = document.getElementById(sectionTabId);
@@ -35,7 +49,7 @@ function ToggleSection(sectionId, sectionTabId) {
     }
 
     if (sectionTab.style.display == "none" || sectionTab.style.display == "") {
-        sectionTab.style.display = "inline-block";
+        sectionTab.style.display = "grid";
     }
 
     else {
@@ -51,8 +65,8 @@ function ToggleWork(workID) {
     if (focusedSection.style.display == "none" || focusedSection.style.display == "") {
         focusedSection.style.display = "inline-block";
         overviewSection.style.display = "none";
-        
-    } 
+
+    }
     else {
         overviewSection.style.display = "grid";
         focusedSection.style.display = "none";

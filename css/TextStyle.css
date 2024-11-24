@@ -5,9 +5,11 @@ file defines the sites text styles
 */
 h1 {
     /* setting text */
-    font-size: 40px;
+    font-size: 50px;
     text-shadow: 1px 1px 5px black;
     color: var(--textColor1);
+    padding: 0px;
+    margin: 0px;
 }
 
 h2 {
@@ -15,18 +17,30 @@ h2 {
     font-size: 30px;
     text-shadow: 1px 1px 5px black;
     color: var(--textColor1);
+    padding: 0px;
+    margin: 0px;
 }
 
 h3 {
     /* setting text */
-    font-size: 20px;
+    font-size: 25px;
     text-shadow: 1px 1px 5px black;
     color: var(--textColor1);
 
     /* setting padding and margin */
     padding: 0px;
     margin: 0px;
+}
 
+h4 {
+    /* setting text */
+    font-size: 25px;
+    text-shadow: 1px 1px 5px black;
+    color: var(--textColor1);
+
+    /* setting padding and margin */
+    padding: 0px;
+    margin: 0px;
 }
 
 p {

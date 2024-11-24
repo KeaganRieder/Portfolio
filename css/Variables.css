@@ -15,6 +15,8 @@ defines variables, that effect the sites margins,
     --topBarBg: #1c1c1c;
     --topBarBg2: #2e2e2e;
     --topBarTab: #464646;
+    --topBarTabHover: #686767;
+
     --topBarBorderBg: #464646;
 
     --bottomBarBG: #374962;
@@ -23,11 +25,14 @@ defines variables, that effect the sites margins,
     /* work section colors */
     --navTabBG: #1c1c1c;
     --navTabHoverBg: #333333;
-    --navTabActiveBG: #2B394d;
+    --navTabHoverBg2: #696868;
+
+    --navTabToggleBg: #1c1c1c;
+    --navTabToggleHover: #424242;
 
     --workBg: #355b91;
-    --workButtonBG: #1c1c1c;
-    --workButtonHoverBG: #333333;
+    --workButtonBG: #333333;
+    --workButtonHoverBG: #494949;
 
     /* about me section */
     --skillsBG: #2e2e2e;
