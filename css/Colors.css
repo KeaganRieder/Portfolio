@@ -1,0 +1,49 @@
+/* 
+-------------------------------------------------------------------
+CSS for the sites color palette
+-------------------------------------------------------------------
+*/
+
+:root{
+
+    --sectionBg: #374962;
+    --sectionBg2: #2e2e2e;
+    --subSectionBg: #2e2e2e;
+
+    --contentSectionBg: #535f70;
+    --contentSectionDividerBg: #2e2e2e;
+
+    
+    --topBarBg: #1c1c1c;
+    --topBarBg2: #424242;
+    
+    --bottomBarBG: #374962;
+    --sideBarBG: #1c1c1c;
+
+    --contentSectionButtonBg: #667488;
+    --contentSectionButtonHoverBg: #535f70;
+
+    --topBarTabBG: #a39f9f;
+    --topBarTabHoverBG: #464646;
+
+    --sideBarTabBG: #464646;
+    --sideBarTabHoverBG: #7e7e7e;
+
+    --sideBarToggleBG: #464646;
+    --sideBarToggleHoverBG: #7e7e7e;
+
+    --sideBarToggleBG2: #1c1c1c;
+    --sideBarToggleHoverBG2: #4b4a4a;
+
+    --buttonBg: #333333;
+    --buttonHoverBg: #494949;
+
+    --sectionShadow: #1c1c1c;
+    --topBarShadow: #1c1c1c;
+    --bottomBarShadow: #1c1c1c;
+
+    --textColor : #F2F0F0;
+    --textColor2 : #cacaca;
+
+    --textShadow: black;
+}
