@@ -1,0 +1,119 @@
+/* 
+-------------------------------------------------------------------
+CSS for the sites text styles
+-------------------------------------------------------------------
+*/
+
+@import url(Colors.css);
+
+h1 {
+    font-size: 2.5em;
+
+    color: var(--textColor);
+
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-size: 2em;
+
+    color: var(--textColor);
+
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    font-size: 1.5em;
+
+    color: var(--textColor);
+
+    margin: 0;
+    padding: 0;
+}
+
+h4 {
+    font-size: 1.2em;
+
+    color: var(--textColor);
+
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-size: 1em;
+
+    color: var(--textColor);
+
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    color: var(--textColor);
+    font-size: 1em;
+
+    padding: 0;
+    margin: 0;
+}
+
+/* additional styles */
+.shadowedText {
+    text-shadow: 1px 1px 5px black;
+
+}
+
+/* 
+-------------------------------------------------------------------
+responsive design section
+-------------------------------------------------------------------
+*/
+@media screen and (max-width: 1000px) {
+
+    h1 {
+        font-size: 2.5em;
+
+        color: var(--textColor);
+
+        margin: 0;
+        padding: 0;
+    }
+
+    h2 {
+        font-size: 2em;
+
+        color: var(--textColor);
+
+        margin: 0;
+        padding: 0;
+    }
+
+    h3 {
+        font-size: 1.5em;
+
+        color: var(--textColor);
+
+        margin: 0;
+        padding: 0;
+    }
+
+    h4 {
+        font-size: .9em;
+
+        color: var(--textColor);
+
+        margin: 0;
+        padding: 0;
+    }
+
+    p {
+        font-size: 1em;
+
+        color: var(--textColor);
+
+        margin: 0;
+        padding: 0;
+    }
+}

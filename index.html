@@ -1,7 +1,5 @@
-<!-- 
-this is the main html file for my portfolio site. it controls navigation and 
-displaying of the portfolio content.
--->
+<!DOCTYPE html>
+<html>
 
 <head>
     <title>Keagan Rieder Portfolio</title>
@@ -9,461 +7,452 @@ displaying of the portfolio content.
 
     <!-- viewport data -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- style data -->
     <link rel="stylesheet" href="css/SiteStyle.css">
 </head>
 
-<!-- the sites body -->
-
 <body class="body">
 
-    <!-- main section of the portfolio site -->
-    <section class="gridContainer">
-
-        <!-- sites navigation -->
-        <nav class="sideBar">
-
-            <section>
-                <div class="NavApps">
-                    <img onclick="OpenFile('AboutMe')" src="assets/images/TextDoc.png">
-                    <h3>AboutMe.txt</h3>
-                </div>
-
-                <!-- link to Github  -->
-                <div class="NavApps">
-                    <a href="https://github.com/KeaganRieder" target="_blank">
-                        <img src="assets/images/GitHub.png">
-                    </a>
-                    <h3>GitHub</h3>
-                </div>
-
-                <!-- link to email -->
-                <div class="NavApps">
-                    <a href="mailto:Keagan@rieder.ca">
-                        <img src="assets/images/Email.png">
-                    </a>
-                    <h3>Email</h3>
-                </div>
-
-                <!-- link to linkedin acount -->
-                <div class="NavApps">
-                    <a href="https://www.linkedin.com/in/keagan-rieder/" target="_blank">
-                        <img src="assets/images/linkedin.png" alt="linkedin">
-                    </a>
-                    <h3>Linkedin</h3>
-                </div>
-            </section>
-
-            <section>
-
-                <!-- text document containing my resume -->
-                <div class="NavApps">
-                    <img src="assets/images/Folder.png" onclick="OpenFile('ApplicationMaterials')">
-
-                    <h3>Application Materials</h3>
-                </div>
-
-                <!-- portfolio -->
-                <div class="NavApps">
-                    <img src="assets/images/Folder.png" onclick="OpenFile('Portfolio')">
-                    <h3>My Work</h3>
-                </div>
-            </section>
-
-        </nav>
-
-        <!-- section for the content of the site-->
+    <!-- site navigation -->
+    <nav class="navigationApps">
+        <button> <img src="assets/nav_icons/ArrowD.png" alt="down arrow"> </img></button>
         <section>
+            <div>
+                <img onclick="ShowSection('AboutMe')" src="assets/nav_icons/TextDoc.png">
+                <h4 class="shadowedText">AboutMe.txt</h4>
+            </div>
 
-            <!-- about me page -->
-            <section id="AboutMe" class="sectionContainer">
-                <section class="aboutMe">
-                    <!-- top bar of about me -->
-                    <div class="sectionTopBar">
-                        <div>
-                            <h2>AboutMe.txt</h2>
-                        </div>
-                        <div>
-                            <!-- this is empty mainly used for spacing -->
-                        </div>
-                        <div>
-                            <img src="assets/images/XButton.png" alt="Close Doc" class="closeFileImage"
-                                onclick="CloseFile('AboutMe')">
-                        </div>
-                    </div>
+            <div href="mailto:Keagan@rieder.ca">
+                <img src="assets/nav_icons/Email.png">
+                <h4 class="shadowedText">Email</h4>
+            </div>
 
-                    <div class="aboutMeContainer">
-                        <!-- biography -->
-                        <p>
-                            Hello I’m Keagan Rieder!<br><br>
+            <div href="https://www.linkedin.com/in/keagan-rieder/" target="_blank">
+                <img src="assets/nav_icons/linkedin.png" alt="linkedin">
+                <h4 class="shadowedText">Linkedin</h4>
+            </div>
 
-                            I’m a programmer and artist, currently attending the University
-                            of Lethbridge for a BFA in New Media and a BSC in Computer Science.
-                            I enjoy working with various programming languages and tools to
-                            create software that solves problems or generates and makes interactive artwork. When I’m
-                            not
-                            writing programs to make or solve problems, I’m drawing pixel art pieces or tile sets and
-                            character
-                            models that can be used for games. <br><br>
+            <div href="https://github.com/KeaganRieder" target="_blank">
+                <img src="assets/nav_icons/GitHub.png">
+                <h4 class="shadowedText">GitHub</h4>
+            </div>
 
-                            Programming is a hobby and passion of mine, which I’ve had since middle school.
-                            I was introduced and
-                            fell in love with the problem-solving aspects and the ability to create things with it. This
-                            passion
-                            led me to attend the University of Lethbridge to expand my programming skills. Well, there,
-                            I
-                            would
-                            find
-                            out about the new media program that covered various skills and topics, including video game
-                            design
-                            and
-                            development. Having a hobby of playing video games and a desire to develop and create games,
-                            I
-                            added
-                            new media as a second major. <br><br>
-
-                            Besides doing school, I’m currently working on a game called Automation, which combines
-                            elements
-                            from automation games and colony sims to create different experiences. The game’s developer
-                            is
-                            currently more of a hobby, a way to practice and learn new skills.
-                        </p>
-                        <img src="assets/images/Logo.gif" alt="picture of me" class="logoStyle">
-
-                        <!-- skills section -->
-                        <div class="rowSpan skillsContainer">
-                            <h1 class="">Skills</h1>
-
-                            <!-- Languages I know -->
-                            <div>
-                                <h2>Languages</h2>
-                                <ul>
-                                    <li>Java</li>
-                                    <li>C#</li>
-                                    <li>C++</li>
-                                </ul>
-
-                            </div>
-
-                            <!-- Engines I know -->
-                            <div>
-                                <h2>Engines</h2>
-                                <ul>
-                                    <li>Unity</li>
-                                    <li>Godot</li>
-                                </ul>
-                            </div>
-
-                            <!-- Tools/software I use and know -->
-                            <div>
-                                <h2>Tools</h2>
-                                <ul>
-                                    <li>Blender</li>
-                                    <li>Aesprite</li>
-                                    <li>Git & GitHub</li>
-                                    <li>Visual Studio Code</li>
-                                    <li>Processing</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- artist statement -->
-                        <div class="rowSpan">
-                            <h3> Artist Statement <br><br></h3>
-                            <p>
-
-                                I’ve always enjoyed creating digital works of art that are static images but rather
-                                change
-                                either on
-                                their own or by the action of the viewer, often achieved by having some degree of
-                                programming
-                                part
-                                of the work. The programming aspects of my work can range from accompanying pixel art
-                                pieces
-                                or
-                                other digital artworks to a program utilizing procedural generation techniques to create
-                                new
-                                work
-                                from something semi or fully random. <br><br>
-
-                                The ability to create something with meaning from something semi or purely random is one
-                                of
-                                many
-                                things that inspire my work. Sense-creating works from randomness can allow for a piece
-                                with
-                                elements that can unpredictably change, creating an entirely different experience.
-                                Especially
-                                when
-                                accompanied by adding interactivity through code, it can lead to the work being able to
-                                change
-                                based
-                                on the viewer.<br><br>
-
-                                Overall, I strive to create pieces that combine digital art with the strengths code to
-                                create
-                                works
-                                that can be interacted with and experienced in many ways.
-                                <br><br>
-                            </p>
-                        </div>
-
-                    </div>
-
-                </section>
-            </section>
-
-            <!-- work showcase page -->
-            <section id="Portfolio" class="sectionContainer">
-                <section class="folderContainer">
-
-                    <!-- top bar in portfolio -->
-                    <div class="sectionTopBar">
-                        <div>
-                            <h2>My Work</h2>
-                        </div>
-
-                        <!-- current sections open/top bar nav -->
-                        <div class="workTabContainer">
-                            <section>
-                                <div id="Current projects tab" onclick="location.href='#Current projects'">
-                                    <h2>Current projects</h2>
-                                    <img src="assets/images/XButton.png" alt="Close Doc" class="closeFileImage"
-                                        onclick="ToggleSection('Current projects','Current projects tab')">
-                                </div>
-
-                                <div id="Video Games tab" onclick="location.href='#Video Games'">
-                                    <h2> Video Games</h2>
-                                    <img src="assets/images/XButton.png" alt="Close Doc" class="closeFileImage"
-                                        onclick="ToggleSection('Video Games','Video Games tab')">
-                                </div>
-
-                                <div id="interactive Art tab" onclick="location.href='#interactive Art'">
-                                    <h2>Interactive Art</h2>
-                                    <img src="assets/images/XButton.png" alt="Close Doc" class="closeFileImage"
-                                        onclick="ToggleSection('interactive Art','interactive Art tab')">
-                                </div>
-
-                                <div id="Puzzle Solvers tab" onclick="location.href='#Puzzle Solvers'">
-                                    <h2> Puzzle Solvers</h2>
-                                    <img src="assets/images/XButton.png" alt="Close Doc" class="closeFileImage"
-                                        onclick="ToggleSection('Puzzle Solvers','Puzzle Solvers tab')">
-                                </div>
-
-                                <div id="Pixel Art tab" onclick="location.href='#Pixel Art'">
-                                    <h2>Pixel Art</h2>
-                                    <img src="assets/images/XButton.png" alt="Close Doc" class="closeFileImage"
-                                        onclick="ToggleSection('Pixel Art','Pixel Art tab')">
-                                </div>
-                                </sections>
-                        </div>
-
-                        <div>
-                            <img src="assets/images/XButton.png" alt="Close Doc" class="closeFileImage"
-                                onclick="CloseFile('Portfolio')">
-                        </div>
-                    </div>
-
-                    <!-- overview of work -->
-                    <section id="workOverView" class="portfolioContainer">
-                        <!-- button to toggle side bar nav -->
-                        <button class="portfolioNavToggle" onclick="ToggleSection('portfolioNav')">
-                            <img src="assets/images/ArrowR.png" alt="arrow">
-                        </button>
-
-                        <!-- side bar nav -->
-                        <section id="portfolioNav" class=portfolioNavContainer>
-                            <nav class="portfolioNav">
-                                <div onclick="ToggleSection('Current projects','Current projects tab')">
-                                    <h2>Current projects</h2>
-                                </div>
-                                <div onclick="ToggleSection('Video Games','Video Games tab')">
-                                    <h2> Video Games</h2>
-                                </div>
-                                <div onclick="ToggleSection('interactive Art','interactive Art tab')">
-                                    <h2>interactive Art</h2>
-                                </div>
-                                <div onclick="ToggleSection('Puzzle Solvers','Puzzle Solvers tab')">
-                                    <h2> Puzzle Solvers</h2>
-                                </div>
-                                <div onclick="ToggleSection('Pixel Art','Pixel Art tab')">
-                                    <h2>Pixel Art</h2>
-                                </div>
-                            </nav>
-                            <button class="portfolioNavToggle" onclick="ToggleSection('portfolioNav')">
-                                <img src="assets/images/ArrowL.png" alt="arrow">
-
-                            </button>
-
-                        </section>
-
-                        <!-- content  -->
-                        <div class="workContainer">
-                            <!-- content overview -->
-                            <section id="Current projects">
-                                <h3 class="rowSpan"> Current projects </h3>
-
-                            </section>
-
-                            <section id="Video Games">
-                                <h3 class="rowSpan"> Video Games</h3>
-
-                            </section>
-
-                            <section id="interactive Art">
-                                <h3 class="rowSpan"> Interactive Art </h3>
-
-                            </section>
-
-                            <section id="Puzzle Solvers">
-                                <h3 class="rowSpan"> Puzzle Solvers </h3>
-
-
-                            </section>
-
-                            <section id="Pixel Art">
-                                <h3 class="rowSpan"> Pixel Art </h3>
-                                <div>
-                                    <h4 onclick="ToggleWork('Home Among The stars')">Home Among
-                                        The stars</h4>
-                                    <img src="assets/portfolio_work/PixelArt/Home among the stars.png"
-                                        alt="Home Among The stars">
-                                    <p>'Home Among The stars' was created using Aseprite</p>
-                                </div>
-
-                                <div>
-                                    <h4 onclick="ToggleWork('Sunset')">Sunset</h4>
-                                    <img src="assets/portfolio_work/PixelArt/Sunset.png" alt="Sunset">
-                                    <p>'Sunset' was created using Aseprite</p>
-                                </div>
-
-                                <div>
-                                    <h4 onclick="ToggleWork('Snowy skys')">Snowy skys</h4>
-                                    <img src="assets/portfolio_work/PixelArt/Snowy skys.png" alt="Snowy skys">
-                                    <p>'Snowy skys' was created in Aseprite</p>
-                                </div>
-
-                            </section>
-                        </div>
-                    </section>
-
-                    <!-- more in depth of the work -->
-                    <section id="focusedWork" class="focusedWorkContainer">
-
-                        <!-- pixel art -->
-                        <div>
-                            <section id="Home Among The stars" >
-                                <nav >
-                                    <div onclick="ToggleWork('Home Among The stars')">
-                                        <h2>back</h2>
-                                    </div>
-                                </nav>
-                                <iframe src="work_pages/home_among_the_stars.html"></iframe>
-                            </section>
-
-                            <section id="Sunset">
-                                <nav >
-                                    <div onclick="ToggleWork('Sunset')">
-                                        <h2>back</h2>
-                                    </div>
-                                </nav>
-                                <div>
-                                    <iframe src="work_pages/sunset.html"></iframe>
-
-                                </div>
-                            </section>
-                            
-                            <section id="Snowy skys">
-                                <nav >
-                                    <div onclick="ToggleWork('Snowy skys')">
-                                        <h2>back</h2>
-                                    </div>
-                                </nav>
-                                <iframe src="work_pages/snowy_skys.html"></iframe>
-                            </section>
-                        </div>
-
-
-
-                    </section>
-
-                </section>
-            </section>
-
-            <!-- Resume,cover letter and artist cv  -->
-            <section id="ApplicationMaterials" class="sectionContainer">
-                <section class="folderContainer">
-
-                    <!-- top bar in portfolio -->
-                    <div class="sectionTopBar">
-                        <div>
-                            <h2>Application Materials</h2>
-                        </div>
-
-                        <!-- current sections open/top bar nav -->
-                        <div class="workTabContainer">
-                            <section>
-                                <div id="Resume tab" onclick="location.href='#Resume'">
-                                    <h2>Resume</h2>
-                                    <img src="assets/images/XButton.png" alt="Close Doc" class="closeFileImage"
-                                        onclick="ToggleSection('Resume','Resume tab')">
-                                </div>
-
-                                <div id="Artist Cv tab" onclick="location.href='#Artist Cv'">
-                                    <h2>Artist Cv</h2>
-                                    <img src="assets/images/XButton.png" alt="Close Doc" class="closeFileImage"
-                                        onclick="ToggleSection('Artist Cv','Artist Cv tab')">
-                                </div>
-                                </sections>
-                        </div>
-
-                        <div>
-                            <img src="assets/images/XButton.png" alt="Close Doc" class="closeFileImage"
-                                onclick="CloseFile('ApplicationMaterials')">
-                        </div>
-                    </div>
-
-                    <!-- Navigation of folders -->
-                    <section id="workOverView" class="portfolioContainer">
-                        <!-- button to toggle side bar nav -->
-                        <button class="portfolioNavToggle" onclick="ToggleSection('workOverViewNav')">
-                            <img src="assets/images/ArrowR.png" alt="arrow">
-                        </button>
-
-                        <!-- side bar nav -->
-                        <section id="workOverViewNav" class=portfolioNavContainer>
-                            <nav class="portfolioNav">
-                                <div onclick="ToggleSection('Resume','Resume tab')">
-                                    <h2>Resume</h2>
-                                </div>
-                                <div onclick="ToggleSection('Artist Cv','Artist Cv tab')">
-                                    <h2>Artist Cv</h2>
-                                </div>
-                            </nav>
-                            <button class="portfolioNavToggle" onclick="ToggleSection('workOverViewNav')">
-                                <img src="assets/images/ArrowL.png" alt="arrow">
-                            </button>
-
-                        </section>
-
-                        <!-- content  -->
-                        <div class="applicationContainer">
-                            <!-- content overview -->
-                            <section id="Resume">
-                                <h3 class="rowSpan"> Resume </h3>
-                                <iframe src="assets/application_materials/Resume.pdf"></iframe>
-                            </section>
-
-                            <section id="Artist Cv">
-                                <h3 class="rowSpan"> Artist Cv </h3>
-                                <iframe src="assets/application_materials/ArtestCv.pdf"></iframe>
-                            </section>
-                        </div>
-                    </section>
-                </section>
-            </section>
-
+            <div>
+                <img src="assets/nav_icons/Folder.png" onclick="ShowSection('ApplicationMaterials')">
+                <h4 class="shadowedText">Application Materials</h4>
+            </div>
         </section>
 
-        <!-- getting scripts -->
-        <script src="scripts/NavScripts.js" type="text/JavaScript"></script>
+        <div>
+            <img src="assets/nav_icons/Folder.png" onclick="ShowSection('WorkShowCase')">
+            <h4 class="shadowedText">My Work</h4>
+        </div>
+
+    </nav>
+
+    <!-- about me page -->
+    <section id="AboutMe" class="contentSectionContainer hidden">
+        <div class="topBar">
+            <h1>AboutMe.txt</h1>
+            <div></div>
+            <img src="assets/nav_icons/XButton.png" alt="Close Doc" class="closeFileImage"
+                onclick="HideSection('AboutMe')">
+        </div>
+        <!-- section Content -->
+
+        <div class="aboutMeContainer">
+            <p>
+                <img src="assets/imgs/Logo.gif" alt="temp">
+
+                Hello I’m Keagan Rieder!<br><br>
+
+                I’m a programmer and artist, currently attending the University
+                of Lethbridge for a BFA in New Media and a BSC in Computer Science.
+                I enjoy working with various programming languages and tools to
+                create software that solves problems or generates and makes interactive artwork. When I’m
+                not
+                writing programs to make or solve problems, I’m drawing pixel art pieces or tile sets and
+                character
+                models that can be used for games. <br><br>
+
+                Programming is a hobby and passion of mine, which I’ve had since middle school.
+                I was introduced and
+                fell in love with the problem-solving aspects and the ability to create things with it. This
+                passion
+                led me to attend the University of Lethbridge to expand my programming skills. Well, there,
+                I
+                would
+                find
+                out about the new media program that covered various skills and topics, including video game
+                design
+                and
+                development. Having a hobby of playing video games and a desire to develop and create games,
+                I
+                added
+                new media as a second major. <br><br>
+
+                Besides doing school, I’m currently working on a game called Automation, which combines
+                elements
+                from automation games and colony sims to create different experiences. The game’s developer
+                is
+                currently more of a hobby, a way to practice and learn new skills.
+            </p>
+
+
+            <div class="span2Columns skillsContainer">
+                <h1 class="">Skills</h1>
+
+                <!-- Languages I know -->
+                <div>
+                    <h2>Languages</h2>
+                    <ul>
+                        <li>Java</li>
+                        <li>C#</li>
+                        <li>C++</li>
+                    </ul>
+
+                </div>
+
+                <!-- Engines I know -->
+                <div>
+                    <h2>Engines</h2>
+                    <ul>
+                        <li>Unity</li>
+                        <li>Godot</li>
+                    </ul>
+                </div>
+
+                <!-- Tools/software I use and know -->
+                <div>
+                    <h2>Tools</h2>
+                    <ul>
+                        <li>Blender</li>
+                        <li>Aesprite</li>
+                        <li>Git & GitHub</li>
+                        <li>Visual Studio Code</li>
+                        <li>Processing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="span2Columns">
+                <h3> Artist Statement <br><br></h3>
+                <p>
+
+                    I’ve always enjoyed creating digital works of art that are static images but rather
+                    change
+                    either on
+                    their own or by the action of the viewer, often achieved by having some degree of
+                    programming
+                    part
+                    of the work. The programming aspects of my work can range from accompanying pixel art
+                    pieces
+                    or
+                    other digital artworks to a program utilizing procedural generation techniques to create
+                    new
+                    work
+                    from something semi or fully random. <br><br>
+
+                    The ability to create something with meaning from something semi or purely random is one
+                    of
+                    many
+                    things that inspire my work. Sense-creating works from randomness can allow for a piece
+                    with
+                    elements that can unpredictably change, creating an entirely different experience.
+                    Especially
+                    when
+                    accompanied by adding interactivity through code, it can lead to the work being able to
+                    change
+                    based
+                    on the viewer.<br><br>
+
+                    Overall, I strive to create pieces that combine digital art with the strengths code to
+                    create
+                    works
+                    that can be interacted with and experienced in many ways.
+                    <br><br>
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- application materials page -->
+    <section id="ApplicationMaterials" class="contentSectionContainer  hidden">
+        <div class="topBar">
+            <h1>Application Materials</h1>
+
+            <div class='topBarTabContainer'>
+                <div onclick="location.href='#Resume'" id="Resume Tab">
+                    <h2> Resume </h2>
+                    <img onclick='HideSection("Resume"); HideSection("Resume Tab")' src="assets/nav_icons/XButton.png"
+                        alt="XButton">
+                </div>
+
+                <div onclick="location.href='#ArtistCv'" id="ArtistCv Tab">
+                    <h2> Artist Cv </h2>
+                    <img onclick='HideSection("ArtistCv"); HideSection("ArtistCv Tab")'
+                        src="assets/nav_icons/XButton.png" alt="XButton">
+                </div>
+
+            </div>
+
+            <img src="assets/nav_icons/XButton.png" alt="Close Doc" class="closeFileImage"
+                onclick="HideSection('ApplicationMaterials')">
+        </div>
+
+        <div class="folderContainer">
+            <!-- section nav -->
+
+            <button id="JobAppNavButton" class="sideNavToggleButton hidden"
+                onclick='HideSection("JobAppNavButton"); ShowSection("JobAppNav")'>
+                <img class='toggleButtonImg' src="assets/nav_icons/ArrowR.png" alt="right arrow"> </img>
+            </button>
+
+            <div id="JobAppNav" class="sectionSideNavBar">
+                <section>
+                    <div onclick='ShowSection("Resume"); ShowSection("Resume Tab")'>
+                        <h2> Resume </h2>
+                    </div>
+
+                    <div onclick='ShowSection("ArtistCv"); ShowSection("ArtistCv Tab")'>
+                        <h2> Artist Cv </h2>
+                    </div>
+
+
+                </section>
+                <button onclick='HideSection("JobAppNav"); ShowSection("JobAppNavButton")'>
+                    <img src="assets/nav_icons/ArrowL.png" alt="left arrow"> </img>
+                </button>
+            </div>
+
+            <!-- section content -->
+            <div class="contentContainer">
+                <section class="applicationSection" id="Resume">
+                    <h2 class="spanAllColumns"> Resume </h2>
+                    <iframe class="spanAllColumns" src="assets/application_materials/Resume.pdf"></iframe>
+                </section>
+
+                <section class="applicationSection" id="ArtistCv">
+                    <h2 class="spanAllColumns"> Artist Cv </h2>
+
+                    <iframe class="spanAllColumns" src="assets/application_materials/ArtestCv.pdf"></iframe>
+                </section>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- work showcase page -->
+    <section id="WorkShowCase" class="contentSectionContainer hidden">
+        <div class="topBar">
+            <h1>My Work</h1>
+
+            <div class=topBarTabContainer>
+                <div onclick="location.href='#Current projects'" id="Current projects Tab">
+                    <h2> Current Projects </h2>
+                    <img onclick='HideSection("Current projects"); HideSection("Current projects Tab")'
+                        src="assets/nav_icons/XButton.png" alt="XButton">
+                </div>
+
+                <div onclick="location.href='#Pixel Art'" id="Pixel Art Tab">
+                    <h2> Pixel Art </h2>
+                    <img onclick='HideSection("Pixel Art"); HideSection("Pixel Art Tab")'
+                        src="assets/nav_icons/XButton.png" alt="XButton">
+                </div>
+
+                <div onclick="location.href='#Video Games'" id="Video Games Tab">
+                    <h2> Video Games </h2>
+                    <img onclick='HideSection("Video Games"); HideSection("Video Games Tab")'
+                        src="assets/nav_icons/XButton.png" alt="XButton">
+                </div>
+
+                <div onclick="location.href='#Puzzle Solvers'" id="Puzzle Solvers Tab">
+                    <h2> Puzzle Solvers </h2>
+                    <img onclick='HideSection("Puzzle Solvers"); HideSection("Puzzle SolversPuzzle Solvers Tab")'
+                        src="assets/nav_icons/XButton.png" alt="XButton">
+                </div>
+
+                <div onclick="location.href='#Interactive Art'" id="Interactive Art Tab">
+                    <h2> Interactive Art </h2>
+                    <img onclick='HideSection("Interactive Art"); HideSection("Interactive Art Tab")'
+                        src="assets/nav_icons/XButton.png" alt="XButton">
+                </div>
+            </div>
+
+            <img src="assets/nav_icons/XButton.png" alt="Close Doc" class="closeFileImage"
+                onclick="HideSection('WorkShowCase')">
+        </div>
+
+        <!-- section nav -->
+        <div class="folderContainer">
+            <button id="PortNavButton" class="sideNavToggleButton hidden"
+                onclick='HideSection("PortNavButton"); ShowSection("PortNav")'>
+                <img class='toggleButtonImg' src="assets/nav_icons/ArrowR.png" alt="right arrow"> </img>
+            </button>
+
+            <div id="PortNav" class="sectionSideNavBar">
+                <section>
+                    <div onclick='ShowSection("Current projects"); ShowSection("Current projects Tab")'>
+                        <h2> Current Projects </h2>
+                    </div>
+
+                    <div onclick='ShowSection("Pixel Art"); ShowSection("Pixel Art Tab")'>
+                        <h2> Pixel Art </h2>
+                    </div>
+
+                    <div onclick='ShowSection("Video Games"); ShowSection("Video Games Tab")'>
+                        <h2> Video Games </h2>
+                    </div>
+
+                    <div onclick='ShowSection("Puzzle Solvers"); ShowSection("Puzzle Solvers Tab")'>
+                        <h2> Puzzle Solvers </h2>
+                    </div>
+
+                    <div onclick='ShowSection("Interactive Art"); ShowSection("Interactive Art Tab")'>
+                        <h2> Interactive Art </h2>
+                    </div>
+
+                </section>
+                <button onclick='HideSection("PortNav"); ShowSection("PortNavButton")'>
+                    <img src="assets/nav_icons/ArrowL.png" alt="left arrow"> </img>
+                </button>
+            </div>
+
+            <!-- section content -->
+            <div class="contentContainer">
+
+                <section id="Current projects">
+                    <h2 class="spanAllColumns"> Current projects </h2>
+
+                    <div>
+                        <h3> Automation </h3>
+                        <img src="assets/imgs/atomation.png" alt="atomationImgs"> </img>
+
+                        <p>
+                            Automation is a game that combines elements from automation games and colony sims to
+                            create
+                            different experiences.
+                            The game’s developer is currently more of a hobby, a way to practice and learn new
+                            skills.
+                        </p>
+                    </div>
+                </section>
+
+                <section id="Pixel Art">
+                    <h2 class="spanAllColumns"> Pixel Art </h2>
+
+                    <div>
+                        <h3> Home Among The Stars </h3>
+                        <img src="assets/portfolio_work/pixel_art/home_among_the_stars.png" alt="Home Among The Stars">
+                        </img>
+                        <p>
+                            Home Among The Stars was created using Aesprite and is a piece of pixel art that was
+                            created for practice using the software.
+                        </p>
+                    </div>
+                    <div>
+                        <h3> Snowy Skies </h3>
+                        <img src="assets/portfolio_work/pixel_art/snowy_skies.png" alt="Snowy Skies"> </img>
+                        <p>
+                            Snowy Skies was created using Aesprite.
+                        </p>
+                    </div>
+                    <div>
+                        <h3> Sun Set </h3>
+                        <img src="assets/portfolio_work/pixel_art/sunset.png" alt="Sunset"> </img>
+                        <p>
+                            Sun Set was created using Aesprite.
+                        </p>
+                    </div>
+
+                </section>
+
+                <section id="Video Games">
+                    <h2 class="spanAllColumns"> Video games</h2>
+                    <div>
+                        <h3> UnderUs </h3>
+                        <img src="assets/portfolio_work/.png" alt="under us img"> </img>
+                        <p>
+                            Under us is a text based adventure game developed in c++. where you play as a person
+                            stuck
+                            in a submarine and your tasked with fixing it.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3> Tic Tac Toe </h3>
+                        <img src="assets/portfolio_work/.png" alt="tic tac toe"> </img>
+                        <p>
+                            Tic Tac Toe was created with c++. The game allows teh user to play against a bot which
+                            uses a minimax algorithm to play the game.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3> Cookie Clicker </h3>
+                        <img src="assets/.png" alt="cookie clicker"> </img>
+                        <p>
+                            an idle game developed in Unity using C#. I created this game mainly as a way of
+                            learning and practicing
+                            how to use unity and c#.
+                        </p>
+                    </div>
+                </section>
+
+                <section id="Puzzle Solvers">
+                    <h2 class="spanAllColumns"> Puzzle Solvers </h2>
+                    <div>
+                        <h3> N-Queen problem Solver </h3>
+                        <img src="assets/.png" alt="N-Queen problem Solver"> </img>
+                        <p>
+                            The N-Queen problem solver was developed in c++.It solves the problem by using a
+                            backtracking algorithm
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3> Missionary, Cannibal Solver </h3>
+                        <img src="assets/.png" alt="Missionary, Cannibal Solver"> </img>
+                        <p>
+                            The Missionary, Cannibal problem solver was developed in c++. it solves the problem
+                            using a Breadth first search (BFS) algorithm.
+                        </p>
+                    </div>
+                </section>
+
+                <section id="Interactive Art">
+                    <h2 class="spanAllColumns"> Interactive Art </h2>
+
+                    <div>
+                        <h3> Cityscape </h3>
+                        <img src="assets/.png" alt="City Scape"> </img>
+                        <p>
+                            City Scape was developed in processing. The program generates a city scape, that can be
+                            interacted with by the user to change varying aspects.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3> Perlin Galaxy </h3>
+                        <img src="assets/.png" alt="Perlin Galaxy"> </img>
+                        <p>
+                            Perlin Galaxy, was developed in unity, and was mainly to practice using perlin noise to
+                            generate things. with input it allows the user to generate new galaxies based on perlin
+                            noise maps
+                        </p>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- work focused -->
+<section></section>
+    <script src="scripts/SiteNav.js" type="text/JavaScript"></script>
+
 </body>

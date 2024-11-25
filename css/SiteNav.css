@@ -1,0 +1,340 @@
+/* 
+-------------------------------------------------------------------
+CSS for the sites navigation styles
+-------------------------------------------------------------------
+*/
+
+@import url(Text.css);
+@import url(Colors.css);
+
+/* 
+-------------------------------------------------------------------
+style for sites navigation bar
+-------------------------------------------------------------------
+*/
+
+.navigationApps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+
+    height: 100%;
+    width: 10%;
+
+
+    margin: 10px;
+    margin-left: 30px;
+    margin-top: 20px;
+
+}
+
+.navigationApps div {
+    text-align: center;
+
+    width: auto;
+    height: auto;
+
+    padding: 0px;
+
+}
+
+.navigationApps div img {
+    width: auto;
+    height: auto;
+}
+
+.navigationApps div h4 {
+    color: var(--textColor2);
+
+}
+
+.navigationApps button {
+    display: none;
+}
+
+/* 
+-------------------------------------------------------------------
+style for section navigation bar
+-------------------------------------------------------------------
+*/
+/*  */
+
+.sectionSideNavBar {
+    /* overflow-y: auto; */
+
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    position: relative;
+
+    z-index: 10;
+
+    background-color: var(--sideBarBG);
+    padding-top: 10px;
+    padding-left: 10px;
+
+    width: 120%;
+    height: auto;
+}
+
+.sectionSideNavBar div {
+    background-color: var(--sideBarTabBG);
+    width: auto;
+    height: auto;
+    margin: 10px;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+
+}
+
+.sectionSideNavBar div:hover {
+    background-color: var(--sideBarTabHoverBG);
+}
+
+.sectionSideNavBar Button {
+    display: grid;
+    place-items: center;
+    background-color: var(--sideBarToggleBG);
+    width: 100%;
+
+    padding: 0;
+}
+
+.sectionSideNavBar Button:hover {
+    background-color: var(--sideBarToggleHoverBG);
+}
+
+.sectionSideNavBar Button img {
+
+    width: 100%;
+    /* height: auto; */
+}
+
+.sideNavToggleButton {
+    display: grid;
+    place-items: center;
+
+    background-color: var(--sideBarToggleBG2);
+
+    width: 70%;
+
+}
+
+.sideNavToggleButton:hover {
+    background-color: var(--sideBarToggleHoverBG2);
+}
+
+.sideNavToggleButton img {
+    width: 100%;
+}
+
+/* 
+-------------------------------------------------------------------
+section top bar style
+-------------------------------------------------------------------
+*/
+.topBar {
+    display: grid;
+    grid-template-columns: .5fr 2fr .4fr;
+    z-index: 2;
+
+    background-color: var(--topBarBg);
+    box-shadow: 0px 4px 10px black;
+
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 0px;
+
+}
+
+.topBar h1 {
+    margin-top: 20px;
+
+    margin-left: 5px;
+    margin-right: 5px;
+
+}
+
+.topBar img {
+    position: relative;
+    justify-self: end;
+
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+}
+
+.topBarTabContainer {
+    overflow-y: hidden;
+    overflow-x: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+
+    background-color: var(--topBarBg2);
+
+    width: 100%;
+    height: auto;
+
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+.topBarTabContainer div {
+    display: none;
+    grid-template-columns: 2fr .5fr;
+
+    background-color: var(--topBarTabBG);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-bottom: 5px;
+}
+
+.topBarTabContainer div:hover {
+    background-color: var(--topBarTabHoverBG);
+}
+
+.topBarTabContainer div h2 {
+    margin: 15px;
+}
+
+/* 
+-------------------------------------------------------------------
+responsive design section
+-------------------------------------------------------------------
+*/
+@media screen and (max-width: 1000px),
+screen and (max-height: 600px) {
+
+    .navigationApps {
+        overflow-y: auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+
+        grid-row: 1fr 1fr;
+        grid-gap: 0;
+
+        position: fixed;
+        bottom: 0px;
+        left: 0;
+        right: 0;
+
+        background-color: var(--bottomBarBG);
+
+        height: 30%;
+        width: 100%;
+
+        margin: 0px;
+        padding-right: 5px;
+        padding-bottom: 10px;
+    }
+
+    .navigationApps section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+
+        /* grid-row: 1fr; */
+        grid-gap: 0px;
+
+
+        background-color: var(--bottomBarBG);
+        /* height: 20%; */
+
+        margin: 0px;
+        padding-right: 10px;
+    }
+
+    .navigationApps div {
+
+        width: 100%;
+
+        height: auto;
+    }
+
+    .navigationApps div img {
+
+        width: auto;
+
+        height: 70%;
+    }
+
+    .navigationApps button {
+        display: inline-block;
+        background-color: var(--buttonBg);
+    }
+
+    .navigationApps button:hover {
+        background-color: var(--buttonHoverBg);
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    .navigationApps {
+        overflow-y: auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+
+        grid-row: 1fr 1fr;
+        grid-gap: 0;
+
+        position: fixed;
+        bottom: 0px;
+        left: 0;
+        right: 0;
+
+        background-color: var(--bottomBarBG);
+
+        height: 20%;
+        width: 100%;
+
+        margin: 0px;
+        padding-right: 5px;
+        padding-bottom: 10px;
+
+    }
+
+    .navigationApps section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+
+        /* grid-row: 1fr; */
+        grid-gap: 0px;
+
+
+        background-color: var(--bottomBarBG);
+
+        margin: 0px;
+        /* padding-left: 5px; */
+        padding-right: 10px;
+    }
+
+
+    .navigationApps div {
+
+        width: 100%;
+
+        height: 70%;
+    }
+
+    .navigationApps div img {
+
+        width: auto;
+
+        height: 70%;
+    }
+
+
+}

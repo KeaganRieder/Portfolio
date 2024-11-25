@@ -1,227 +1,50 @@
 /* 
------------------------------------------------------------
-file defines the main style guide for the portfolio site
------------------------------------------------------------
+-------------------------------------------------------------------
+CSS for the sites default and main style
+-------------------------------------------------------------------
 */
-
-@import url(Variables.css);
-@import url(TextStyle.css);
-@import url(WorkAppMaterialStyles.css);
+@import url(Colors.css);
+@import url(Text.css);
+@import url(SiteNav.css);
+@import url(ApplicationStyles.css);
+@import url(ContentSectionStyles.css);
 @import url(AboutMeStyle.css);
-@import url(PortfolioStyle.css);
 
+html, body {
+    width: 100%;
+    height: 100%;
 
-/* setting up main container */
-.body {
-    /* setting layout and anchors */
+    margin: 0;
+    padding: 0;
+}
+
+body {
     overflow: hidden;
     background-image: none;
 
-    /* setting size */
-    width: 100vw;
-    height: 100vh;
-
-    margin: 0px;
-    padding: 0px;
-}
-
-.sectionContainer {
-    /* setting layout and anchors */
-    display: none;
-    position: relative;
-
-    /* setting size */
-    width: 90%;
-    height: 100%;
-
-    margin-right: 10px;
-    padding: 0px;
-}
-
-/* container used to store sites contents */
-.gridContainer {
-    /* setting display*/
-    overflow: hidden;
-
-    display: grid;
-    grid-template-columns: 1fr 5fr;
-    grid-template-rows: 12fr 1fr;
-    grid-gap: 10px;
-
-    /* setting background */
-    background-image: url(../assets/images/Background.png);
+    background-image: url(../assets/imgs/background.png);
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
 
-    /* setting size */
-    height: 90%;
-
-    /* setting borders, margins and padding */
-    border-top: 30px solid black;
-    border-bottom: 70px solid black;
-    border-left: 70px solid black;
-    border-right: 70px solid black;
+ 
+    margin: 0;
+    padding: 0;
 }
 
-.rowSpan {
+/* general styles */
+.span2Columns{
     grid-column: span 2;
 }
 
-iframe {
-    /* setting size */
-    width: 100%;
-    height: 100%;
-    /* setting padding,border, and margins */
-    border: none;
+.spanAllColumns{
+    grid-column: 1 / -1;
 }
 
-/* 
------------------------------------------------------------
-site navigation
------------------------------------------------------------
-*/
-
-/* sites side bar */
-.sideBar {
-    /* setting display */
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* row-gap: ; */
-    grid-gap: 10px;
-    z-index: 10;
-
-    /* setting borders, margins and padding */
-    margin: 10px;
+.hidden{
+    display: none;
 }
 
-/* style site tabs */
-.NavApps {
-    /* setting display */
-    text-align: center;
-
-    /* setting text */
-    font-size: 20px;
-    text-shadow: 1px 1px 5px black;
-    color: var(--textColor1);
-    /* setting padding and margin */
-    padding: 10px;
-}
-
-/* 
------------------------------------------------------------
-site section general style
------------------------------------------------------------
-*/
-
-.sectionTopBar {
-    /* setting display */
-    z-index: 1;
-    display: grid;
-    grid-template-columns: 1.5fr 6fr 1fr;
-
-    /* setting background */
-    background-color: var(--topBarBg);
-    box-shadow: 0px 4px 10px var(--shadowColor);
-    border-bottom: 4px solid var(--topBarBorderBg);
-
-    /* setting size */
-    height: 100%;
-    width: auto;
-
-    /* setting borders,margins,padding */
-    padding-top: 10px;
-
-    padding-left: 20px;
-    padding-right: 20px;
-
-}
-
-.sectionTopBar div {
-    padding-top: 10px;
-    padding-right: 20px;
-}
-
-.closeFileImage {
-    /* setting display */
-    float: right;
-
-    /* setting size   */
-    width: 60px;
-    height: 60px;
-}
-
-/* 
------------------------------------------------------------
- responsive design sections 
------------------------------------------------------------
-*/
-@media screen and (max-width: 1100px) {
-    .rowSpan {
-        grid-column: span 1;
-    }
-}
-
-@media screen and (max-width: 1000px) {
-    .gridContainer {
-        /* setting display*/
-        overflow: hidden;
-
-        display: grid;
-        grid-template-columns: 1fr 5fr;
-        grid-template-rows: 12fr 1fr;
-        grid-gap: 10px;
-
-        /* setting background */
-        background-image: url(../assets/images/Background.png);
-        background-position: center;
-        background-size: cover;
-
-        /* setting size */
-        height: 90%;
-
-        /* setting borders, margins and padding */
-        border-top: 20px solid black;
-        border-bottom: 100px solid black;
-        border-left: 30px solid black;
-        border-right: 30px solid black;
-
-    }
-}
-
-@media screen and (max-width: 800px) {
-
-    .gridContainer {
-        /* setting display*/
-        overflow: hidden;
-
-        display: grid;
-        grid-template-columns: 1fr 5fr;
-        grid-template-rows: 12fr 1fr;
-        grid-gap: 10px;
-
-        /* setting background */
-        background-image: url(../assets/images/Background.png);
-        background-position: center;
-        background-size: cover;
-
-        /* setting size */
-        height: 100%;
-
-        /* setting borders, margins and padding */
-        border: none;
-
-    }
-
-    /* sites side bar */
-    .sideBar {
-        /* setting display */
-        display: grid;
-        grid-template-columns: 1fr;
-        /* row-gap: ; */
-        grid-gap: 10px;
-        z-index: 10;
-
-        /* setting borders, margins and padding */
-        margin: 10px;
-    }
+.show{
+    display: block;
 }
