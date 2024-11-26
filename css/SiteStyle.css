@@ -9,6 +9,7 @@ CSS for the sites default and main style
 @import url(ApplicationStyles.css);
 @import url(ContentSectionStyles.css);
 @import url(AboutMeStyle.css);
+@import url(FocusedWorkContainer.css);
 
 html, body {
     width: 100%;
