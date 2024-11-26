@@ -57,23 +57,19 @@ style for sites navigation bar
 style for section navigation bar
 -------------------------------------------------------------------
 */
-/*  */
-
 .sectionSideNavBar {
-    /* overflow-y: auto; */
+    overflow-y: visible;
+    overflow-x:scroll;
 
     display: grid;
-    grid-template-columns: 3fr 1fr;
-    position: relative;
-
-    z-index: 10;
+    grid-template-columns: 1fr .2fr;
+    position: absolute;
 
     background-color: var(--sideBarBG);
     padding-top: 10px;
     padding-left: 10px;
 
-    width: 120%;
-    height: auto;
+    height: 90%;
 }
 
 .sectionSideNavBar div {
@@ -86,8 +82,6 @@ style for section navigation bar
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
-
-
 }
 
 .sectionSideNavBar div:hover {
@@ -119,7 +113,7 @@ style for section navigation bar
 
     background-color: var(--sideBarToggleBG2);
 
-    width: 70%;
+    /* max-width: 100px; */
 
 }
 
@@ -148,7 +142,6 @@ section top bar style
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 0px;
-
 }
 
 .topBar h1 {
@@ -156,7 +149,6 @@ section top bar style
 
     margin-left: 5px;
     margin-right: 5px;
-
 }
 
 .topBar img {
@@ -279,62 +271,3 @@ screen and (max-height: 600px) {
     }
 }
 
-@media screen and (max-width: 700px) {
-
-    .navigationApps {
-        overflow-y: auto;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
-
-        grid-row: 1fr 1fr;
-        grid-gap: 0;
-
-        position: fixed;
-        bottom: 0px;
-        left: 0;
-        right: 0;
-
-        background-color: var(--bottomBarBG);
-
-        height: 20%;
-        width: 100%;
-
-        margin: 0px;
-        padding-right: 5px;
-        padding-bottom: 10px;
-
-    }
-
-    .navigationApps section {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
-
-        /* grid-row: 1fr; */
-        grid-gap: 0px;
-
-
-        background-color: var(--bottomBarBG);
-
-        margin: 0px;
-        /* padding-left: 5px; */
-        padding-right: 10px;
-    }
-
-
-    .navigationApps div {
-
-        width: 100%;
-
-        height: 70%;
-    }
-
-    .navigationApps div img {
-
-        width: auto;
-
-        height: 70%;
-    }
-
-
-}
