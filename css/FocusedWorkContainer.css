@@ -18,3 +18,12 @@ CSS for styling focused work sections
     height: auto;
     /* border: none; */
 }
+
+.focusedWorkContainer video{
+    width: auto;
+    height: auto;
+
+    
+    margin: 10px;
+
+}

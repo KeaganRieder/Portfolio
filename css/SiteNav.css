@@ -35,7 +35,9 @@ style for sites navigation bar
     height: auto;
 
     padding: 0px;
+    margin-top: 10px;
 
+    margin-bottom: 5px;
 }
 
 .navigationApps div img {
@@ -58,7 +60,7 @@ style for section navigation bar
 -------------------------------------------------------------------
 */
 .sectionSideNavBar {
-    overflow-y: scroll;
+    overflow-y: auto;
 
     display: grid;
     grid-template-columns: 1fr .2fr;
@@ -70,6 +72,8 @@ style for section navigation bar
 
     height: 100%;
 }
+
+
 
 .sectionSideNavBar div {
     background-color: var(--sideBarTabBG);

@@ -7,6 +7,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="css/SiteStyle.css">
 </head>
@@ -61,7 +66,7 @@
         <div class="topBar">
             <h1>AboutMe.txt</h1>
             <div></div>
-            <img src="assets/nav_icons/XButton.png" alt="Close Doc" class="closeFileImage"
+            <img src="assets/nav_icons/XButton.png" alt="Close Doc" 
                 onclick="HideSection('AboutMe')">
         </div>
 
@@ -204,7 +209,7 @@
 
             </div>
 
-            <img src="assets/nav_icons/XButton.png" alt="Close Doc" class="closeFileImage"
+            <img src="assets/nav_icons/XButton.png" alt="Close Doc" 
                 onclick="HideSection('ApplicationMaterials')">
         </div>
 
@@ -287,7 +292,7 @@
                 </div>
             </div>
 
-            <img src="assets/nav_icons/XButton.png" alt="Close Doc" class="closeFileImage"
+            <img src="assets/nav_icons/XButton.png" alt="Close Doc" 
                 onclick="HideSection('WorkShowCase')">
         </div>
 
@@ -378,25 +383,15 @@
                 <section id="VideoGames">
                     <h2 class="spanAllColumns"> Video games</h2>
                     <div>
-                        <h3 onclick="ShowSection('UnderUsFocused'), HideSection('WorkShowCase')"> Under Us </h3>
-                        <img src="assets/portfolio_work/under_us.png" alt="Under Us">
-                        <p>
-                            Under Us is a text-based adventure game developed in C++. You play as a person
-                            stuck
-                            in a submarine and are tasked with fixing it.
-                        </p>
-                    </div>
-
-                    <div>
                         <h3 onclick="ShowSection('TicTacToeFocused'), HideSection('WorkShowCase')"> Tic Tac Toe </h3>
-                        <img src="assets/portfolio_work/tic_tac_toe.png" alt="Tic Tac Toe">
+                        <img src="assets/portfolio_work/games/tic_tac_toe/board.png" alt="Tic Tac Toe">
                         <p>
                             Tic Tac Toe was created with C++. The game allows the user to play against a bot which
                             uses a minimax algorithm to play the game.
                         </p>
                     </div>
 
-                    <div>
+                    <!-- <div>
                         <h3 onclick="ShowSection('CookieClickerFocused'), HideSection('WorkShowCase')"> Cookie Clicker
                         </h3>
                         <img src="assets/cookie_clicker.png" alt="Cookie Clicker">
@@ -405,7 +400,7 @@
                             way of
                             learning and practicing how to use Unity and C#.
                         </p>
-                    </div>
+                    </div> -->
                 </section>
 
                 <section id="PuzzleSolvers">
@@ -413,7 +408,6 @@
                     <div>
                         <h3 onclick="ShowSection('NQueenFocused'), HideSection('WorkShowCase')"> N-Queen problem Solver
                         </h3>
-                        <img src="assets/n_queen_solver.png" alt="N-Queen problem Solver">
                         <p>
                             The N-Queen problem solver was developed in C++. It solves the problem by using a
                             backtracking algorithm.
@@ -424,7 +418,6 @@
                         <h3 onclick="ShowSection('MCSFocused'), HideSection('WorkShowCase')">
                             Missionary, Cannibal Solver
                         </h3>
-                        <img src="assets/missionary_cannibal_solver.png" alt="Missionary, Cannibal Solver">
                         <p>
                             The Missionary, Cannibal problem solver was developed in C++. It solves the problem
                             using a Breadth First Search (BFS) algorithm.
@@ -437,7 +430,7 @@
 
                     <div>
                         <h3 onclick="ShowSection('CityscapeFocused'), HideSection('WorkShowCase')"> Cityscape </h3>
-                        <img src="assets/cityscape.png" alt="Cityscape">
+                        <img src="assets/portfolio_work/interactive_art/cityScape/ex.png" alt="Cityscape">
                         <p>
                             Cityscape was developed in Processing. The program generates a cityscape that can be
                             interacted with by the user to change varying aspects.
@@ -447,7 +440,7 @@
                     <div>
                         <h3 onclick="ShowSection('PerlinGalaxyFocused'), HideSection('WorkShowCase')"> Perlin Galaxy
                         </h3>
-                        <img src="assets/perlin_galaxy.png" alt="Perlin Galaxy" />
+                        <img src="assets/portfolio_work/interactive_art/perlin_galaxy/ex.png" alt="Perlin Galaxy" />
                         <p>
                             Perlin Galaxy was developed in Unity, and was mainly to practice using Perlin noise to
                             generate things. With input, it allows the user to generate new galaxies based on Perlin
@@ -469,7 +462,7 @@
             <div class="topBar">
                 <h2>Atomation</h2>
                 <div></div>
-                <img src="assets/nav_icons/XButton.png" alt="Close Doc" class="closeFileImage"
+                <img src="assets/nav_icons/XButton.png" alt="Close Doc" 
                     onclick="HideSection('AtomationFocused'), ShowSection('WorkShowCase')">
             </div>
 
@@ -486,7 +479,7 @@
             <div class="topBar">
                 <h2>Home Among The Stars</h2>
                 <div></div>
-                <img src="assets/nav_icons/XButton.png" alt="Close Doc" class="closeFileImage"
+                <img src="assets/nav_icons/XButton.png" alt="Close Doc" 
                     onclick="HideSection('HomeAmongTheStarsFocused'), ShowSection('WorkShowCase')">
             </div>
 
@@ -500,7 +493,7 @@
             <div class="topBar">
                 <h2>Snowy Skies</h2>
                 <div></div>
-                <img src="assets/nav_icons/XButton.png" alt="Close Doc" class="closeFileImage"
+                <img src="assets/nav_icons/XButton.png" alt="Close Doc" 
                     onclick="HideSection('SnowySkiesFocused'), ShowSection('WorkShowCase')">
             </div>
 
@@ -514,7 +507,7 @@
             <div class="topBar">
                 <h2>Sun Set</h2>
                 <div></div>
-                <img src="assets/nav_icons/XButton.png" alt="Close Doc" class="closeFileImage"
+                <img src="assets/nav_icons/XButton.png" alt="Close Doc" 
                     onclick="HideSection('SunSetFocused'), ShowSection('WorkShowCase')">
             </div>
 
@@ -527,47 +520,63 @@
 
     <!-- video games -->
     <section>
-        <section id="UnderUsFocused" class="contentSectionContainer hidden">
+        <!-- <section id="UnderUsFocused" class="contentSectionContainer hidden">
             <div class="topBar">
                 <h2>Under Us</h2>
                 <div></div>
-                <img src="assets/nav_icons/XButton.png" alt="Close Doc" class="closeFileImage"
+                <img src="assets/nav_icons/XButton.png" alt="Close Doc" 
                     onclick="HideSection('UnderUsFocused'), ShowSection('WorkShowCase')">
             </div>
 
-            <!-- section Content -->
             <div class="focusedWorkContainer">
                 <img src="assets/portfolio_work/pixel_art/home_among_the_stars.png" alt="Automation">
             </div>
-        </section>
+        </section> -->
 
         <section id="TicTacToeFocused" class="contentSectionContainer hidden">
             <div class="topBar">
                 <h2>Tic Tac Toe</h2>
                 <div></div>
-                <img src="assets/nav_icons/XButton.png" alt="Close Doc" class="closeFileImage"
+                <img src="assets/nav_icons/XButton.png" alt="Close Doc" 
                     onclick="HideSection('TicTacToeFocused'), ShowSection('WorkShowCase')">
             </div>
 
             <!-- section Content -->
             <div class="focusedWorkContainer">
-                <img src="assets/portfolio_work/pixel_art/home_among_the_stars.png" alt="Automation">
+
+                <iframe src="https://github.com/KeaganRieder/TicTacToe/blob/main/README.md"></iframe>
+
+                <h4>example of winning:</h4>
+
+                <video controls>
+                    <source src="assets/portfolio_work/games/tic_tac_toe/TictacToe-win.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <h4>example of loosing:</h4>
+                <video controls>
+                    <source src="assets/portfolio_work/games/tic_tac_toe/TictacToe-loss.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <a href="#"> Code For this </a>
+
             </div>
         </section>
 
-        <section id="CookieClickerFocused" class="contentSectionContainer hidden">
+        <!-- <section id="CookieClickerFocused" class="contentSectionContainer hidden">
             <div class="topBar">
                 <h2>Cookie Clicker</h2>
                 <div></div>
-                <img src="assets/nav_icons/XButton.png" alt="Close Doc" class="closeFileImage"
+                <img src="assets/nav_icons/XButton.png" alt="Close Doc" 
                     onclick="HideSection('CookieClickerFocused'), ShowSection('WorkShowCase')">
             </div>
 
-            <!-- section Content -->
+            
             <div class="focusedWorkContainer">
                 <img src="assets/portfolio_work/pixel_art/home_among_the_stars.png" alt="Automation">
             </div>
-        </section>
+        </section> -->
     </section>
 
     <!-- puzzle solvers -->
@@ -576,13 +585,23 @@
             <div class="topBar">
                 <h2>N-Queen Solver</h2>
                 <div></div>
-                <img src="assets/nav_icons/XButton.png" alt="Close Doc" class="closeFileImage"
+                <img src="assets/nav_icons/XButton.png" alt="Close Doc" 
                     onclick="HideSection('NQueenFocused'), ShowSection('WorkShowCase')">
             </div>
 
             <!-- section Content -->
             <div class="focusedWorkContainer">
-                <img src="assets/portfolio_work/pixel_art/home_among_the_stars.png" alt="Automation">
+
+                <iframe src="https://github.com/KeaganRieder/N-Queens/blob/main/README.md"></iframe>
+                
+                <h4>example usage:</h4>
+                <video controls>
+                    <source src="assets/portfolio_work/puzzle_solvers/n_queen_problem/NqueenEx.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <a href="#"> Code For this </a>
+
             </div>
         </section>
 
@@ -590,13 +609,21 @@
             <div class="topBar">
                 <h2>Missionary, Cannibal Solver</h2>
                 <div></div>
-                <img src="assets/nav_icons/XButton.png" alt="Close Doc" class="closeFileImage"
+                <img src="assets/nav_icons/XButton.png" alt="Close Doc" 
                     onclick="HideSection('MCSFocused'), ShowSection('WorkShowCase')">
             </div>
 
             <!-- section Content -->
             <div class="focusedWorkContainer">
-                <img src="assets/portfolio_work/pixel_art/home_among_the_stars.png" alt="Automation">
+                <iframe src="####"></iframe>
+
+                <h4>example usage:</h4>
+                <video controls>
+                    <source src="assets/portfolio_work/puzzle_solvers/MC_solver/mcpEx.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <a href="#"> Code For this </a>
             </div>
         </section>
     </section>
@@ -607,13 +634,20 @@
             <div class="topBar">
                 <h2>Cityscape</h2>
                 <div></div>
-                <img src="assets/nav_icons/XButton.png" alt="Close Doc" class="closeFileImage"
+                <img src="assets/nav_icons/XButton.png" alt="Close Doc" 
                     onclick="HideSection('CityscapeFocused'), ShowSection('WorkShowCase')">
             </div>
 
             <!-- section Content -->
             <div class="focusedWorkContainer">
-                <img src="assets/portfolio_work/pixel_art/home_among_the_stars.png" alt="Automation">
+                <h4>example usage:</h4>
+                <video controls>
+                    <source src="assets/portfolio_work/interactive_art/cityScape/ex.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <a href="#"> Code For this </a>
+
             </div>
         </section>
 
@@ -621,13 +655,20 @@
             <div class="topBar">
                 <h2>Perlin Galaxy</h2>
                 <div></div>
-                <img src="assets/nav_icons/XButton.png" alt="Close Doc" class="closeFileImage"
+                <img src="assets/nav_icons/XButton.png" alt="Close Doc" 
                     onclick="HideSection('PerlinGalaxyFocused'), ShowSection('WorkShowCase')">
             </div>
 
             <!-- section Content -->
             <div class="focusedWorkContainer">
-                <img src="assets/portfolio_work/pixel_art/home_among_the_stars.png" alt="Automation">
+                <h4>example usage:</h4>
+                <video controls>
+                    <source src="assets/portfolio_work/interactive_art/perlin_galaxy/ex.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <a href="#"> Code For this </a>
+
             </div>
         </section>
     </section>
