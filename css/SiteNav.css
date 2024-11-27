@@ -58,8 +58,7 @@ style for section navigation bar
 -------------------------------------------------------------------
 */
 .sectionSideNavBar {
-    overflow-y: visible;
-    overflow-x:scroll;
+    overflow-y: scroll;
 
     display: grid;
     grid-template-columns: 1fr .2fr;
@@ -69,7 +68,7 @@ style for section navigation bar
     padding-top: 10px;
     padding-left: 10px;
 
-    height: 90%;
+    height: 100%;
 }
 
 .sectionSideNavBar div {
