@@ -11,9 +11,11 @@ CSS for the sites default and main style
 @import url(AboutMeStyle.css);
 @import url(FocusedWorkContainer.css);
 
-html, body {
+:root {
     width: 100%;
     height: 100%;
+
+    scrollbar-color: var(--scrollBarThumb) var(--scrollBarTrack);
 
     margin: 0;
     padding: 0;
@@ -28,24 +30,24 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 
- 
+
     margin: 0;
     padding: 0;
 }
 
 /* general styles */
-.span2Columns{
+.span2Columns {
     grid-column: span 2;
 }
 
-.spanAllColumns{
+.spanAllColumns {
     grid-column: 1 / -1;
 }
 
-.hidden{
+.hidden {
     display: none;
 }
 
-.show{
+.show {
     display: block;
 }

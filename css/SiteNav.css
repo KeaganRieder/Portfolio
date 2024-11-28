@@ -19,13 +19,12 @@ style for sites navigation bar
     grid-gap: 20px;
 
     height: 100%;
-    width: 10%;
+    width: 15%;
 
 
     margin: 10px;
     margin-left: 30px;
     margin-top: 20px;
-
 }
 
 .navigationApps div {
@@ -47,7 +46,10 @@ style for sites navigation bar
 
 .navigationApps div h4 {
     color: var(--textColor2);
+}
 
+.navigationApps div a {
+    text-decoration: none;
 }
 
 .navigationApps button {
@@ -66,21 +68,21 @@ style for section navigation bar
     grid-template-columns: 1fr .2fr;
     position: absolute;
 
-    background-color: var(--sideBarBG);
+    background-color: var(--sideBarBg);
     padding-top: 10px;
     padding-left: 10px;
 
     height: 100%;
 }
 
-
-
 .sectionSideNavBar div {
     background-color: var(--sideBarTabBG);
+    box-shadow: 0 5px 5px -2px var(--sideBarToggleShadowBg);
+
     width: auto;
     height: auto;
-    margin: 10px;
 
+    margin: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 10px;
@@ -91,17 +93,28 @@ style for section navigation bar
     background-color: var(--sideBarTabHoverBG);
 }
 
+.sectionSideNavBar div:active {
+    box-shadow: none;
+
+}
+
 .sectionSideNavBar Button {
     display: grid;
     place-items: center;
-    background-color: var(--sideBarToggleBG);
-    width: 100%;
+    background-color: var(--sideBarToggleButtonBg);
+    box-shadow: -5px 0 5px -2px var(--sideBarToggleShadowBg);
 
+    width: 100%;
+    height: auto;
     padding: 0;
 }
 
 .sectionSideNavBar Button:hover {
-    background-color: var(--sideBarToggleHoverBG);
+    background-color: var(--sideBarToggleHoverBg);
+}
+
+.sectionSideNavBar Button:active {
+    box-shadow: none;
 }
 
 .sectionSideNavBar Button img {
@@ -114,14 +127,20 @@ style for section navigation bar
     display: grid;
     place-items: center;
 
-    background-color: var(--sideBarToggleBG2);
+    background-color: var(--sideBarToggleButtonBg);
+    box-shadow: 5px 0 5px -2px var(--sideBarToggleShadowBg);
 
     /* max-width: 100px; */
 
 }
 
 .sideNavToggleButton:hover {
-    background-color: var(--sideBarToggleHoverBG2);
+    background-color: var(--sideBarToggleHoverBg);
+
+}
+
+.sideNavToggleButton {
+    box-shadow: none;
 }
 
 .sideNavToggleButton img {
@@ -139,15 +158,22 @@ section top bar style
     z-index: 2;
 
     background-color: var(--topBarBg);
-    box-shadow: 0px 4px 10px black;
+    box-shadow: 0px 4px 10px var(--topBarShadow);
 
     padding: 5px;
     padding-left: 20px;
     padding-right: 20px;
-    padding-bottom: 0px;
+    padding-bottom: 5px;
 }
 
 .topBar h1 {
+    margin-top: 20px;
+
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.topBar h2 {
     margin-top: 20px;
 
     margin-left: 5px;
@@ -158,9 +184,17 @@ section top bar style
     position: relative;
     justify-self: end;
 
+    box-shadow: 0 5px 5px var(--topBarShadow);
+
     width: 60px;
     height: 60px;
-    padding: 10px;
+    padding: 5px;
+}
+
+.topBar img:active {
+
+    box-shadow: none;
+
 }
 
 .topBarTabContainer {
@@ -171,7 +205,7 @@ section top bar style
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
 
-    background-color: var(--topBarBg2);
+    background-color: var(--topBarTabConBg);
 
     width: 100%;
     height: auto;
@@ -185,7 +219,9 @@ section top bar style
     display: none;
     grid-template-columns: 2fr .5fr;
 
-    background-color: var(--topBarTabBG);
+    background-color: var(--topBarTabBg);
+    box-shadow: 0 -5px 5px -5px var(--topBarShadow);
+
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 
@@ -196,11 +232,20 @@ section top bar style
 }
 
 .topBarTabContainer div:hover {
-    background-color: var(--topBarTabHoverBG);
+    background-color: var(--topBarTabHoverBg);
+}
+
+.topBarTabContainer div:active {
+    box-shadow: none;
 }
 
 .topBarTabContainer div h2 {
     margin: 15px;
+}
+
+.topBarTabContainer div img {
+    box-shadow: 0 5px 5px var(--topBarShadow);
+    margin: 5px;
 }
 
 /* 
@@ -273,4 +318,3 @@ screen and (max-height: 600px) {
         background-color: var(--buttonHoverBg);
     }
 }
-

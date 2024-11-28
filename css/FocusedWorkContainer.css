@@ -4,7 +4,7 @@ CSS for styling focused work sections
 -------------------------------------------------------------------
 */
 
-.focusedWorkContainer{
+.focusedWorkContainer {
     overflow-y: auto;
     display: grid;
     grid-template-columns: 1fr;
@@ -13,17 +13,44 @@ CSS for styling focused work sections
     height: 100%;
 }
 
-.focusedWorkContainer img{
+
+.focusedWorkContainer h3 {
+
+    margin: 10px;
+}
+
+.focusedWorkContainer div {
+    margin: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+
+}
+
+.focusedWorkContainer img {
     width: 100%;
     height: auto;
     /* border: none; */
 }
 
-.focusedWorkContainer video{
-    width: auto;
+.focusedWorkContainer video {
+    width: 90%;
     height: auto;
 
-    
-    margin: 10px;
+    margin: 20px;
+}
+
+.focusedWorkContainer nav {
+    background: var(--focusWorkButtonBg);
+    box-shadow: 0 15px 15px var(--focusWorkShadow);
+
+    margin: 20px;
+}
+
+.focusedWorkContainer nav:hover {
+    background: var(--focusWorkButtonHoverBg);
+}
+
+.focusedWorkContainer nav:active {
+    box-shadow: none;
 
 }

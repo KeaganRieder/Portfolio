@@ -12,8 +12,8 @@ CSS for general styles of the about me content section
     grid-auto-flow: column;
 
     /* background  */
-    background-color: var(--subSectionBg);
-    box-shadow: 0 0px 15px black;
+    background-color: var(--secondarySectionBg);
+    box-shadow: 0 15px 15px var(--secondarySectionShadow);
 
     /* setting size */
     height: 200px;
@@ -28,7 +28,7 @@ CSS for general styles of the about me content section
 }
 
 .skillsContainer h1 {
-    color: var(--textColor);
+    color: var(--textColor2);
 
     margin-top: 20px;
     margin-left: 20px;
@@ -36,11 +36,16 @@ CSS for general styles of the about me content section
 }
 
 .skillsContainer h2 {
-    color: var(--textColor);
+    color: var(--textColor3);
 
     text-align: center;
 
     margin-top: 20px;
+
+}
+.skillsContainer p {
+    color: var(--textColor);
+
 
 }
 

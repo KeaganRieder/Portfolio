@@ -4,46 +4,57 @@ CSS for the sites color palette
 -------------------------------------------------------------------
 */
 
-:root{
+:root {
+    /* section main background */
+    --mainSectionBg: #415A77;
+    --secondarySectionBg: #1B263B;
 
-    --sectionBg: #374962;
-    --sectionBg2: #2e2e2e;
-    --subSectionBg: #2e2e2e;
+    --workShowcaseBg: #778DA9;
+    --workShowcaseDivBg: #1B263B;
 
-    --contentSectionBg: #535f70;
-    --contentSectionDividerBg: #2e2e2e;
+    --workShowcaseDivShadow: #0f1520;
 
-    
-    --topBarBg: #1c1c1c;
-    --topBarBg2: #424242;
-    
-    --bottomBarBG: #374962;
-    --sideBarBG: #1c1c1c;
+    --sectionShadows: #0D1B2A;
+    --secondarySectionShadow: #0D1B2A;
+    /* sections top bar  */
+    --topBarBg: #34383d;
+    --topBarTabConBg: #ADB5BD;
 
-    --contentSectionButtonBg: #667488;
-    --contentSectionButtonHoverBg: #535f70;
+    --topBarTabBg: #6C757D;
+    --topBarTabHoverBg: #99a5b1;
 
-    --topBarTabBG: #a39f9f;
-    --topBarTabHoverBG: #464646;
+    --topBarTabShadow: #545b61;
+    --topBarShadow: #15171a;
 
-    --sideBarTabBG: #464646;
-    --sideBarTabHoverBG: #7e7e7e;
+    /* section side bar  */
+    --sideBarBg: #34383d;
 
-    --sideBarToggleBG: #464646;
-    --sideBarToggleHoverBG: #7e7e7e;
+    --sideBarTabBG: #34383d;
 
-    --sideBarToggleBG2: #1c1c1c;
-    --sideBarToggleHoverBG2: #4b4a4a;
+    --sideBarTabHoverBG: #ADB5BD;
 
-    --buttonBg: #333333;
-    --buttonHoverBg: #494949;
+    --sideBarToggleButtonBg: #34383d;
 
-    --sectionShadow: #1c1c1c;
-    --topBarShadow: #1c1c1c;
-    --bottomBarShadow: #1c1c1c;
+    --sideBarToggleHoverBg: #ADB5BD;
+    --sideBarToggleShadowBg: #15171a;
 
-    --textColor : #e2e2e2;
-    --textColor2 : #cacaca;
+    /* buttons */
 
-    --textShadow: black;
+    --linkButtonBg: black;
+    --linkButtonHoverBg: black;
+
+    --focusWorkButtonBg: #2d3b4d;
+    --focusWorkButtonHoverBg: #879ebd;
+    --focusWorkShadow: #1c2733;
+
+    /* scroll bar */
+    --scrollBarThumb: #6C757D;
+    --scrollBarTrack: #ADB5BD;
+
+    /* text colors */
+    --textColor: #F8F9FA;
+    --textColor2: #ebf0f5;
+    --textColor3: #b0b3b6;
+
+    --textHoverColor: #badafa;
 }

@@ -23,40 +23,40 @@
         <section>
             <div>
                 <img onclick="ShowSection('AboutMe')" src="assets/nav_icons/TextDoc.png" alt="About Me">
-                <h4 class="shadowedText">AboutMe.txt</h4>
+                <h4 class="textOutline">AboutMe.txt</h4>
             </div>
 
             <div>
                 <a href="mailto:Keagan@rieder.ca">
                     <img src="assets/nav_icons/Email.png" alt="Email">
-                    <h4 class="shadowedText">Email</h4>
+                    <h4 class="textOutline">Email</h4>
                 </a>
             </div>
 
             <div>
                 <a href="https://www.linkedin.com/in/keagan-rieder/" target="_blank">
                     <img src="assets/nav_icons/linkedin.png" alt="LinkedIn">
-                    <h4 class="shadowedText">LinkedIn</h4>
+                    <h4 class="textOutline">LinkedIn</h4>
                 </a>
             </div>
 
             <div>
                 <a href="https://github.com/KeaganRieder" target="_blank">
                     <img src="assets/nav_icons/GitHub.png" alt="GitHub">
-                    <h4 class="shadowedText">GitHub</h4>
+                    <h4 class="textOutline">GitHub</h4>
                 </a>
             </div>
 
             <div>
                 <img src="assets/nav_icons/Folder.png" onclick="ShowSection('ApplicationMaterials')"
                     alt="Application Materials">
-                <h4 class="shadowedText">Application Materials</h4>
+                <h4 class="textOutline">Application Materials</h4>
             </div>
         </section>
 
         <div>
             <img src="assets/nav_icons/Folder.png" onclick="ShowSection('WorkShowCase')" alt="My Work">
-            <h4 class="shadowedText">My Work</h4>
+            <h4 class="textOutline">My Work</h4>
         </div>
 
     </nav>
@@ -66,8 +66,7 @@
         <div class="topBar">
             <h1>AboutMe.txt</h1>
             <div></div>
-            <img src="assets/nav_icons/XButton.png" alt="Close Doc" 
-                onclick="HideSection('AboutMe')">
+            <img src="assets/nav_icons/XButton.png" alt="Close Doc" onclick="HideSection('AboutMe')">
         </div>
 
         <!-- section Content -->
@@ -192,7 +191,7 @@
     <!-- application materials page -->
     <section id="ApplicationMaterials" class="contentSectionContainer  hidden">
         <div class="topBar">
-            <h1>Application Materials</h1>
+            <h1>Application Material</h1>
 
             <div class='topBarTabContainer'>
                 <div onclick="location.href='#Resume'" id="ResumeTab">
@@ -209,8 +208,7 @@
 
             </div>
 
-            <img src="assets/nav_icons/XButton.png" alt="Close Doc" 
-                onclick="HideSection('ApplicationMaterials')">
+            <img src="assets/nav_icons/XButton.png" alt="Close Doc" onclick="HideSection('ApplicationMaterials')">
         </div>
 
         <div class="folderContainer">
@@ -292,8 +290,7 @@
                 </div>
             </div>
 
-            <img src="assets/nav_icons/XButton.png" alt="Close Doc" 
-                onclick="HideSection('WorkShowCase')">
+            <img src="assets/nav_icons/XButton.png" alt="Close Doc" onclick="HideSection('WorkShowCase')">
         </div>
 
         <!-- section nav -->
@@ -337,16 +334,33 @@
                 <section id="CurrentProjects">
                     <h2 class="spanAllColumns"> Current projects </h2>
 
-                    <div>
-                        <h3 onclick="ShowSection('AtomationFocused'), HideSection('WorkShowCase')"> Automation </h3>
-                        <img src="assets/imgs/atomation.png" alt="Automation">
+                    <div class="contentShadowed">
+                        <h3 onclick="ShowSection('AtomationCodeFocused'), HideSection('WorkShowCase')"> Automation -
+                            Code </h3>
+                        <div class="photoCollectionContainer">
+                            <img src="assets/portfolio_work/atomation/MainMenu.png" alt="AutomationMainMenu">
+                            <img src="assets/portfolio_work/atomation/WorldGenUi.png" alt="AutomationWorldGenUI">
+                        </div>
 
                         <p>
-                            Automation is a game that combines elements from automation games and colony sims to
-                            create
-                            different experiences.
-                            The game’s developer is currently more of a hobby, a way to practice and learn new
-                            skills.
+                            This is the code for the game Automation, which is currently in development. The game is
+                            being developed in the godot engine Using C#.
+                        </p>
+                    </div>
+
+                    <div class="contentShadowed">
+                        <h3 onclick="ShowSection('AtomationArtFocused'), HideSection('WorkShowCase')"> Automation - Art
+                        </h3>
+
+                        <div class="photoCollectionContainer">
+                            <img src="assets/portfolio_work/atomation/art/oldtileSet.png" alt="AutomationMainMenu">
+                            <img src="assets/portfolio_work/atomation/art/CurrentTileSet.png" alt="AutomationWorldGenUI">
+                            <img src="assets/portfolio_work/atomation/art/Oldplayer.png" alt="AutomationWorldGenUI">
+                        </div>
+
+                        <p>
+                            This is the art for the game Automation, which is currently in development. The art was
+                            created using Aesprite.
                         </p>
                     </div>
                 </section>
@@ -354,7 +368,7 @@
                 <section id="PixelArt">
                     <h2 class="spanAllColumns"> Pixel Art </h2>
 
-                    <div>
+                    <div class="contentShadowed">
                         <h3 onclick="ShowSection('HomeAmongTheStarsFocused'), HideSection('WorkShowCase')"> Home Among
                             The Stars </h3>
                         <img src="assets/portfolio_work/pixel_art/home_among_the_stars.png" alt="Home Among The Stars">
@@ -363,14 +377,14 @@
                             created for practice using the software.
                         </p>
                     </div>
-                    <div>
+                    <div class="contentShadowed">
                         <h3 onclick="ShowSection('SnowySkiesFocused'), HideSection('WorkShowCase')"> Snowy Skies </h3>
                         <img src="assets/portfolio_work/pixel_art/snowy_skies.png" alt="Snowy Skies">
                         <p>
                             Snowy Skies was created using Aesprite.
                         </p>
                     </div>
-                    <div>
+                    <div class="contentShadowed">
                         <h3 onclick="ShowSection('SunSetFocused'), HideSection('WorkShowCase')"> Sun Set </h3>
                         <img src="assets/portfolio_work/pixel_art/sunset.png" alt="Sunset">
                         <p>
@@ -382,7 +396,7 @@
 
                 <section id="VideoGames">
                     <h2 class="spanAllColumns"> Video games</h2>
-                    <div>
+                    <div class="contentShadowed">
                         <h3 onclick="ShowSection('TicTacToeFocused'), HideSection('WorkShowCase')"> Tic Tac Toe </h3>
                         <img src="assets/portfolio_work/games/tic_tac_toe/board.png" alt="Tic Tac Toe">
                         <p>
@@ -391,7 +405,7 @@
                         </p>
                     </div>
 
-                    <!-- <div>
+                    <!-- <div class="contentShadowed">
                         <h3 onclick="ShowSection('CookieClickerFocused'), HideSection('WorkShowCase')"> Cookie Clicker
                         </h3>
                         <img src="assets/cookie_clicker.png" alt="Cookie Clicker">
@@ -405,7 +419,7 @@
 
                 <section id="PuzzleSolvers">
                     <h2 class="spanAllColumns"> Puzzle Solvers </h2>
-                    <div>
+                    <div class="contentShadowed">
                         <h3 onclick="ShowSection('NQueenFocused'), HideSection('WorkShowCase')"> N-Queen problem Solver
                         </h3>
                         <p>
@@ -414,7 +428,7 @@
                         </p>
                     </div>
 
-                    <div>
+                    <div class="contentShadowed">
                         <h3 onclick="ShowSection('MCSFocused'), HideSection('WorkShowCase')">
                             Missionary, Cannibal Solver
                         </h3>
@@ -428,7 +442,7 @@
                 <section id="InteractiveArt">
                     <h2 class="spanAllColumns"> Interactive Art </h2>
 
-                    <div>
+                    <div class="contentShadowed">
                         <h3 onclick="ShowSection('CityscapeFocused'), HideSection('WorkShowCase')"> Cityscape </h3>
                         <img src="assets/portfolio_work/interactive_art/cityScape/ex.png" alt="Cityscape">
                         <p>
@@ -437,7 +451,7 @@
                         </p>
                     </div>
 
-                    <div>
+                    <div class="contentShadowed">
                         <h3 onclick="ShowSection('PerlinGalaxyFocused'), HideSection('WorkShowCase')"> Perlin Galaxy
                         </h3>
                         <img src="assets/portfolio_work/interactive_art/perlin_galaxy/ex.png" alt="Perlin Galaxy" />
@@ -458,17 +472,127 @@
 
     <!-- current project -->
     <section>
-        <section id="AtomationFocused" class="contentSectionContainer hidden">
+        <section id="AtomationCodeFocused" class="contentSectionContainer hidden">
             <div class="topBar">
-                <h2>Atomation</h2>
+                <h2>Atomation - Code</h2>
                 <div></div>
-                <img src="assets/nav_icons/XButton.png" alt="Close Doc" 
-                    onclick="HideSection('AtomationFocused'), ShowSection('WorkShowCase')">
+                <img src="assets/nav_icons/XButton.png" alt="Close Doc"
+                    onclick="HideSection('AtomationCodeFocused'), ShowSection('WorkShowCase')">
             </div>
 
             <!-- section Content -->
             <div class="focusedWorkContainer">
-                <img src="assets/portfolio_work/pixel_art/home_among_the_stars.png" alt="Automation">
+                <div>
+                    <h3> Overview </h3>
+                    <p>
+                        Atomation is a passion project of mine. I'm currently developing the game in the godot engine,
+                        mainly as a hobby and to practice/learn new skills. due to the natur eof this project being for
+                        fun/a hobby I work it when i'm able to and as such currently have no planned release date.
+
+                        Atomation is currently planed to be a sort of cross between an Atomation game and a colony sim,
+                        taking inspiration form games like Rimworld and Factorio.
+
+                        Atomation takes place on a randomly generate world, which was once a colony of humanity however
+                        it's now a nuclear wasteland scatter with ruins. the player find themselves arriving to the
+                        planet onboard a colony ship which arrived many years to late due to a unknown error. so they
+                        are forced to adapt and begin rebuilding and reclaiming planet, and solving many mystery along
+                        the way.
+
+                        -- more to come
+                    </p>
+                </div>
+
+                <h3> World Generation</h3>
+                <video controls>
+                    <source src="assets/portfolio_work/atomation/Atomation-WorldGen.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <h3> In Development</h3>
+                <p>
+                    currently working on allowing the world gen to be customized using ui, during the game
+                    initialization
+                    phase. the following is an example of that
+                </p>
+                <video controls>
+                    <source src="assets/portfolio_work/atomation/Atomation-WorldGenWIP.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <code>
+                    public const float MAX_LOAD_DIST = 64; // 64 tiles away from player current position
+
+                    // making it so load distance is based on chunks not tiles. Chunk.CHUNK_SIZE = 32 tiles, 
+                    // so visibleChunks = 2 chunks away from player are loaded
+                    visibleChunks = Mathf.RoundToInt(MAX_LOAD_DIST / Chunk.CHUNK_SIZE);  
+                </code>
+
+                <nav>
+                    <a href="https://github.com/KeaganRieder/Atomation" target="_blank">
+                        <h3>To GitHub Repo</h3>
+                    </a>
+                </nav>
+            </div>
+        </section>
+
+        <section id="AtomationArtFocused" class="contentSectionContainer hidden">
+            <div class="topBar">
+                <h2>Atomation - Art</h2>
+                <div></div>
+                <img src="assets/nav_icons/XButton.png" alt="Close Doc"
+                    onclick="HideSection('AtomationArtFocused'), ShowSection('WorkShowCase')">
+            </div>
+
+            <!-- section Content -->
+            <div class="focusedWorkContainer">
+                <div>
+                    <h3> Overview </h3>
+                    <p>
+                        Atomation is a passion project of mine. I'm currently developing the game in the godot engine,
+                        mainly as a hobby and to practice/learn new skills. due to the natur eof this project being for
+                        fun/a hobby I work it when i'm able to and as such currently have no planned release date.
+
+                        Atomation is currently planed to be a sort of cross between an Atomation game and a colony sim,
+                        taking inspiration form games like Rimworld and Factorio.
+
+                        Atomation takes place on a randomly generate world, which was once a colony of humanity however
+                        it's now a nuclear wasteland scatter with ruins. the player find themselves arriving to the
+                        planet onboard a colony ship which arrived many years to late due to a unknown error. so they
+                        are forced to adapt and begin rebuilding and reclaiming planet, and solving many mystery along
+                        the way.
+
+                        -- more to come
+                    </p>
+                </div>
+
+                <h3> World Generation</h3>
+                <video controls>
+                    <source src="assets/portfolio_work/atomation/Atomation-WorldGen.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <h3> In Development</h3>
+                <p>
+                    currently working on allowing the world gen to be customized using ui, during the game
+                    initialization
+                    phase. the following is an example of that
+                </p>
+                <video controls>
+                    <source src="assets/portfolio_work/atomation/Atomation-WorldGenWIP.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <code>
+                    public const float MAX_LOAD_DIST = 64; // 64 tiles away from player current position
+
+                    // making it so load distance is based on chunks not tiles. Chunk.CHUNK_SIZE = 32 tiles, 
+                    // so visibleChunks = 2 chunks away from player are loaded
+                    visibleChunks = Mathf.RoundToInt(MAX_LOAD_DIST / Chunk.CHUNK_SIZE);  
+                </code>
+
+                <nav>
+                    <a href="https://github.com/KeaganRieder/Atomation" target="_blank">
+                        <h3>To GitHub Repo</h3>
+                    </a>
+                </nav>
             </div>
         </section>
     </section>
@@ -479,7 +603,7 @@
             <div class="topBar">
                 <h2>Home Among The Stars</h2>
                 <div></div>
-                <img src="assets/nav_icons/XButton.png" alt="Close Doc" 
+                <img src="assets/nav_icons/XButton.png" alt="Close Doc"
                     onclick="HideSection('HomeAmongTheStarsFocused'), ShowSection('WorkShowCase')">
             </div>
 
@@ -493,7 +617,7 @@
             <div class="topBar">
                 <h2>Snowy Skies</h2>
                 <div></div>
-                <img src="assets/nav_icons/XButton.png" alt="Close Doc" 
+                <img src="assets/nav_icons/XButton.png" alt="Close Doc"
                     onclick="HideSection('SnowySkiesFocused'), ShowSection('WorkShowCase')">
             </div>
 
@@ -507,7 +631,7 @@
             <div class="topBar">
                 <h2>Sun Set</h2>
                 <div></div>
-                <img src="assets/nav_icons/XButton.png" alt="Close Doc" 
+                <img src="assets/nav_icons/XButton.png" alt="Close Doc"
                     onclick="HideSection('SunSetFocused'), ShowSection('WorkShowCase')">
             </div>
 
@@ -537,29 +661,63 @@
             <div class="topBar">
                 <h2>Tic Tac Toe</h2>
                 <div></div>
-                <img src="assets/nav_icons/XButton.png" alt="Close Doc" 
+                <img src="assets/nav_icons/XButton.png" alt="Close Doc"
                     onclick="HideSection('TicTacToeFocused'), ShowSection('WorkShowCase')">
             </div>
 
             <!-- section Content -->
             <div class="focusedWorkContainer">
 
-                <iframe src="https://github.com/KeaganRieder/TicTacToe/blob/main/README.md"></iframe>
+                <div>
+                    <h3> Overview </h3>
+                    <p>
+                        Tic Tac Toe, is game which has the player and a bot
+                        play as either an x or o token against each other
+                        Trying to get three of their tokens in a row. The game was created
+                        with c++ and was meant to be a way to practice and learn
+                        how to use the minimax algorithm. <br>
 
-                <h4>example of winning:</h4>
+                        The games starts of with allowing the player to pick either x or o, and then doing a coin flip
+                        to see who goes first, then the game starts,
+                        being the rules and method of playing normal tic tac toe.
+                    </p>
 
+                    <h3> The Bot </h3>
+                    <p>
+                        The bot uses the minimax algorithm to play the game. On the bots turn it takes the current state
+                        of the board,
+                        and then attempts project all possible moves for both the player and it self. Playing it's game
+                        tell it eventually
+                        find a move which it sees as one that minimizes the possible loss for it self and maximizes the
+                        possible loss for the player.
+
+                        Depending on the token the bot is given will design wether it does min or max first when running
+                        through all possible moves.
+                        if it's given the x token it will start with min, and if it's given the o token it will start
+                        with max. Swapping between min and max
+                        moves as it moves down the state tree.
+                    </p>
+                </div>
+
+                <h3> Program Execution Examples</h3>
+                <p> The following is a demonstration of program in which has the player win</p>
                 <video controls>
                     <source src="assets/portfolio_work/games/tic_tac_toe/TictacToe-win.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
 
-                <h4>example of loosing:</h4>
+
+                <p> The following is a demonstration of program in which has the player loss</p>
                 <video controls>
                     <source src="assets/portfolio_work/games/tic_tac_toe/TictacToe-loss.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
 
-                <a href="#"> Code For this </a>
+                <nav>
+                    <a href="https://github.com/KeaganRieder/TicTacToe" target="_blank">
+                        <h3>To GitHub Repo</h3>
+                    </a>
+                </nav>
 
             </div>
         </section>
@@ -585,22 +743,38 @@
             <div class="topBar">
                 <h2>N-Queen Solver</h2>
                 <div></div>
-                <img src="assets/nav_icons/XButton.png" alt="Close Doc" 
+                <img src="assets/nav_icons/XButton.png" alt="Close Doc"
                     onclick="HideSection('NQueenFocused'), ShowSection('WorkShowCase')">
             </div>
 
             <!-- section Content -->
             <div class="focusedWorkContainer">
+                <div>
+                    <h3> Overview </h3>
+                    <p>
+                        The N-queen problem solver was developed in C++. The program solves the n- queen by using a
+                        backtracking algorithm in order to find the solution. with that th problem is as followed:
 
-                <iframe src="https://github.com/KeaganRieder/N-Queens/blob/main/README.md"></iframe>
-                
-                <h4>example usage:</h4>
+                        When provided amount of queens represented as 'n' place them on
+                        a chessboard of size s x s, such that no two queens are threatening one another
+
+                        The solution for this is one in which place all n queens on a s x s board where no two
+                        queen are in the same column, row or diagonal. Which leads to the following restrictions about
+                        what s and n can equal in order to have a solution
+                    </p>
+                    <p>
+                        A more detailed explanation of how this program solves the n-queen problem can be found
+                        <a href="https://github.com/KeaganRieder/N-Queens" target="_blank">
+                            here
+                        </a>
+                    </p>
+                </div>
+
+                <h3> Program Execution Example</h3>
                 <video controls>
                     <source src="assets/portfolio_work/puzzle_solvers/n_queen_problem/NqueenEx.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-
-                <a href="#"> Code For this </a>
 
             </div>
         </section>
@@ -609,22 +783,49 @@
             <div class="topBar">
                 <h2>Missionary, Cannibal Solver</h2>
                 <div></div>
-                <img src="assets/nav_icons/XButton.png" alt="Close Doc" 
+                <img src="assets/nav_icons/XButton.png" alt="Close Doc"
                     onclick="HideSection('MCSFocused'), ShowSection('WorkShowCase')">
             </div>
 
-            <!-- section Content -->
             <div class="focusedWorkContainer">
-                <iframe src="####"></iframe>
+                <div>
+                    <h3> Overview </h3>
+                    <p>
+                        The Missionary Cannibal solver, is developed in C++. The program solves the Missionary Cannibal
+                        through the use of a Breadth First Search (BFS) algorithm. The problem is as followed:
+                    </p>
+                    <ul>
+                        <li>
+                            3 missionaries and 3 cannibals are on one side of the river and wish to cross it using the
+                            boat
+                            they found
+                        </li>
+                        <li>
+                            The boat can only hold 2 people at once and needs a driver (so 1 person must always go
+                            between
+                            sides)
+                        </li>
+                        <li>
+                            The missionaries can never be outnumbered by the cannibals
+                        </li>
+                    </ul>
 
-                <h4>example usage:</h4>
+                    <p>
+                        the rest of the explanation can be found in the readme file of the project located
+                        <a href="https://github.com/KeaganRieder/Missionaries-and-Cannibals-Problem" target="_blank">
+                            here
+                        </a>
+                    </p>
+                </div>
+
+                <h3> Program Execution Example</h3>
                 <video controls>
                     <source src="assets/portfolio_work/puzzle_solvers/MC_solver/mcpEx.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
 
-                <a href="#"> Code For this </a>
             </div>
+
         </section>
     </section>
 
@@ -634,41 +835,72 @@
             <div class="topBar">
                 <h2>Cityscape</h2>
                 <div></div>
-                <img src="assets/nav_icons/XButton.png" alt="Close Doc" 
+                <img src="assets/nav_icons/XButton.png" alt="Close Doc"
                     onclick="HideSection('CityscapeFocused'), ShowSection('WorkShowCase')">
             </div>
 
             <!-- section Content -->
             <div class="focusedWorkContainer">
-                <h4>example usage:</h4>
+                <div>
+                    <h3> Overview </h3>
+                    <p>
+                        Cityscape, was developed in Processing. The program generates a cityscape that can be interacted
+                        through a variety of input,
+                        all of which change the city in some way. -- more to come
+                    </p>
+
+                </div>
+
+                <h3> Program Execution Example</h3>
                 <video controls>
-                    <source src="assets/portfolio_work/interactive_art/cityScape/ex.mp4" type="video/mp4">
+                    <source src="assets/portfolio_work/interactive_art/cityScape/ExecutionEx.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
 
-                <a href="#"> Code For this </a>
-
+                <nav>
+                    <a href="https://github.com/KeaganRieder/CityScape" target="_blank">
+                        <h3>To GitHub Repo</h3>
+                    </a>
+                </nav>
             </div>
+
         </section>
 
         <section id="PerlinGalaxyFocused" class="contentSectionContainer hidden">
             <div class="topBar">
                 <h2>Perlin Galaxy</h2>
                 <div></div>
-                <img src="assets/nav_icons/XButton.png" alt="Close Doc" 
+                <img src="assets/nav_icons/XButton.png" alt="Close Doc"
                     onclick="HideSection('PerlinGalaxyFocused'), ShowSection('WorkShowCase')">
             </div>
 
             <!-- section Content -->
             <div class="focusedWorkContainer">
-                <h4>example usage:</h4>
+                <div>
+                    <h3> Overview </h3>
+                    <p>
+                        perlin galaxy generator was created using c# inside of unity. It's purpose was toe mainly
+                        practice and learn c# and todo some things in unity. some these things include:
+                    </p>
+
+                    <ul>
+                        <li>using perlin noise to generate things</li>
+                        <li>reading and giving functionality to user input</li>
+                    </ul>
+
+                </div>
+
+                <h3> Program Execution Example</h3>
                 <video controls>
-                    <source src="assets/portfolio_work/interactive_art/perlin_galaxy/ex.mp4" type="video/mp4">
+                    <source src="assets/portfolio_work/interactive_art/perlin_galaxy/ExecutionEx.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
 
-                <a href="#"> Code For this </a>
-
+                <nav>
+                    <a href="https://github.com/KeaganRieder/PerlinNebulaGenerator" target="_blank">
+                        <h3>To GitHub Repo</h3>
+                    </a>
+                </nav>
             </div>
         </section>
     </section>

@@ -79,8 +79,19 @@ ul {
     color: var(--textColor);
     font-size: 1em;
 
-    padding: 0;
+    padding: 10px;
+    padding-left: 15px;
+
     margin: 0;
+}
+
+a{
+    color: var(--textColor);
+    /* text-decoration: none; */
+}
+a:hover{
+    color: var(--textHoverColor);
+    /* text-decoration: none; */
 }
 
 /* additional styles */
@@ -91,6 +102,13 @@ ul {
 .shadowedText:active {
     text-shadow: 5px 5px 3px none;
 
+}
+.textOutline{
+    text-shadow: 
+        -2px -2px 0 #000,  
+         2px -2px 0 #000,
+        -2px  2px 0 #000,
+         2px  2px 0 #000;
 }
 
 /* 
@@ -103,16 +121,12 @@ responsive design section
     h1 {
         font-size: 2.5em;
 
-        color: var(--textColor);
-
         margin: 0;
         padding: 0;
     }
 
     h2 {
         font-size: 2em;
-
-        color: var(--textColor);
 
         margin: 0;
         padding: 0;
@@ -121,8 +135,6 @@ responsive design section
     h3 {
         font-size: 1.5em;
 
-        color: var(--textColor);
-
         margin: 0;
         padding: 0;
     }
@@ -130,16 +142,12 @@ responsive design section
     h4 {
         font-size: .9em;
 
-        color: var(--textColor);
-
         margin: 0;
         padding: 0;
     }
 
     p {
         font-size: 1em;
-
-        color: var(--textColor);
 
         margin: 0;
         padding: 0;
