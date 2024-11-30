@@ -216,7 +216,7 @@ section top bar style
 }
 
 .topBarTabContainer div {
-    display: none;
+    display: grid;
     grid-template-columns: 2fr .5fr;
 
     background-color: var(--topBarTabBg);

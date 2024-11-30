@@ -6,23 +6,27 @@ CSS for the style of teh work application section
 @import url(Colors.css);
 @import url(Text.css);
 
-.applicationSection{
+.applicationSection {
     display: grid;
-    /* position: relative; */
+    grid-template-rows: 1fr 1fr ;
 
-    grid-template-columns: 1fr;
-    grid-template-rows: .2fr 2fr;
+    overflow-y: visible;
+    height: 200%;
 
-    width: 100%;
-    height: 100%;
-    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
+.applicationSection section {
 
+    padding-bottom: 10px;
+}
 .applicationSection iframe{
    /* transform: scale(1.1); */
 
     width: 100%;
     height: 100%;
+    padding-bottom: 10px;
     border: none;
 }
+

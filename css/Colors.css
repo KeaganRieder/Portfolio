@@ -40,9 +40,6 @@ CSS for the sites color palette
 
     /* buttons */
 
-    --linkButtonBg: black;
-    --linkButtonHoverBg: black;
-
     --focusWorkButtonBg: #2d3b4d;
     --focusWorkButtonHoverBg: #879ebd;
     --focusWorkShadow: #1c2733;

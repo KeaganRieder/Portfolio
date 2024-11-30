@@ -12,7 +12,6 @@ section content
 -------------------------------------------------------------------
 */
 
-
 .contentSectionContainer {
     overflow-y: hidden;
     display: grid;
@@ -55,25 +54,24 @@ section content
 }
 
 .folderContainer {
-    overflow-y: hidden;
+    overflow-y: auto;
     display: grid;
-    grid-template-columns: .5fr 8fr;
 
     background-color: var(--mainSectionBg);
 
     width: auto;
-    height: auto;
+    height: 100%;
 
     padding-top: 0px;
     padding-left: 0px;
-    padding-right: 20px;
 }
 
 .contentContainer {
+    display: grid;
+    grid-template-rows: 1fr ;
+
     overflow-y: auto;
     height: auto;
-
-    grid-column: 2/3;
 
     padding-left: 20px;
     padding-right: 20px;
@@ -94,7 +92,7 @@ section content
 }
 
 .contentContainer section {
-    display: none;
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
 }

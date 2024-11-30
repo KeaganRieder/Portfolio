@@ -189,21 +189,19 @@
     </section>
 
     <!-- application materials page -->
-    <section id="ApplicationMaterials" class="contentSectionContainer  hidden">
+    <section id="ApplicationMaterials" class="contentSectionContainer hidden">
         <div class="topBar">
             <h1>Application Material</h1>
 
-            <div class='topBarTabContainer'>
-                <div onclick="location.href='#Resume'" id="ResumeTab">
-                    <h2> Resume </h2>
-                    <img onclick='HideSection("Resume"); HideSection("ResumeTab")' src="assets/nav_icons/XButton.png"
-                        alt="XButton">
+            <div class=topBarTabContainer>
+                <div onclick="location.href='#Resume'" id="CurrentProjectsTab">
+                    <h2> Resume</h2>
+                    <img src="assets/nav_icons/XButton.png" alt="XButton">
                 </div>
 
-                <div onclick="location.href='#ArtistCv'" id="ArtistCvTab">
+                <div onclick="location.href='#ArtistCv'" id="PixelArtTab">
                     <h2> Artist Cv </h2>
-                    <img onclick='HideSection("ArtistCv"); HideSection("ArtistCvTab")'
-                        src="assets/nav_icons/XButton.png" alt="XButton">
+                    <img src="assets/nav_icons/XButton.png" alt="XButton">
                 </div>
 
             </div>
@@ -211,47 +209,28 @@
             <img src="assets/nav_icons/XButton.png" alt="Close Doc" onclick="HideSection('ApplicationMaterials')">
         </div>
 
-        <div class="folderContainer">
+        <div class="folderContainer scrollAbleSection">
+
             <!-- section nav -->
-
-            <button id="JobAppNavButton" class="sideNavToggleButton hidden"
-                onclick='HideSection("JobAppNavButton"); ShowSection("JobAppNav")'>
-                <img class='toggleButtonImg' src="assets/nav_icons/ArrowR.png" alt="right arrow">
-            </button>
-
-            <div id="JobAppNav" class="sectionSideNavBar">
-                <section>
-                    <div onclick='ShowSection("Resume"); ShowSection("ResumeTab")'>
-                        <h2> Resume </h2>
-                    </div>
-
-                    <div onclick='ShowSection("ArtistCv"); ShowSection("ArtistCvTab")'>
-                        <h2> Artist Cv </h2>
-                    </div>
-
-
-                </section>
-                <button onclick='HideSection("JobAppNav"); ShowSection("JobAppNavButton")'>
-                    <img src="assets/nav_icons/ArrowL.png" alt="left arrow">
-                </button>
-            </div>
-
-            <!-- section content -->
-            <div class="contentContainer">
-                <section class="applicationSection" id="Resume">
-                    <h2 class="spanAllColumns"> Resume </h2>
+            <div class="applicationSection">
+                <section  id="Resume">
+                    <!-- <h2 class="spanAllColumns"> Resume </h2> -->
                     <iframe class="spanAllColumns" src="assets/application_materials/Resume.pdf"></iframe>
                 </section>
 
-                <section class="applicationSection" id="ArtistCv">
-                    <h2 class="spanAllColumns"> Artist Cv </h2>
+                <section  id="ArtistCv">
+                    <!-- <h2 class="spanAllColumns"> Artist Cv </h2> -->
 
                     <iframe class="spanAllColumns" src="assets/application_materials/ArtestCv.pdf"></iframe>
                 </section>
 
             </div>
+         
         </div>
+
+
     </section>
+
 
     <!-- work showcase page -->
     <section id="WorkShowCase" class="contentSectionContainer hidden">
@@ -261,32 +240,27 @@
             <div class=topBarTabContainer>
                 <div onclick="location.href='#CurrentProjects'" id="CurrentProjectsTab">
                     <h2> Current Projects </h2>
-                    <img onclick='HideSection("CurrentProjects"); HideSection("CurrentProjectsTab")'
-                        src="assets/nav_icons/XButton.png" alt="XButton">
+                    <img src="assets/nav_icons/XButton.png" alt="XButton">
                 </div>
 
                 <div onclick="location.href='#PixelArt'" id="PixelArtTab">
                     <h2> Pixel Art </h2>
-                    <img onclick='HideSection("PixelArt"); HideSection("PixelArtTab")'
-                        src="assets/nav_icons/XButton.png" alt="XButton">
+                    <img src="assets/nav_icons/XButton.png" alt="XButton">
                 </div>
 
                 <div onclick="location.href='#VideoGames'" id="VideoGamesTab">
                     <h2> Video Games </h2>
-                    <img onclick='HideSection("VideoGames"); HideSection("VideoGamesTab")'
-                        src="assets/nav_icons/XButton.png" alt="XButton">
+                    <img src="assets/nav_icons/XButton.png" alt="XButton">
                 </div>
 
                 <div onclick="location.href='#PuzzleSolvers'" id="PuzzleSolversTab">
                     <h2> Puzzle Solvers </h2>
-                    <img onclick='HideSection("PuzzleSolvers"); HideSection("PuzzleSolversTab")'
-                        src="assets/nav_icons/XButton.png" alt="XButton">
+                    <img src="assets/nav_icons/XButton.png" alt="XButton">
                 </div>
 
                 <div onclick="location.href='#InteractiveArt'" id="InteractiveArtTab">
                     <h2> Interactive Art </h2>
-                    <img onclick='HideSection("InteractiveArt"); HideSection("InteractiveArtTab")'
-                        src="assets/nav_icons/XButton.png" alt="XButton">
+                    <img src="assets/nav_icons/XButton.png" alt="XButton">
                 </div>
             </div>
 
@@ -295,38 +269,6 @@
 
         <!-- section nav -->
         <div class="folderContainer">
-            <button id="PortNavButton" class="sideNavToggleButton hidden"
-                onclick='HideSection("PortNavButton"); ShowSection("PortNav")'>
-                <img class='toggleButtonImg' src="assets/nav_icons/ArrowR.png" alt="right arrow">
-            </button>
-
-            <div id="PortNav" class="sectionSideNavBar">
-                <section>
-                    <div onclick='ShowSection("CurrentProjects"); ShowSection("CurrentProjectsTab")'>
-                        <h2> Current Projects </h2>
-                    </div>
-
-                    <div onclick='ShowSection("PixelArt"); ShowSection("PixelArtTab")'>
-                        <h2> Pixel Art </h2>
-                    </div>
-
-                    <div onclick='ShowSection("VideoGames"); ShowSection("VideoGamesTab")'>
-                        <h2> Video Games </h2>
-                    </div>
-
-                    <div onclick='ShowSection("PuzzleSolvers"); ShowSection("PuzzleSolversTab")'>
-                        <h2> Puzzle Solvers </h2>
-                    </div>
-
-                    <div onclick='ShowSection("InteractiveArt"); ShowSection("InteractiveArtTab")'>
-                        <h2> Interactive Art </h2>
-                    </div>
-
-                </section>
-                <button onclick='HideSection("PortNav"); ShowSection("PortNavButton")'>
-                    <img src="assets/nav_icons/ArrowL.png" alt="left arrow">
-                </button>
-            </div>
 
             <!-- section content -->
             <div class="contentContainer">
@@ -349,12 +291,14 @@
                     </div>
 
                     <div class="contentShadowed">
-                        <h3 onclick="ShowSection('AtomationArtFocused'), HideSection('WorkShowCase')"> Automation - Art
+                        <h3 onclick="ShowSection('AtomationArtFocused'), HideSection('WorkShowCase')"> Automation -
+                            Art
                         </h3>
 
                         <div class="photoCollectionContainer">
                             <img src="assets/portfolio_work/atomation/art/oldtileSet.png" alt="AutomationMainMenu">
-                            <img src="assets/portfolio_work/atomation/art/CurrentTileSet.png" alt="AutomationWorldGenUI">
+                            <img src="assets/portfolio_work/atomation/art/CurrentTileSet.png"
+                                alt="AutomationWorldGenUI">
                             <img src="assets/portfolio_work/atomation/art/Oldplayer.png" alt="AutomationWorldGenUI">
                         </div>
 
@@ -369,7 +313,8 @@
                     <h2 class="spanAllColumns"> Pixel Art </h2>
 
                     <div class="contentShadowed">
-                        <h3 onclick="ShowSection('HomeAmongTheStarsFocused'), HideSection('WorkShowCase')"> Home Among
+                        <h3 onclick="ShowSection('HomeAmongTheStarsFocused'), HideSection('WorkShowCase')"> Home
+                            Among
                             The Stars </h3>
                         <img src="assets/portfolio_work/pixel_art/home_among_the_stars.png" alt="Home Among The Stars">
                         <p>
@@ -378,7 +323,8 @@
                         </p>
                     </div>
                     <div class="contentShadowed">
-                        <h3 onclick="ShowSection('SnowySkiesFocused'), HideSection('WorkShowCase')"> Snowy Skies </h3>
+                        <h3 onclick="ShowSection('SnowySkiesFocused'), HideSection('WorkShowCase')"> Snowy Skies
+                        </h3>
                         <img src="assets/portfolio_work/pixel_art/snowy_skies.png" alt="Snowy Skies">
                         <p>
                             Snowy Skies was created using Aesprite.
@@ -397,7 +343,8 @@
                 <section id="VideoGames">
                     <h2 class="spanAllColumns"> Video games</h2>
                     <div class="contentShadowed">
-                        <h3 onclick="ShowSection('TicTacToeFocused'), HideSection('WorkShowCase')"> Tic Tac Toe </h3>
+                        <h3 onclick="ShowSection('TicTacToeFocused'), HideSection('WorkShowCase')"> Tic Tac Toe
+                        </h3>
                         <img src="assets/portfolio_work/games/tic_tac_toe/board.png" alt="Tic Tac Toe">
                         <p>
                             Tic Tac Toe was created with C++. The game allows the user to play against a bot which
@@ -420,7 +367,8 @@
                 <section id="PuzzleSolvers">
                     <h2 class="spanAllColumns"> Puzzle Solvers </h2>
                     <div class="contentShadowed">
-                        <h3 onclick="ShowSection('NQueenFocused'), HideSection('WorkShowCase')"> N-Queen problem Solver
+                        <h3 onclick="ShowSection('NQueenFocused'), HideSection('WorkShowCase')"> N-Queen problem
+                            Solver
                         </h3>
                         <p>
                             The N-Queen problem solver was developed in C++. It solves the problem by using a
@@ -485,17 +433,23 @@
                 <div>
                     <h3> Overview </h3>
                     <p>
-                        Atomation is a passion project of mine. I'm currently developing the game in the godot engine,
-                        mainly as a hobby and to practice/learn new skills. due to the natur eof this project being for
+                        Atomation is a passion project of mine. I'm currently developing the game in the godot
+                        engine,
+                        mainly as a hobby and to practice/learn new skills. due to the natur eof this project being
+                        for
                         fun/a hobby I work it when i'm able to and as such currently have no planned release date.
 
-                        Atomation is currently planed to be a sort of cross between an Atomation game and a colony sim,
+                        Atomation is currently planed to be a sort of cross between an Atomation game and a colony
+                        sim,
                         taking inspiration form games like Rimworld and Factorio.
 
-                        Atomation takes place on a randomly generate world, which was once a colony of humanity however
+                        Atomation takes place on a randomly generate world, which was once a colony of humanity
+                        however
                         it's now a nuclear wasteland scatter with ruins. the player find themselves arriving to the
-                        planet onboard a colony ship which arrived many years to late due to a unknown error. so they
-                        are forced to adapt and begin rebuilding and reclaiming planet, and solving many mystery along
+                        planet onboard a colony ship which arrived many years to late due to a unknown error. so
+                        they
+                        are forced to adapt and begin rebuilding and reclaiming planet, and solving many mystery
+                        along
                         the way.
 
                         -- more to come
@@ -540,21 +494,27 @@
                 <div>
                     <h3> Overview </h3>
                     <p>
-                        Atomation is a passion project of mine. I'm currently developing the game in the godot engine,
-                        mainly as a hobby and to practice/learn new skills. due to the natur eof this project being for
+                        Atomation is a passion project of mine. I'm currently developing the game in the godot
+                        engine,
+                        mainly as a hobby and to practice/learn new skills. due to the natur eof this project being
+                        for
                         fun/a hobby I work it when i'm able to and as such currently have no planned release date.
 
-                        Atomation is currently planed to be a sort of cross between an Atomation game and a colony sim,
+                        Atomation is currently planed to be a sort of cross between an Atomation game and a colony
+                        sim,
                         taking inspiration form games like Rimworld and Factorio.
 
-                        Atomation takes place on a randomly generate world, which was once a colony of humanity however
+                        Atomation takes place on a randomly generate world, which was once a colony of humanity
+                        however
                         it's now a nuclear wasteland scatter with ruins. the player find themselves arriving to the
-                        planet onboard a colony ship which arrived many years to late due to a unknown error. so they
-                        are forced to adapt and begin rebuilding and reclaiming planet, and solving many mystery along
+                        planet onboard a colony ship which arrived many years to late due to a unknown error. so
+                        they
+                        are forced to adapt and begin rebuilding and reclaiming planet, and solving many mystery
+                        along
                         the way.
 
                         -- more to come
-                            - like images of the art and animations
+                        - like images of the art and animations
                     </p>
                 </div>
 
@@ -647,23 +607,29 @@
                         with c++ and was meant to be a way to practice and learn
                         how to use the minimax algorithm. <br>
 
-                        The games starts of with allowing the player to pick either x or o, and then doing a coin flip
+                        The games starts of with allowing the player to pick either x or o, and then doing a coin
+                        flip
                         to see who goes first, then the game starts,
                         being the rules and method of playing normal tic tac toe.
                     </p>
 
                     <h3> The Bot </h3>
                     <p>
-                        The bot uses the minimax algorithm to play the game. On the bots turn it takes the current state
+                        The bot uses the minimax algorithm to play the game. On the bots turn it takes the current
+                        state
                         of the board,
-                        and then attempts project all possible moves for both the player and it self. Playing it's game
+                        and then attempts project all possible moves for both the player and it self. Playing it's
+                        game
                         tell it eventually
-                        find a move which it sees as one that minimizes the possible loss for it self and maximizes the
+                        find a move which it sees as one that minimizes the possible loss for it self and maximizes
+                        the
                         possible loss for the player.
 
-                        Depending on the token the bot is given will design wether it does min or max first when running
+                        Depending on the token the bot is given will design wether it does min or max first when
+                        running
                         through all possible moves.
-                        if it's given the x token it will start with min, and if it's given the o token it will start
+                        if it's given the x token it will start with min, and if it's given the o token it will
+                        start
                         with max. Swapping between min and max
                         moves as it moves down the state tree.
                     </p>
@@ -729,7 +695,8 @@
                         a chessboard of size s x s, such that no two queens are threatening one another
 
                         The solution for this is one in which place all n queens on a s x s board where no two
-                        queen are in the same column, row or diagonal. Which leads to the following restrictions about
+                        queen are in the same column, row or diagonal. Which leads to the following restrictions
+                        about
                         what s and n can equal in order to have a solution
                     </p>
                     <p>
@@ -761,12 +728,14 @@
                 <div>
                     <h3> Overview </h3>
                     <p>
-                        The Missionary Cannibal solver, is developed in C++. The program solves the Missionary Cannibal
+                        The Missionary Cannibal solver, is developed in C++. The program solves the Missionary
+                        Cannibal
                         through the use of a Breadth First Search (BFS) algorithm. The problem is as followed:
                     </p>
                     <ul>
                         <li>
-                            3 missionaries and 3 cannibals are on one side of the river and wish to cross it using the
+                            3 missionaries and 3 cannibals are on one side of the river and wish to cross it using
+                            the
                             boat
                             they found
                         </li>
@@ -814,7 +783,8 @@
                 <div>
                     <h3> Overview </h3>
                     <p>
-                        Cityscape, was developed in Processing. The program generates a cityscape that can be interacted
+                        Cityscape, was developed in Processing. The program generates a cityscape that can be
+                        interacted
                         through a variety of input,
                         all of which change the city in some way. -- more to come
                     </p>
