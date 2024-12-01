@@ -102,13 +102,18 @@ section content
     place-items: center;
 
     background-color: var(--workShowcaseBg);
-
+    cursor: pointer;
     width: auto;
     height: auto;
 
     padding: 10px;
 }
 
+.contentContainer section div:hover {
+    background-color: var(--workShowcaseHoverBg);
+    cursor: pointer;
+  
+}
 .contentShadowed{
     box-shadow: 5px 5px 5px var(--workShowcaseDivShadow);
 }
@@ -120,15 +125,6 @@ section content
 
     padding: 5px;
     margin-bottom: 10px;
-}
-
-.contentContainer section div h3:hover {
-    background-color: var(--focusWorkButtonHoverBg);
-}
-
-.contentContainer section div h3:active {
-    box-shadow: none;
-
 }
 
 .contentContainer section div img {

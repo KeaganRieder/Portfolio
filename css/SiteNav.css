@@ -42,6 +42,8 @@ style for sites navigation bar
 .navigationApps div img {
     width: auto;
     height: auto;
+    cursor: pointer;
+
 }
 
 .navigationApps div h4 {
@@ -185,6 +187,7 @@ section top bar style
     justify-self: end;
 
     box-shadow: 0 5px 5px var(--topBarShadow);
+    cursor: pointer;
 
     width: 60px;
     height: 60px;
@@ -216,14 +219,17 @@ section top bar style
 }
 
 .topBarTabContainer div {
-    display: grid;
-    grid-template-columns: 2fr .5fr;
-
+    display: block;
+    /* grid-template-columns: 2fr ; */
+    
     background-color: var(--topBarTabBg);
     box-shadow: 0 -5px 5px -5px var(--topBarShadow);
 
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+
+    width: 300px;
+    cursor: pointer;
 
     margin-top: 10px;
     margin-left: 10px;
