@@ -209,6 +209,8 @@ section top bar style
     grid-template-rows: 1fr;
 
     background-color: var(--topBarTabConBg);
+        
+    box-shadow: inset 0px 5px 10px black;
 
     width: 100%;
     height: auto;
@@ -219,6 +221,7 @@ section top bar style
 }
 
 .topBarTabContainer div {
+    box-sizing: border-box;
     display: block;
     /* grid-template-columns: 2fr ; */
     
@@ -231,7 +234,7 @@ section top bar style
     width: 300px;
     cursor: pointer;
 
-    margin-top: 10px;
+    margin-top: 20px;
     margin-left: 10px;
     margin-right: 10px;
     padding-bottom: 5px;
@@ -276,7 +279,8 @@ screen and (max-height: 600px) {
         left: 0;
         right: 0;
 
-        background-color: var(--bottomBarBG);
+        background-color: var(--bottomBarBg);
+        box-shadow: 0px -5px 10px black;
 
         height: 30%;
         width: 100%;

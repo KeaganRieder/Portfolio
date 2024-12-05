@@ -145,7 +145,11 @@ section content
     grid-gap: 10px;
 
 }
+.focusedImg{
+    width: 100%;
 
+    box-shadow:  5px 10px 5px black;
+}
 
 
 /* 
