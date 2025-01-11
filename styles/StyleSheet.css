@@ -1,0 +1,20 @@
+/* 
+-------------------------------------------------------------------
+contains default styles of the site, as well as imports other 
+styles to be applied to the site
+-------------------------------------------------------------------
+*/
+
+/* move to js */
+html {
+    overflow: hidden;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    
+    margin: 0;
+    padding: 0;
+
+} 
