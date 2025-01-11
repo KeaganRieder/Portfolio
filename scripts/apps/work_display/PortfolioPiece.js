@@ -1,5 +1,5 @@
 import ContainerElement from "../../elements/ContainerElement.js";
-import ImgElement from "../../elements/imgElement.js";
+import ImgElement from "../../elements/ImgElement.js";
 import HeaderTextElement from "../../elements/HeaderTextElement.js";
 import BodyTextElement from "../../elements/BodyTextElements.js";
 import App from "../App.js";
@@ -58,7 +58,7 @@ class PortfolioPiece extends App {
         // let currentColumn = 0;
 
         // imgs.forEach((img) => {
-        //     let imgElement = new ImgElement(img, WORK_DISPLAY_STYLE.get("PieceImg"), imgColumns[currentColumn].GetBody());
+        //     let ImgElement = new ImgElement(img, WORK_DISPLAY_STYLE.get("PieceImg"), imgColumns[currentColumn].GetBody());
         //     currentColumn = (currentColumn + 1) % imgColumn.length;
         // });
 

@@ -1,7 +1,6 @@
 import ContainerElement from "../elements/ContainerElement.js";
-import ImgElement from "../elements/imgElement.js";
+import ImgElement from "../elements/ImgElement.js";
 import HeaderTextElement from "../elements/HeaderTextElement.js";
-import { SHORTCUT_STYLES } from "../computer/DesktopStyles.js";
 import { MAIN_STYLES } from "./AppStyles.js";
 import { SITE_COLORS } from "../constants/SiteColors.js";
 

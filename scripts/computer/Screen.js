@@ -1,5 +1,5 @@
 import ContainerElement from "../elements/ContainerElement.js";
-import ImgElement from "../elements/imgElement.js";
+import ImgElement from "../elements/ImgElement.js";
 import HeaderTextElement from "../elements/HeaderTextElement.js";
 
 import AboutMe from "../apps/about_me/AboutMe.js";

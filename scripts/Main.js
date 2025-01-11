@@ -7,7 +7,6 @@
 */
 import Screen from "./computer/Screen.js";
 
-
 /*
 --------------------------------------------------------------------------
     Variables and classes
