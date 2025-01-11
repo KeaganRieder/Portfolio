@@ -5,14 +5,15 @@
    the site
 --------------------------------------------------------------------------
 */
-import Desktop from './computer/Desktop.js';
+import Screen from "./computer/Screen.js";
+
 
 /*
 --------------------------------------------------------------------------
     Variables and classes
 --------------------------------------------------------------------------
 */
-var desktop = new Desktop();
+var screen = new Screen();
 
 /*
 --------------------------------------------------------------------------
@@ -22,6 +23,6 @@ var desktop = new Desktop();
 
 $(document).ready(function () {
 
-    desktop.createDesktop();
+    screen.CreateScreenElements();
 
 });
