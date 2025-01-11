@@ -49,10 +49,10 @@ class Screen {
     this.CreateShortCut({ name: "AboutMe", text: "AboutMe.txt", imgSrc: "apps/icons/text_doc.png" },
       "click", () => { aboutMeApp.openApp() });
 
-    this.CreateShortCut({ name: "Resume", text: "Resume.pdf", imgSrc: "apps/icons/text_doc.png" },
+    this.CreateShortCut({ name: "Resume", text: "resume.pdf", imgSrc: "apps/icons/text_doc.png" },
       "click", () => { resumeApp.openApp() });
 
-    this.CreateShortCut({ name: "ArtistCv", text: "ArtistCv.pdf", imgSrc: "apps/icons/text_doc.png" },
+    this.CreateShortCut({ name: "ArtistCv", text: "artist_Cv.pdf", imgSrc: "apps/icons/text_doc.png" },
       "click", () => { artistCvApp.openApp() });
 
     this.CreateShortCut({ name: "Linkedin", text: "Linkedin", imgSrc: "apps/icons/linkedin.png" },
@@ -64,7 +64,7 @@ class Screen {
     this.CreateShortCut({ name: "Email", text: "Email", imgSrc: "apps/icons/email.png" },
       "click", () => { window.open("mailto:'kagan@rieder.ca'", "_blank") });
 
-    this.CreateShortCut({ name: "WorkShowcase", text: "WorkShowcase", imgSrc: "apps/icons/Folder.png" },
+    this.CreateShortCut({ name: "WorkShowcase", text: "WorkShowcase", imgSrc: "apps/icons/folder.png" },
       "click", () => { workDisplayApp.openApp() });
 
     this.resize();
