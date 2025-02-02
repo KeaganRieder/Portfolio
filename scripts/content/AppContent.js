@@ -77,7 +77,7 @@ export const AboutMeContent = {
 export const ResumeContent = {
     resume: {
         type: "embedded",
-        size: { width: '100%', height: '90%' },
+        size: { width: '100%', height: '100%' },
         content: { src: "./assets/apps/pdfs/resume.pdf", type: 'application/pdf' }
     }
 }
@@ -88,7 +88,7 @@ export const ResumeContent = {
 export const ArtistCvContent = {
     resume: {
         type: "embedded",
-        size: { width: '100%', height: '90%' },
+        size: { width: '100%', height: '100%' },
         content: { src: "./assets/apps/pdfs/artistCv.pdf", type: 'application/pdf' }
     }
 }

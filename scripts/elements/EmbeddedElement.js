@@ -7,7 +7,7 @@ import BaseElement from './BaseElement.js';
 */
 class EmbeddedElement extends BaseElement {
     constructor(attributes, style, parent) {
-        super("embed", attributes, style, parent);
+        super("iframe", attributes, style, parent);
     }
 
     SetAttributes() {
