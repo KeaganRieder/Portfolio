@@ -69,7 +69,6 @@ export const AboutMeContent = {
             developer is currently more of a hobby, a way to practice and learn new skills.
         `}
     },
-
 };
 
 /*
@@ -79,7 +78,7 @@ export const ResumeContent = {
     resume: {
         type: "embedded",
         size: { width: '100%', height: '90%' },
-        content: { src: "./assets/apps/pdfs/Resume.pdf", type: 'application/pdf' }
+        content: { src: "./assets/apps/pdfs/resume.pdf", type: 'application/pdf' }
     }
 }
 
@@ -90,6 +89,6 @@ export const ArtistCvContent = {
     resume: {
         type: "embedded",
         size: { width: '100%', height: '90%' },
-        content: { src: "./assets/apps/pdfs/Resume.pdf", type: 'application/pdf' }
+        content: { src: "./assets/apps/pdfs/artistCv.pdf", type: 'application/pdf' }
     }
 }

@@ -13,7 +13,6 @@ class AppShortcut {
     constructor(attributes, parent, event) {
         this.shortCutContainer = new ContainerElement(attributes.name + " ShortCut", DeskTopStyles.shortcuts.body, parent);
         this.icon = new ImgElement(attributes, DeskTopStyles.shortcuts.img, this.shortCutContainer.GetBody());
-
         this.header = new HeaderTextElement("h2", { title: attributes.text }, DeskTopStyles.shortcuts.label, this.shortCutContainer.GetBody());
         this.shortCutContainer.MakeEventListener("click", event);
 
@@ -25,6 +24,7 @@ class AppShortcut {
         });
     }
 
+    
     GetBody() {
         return this.shortCutContainer;
     }
@@ -81,7 +81,7 @@ class ComputerApp {
 
         this.title = null;
     }
-    
+
 
     // runs trough the container of app content, and adds content to the 
     // app

@@ -10,9 +10,13 @@ class ImgElement extends BaseElement {
 
     // Set the attributes of the element
     SetAttributes() {
-        let src = "./assets/"+ this.attributes.imgSrc;
-        this.element.src = src;
-        this.element.alt = this.attributes.title;
+        if (this.attributes.imgSrc != undefined) {
+
+            let src = "./assets/" + this.attributes.imgSrc;
+            this.element.src = src;
+            this.element.alt = this.attributes.title;
+        }
+
     }
 }
 

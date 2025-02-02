@@ -5,7 +5,26 @@ export const WorkDisplayContent = {
     currentProject: {
         title: "Current Projects",
         type: "section",
-        works: {},
+        works: {
+            atomationCode: {
+                title: "Atomation-Code",
+                content: {
+                    highLight: {
+                        description: "Atomation code"
+                    },
+                    overview: {},
+                },
+            },
+            atomationArt: {
+                title: "Atomation-Art",
+                content: {
+                    highLight: {
+                        description: "Atomation art"
+                    },
+                    overview: {},
+                },
+            }
+        },
     },
 
     games: {

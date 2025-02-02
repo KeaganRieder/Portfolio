@@ -1,7 +1,4 @@
 import ContainerElement from "../../elements/ContainerElement.js";
-import ImgElement from "../../elements/ImgElement.js";
-import EmbeddedElement from "../../elements/EmbeddedElement.js";
-import { BodyTextElement, HeaderTextElement } from "../../elements/TextElements.js";
 import ComputerApp from "../ComputerApp.js";
 import WorkSection from "./WorkSection.js";
 import { AppStyles } from "../../site_styles/ComputerAppStyles.js";
@@ -12,7 +9,6 @@ import { AppStyles } from "../../site_styles/ComputerAppStyles.js";
 class WorkDisplay extends ComputerApp {
     constructor(appInfo, content, parents) {
         super(appInfo, content, parents);
-
     }
 
     addContent() {
@@ -47,7 +43,7 @@ class WorkDisplay extends ComputerApp {
     createSpecializedElement(element) {
         switch (element.type) {
             case "section":
-                let parents = {navParent: this.navScroll.GetBody(), parent: this.contentContainer.GetBody()};
+                let parents = {screen: this.parent, navParent: this.navScroll.GetBody(), parent: this.contentContainer.GetBody()};
                 let section = new WorkSection(element.title,this.appName, parents, this.appTitle,element.works);
                 this.sections.set(element.title, section);
                 return section;

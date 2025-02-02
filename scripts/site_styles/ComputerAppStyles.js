@@ -172,6 +172,7 @@ export const AppStyles = {
             },
 
             columns: {
+                flex: "0",
                 justifyContent: "center",
                 alignItems: "center",
                 margin: "2px",
@@ -189,7 +190,7 @@ export const AppStyles = {
                 padding: "5px",
             },
 
-            PieceHeader: {
+            pieceHeader: {
                 fontSize: "1.5em",
                 textAlign: "center",
 
@@ -200,7 +201,7 @@ export const AppStyles = {
                 margin: "0px",
             },
 
-            PieceImgContainer: {
+            pieceImgContainer: {
                 display: "flex",
                 flexWrap: "wrap",
 
@@ -212,13 +213,13 @@ export const AppStyles = {
                 padding: "4px",
             },
 
-            PieceImg: {
+            pieceImg: {
                 width: "100%",
                 height: "auto",
                 boxSizing: "border-box",
             },
 
-            PieceBody: {
+            pieceBody: {
                 fontSize: "1.0em",
                 textAlign: "center",
 
