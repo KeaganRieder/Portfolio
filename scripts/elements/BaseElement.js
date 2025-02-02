@@ -41,11 +41,10 @@ class BaseElement {
             Object.assign(this.element.style, this.style);
         }
 
-        this.SetAttributes();
-
         if (this.parent != null) {
             $(this.parent).append(this.element);
         }
+        this.SetAttributes();
     }
 
     // Set the attributes of the element

@@ -1,10 +1,10 @@
 import ContainerElement from "../elements/ContainerElement.js";
 import ImgElement from "../elements/ImgElement.js";
-import EmbeddedElement from "../elements/EmbeddedElement.js";
+import { EmbeddedElement, IframeElement } from "../elements/EmbeddedElement.js";
 import { BodyTextElement, HeaderTextElement } from "../elements/TextElements.js";
-import { AppStyles } from "../site_styles/ComputerAppStyles.js";
+import { AppStyle } from "../site_styles/ComputerAppStyles.js";
 import { DeskTopStyles } from "../site_styles/DesktopStyles.js";
-import { SITE_COLORS } from "../site_styles/SiteColors.js";
+import { appColors, deskTopColors, } from "../site_styles/SiteColors.js";
 
 /*
     a shortcut is used to open an app
@@ -17,14 +17,14 @@ class AppShortcut {
         this.shortCutContainer.MakeEventListener("click", event);
 
         $(this.shortCutContainer.GetBody()).on('mouseover', () => {
-            this.shortCutContainer.GetStyleSheet().backgroundColor = SITE_COLORS.shortCutHoverBackground;
+            this.shortCutContainer.GetStyleSheet().backgroundColor = deskTopColors.shortCuts.hover;
         });
         $(this.shortCutContainer.GetBody()).on('mouseout', () => {
-            this.shortCutContainer.GetStyleSheet().backgroundColor = SITE_COLORS.shortCutBackground;
+            this.shortCutContainer.GetStyleSheet().backgroundColor = deskTopColors.shortCuts.base;
         });
     }
 
-    
+
     GetBody() {
         return this.shortCutContainer;
     }
@@ -56,23 +56,14 @@ class ComputerApp {
     }
 
     createApp() {
-        this.appContainer = new ContainerElement(this.appName + " App", AppStyles.main.container, this.parent);
+        this.appContainer = new ContainerElement(this.appName + " App", AppStyle.mainContainer, this.parent);
 
-        this.headerContainer = new ContainerElement(null, AppStyles.main.header.Container, this.appContainer.GetBody());
-        this.appTitle = new HeaderTextElement("h2", { title: this.title }, AppStyles.main.header.title, this.headerContainer.GetBody());
+        this.headerContainer = new ContainerElement(null, AppStyle.header.container, this.appContainer.GetBody());
+        this.appTitle = new HeaderTextElement("h2", { title: this.title }, AppStyle.header.text, this.headerContainer.GetBody());
+        this.createCloseButton();
 
-        let closeButton = new ImgElement({ name: "close button", imgSrc: "apps/elements/close_button.png" }, AppStyles.main.header.closeButton,
-            this.headerContainer.GetBody());
-        $(closeButton.GetBody()).on('click', () => { this.closeApp() });
-        $(closeButton.GetBody()).on('mouseover', function () {
-            closeButton.GetStyleSheet().backgroundColor = SITE_COLORS.appCloseButtonHoverBackground;
-        });
-        $(closeButton.GetBody()).on('mouseout', function () {
-            closeButton.GetStyleSheet().backgroundColor = 'transparent';
-        });
-
-        this.appBody = new ContainerElement(null, AppStyles.main.content.container, this.appContainer.GetBody());
-        this.contentContainer = new ContainerElement(this.appName + " App Content", AppStyles.main.content.scrollContainer, this.appBody.GetBody());
+        this.appBody = new ContainerElement(null, AppStyle.content.container, this.appContainer.GetBody());
+        this.contentContainer = new ContainerElement(this.appName + " App Content", AppStyle.content.scrollContainer, this.appBody.GetBody());
 
         this.addContent();
 
@@ -82,8 +73,20 @@ class ComputerApp {
         this.title = null;
     }
 
+    createCloseButton() {
+        let closeButton = new ImgElement({ name: "close button", imgSrc: "apps/elements/close_button.png" }, AppStyle.header.closeButton,
+            this.headerContainer.GetBody());
 
-    // runs trough the container of app content, and adds content to the 
+        $(closeButton.GetBody()).on('click', () => { this.closeApp() });
+        $(closeButton.GetBody()).on('mouseover', function () {
+            closeButton.GetStyleSheet().backgroundColor = appColors.closeButton.hover;
+        });
+        $(closeButton.GetBody()).on('mouseout', function () {
+            closeButton.GetStyleSheet().backgroundColor = appColors.closeButton.background;
+        });
+    }
+
+    // runs through the container of app content, and adds content to the 
     // app
     addContent() {
         let createdElement;
@@ -123,10 +126,17 @@ class ComputerApp {
                 this.appBody = null;
                 this.contentContainer = null;
                 return new EmbeddedElement(element.content, element.size, this.appContainer.GetBody());
+            case "iframe":
+                this.appBody.GetBody().remove();
+                this.contentContainer.GetBody().remove();
+                this.appBody = null;
+                this.contentContainer = null;
+                return new IframeElement(element.content, element.size, this.appContainer.GetBody());
             default:
                 return null;
         }
     }
+
     resizeApp() {
         this.appContainer.GetStyleSheet().width = `95%`;
         this.appContainer.GetStyleSheet().height = `90%`;

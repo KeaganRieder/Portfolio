@@ -1,10 +1,11 @@
 import ContainerElement from "../../elements/ContainerElement.js";
 import ImgElement from "../../elements/ImgElement.js";
-import EmbeddedElement from "../../elements/EmbeddedElement.js";
+import { EmbeddedElement, IframeElement } from "../../elements/EmbeddedElement.js";
 import { BodyTextElement, HeaderTextElement } from "../../elements/TextElements.js";
 import ComputerApp from "../ComputerApp.js";
-import { SITE_COLORS } from "../../site_styles/SiteColors.js";
-import { AppStyles } from "../../site_styles/ComputerAppStyles.js";
+import { AppStyle } from "../../site_styles/ComputerAppStyles.js";
+import { appColors } from "../../site_styles/SiteColors.js";
+import { WorkDisplayStyle } from "../../site_styles/ComputerAppStyles.js";
 
 class Work extends ComputerApp {
     constructor(appInfo, content, parents) {
@@ -13,23 +14,14 @@ class Work extends ComputerApp {
     }
 
     createApp() {
-        this.appContainer = new ContainerElement("works-" + this.appName + " App", AppStyles.main.container, document.getElementById('screen'));
+        this.appContainer = new ContainerElement("works-" + this.appName + " App", AppStyle.mainContainer, document.getElementById('screen'));
 
-        this.headerContainer = new ContainerElement(null, AppStyles.main.header.Container, this.appContainer.GetBody());
-        this.appTitle = new HeaderTextElement("h2", { title: "works-" + this.appName }, AppStyles.main.header.title, this.headerContainer.GetBody());
+        this.headerContainer = new ContainerElement(null, AppStyle.header.container, this.appContainer.GetBody());
+        this.appTitle = new HeaderTextElement("h2", { title: "works-" + this.appName }, AppStyle.header.text, this.headerContainer.GetBody());
+        this.createCloseButton();
 
-        let closeButton = new ImgElement({ name: "close button", imgSrc: "apps/elements/close_button.png" }, AppStyles.main.header.closeButton,
-            this.headerContainer.GetBody());
-        $(closeButton.GetBody()).on('click', () => { this.closeApp() });
-        $(closeButton.GetBody()).on('mouseover', function () {
-            closeButton.GetStyleSheet().backgroundColor = SITE_COLORS.appCloseButtonHoverBackground;
-        });
-        $(closeButton.GetBody()).on('mouseout', function () {
-            closeButton.GetStyleSheet().backgroundColor = 'transparent';
-        });
-
-        this.appBody = new ContainerElement(null, AppStyles.main.content.container, this.appContainer.GetBody());
-        this.contentContainer = new ContainerElement(this.appName + " App Content", AppStyles.main.content.scrollContainer, this.appBody.GetBody());
+        this.appBody = new ContainerElement(null, AppStyle.content.container, this.appContainer.GetBody());
+        this.contentContainer = new ContainerElement(this.appName + " App Content", AppStyle.content.scrollContainer, this.appBody.GetBody());
 
         this.addContent();
 
@@ -40,17 +32,17 @@ class Work extends ComputerApp {
     }
 
     addContent() {
-        this.previewContainer = new ContainerElement(this.appName + " Overview", AppStyles.workStyles.sections.piece, this.parent);
-        let title = new HeaderTextElement("h3", { title: this.appName }, AppStyles.workStyles.sections.pieceHeader, this.previewContainer.GetBody());
+        this.previewContainer = new ContainerElement(this.appName + " Overview", WorkDisplayStyle.pieceDisplay.container.main, this.parent);
+        let title = new HeaderTextElement("h3", { title: this.appName }, WorkDisplayStyle.pieceDisplay.text.header, this.previewContainer.GetBody());
         //todo images
-        let description = new BodyTextElement({ bodyText: this.appContent.highLight.description }, AppStyles.workStyles.sections.pieceBody, this.previewContainer.GetBody());
+        let description = new BodyTextElement({ bodyText: this.appContent.highLight.description }, WorkDisplayStyle.pieceDisplay.text.body, this.previewContainer.GetBody());
 
         $(this.previewContainer.GetBody()).on('click', () => { this.openApp() });
         $(this.previewContainer.GetBody()).on('mouseover', () => {
-            this.previewContainer.GetStyleSheet().backgroundColor = SITE_COLORS.appCloseButtonHoverBackground;
+            this.previewContainer.GetStyleSheet().backgroundColor = appColors.workShowcase.pieceOverView.hover;
         });
         $(this.previewContainer.GetBody()).on('mouseout', () => {
-            this.previewContainer.GetStyleSheet().backgroundColor = 'transparent';
+            this.previewContainer.GetStyleSheet().backgroundColor = appColors.workShowcase.pieceOverView.display;
         });
 
         let createdElement;

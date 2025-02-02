@@ -1,4 +1,4 @@
-import { AppStyles } from "../site_styles/ComputerAppStyles.js";
+import { AboutMeStyles } from "../site_styles/ComputerAppStyles.js";
 
 /*
     contains all the content for the about me app
@@ -6,12 +6,12 @@ import { AppStyles } from "../site_styles/ComputerAppStyles.js";
 export const AboutMeContent = {
     profilePic: {
         type: "Img",
-        style: AppStyles.aboutMe.profilePic,
+        style: AboutMeStyles.profilePic,
         content: { name: "profilePic", imgSrc: "apps/elements/logo.gif" }
     },
     bio: {
         type: "bodyText",
-        style: AppStyles.aboutMe.bodyText,
+        style: AboutMeStyles.bodyText,
         content: {
             bodyText: `
             I’m a programmer and artist, currently attending the University of Lethbridge for a BFA in New Media 
@@ -50,7 +50,7 @@ export const AboutMeContent = {
     
     artistStatement: {
         type: "bodyText",
-        style: AppStyles.aboutMe.bodyText,
+        style: AboutMeStyles.bodyText,
         content: {
             bodyText: `
             I’m a programmer and artist, currently attending the University of Lethbridge for a BFA in New Media 
@@ -76,8 +76,8 @@ export const AboutMeContent = {
 */
 export const ResumeContent = {
     resume: {
-        type: "embedded",
-        size: { width: '100%', height: '100%' },
+        type: "iframe",
+        size: {  width: '100%', height: '92%' },
         content: { src: "./assets/apps/pdfs/resume.pdf", type: 'application/pdf' }
     }
 }
@@ -87,8 +87,8 @@ export const ResumeContent = {
 */
 export const ArtistCvContent = {
     resume: {
-        type: "embedded",
-        size: { width: '100%', height: '100%' },
+        type: "iframe",
+        size: { width: '100%', height: '92%' },
         content: { src: "./assets/apps/pdfs/artistCv.pdf", type: 'application/pdf' }
     }
 }

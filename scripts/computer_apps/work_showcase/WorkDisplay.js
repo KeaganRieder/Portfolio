@@ -1,7 +1,7 @@
 import ContainerElement from "../../elements/ContainerElement.js";
 import ComputerApp from "../ComputerApp.js";
 import WorkSection from "./WorkSection.js";
-import { AppStyles } from "../../site_styles/ComputerAppStyles.js";
+import { WorkDisplayStyle } from "../../site_styles/ComputerAppStyles.js";
 
 /*
     Extends computer app to create an app that showcases my work
@@ -12,8 +12,8 @@ class WorkDisplay extends ComputerApp {
     }
 
     addContent() {
-        this.navContainer = new ContainerElement("Work_Display_Nav", AppStyles.workStyles.navButtons.container, this.appContainer.GetBody());
-        this.navScroll = new ContainerElement("Work_Display_Nav_Scroll", AppStyles.workStyles.navButtons.navScroll, this.navContainer.GetBody());
+        this.navContainer = new ContainerElement("Work_Display_Nav", WorkDisplayStyle.nav.container, this.appContainer.GetBody());
+        this.navScroll = new ContainerElement("Work_Display_Nav_Scroll", WorkDisplayStyle.nav.navScroll, this.navContainer.GetBody());
         this.sections = new Map();
 
         let createdElement;

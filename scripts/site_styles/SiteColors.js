@@ -1,58 +1,79 @@
-export const SITE_COLORS = {
-    desktopBackground: 'rgb(65, 90, 119)',
-    // app colors
-    appHeaderBackground: 'rgb(52, 56, 61)',
-    appNavBackground: 'rgb(173, 181, 189)', 
-    appNavTabBackground: 'rgb(108, 117, 125)', 
+export const deskTopColors = {
+    taskBar: {
+        main: 'rgb(52, 56, 61)',
+        shadow: 'rgb(30, 32, 34)',
+    },
+    shortCuts: {
+        base: 'transparent',
+        hover: 'rgba(211, 211, 211, 0.25)',
+    },
+}
 
-    appBodyBackground: 'rgb(65, 90, 119)', 
-    appBodyBackground2: 'rgb(27, 38, 59)', 
-    appBodyBackground3: 'rgb(119, 141, 169)', 
+export const appColors = {
+    header: 'rgb(52, 56, 61)',
+    body: 'rgb(65, 90, 119)',
+    bodyShadow: 'rgb(15, 21, 32)',
 
-    appHeaderShadow: 'rgb(13, 14, 15)',
+    border: {
+        outer: 'rgb(170, 178, 185)',
+        middle: 'rgb(108, 117, 125)',
+        inner: 'rgb(51, 53, 56)',
+    },
 
-    appBorder: 'rgb(108, 117, 125)',
-    appBorder2: 'rgb(170, 178, 185)',
-    appBorder3: 'rgb(51, 53, 56)',
+    closeButton: {
+        hover: 'rgb(46, 45, 45)',
+        background: 'transparent',
+    },
 
-    appBodyShadow: 'rgb(15, 21, 32)',
-    appBodyHoverBackground: 'rgb(138, 163, 196)',
+    aboutMe: {
+        skillsSectionBg: 'rgb(27, 38, 59)',
+    },
 
-    appCloseButtonHoverBackground: 'rgb(46, 45, 45)',
-    
-    //buttonColors
-    headerButtonBackground: 'rgb(45, 59, 77)',
-    headerButtonHoverBackground: 'rgb(135, 158, 189)',
+    workShowcase: {
+        nav: {
+            mainContainer: 'rgb(27, 38, 59)',
+            tab: 'rgb(108, 117, 125)',
+            tabHover: 'rgb(173, 181, 189)',
+        },
 
-    // bar colors
-    taskBarBackground: 'rgb(52, 56, 61)',
-    taskBarShadow: 'rgb(30, 32, 34)',
+        pieceOverView: {
+            main: "rgb(27, 38, 59)",
+            display: 'rgb(79, 93, 112)',
+            hover: 'rgb(138, 163, 196)',
+        },
+    },
+}
 
-    //scroll bar colors
-    appMainScrollBarThumb: 'rgb(108, 117, 125)',
-    appMainScrollBarTrack: 'rgb(173, 181, 189)',
+export const textColors = {
+    header: {
+        style1: 'rgb(216, 222, 228)', 
+        style2: 'rgb(176, 179, 182)',
+        style3: 'rgb(199, 202, 206)', 
+        style4: 'rgb(248, 249, 250)',
+    },
 
-    // short cut colors
-    shortCutBackground: '',
-    shortCutHoverBackground: 'rgba(211, 211, 211, 0.25)',
+    subHeader: {
+        style1: 'rgb(216, 222, 228)',
+        style2: 'rgb(199, 202, 206)', 
 
-    // text colors
-    shortCutText: 'rgb(216, 222, 228)',
+        style3: 'rgb(176, 179, 182)',
+        style4: 'rgb(248, 249, 250)',
 
-    headingText: 'rgb(248, 249, 250)',
+    },
 
-    SubheadingText: 'rgb(176, 179, 182)',
-
-    bodyText: 'rgb(248, 249, 250)',
-    bodyText2: 'rgb(199, 202, 206)',
-
-    bodyText3: 'rgb(176, 179, 182)',
-
+    body: {
+        style1: 'rgb(216, 222, 228)', 
+        style2: 'rgb(176, 179, 182)',
+        style3: 'rgb(199, 202, 206)', 
+        style4: 'rgb(248, 249, 250)',
+    },
     textHover: 'rgb(186, 218, 250)',
     textShadow: 'rgb(0, 0, 0)',
+}
 
-    // other
-    Undefined: 'rgba(143, 140, 140, 0.44)'
-};
-
-
+export const otherColors = {
+    scrollbar: {
+        thumb: 'rgb(108, 117, 125)',
+        track: 'rgb(173, 181, 189)',
+    },
+}

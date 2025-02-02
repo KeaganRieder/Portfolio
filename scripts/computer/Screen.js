@@ -1,5 +1,5 @@
 import ContainerElement from "../elements/ContainerElement.js";
-import { AppShortcut,ComputerApp } from "../computer_apps/ComputerApp.js";
+import { AppShortcut, ComputerApp } from "../computer_apps/ComputerApp.js";
 import AboutMe from "../computer_apps/AboutMe.js";
 import WorkDisplay from "../computer_apps/work_showcase/WorkDisplay.js";
 
@@ -37,9 +37,9 @@ class Screen {
 
     let appParents = { parent: this.screen.GetBody(), shortCutParent: internalApps.GetBody() };
 
-    this.apps.set("About_Me", new AboutMe({ name: "AboutMe", text: "AboutMe.txt", imgSrc: "apps/icons/text_doc.png" }, AboutMeContent, appParents));
-    this.apps.set("Resume", new ComputerApp({ name: "Resume", text: "Resume.pdf", imgSrc: "apps/icons/text_doc.png" }, ResumeContent, appParents));
-    this.apps.set("Artist Cv", new ComputerApp({ name: "Artist_Cv", text: "Artist_Cv.pdf", imgSrc: "apps/icons/text_doc.png" }, ArtistCvContent, appParents));
+    this.apps.set("About_Me", new AboutMe({ name: "AboutMe", text: "About_Me", imgSrc: "apps/icons/text_doc.png" }, AboutMeContent, appParents));
+    this.apps.set("Resume", new ComputerApp({ name: "Resume", text: "Resume", imgSrc: "apps/icons/text_doc.png" }, ResumeContent, appParents));
+    this.apps.set("Artist Cv", new ComputerApp({ name: "Artist_Cv", text: "Artist_Cv", imgSrc: "apps/icons/text_doc.png" }, ArtistCvContent, appParents));
     this.apps.set("WorkShowcase", new WorkDisplay({ name: "Works", text: "Works", imgSrc: "apps/icons/folder.png" }, WorkDisplayContent, appParents));
 
     new AppShortcut(

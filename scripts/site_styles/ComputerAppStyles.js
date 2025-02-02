@@ -1,207 +1,202 @@
-import { SITE_COLORS } from './SiteColors.js';
+import { appColors, textColors, otherColors } from './SiteColors.js';
+import { fontStyles } from './TextStyles.js';
 
-export const AppStyles = {
-    main: {
-        container: {
-            zIndex: 4,
-            position: "absolute",
-            overflow: "hidden",
-            boxSizing: "border-box",
-            backgroundColor: SITE_COLORS.appBorder,
-            border: `2px solid ${SITE_COLORS.appBorder2}`,
-            padding: "3px"
-        },
-        header: {
-            Container: {
-                position: "relative",
-                zIndex: 4,
-                width: '100%',
-                height: "40px",
-                boxSizing: "border-box",
-                backgroundColor: SITE_COLORS.appHeaderBackground,
-                marginBottom: "5px",
-                padding: "2px"
-            },
-            title: {
-                position: "absolute",
-                left: "10px",
-                top: "10px",
-                fontSize: "1.4rem",
-                fontFamily: "'Jersey 25', serif",
-                fontOpticalSizing: "auto",
-                fontWeight: 300,
-                fontStyle: "normal",
-                color: SITE_COLORS.headingText,
-                padding: "0px",
-                margin: "0px"
-            },
-            closeButton: {
-                cursor: "pointer",
-                position: "absolute",
-                right: "10px",
-                top: "0px",
-                height: "100%"
-            },
-        },
-        content: {
-            container: {
-                position: "relative",
-                overflowY: "auto",
-                width: "100%",
-                height: "calc(100% - 60px)",
-                boxSizing: "border-box",
-                backgroundColor: SITE_COLORS.appBodyBackground,
-                border: `2px solid ${SITE_COLORS.appBorder3}`
-            },
-            scrollContainer: {
-                position: "relative",
-                zIndex: 4,
-                width: "auto",
-                height: "auto",
-                boxSizing: "border-box",
-                padding: "10px"
-            }
-        }
+export const AppStyle = {
+    mainContainer: {
+        zIndex: 4,
+        position: "absolute",
+        overflow: "hidden",
+        boxSizing: "border-box",
+        backgroundColor: appColors.border.middle,
+        border: `2px solid ${appColors.border.outer}`,
+        padding: "3px"
     },
 
-    aboutMe: {
-        profilePic: {
+    header: {
+        container: {
             position: "relative",
-            float: "right",
-            width: '500px',
-            height: '500px',
-            borderRadius: '50%',
+            zIndex: 4,
+            width: '100%',
+            height: "40px",
+            boxSizing: "border-box",
+            backgroundColor: appColors.header,
+            marginBottom: "5px",
+            padding: "2px"
+        },
+        text: {
+            position: "absolute",
+            left: "10px",
+            top: "0px",
+            ...fontStyles.header.appTitle,
+            color: textColors.header.style1,
+            padding: "0px",
+            margin: "0px"
+        },
+        closeButton: {
+            cursor: "pointer",
+            position: "absolute",
+            right: "10px",
+            top: "0px",
+            height: "100%"
+        },
+    },
+
+    content: {
+        container: {
+            position: "relative",
+            overflowY: "auto",
+            width: "100%",
+            height: "calc(100% - 60px)",
+            boxSizing: "border-box",
+            backgroundColor: appColors.body,
+            border: `2px solid ${appColors.border.inner}`
         },
 
-        bodyText: {
+        scrollContainer: {
             position: "relative",
-            fontSize: "1.5em",
-            color: SITE_COLORS.bodyText,
-            padding: "2px",
-        },
+            zIndex: 4,
+            width: "auto",
+            height: "auto",
+            boxSizing: "border-box",
+            padding: "10px",
 
-        skills: {
-            container: {
+            scrollbarColor: `${otherColors.scrollbar.thumb} ${otherColors.scrollbar.track}`,
+            scrollbarWidth: "thin"
+        }
+    },
+}
+
+export const AboutMeStyles = {
+    profilePic: {
+        position: "relative",
+        float: "right",
+        width: '500px',
+        height: '500px',
+        borderRadius: '50%',
+    },
+
+    bodyText: {
+        ...fontStyles.body.style2,
+        color: textColors.body.style1,
+        padding: "2px",
+    },
+
+    skills: {
+        body: {
+            main: {
                 display: "grid",
                 gridTemplateColumns: "1fr 1fr 1fr 1fr",
                 width: "100%",
                 height: "auto",
                 boxSizing: "border-box",
-                backgroundColor: SITE_COLORS.appBodyBackground2,
-                boxShadow: `1px 5px 5px ${SITE_COLORS.appBodyShadow}`,
+                backgroundColor: appColors.aboutMe.skillsSectionBg,
+                boxShadow: `1px 5px 5px ${appColors.bodyShadow}`,
                 padding: "5px",
             },
-            sectionContainer: {
+            sub: {
                 textAlign: "center",
             },
-            headerText: {
-                textAlign: "center",
-                fontSize: "3em",
-                color: SITE_COLORS.bodyText,
-                paddingLeft: "10px",
+        },
+
+        text: {
+            header: {
+                ...fontStyles.header.style1,
+                color: textColors.header.style1,
+                paddingLeft: "20px",
+
             },
-            subHeaderText: {
-                fontSize: "2em",
-                color: SITE_COLORS.bodyText2,
-                height: "50px",
+            subHeader: {
+                ...fontStyles.subHeader.style2,
+                color: textColors.subHeader.style2,
                 padding: "2px",
             },
-            bodyText: {
-                fontSize: "1.5em",
-                color: SITE_COLORS.bodyText3,
+            body: {
+                ...fontStyles.body.style2,
+                color: textColors.body.style2,
                 padding: "2px",
             },
+        }
+    }
+}
+
+export const WorkDisplayStyle = {
+    nav: {
+        container: {
+            zIndex: 4,
+            position: "absolute",
+            overflowY: "none",
+            top: "50px",
+            width: '250px',
+            height: "calc(100% - 70px)",
+            boxSizing: "border-box",
+
+            backgroundColor: appColors.workShowcase.nav.mainContainer,
+            padding: "5px",
+        },
+
+        scrollContainer: {
+            overflowY: "auto",
+            height: "100%",
+            boxSizing: "border-box",
+        },
+
+        button: {
+            cursor: "pointer",
+
+            width: "100%",
+            height: "auto",
+
+            boxSizing: "border-box",
+            backgroundColor: appColors.workShowcase.nav.tab,
+            padding: "2px",
+            marginBottom: "10px",
+        },
+        text: {
+            ...fontStyles.subHeader.workShowcaseNav,
+            color: textColors.subHeader.style4,
+            textAlign: "center",
+            height: "auto",
+            padding: "0px",
         },
     },
 
-    workStyles: {
-        navButtons: {
-            container: {
-                zIndex: 4,
-                position: "absolute",
-                overflowY: "none",
-                top: "50px",
-                width: '250px',
-                height: "calc(100% - 70px)",
-                boxSizing: "border-box",
+    sections: {
+        container: {
+            display: "flex",
+            flexWrap: "wrap",
+            position: "relative",
+            backgroundColor: appColors.workShowcase.pieceOverView.main,
 
-                backgroundColor: SITE_COLORS.appHeaderBackground,
-                padding: "5px",
-            },
+            height: "auto",
+            width: "auto",
+            boxSizing: "border-box",
 
-            scrollContainer: {
-                overflowY: "auto",
-                height: "100%",
-                boxSizing: "border-box",
-            },
-
-            button: {
-                cursor: "pointer",
-
-                width: "100%",
-                height: "auto",
-
-                boxSizing: "border-box",
-                backgroundColor: SITE_COLORS.headerButtonBackground,
-                padding: "2px",
-                marginBottom: "10px",
-            },
-            text: {
-                textAlign: "center",
-                fontSize: "1.5em",
-                color: SITE_COLORS.bodyText,
-
-                height: "auto",
-
-                padding: "0px",
-            },
+            padding: "5px",
         },
 
-        sections: {
-            container: {
-                display: "flex",
-                flexWrap: "wrap",
-                position: "relative",
-                backgroundColor: SITE_COLORS.headerButtonBackground,
+        column: {
+            flex: "0",
+            justifyContent: "center",
+            alignItems: "center",
+            margin: "2px",
+        },
 
-                height: "auto",
-                width: "auto",
-                boxSizing: "border-box",
 
-                padding: "5px",
-            },
+    },
 
-            columns: {
-                flex: "0",
-                justifyContent: "center",
-                alignItems: "center",
-                margin: "2px",
-            },
-
-            piece: {
+    pieceDisplay: {
+        container: {
+            main: {
                 cursor: "pointer",
 
                 position: "relative",
-
                 height: "auto",
                 boxSizing: "border-box",
-
-                backgroundColor: SITE_COLORS.appBodyBackground3,
+                backgroundColor : appColors.workShowcase.pieceOverView.display,
                 padding: "5px",
             },
 
-            pieceHeader: {
-                fontSize: "1.5em",
-                textAlign: "center",
-
-                color: SITE_COLORS.bodyText,
-
-                width: "100%",
-                padding: "0px",
-                margin: "0px",
-            },
-
-            pieceImgContainer: {
+            img: {
                 display: "flex",
                 flexWrap: "wrap",
 
@@ -211,30 +206,42 @@ export const AppStyles = {
                 boxSizing: "border-box",
 
                 padding: "4px",
-            },
+            }
+        },
 
-            pieceImg: {
-                width: "100%",
-                height: "auto",
-                boxSizing: "border-box",
-            },
+        pieceImg: {
+            width: "100%",
+            height: "auto",
+            boxSizing: "border-box",
+        },
 
-            pieceBody: {
-                fontSize: "1.0em",
+        text: {
+            header: {
+                ...fontStyles.subHeader.style2,
+
+                color: textColors.subHeader.style1,
                 textAlign: "center",
 
-                color: SITE_COLORS.bodyText,
+                width: "100%",
+                padding: "0px",
+                margin: "0px",
+            },
+            body: {
+                ...fontStyles.body.style2,
+
+                color: textColors.body.style1,
+                textAlign: "center",
 
                 width: "100%",
                 padding: "0px",
 
                 margin: "0px",
                 marginTop: "10px",
-            },
-        },
-
-        works: {
-
+            }
         },
     },
+};
+
+export const Works = {
+
 }

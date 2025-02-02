@@ -3,8 +3,8 @@ import ImgElement from "../../elements/ImgElement.js";
 import EmbeddedElement from "../../elements/EmbeddedElement.js";
 import { BodyTextElement, HeaderTextElement } from "../../elements/TextElements.js";
 import Work from "./Work.js";
-import { SITE_COLORS } from "../../site_styles/SiteColors.js";
-import { AppStyles } from "../../site_styles/ComputerAppStyles.js";
+import { appColors } from "../../site_styles/SiteColors.js";
+import { WorkDisplayStyle } from "../../site_styles/ComputerAppStyles.js";
 
 // the used to organize the overview of works in the portfolio
 class WorkSection {
@@ -12,7 +12,7 @@ class WorkSection {
         this.name = name;
         this.parentName = parentName;
         this.screen = parents.screen;
-        this.sectionContainer = new ContainerElement(this.name + "_Section", AppStyles.workStyles.sections.container, parents.parent);
+        this.sectionContainer = new ContainerElement(this.name + "_Section", WorkDisplayStyle.sections.container, parents.parent);
 
         this.otherSections = new Map();
         this.titleElement = titleElement;
@@ -35,14 +35,14 @@ class WorkSection {
     }
 
     createSectionNav(parent) {
-        this.navButton = new ContainerElement(this.name + "_Button", AppStyles.workStyles.navButtons.button, parent);
-        let buttonTitle = new HeaderTextElement("h3", { title: this.name }, AppStyles.workStyles.navButtons.text, this.navButton.GetBody());
+        this.navButton = new ContainerElement(this.name + "_Button", WorkDisplayStyle.nav.button, parent);
+        let buttonTitle = new HeaderTextElement("h3", { title: this.name }, WorkDisplayStyle.nav.text, this.navButton.GetBody());
 
         $(this.navButton.GetBody()).on('mouseover', () => {
-            this.navButton.GetStyleSheet().backgroundColor = SITE_COLORS.headerButtonHoverBackground;
+            this.navButton.GetStyleSheet().backgroundColor = appColors.workShowcase.nav.tabHover;
         });
         $(this.navButton.GetBody()).on('mouseout', () => {
-            this.navButton.GetStyleSheet().backgroundColor = SITE_COLORS.headerButtonBackground;
+            this.navButton.GetStyleSheet().backgroundColor = appColors.workShowcase.nav.tab;
         });
         $(this.navButton.GetBody()).on('click', () => {
             this.titleElement.GetBody().textContent = `${this.parentName} - ${this.name}`;
@@ -75,13 +75,13 @@ class WorkSection {
     createColumns() {
         let numOfWorks = Object.keys(this.works).length;
         if (this.numOfWorks <= 3) {
-            AppStyles.workStyles.sections.columns.flex = `${100 / this.numOfWorks}%`;
+          WorkDisplayStyle.sections.column.flex   = `${100 / this.numOfWorks}%`;
         }
         else {
-            AppStyles.workStyles.sections.columns.flex = '33.33%';
+            WorkDisplayStyle.sections.column.flex = '33.33%';
         }
         for (let i = 0; i < this.maxColumns; i++) {
-            let column = new ContainerElement(null, AppStyles.workStyles.sections.columns, this.sectionContainer.GetBody());
+            let column = new ContainerElement(null,  WorkDisplayStyle.sections.column, this.sectionContainer.GetBody());
             this.sectionColumns.push(column);
         }
     }

@@ -1,4 +1,5 @@
-import { SITE_COLORS } from "./SiteColors.js";
+import { deskTopColors, textColors } from "./SiteColors.js";
+import { fontStyles } from './TextStyles.js';
 
 export const DeskTopStyles = {
     desktop: {
@@ -11,7 +12,6 @@ export const DeskTopStyles = {
         position: "relative",
         boxSizing: "border-box",
         backgroundImage: "url('./assets/computer/background.png')",
-        backgroundColor: SITE_COLORS.desktopBackground,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
@@ -27,8 +27,8 @@ export const DeskTopStyles = {
         width: "100%",
         height: "40px",
         boxSizing: "border-box",
-        backgroundColor: SITE_COLORS.taskBarBackground,
-        boxShadow: `0 -4px 10px ${SITE_COLORS.taskBarShadow}`,
+        backgroundColor: deskTopColors.taskBar.main,
+        boxShadow: `0 -4px 10px ${deskTopColors.taskBar.shadow}`,
         padding: "5px",
     },
 
@@ -38,10 +38,13 @@ export const DeskTopStyles = {
             left: '0px',
             display: "flex",
             flexWrap: "wrap",
+
             height: "calc(100% - 40px)",
             width: "auto",
+
             boxSizing: "border-box",
-            padding: "20px",
+            padding: "0px",
+            paddingTop: "20px",
         },
 
         column: {
@@ -60,13 +63,9 @@ export const DeskTopStyles = {
         },
 
         label: {
-            fontSize: "1.4rem",
-            fontFamily: "'Jersey 25', serif",
-            fontOpticalSizing: "auto",
-            fontWeight: 300,
-            fontStyle: "normal",
-            color: SITE_COLORS.shortCutText,
-            textShadow: `4px 4px 3px ${SITE_COLORS.textShadow}`,
+            ...fontStyles.subHeader.siteNav,
+            color: textColors.subHeader.style1,
+            textShadow: `4px 4px 3px ${textColors.shadow}`,
             margin: "0px",
         },
 
