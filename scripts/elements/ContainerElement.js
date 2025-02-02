@@ -16,7 +16,7 @@ class ContainerElement extends BaseElement {
     }
 
     SetAttributes() {
-        // overrided todo nothing
+        
     }
 
 }

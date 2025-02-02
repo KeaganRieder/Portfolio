@@ -1,4 +1,3 @@
-
 /*
     BaseElement class is the parent class for all elements of the site
     It contains the basic properties and methods that all elements have
@@ -15,12 +14,24 @@ class BaseElement {
         this.CreateElement();
     }
 
+    //returns the main container of the element
     GetBody() {
         return this.element;
     }
-
+    //returns the elements style sheet
     GetStyleSheet() {
         return this.element.style;
+    }
+
+    //sets the parent of the element
+    SetParent(parent) {
+        if (this.parent != null) {
+            return;
+        }
+        else if (parent != null) {
+            this.parent = parent;
+            $(this.parent).append(this.element);
+        }
     }
 
     // Create the element and set its attributes

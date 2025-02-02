@@ -12,7 +12,7 @@ class ImgElement extends BaseElement {
     SetAttributes() {
         let src = "./assets/"+ this.attributes.imgSrc;
         this.element.src = src;
-        this.element.alt = this.attributes.name;
+        this.element.alt = this.attributes.title;
     }
 }
 
