@@ -74,8 +74,8 @@ class WorkSection {
 
     createColumns() {
         let numOfWorks = Object.keys(this.works).length; //need fix counting
-        if (this.numOfWorks <= 3) {
-          WorkDisplayStyle.sections.column.flex   = `${100 / this.numOfWorks}%`;
+        if (numOfWorks <= 3) {
+          WorkDisplayStyle.sections.column.flex   = `33.33%`;
         }
         else {
             WorkDisplayStyle.sections.column.flex = '25%';

@@ -44,8 +44,8 @@ export const WorkDisplayContent = {
                                 developer is currently more of a hobby, a way to practice and learn new skills.
                             `}
                         },
-                        test:{
-                            type:"bodyText",
+                        test: {
+                            type: "bodyText",
                             content: {
                                 bodyText: "this is a test",
                             }
@@ -59,26 +59,114 @@ export const WorkDisplayContent = {
     games: {
         title: "Games",
         type: "section",
-        works: {},
+        works: {
+            cookieClickerClone: {
+                title: "Cookie Clicker Game",
+                content: {
+                    highLight: {},
+                    overview: {},
+                },
+            },
+            underUs: {
+                title: "Under Us",
+                content: {
+                    highLight: {},
+                    overview: {},
+                },
+            },
+            TicTacToe: {
+                title: "Tic Tac Toe",
+                content: {
+                    highLight: {},
+                    overview: {},
+                },
+            },
+        },
     },
 
     webDev: {
         title: "Web Development",
         type: "section",
-        works: {},
+        works: {
+            puddleClicker: {
+                title: "Puddle Clicker",
+                content: {
+                    highLight: {},
+                    overview: {},
+                },
+            },
+
+            SlimeClicker: {
+                title: "Slime Clicker",
+                content: {
+                    highLight: {},
+                    overview: {},
+                },
+            },
+
+            portFolioSite:{
+                title: "This Site",
+                content: {
+                    highLight: {},
+                    overview: {},
+                },
+            }
+        },
     },
 
     puzzleSolvers: {
         title: "Puzzle Solvers",
         type: "section",
-        works: {},
+        works: {
+            missionaryCannibalProblem: {
+                title: "Missionary, Cannibal Problem",
+                content: {
+                    highLight: {},
+                    overview: {},
+                },
+            },
+            nQueens: {
+                title: "N-Queens Problem",
+                content: {
+                    highLight: {},
+                    overview: {},
+                },
+            },
+        },
     },
 
     interactiveArt: {
         title: "Interactive Art",
         type: "section",
         works: {
-
+            perlinGalaxy: {
+                title: "Perlin Galaxy",
+                content: {
+                    highLight: {},
+                    overview: {},
+                },
+            },
+            dynamicCityScape: {
+                title: "Dynamic CityScape",
+                content: {
+                    highLight: {},
+                    overview: {},
+                },
+            },
+            openGlTown: {
+                title: "OpenGl Town",
+                content: {
+                    highLight: {},
+                    overview: {},
+                },
+            },
+            perlinDreamScape: {
+                title: "Perlin DreamScape",
+                content: {
+                    highLight: {},
+                    overview: {},
+                },
+            },
         },
     },
 
@@ -86,32 +174,32 @@ export const WorkDisplayContent = {
         title: "pixelArt",
         type: "section",
         works: {
-            homeAmongTheStars:{
+            homeAmongTheStars: {
                 title: "Home Among The Stars",
-                content:{
-highLight: {},
-overview:{},
+                content: {
+                    highLight: {},
+                    overview: {},
                 },
             },
-            wintersFirstLight:{
+            wintersFirstLight: {
                 title: "Winter's First Light",
                 content: {
-highLight:{},
-overview:{},
+                    highLight: {},
+                    overview: {},
                 },
             },
-            sunsRest:{
-                title:"Sun's Rest",
-                content:{
-highLight:{},
-overview:{},
+            sunsRest: {
+                title: "Sun's Rest",
+                content: {
+                    highLight: {},
+                    overview: {},
                 },
             },
-            untitled:{
+            untitled: {
                 title: "Untitled",
-                content:{
-highLight:{},
-overview:{},
+                content: {
+                    highLight: {},
+                    overview: {},
                 },
             },
 
@@ -121,6 +209,28 @@ overview:{},
     BlenderArt: {
         title: "3D Art",
         type: "section",
-        works: {},
+        works: {
+            forgottenPot: {
+                title: "Forgotten Pot",
+                content: {
+                    highLight: {},
+                    overview: {},
+                },
+            },
+            rainyDay: {
+                title: "Rainy Day",
+                content: {
+                    highLight: {},
+                    overview: {},
+                },
+            },
+            lonelyRoad: {
+                title: "Lonely Road",
+                content: {
+                    highLight: {},
+                    overview: {},
+                },
+            },
+        },
     },
 }

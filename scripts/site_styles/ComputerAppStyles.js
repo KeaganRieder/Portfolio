@@ -214,6 +214,7 @@ export const WorkDisplayStyle = {
                 boxSizing: "border-box",
                 backgroundColor : appColors.workShowcase.pieceOverView.display,
                 padding: "5px",
+                margin: "5px",
             },
 
             img: {

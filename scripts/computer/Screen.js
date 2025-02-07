@@ -6,6 +6,7 @@ import WorkDisplay from "../computer_apps/work_showcase/WorkDisplay.js";
 import { AboutMeContent, ResumeContent, ArtistCvContent } from "../content/AppContent.js";
 import { WorkDisplayContent } from "../content/WorkDisplayContent.js";
 import { DeskTopStyles } from "../site_styles/DesktopStyles.js";
+import { ComputerContent } from "../content/ComputerContent.js";
 
 /*
   the screen is the holds the brunt of the site, and does things 
@@ -37,25 +38,25 @@ class Screen {
 
     let appParents = { parent: this.screen.GetBody(), shortCutParent: internalApps.GetBody() };
 
-    this.apps.set("About_Me", new AboutMe({ name: "AboutMe", text: "About_Me", imgSrc: "apps/icons/text_doc.png" }, AboutMeContent, appParents));
-    this.apps.set("Resume", new ComputerApp({ name: "Resume", text: "Resume", imgSrc: "apps/icons/text_doc.png" }, ResumeContent, appParents));
-    this.apps.set("Artist Cv", new ComputerApp({ name: "Artist_Cv", text: "Artist_Cv", imgSrc: "apps/icons/text_doc.png" }, ArtistCvContent, appParents));
-    this.apps.set("WorkShowcase", new WorkDisplay({ name: "Works", text: "Works", imgSrc: "apps/icons/folder.png" }, WorkDisplayContent, appParents));
+    this.apps.set("About_Me", new AboutMe({ name: "AboutMe", text: "About_Me", imgSrc: ComputerContent.shortCuts.textDoc }, AboutMeContent, appParents));
+    this.apps.set("Resume", new ComputerApp({ name: "Resume", text: "Resume", imgSrc: ComputerContent.shortCuts.textDoc }, ResumeContent, appParents));
+    this.apps.set("Artist Cv", new ComputerApp({ name: "Artist_Cv", text: "Artist_Cv", imgSrc: ComputerContent.shortCuts.textDoc }, ArtistCvContent, appParents));
+    this.apps.set("WorkShowcase", new WorkDisplay({ name: "Works", text: "Works", imgSrc: ComputerContent.shortCuts.folder }, WorkDisplayContent, appParents));
 
     new AppShortcut(
-      { name: "Linkedin", text: "Linkedin", imgSrc: "apps/icons/linkedin.png" },
+      { name: "Linkedin", text: "Linkedin", imgSrc: ComputerContent.shortCuts.linkedin },
       externalApps.GetBody(),
       () => { window.open("https://www.linkedin.com/in/keagan-rieder/", "_blank") }
     );
 
     new AppShortcut(
-      { name: "GitHub", text: "GitHub", imgSrc: "apps/icons/github.png" },
+      { name: "GitHub", text: "GitHub", imgSrc: ComputerContent.shortCuts.github },
       externalApps.GetBody(),
       () => { window.open("https://github.com/KeaganRieder", "_blank") }
     );
 
     new AppShortcut(
-      { name: "Email", text: "Email", imgSrc: "apps/icons/email.png" },
+      { name: "Email", text: "Email", imgSrc: ComputerContent.shortCuts.email },
       externalApps.GetBody(),
       () => { window.open("mailto:'kagan@rieder.ca'", "_blank") }
     );

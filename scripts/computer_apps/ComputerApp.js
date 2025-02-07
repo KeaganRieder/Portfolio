@@ -5,6 +5,7 @@ import { BodyTextElement, HeaderTextElement } from "../elements/TextElements.js"
 import { AppStyle } from "../site_styles/ComputerAppStyles.js";
 import { DeskTopStyles } from "../site_styles/DesktopStyles.js";
 import { appColors, deskTopColors, } from "../site_styles/SiteColors.js";
+import { AppContent } from "../content/AppContent.js";
 
 /*
     a shortcut is used to open an app
@@ -74,7 +75,7 @@ class ComputerApp {
     }
 
     createCloseButton() {
-        let closeButton = new ImgElement({ name: "close button", imgSrc: "apps/elements/close_button.png" }, AppStyle.header.closeButton,
+        let closeButton = new ImgElement({ name: "close button", imgSrc: AppContent.closeButton }, AppStyle.header.closeButton,
             this.headerContainer.GetBody());
 
         $(closeButton.GetBody()).on('click', () => { this.closeApp() });
@@ -138,7 +139,7 @@ class ComputerApp {
 
     resizeApp() {
         this.appContainer.GetStyleSheet().width = `95%`;
-        this.appContainer.GetStyleSheet().height = `calc(80% - 26px)`;
+        this.appContainer.GetStyleSheet().height = `calc(90% - 26px)`;
         this.appContainer.GetStyleSheet().top = `${this.top}px`;
         this.appContainer.GetStyleSheet().left = `${this.left}px`;
     }

@@ -1,5 +1,9 @@
 import { AboutMeStyles, AppStyle } from "../site_styles/ComputerAppStyles.js";
 
+export const AppContent = {
+    closeButton: "nav_icons/close_button.png",
+}
+
 /*
     contains all the content for the about me app
 */
@@ -7,7 +11,7 @@ export const AboutMeContent = {
     profilePic: {
         type: "Img",
         style: AboutMeStyles.profilePic,
-        content: { name: "profilePic", imgSrc: "apps/elements/logo.gif" }
+        content: { name: "profilePic", imgSrc: "about_me/logo.gif" }
     },
     bio: {
         type: "bodyText",
@@ -78,7 +82,7 @@ export const ResumeContent = {
     resume: {
         type: "iframe",
         style: AppStyle.content.embeddedElement.iframe,
-        content: { src: "./assets/apps/pdfs/resume.pdf", type: 'application/pdf' }
+        content: { src: "./assets/job_application/resume.pdf", type: 'application/pdf' }
     }
 }
 
@@ -89,6 +93,6 @@ export const ArtistCvContent = {
     resume: {
         type: "iframe",
         style: AppStyle.content.embeddedElement.iframe,
-        content: { src: "./assets/apps/pdfs/artistCv.pdf", type: 'application/pdf' }
+        content: { src: "./assets/job_application/artistCv.pdf", type: 'application/pdf' }
     }
 }

@@ -1,3 +1,4 @@
+import { ComputerContent } from "../content/ComputerContent.js";
 import { deskTopColors, textColors } from "./SiteColors.js";
 import { fontStyles } from './TextStyles.js';
 
@@ -11,7 +12,7 @@ export const DeskTopStyles = {
         zIndex: 0,
         position: "relative",
         boxSizing: "border-box",
-        backgroundImage: "url('./assets/computer/background.png')",
+        backgroundImage: `url(${ComputerContent.screen.backGround})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
