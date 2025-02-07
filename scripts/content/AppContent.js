@@ -1,4 +1,4 @@
-import { AboutMeStyles } from "../site_styles/ComputerAppStyles.js";
+import { AboutMeStyles, AppStyle } from "../site_styles/ComputerAppStyles.js";
 
 /*
     contains all the content for the about me app
@@ -77,7 +77,7 @@ export const AboutMeContent = {
 export const ResumeContent = {
     resume: {
         type: "iframe",
-        size: {  width: '100%', height: '92%' },
+        style: AppStyle.content.embeddedElement.iframe,
         content: { src: "./assets/apps/pdfs/resume.pdf", type: 'application/pdf' }
     }
 }
@@ -88,7 +88,7 @@ export const ResumeContent = {
 export const ArtistCvContent = {
     resume: {
         type: "iframe",
-        size: { width: '100%', height: '92%' },
+        style: AppStyle.content.embeddedElement.iframe,
         content: { src: "./assets/apps/pdfs/artistCv.pdf", type: 'application/pdf' }
     }
 }

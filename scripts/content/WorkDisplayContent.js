@@ -6,6 +6,7 @@ export const WorkDisplayContent = {
         title: "Current Projects",
         type: "section",
         works: {
+
             atomationCode: {
                 title: "Atomation-Code",
                 content: {
@@ -24,7 +25,7 @@ export const WorkDisplayContent = {
                     overview: {
                         artistStatement: {
                             type: "bodyText",
-                            // style: AppStyles.aboutMe.bodyText,
+                            // style: 
                             content: {
                                 bodyText: `
                                 I’m a programmer and artist, currently attending the University of Lethbridge for a BFA in New Media 
@@ -42,6 +43,12 @@ export const WorkDisplayContent = {
                                 elements from automation games and colony sims to create different experiences. The game’s 
                                 developer is currently more of a hobby, a way to practice and learn new skills.
                             `}
+                        },
+                        test:{
+                            type:"bodyText",
+                            content: {
+                                bodyText: "this is a test",
+                            }
                         },
                     },
                 },
@@ -70,13 +77,45 @@ export const WorkDisplayContent = {
     interactiveArt: {
         title: "Interactive Art",
         type: "section",
-        works: {},
+        works: {
+
+        },
     },
 
     pixelArt: {
         title: "pixelArt",
         type: "section",
-        works: {},
+        works: {
+            homeAmongTheStars:{
+                title: "Home Among The Stars",
+                content:{
+highLight: {},
+overview:{},
+                },
+            },
+            wintersFirstLight:{
+                title: "Winter's First Light",
+                content: {
+highLight:{},
+overview:{},
+                },
+            },
+            sunsRest:{
+                title:"Sun's Rest",
+                content:{
+highLight:{},
+overview:{},
+                },
+            },
+            untitled:{
+                title: "Untitled",
+                content:{
+highLight:{},
+overview:{},
+                },
+            },
+
+        },
     },
 
     BlenderArt: {

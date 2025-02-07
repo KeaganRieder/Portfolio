@@ -73,12 +73,12 @@ class WorkSection {
     }
 
     createColumns() {
-        let numOfWorks = Object.keys(this.works).length;
+        let numOfWorks = Object.keys(this.works).length; //need fix counting
         if (this.numOfWorks <= 3) {
           WorkDisplayStyle.sections.column.flex   = `${100 / this.numOfWorks}%`;
         }
         else {
-            WorkDisplayStyle.sections.column.flex = '33.33%';
+            WorkDisplayStyle.sections.column.flex = '25%';
         }
         for (let i = 0; i < this.maxColumns; i++) {
             let column = new ContainerElement(null,  WorkDisplayStyle.sections.column, this.sectionContainer.GetBody());

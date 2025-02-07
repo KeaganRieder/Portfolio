@@ -1,3 +1,4 @@
+import EmbeddedElement from '../elements/EmbeddedElement.js';
 import { appColors, textColors, otherColors } from './SiteColors.js';
 import { fontStyles } from './TextStyles.js';
 
@@ -7,6 +8,7 @@ export const AppStyle = {
         position: "absolute",
         overflow: "hidden",
         boxSizing: "border-box",
+        
         backgroundColor: appColors.border.middle,
         border: `2px solid ${appColors.border.outer}`,
         padding: "3px"
@@ -62,7 +64,25 @@ export const AppStyle = {
 
             scrollbarColor: `${otherColors.scrollbar.thumb} ${otherColors.scrollbar.track}`,
             scrollbarWidth: "thin"
-        }
+        },
+        embeddedElement: {
+            iframe:{
+                display: 'inline-block',
+                border: 'none',
+                boxSizing: 'border-box',
+                overflowX:'hidden',
+                width: '100%',
+                height: '100%',
+                paddingLeft:'20.5%',
+                paddingRight:'24%',
+            },
+            embed:{
+                display:'inline-block',
+                borderStyle: 'none',
+                width: 'auto',
+                height: '100%',
+            },
+        },
     },
 }
 
@@ -124,7 +144,7 @@ export const WorkDisplayStyle = {
         container: {
             zIndex: 4,
             position: "absolute",
-            overflowY: "none",
+            overflowY: "auto",
             top: "50px",
             width: '250px',
             height: "calc(100% - 70px)",
@@ -135,9 +155,9 @@ export const WorkDisplayStyle = {
         },
 
         scrollContainer: {
-            overflowY: "auto",
-            height: "100%",
+            height: "auto",
             boxSizing: "border-box",
+            paddingBottom: "50px",
         },
 
         button: {

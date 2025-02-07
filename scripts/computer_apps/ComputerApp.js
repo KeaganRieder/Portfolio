@@ -121,17 +121,16 @@ class ComputerApp {
             case "bodyText":
                 return new BodyTextElement(element.content, element.style, this.contentContainer.GetBody());
             case "embedded":
-                this.appBody.GetBody().remove();
-                this.contentContainer.GetBody().remove();
-                this.appBody = null;
-                this.contentContainer = null;
-                return new EmbeddedElement(element.content, element.size, this.appContainer.GetBody());
             case "iframe":
-                this.appBody.GetBody().remove();
                 this.contentContainer.GetBody().remove();
-                this.appBody = null;
                 this.contentContainer = null;
-                return new IframeElement(element.content, element.size, this.appContainer.GetBody());
+                this.appBody.GetStyleSheet().overflowY = 'hidden'; // copy to embed or add if statment and combine with embed functionality
+                if(element.type == "iframe"){
+                    return new IframeElement(element.content, element.style, this.appBody.GetBody());
+                }
+                else{
+                    return new EmbeddedElement(element.content, element.style, this.appBody.GetBody());
+                }
             default:
                 return null;
         }
@@ -139,7 +138,7 @@ class ComputerApp {
 
     resizeApp() {
         this.appContainer.GetStyleSheet().width = `95%`;
-        this.appContainer.GetStyleSheet().height = `90%`;
+        this.appContainer.GetStyleSheet().height = `calc(80% - 26px)`;
         this.appContainer.GetStyleSheet().top = `${this.top}px`;
         this.appContainer.GetStyleSheet().left = `${this.left}px`;
     }
