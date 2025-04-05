@@ -1,27 +1,9 @@
-/*
---------------------------------------------------------------------------
-    main js file fo rmy portfolio site, it handles bring 
-   other js scripts together along with other things and creating
-   the site
---------------------------------------------------------------------------
-*/
-import Screen from "./computer/Screen.js";
+import HomePage from "./sections/home_page/home_page.js";
 
-/*
---------------------------------------------------------------------------
-    Variables and classes
---------------------------------------------------------------------------
-*/
-var screen = new Screen();
-
-/*
---------------------------------------------------------------------------
-    executing and finalizing set up
---------------------------------------------------------------------------
-*/
+var siteHomePage = new HomePage("Screen", "");
 
 $(document).ready(function () {
 
-    screen.CreateScreenElements();
+    siteHomePage.render();
 
 });

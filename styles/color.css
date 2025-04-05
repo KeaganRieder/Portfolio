@@ -1,0 +1,56 @@
+:root {
+    /* Text Colors */
+    --h1Text: #f1f8ff;
+    --h2Text: #d8dee4;
+    --h3Text: #c2c7cc;
+
+    --bodyText01: #d8dee4;
+    --bodyText02: #cccccc;
+
+    --navText: #ffffff;
+    --navHoverText: #badafa;    
+
+    --linkText: #e4e2e2;
+    --linkHoverText: #badafa;    
+
+    --textShadow: #000000;
+
+    /* Section Colors */
+    --sectionMainBg: #aab2b9;
+
+    --sectionHeaderBg01: #34383d;
+    --sectionHeaderBg02: #302f2f;
+
+    --sectionHeaderButtonBg: #696767;
+    --sectionHeaderButtonHoverBg: #2e2d2d;
+    --sectionHeaderButtonShadow: #1f1e1e;
+
+    --sectionSubHeader: #302f2f;
+
+    --sectionOuterBorder: #6c757d;
+    --sectionInnerBorder: #333538;
+
+    --sectionContentBg01: #415a77;
+    --sectionContentBg02: #1b263b;
+
+    --sectionShadow: #000000;
+
+    --scrollBarThumb: #6c757d;
+    --scrollBarTrack: #adb5bd;
+
+    /* Home Page colors */
+    --navigationBg: transparent;
+    --navigationHoverBg: #d3d3d3;
+
+    --taskBar: #34383d;
+    --taskBarShadow: #1e2022;
+    --searchBar: #302f2f;
+    --searchBarShadow: #161515;
+
+    /* About Me Colors */
+
+    /* Work Showcase Colors */
+    --workDisplayTitleBg: #1b263b;
+    --workDisplayBg: #4f5d70;
+    --workDisplayHoverBg: #8aa3c4;
+}

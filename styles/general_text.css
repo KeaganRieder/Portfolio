@@ -1,0 +1,52 @@
+@import url(./color.css);
+
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+.centerText {
+    text-align: center;
+}
+
+h1 {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 3.5rem;
+
+    color: var(--h1Text);
+}
+
+h2 {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 2.5rem;
+
+    color: var(--h2Text);
+}
+
+h3 {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 2rem;
+
+    color: var(--h3Text);
+}
+
+p {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.75rem;
+}
+
+.bodyText01 {
+    color: var(--bodyText01);
+}
+
+.bodyText02 {
+    color: var(--bodyText02);
+}
+
+
