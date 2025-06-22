@@ -1,18 +1,22 @@
 @import url(../color.css);
 
-.sectionContainer{
+.sectionContainer {
     position: absolute;
     overflow: hidden;
     z-index: 3;
 
     background-color: var(--sectionMainBg);
 
+    width: 90%;
+    height: 90%;
     box-sizing: border-box;
     border: 2px solid var(--sectionOuterBorder);
     padding: 2px;
+
+
 }
 
-.sectionHeader{
+.sectionHeader {
     position: relative;
     z-index: 4;
 
@@ -26,9 +30,9 @@
     padding: 2px;
 }
 
-.sectionHeaderText{
+.sectionHeaderText {
     position: relative;
-    float:left;
+    float: left;
     z-index: 4;
 
     width: 100%;
@@ -38,7 +42,7 @@
     padding: 10px;
 }
 
-.sectionHeaderButton{
+.sectionHeaderButton {
     position: relative;
     float: right;
 
@@ -52,12 +56,12 @@
     padding: 10px;
 }
 
-.sectionHeaderButton:hover{
+.sectionHeaderButton:hover {
     background-color: var(--sectionHeaderButtonHoverBg);
 
 }
 
-.sectionSubHeader{
+.sectionSubHeader {
     position: relative;
     z-index: 4;
 
@@ -70,7 +74,7 @@
     padding: 2px;
 }
 
-.sectionContentContainer{
+.sectionContentContainer {
     position: relative;
     overflow-y: auto;
 
@@ -85,7 +89,7 @@
     border: 2px solid var(--sectionInnerBorder);
 }
 
-.sectionContentScrollContainer{
+.sectionContentScrollContainer {
     position: relative;
     z-index: 4;
 
@@ -96,7 +100,7 @@
     padding: 10px;
 }
 
-iframe{
+iframe {
     display: inline-block;
     overflow-x: hidden;
 

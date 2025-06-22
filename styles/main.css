@@ -21,7 +21,7 @@ body {
     height: calc(100% - 40px);
 
     background-image: url(../assets/main/background.png);
-    background-size: cover;
+    background-size: 100% calc(100% + 40px);
     background-repeat: no-repeat;
     background-color: gray;
     box-sizing: border-box;
