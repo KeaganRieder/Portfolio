@@ -1,0 +1,117 @@
+@import url('./Colors.css');
+@import url('./Fonts.css');
+
+/* ======== Main Style ========= */
+.app {
+    position: absolute;
+    overflow: hidden;
+
+    background-color: var(--application-inner-border);
+    box-sizing: border-box;
+    border: 2px solid var(--application-outer-border);
+    padding: 2px;
+}
+
+.app-header {
+    position: relative;
+    background-color: var(--application-header-bg);
+
+    width: 100%;
+    height: 40px;
+
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    padding: 2px;
+}
+
+.app-header h1 {
+    position: relative;
+    float: left;
+
+    font-family: var(--header-font);
+    font-size: var(--font-size-3xl);
+    color: var(--text-header-primary);
+
+    width: 100%;
+    height: 40px;
+
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.app-header button {
+    position: relative;
+    float: right;
+
+    background-color: var(--header-button-bg);
+
+    cursor: pointer;
+
+    height: 100%;
+
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.app-header button:hover {
+    background-color: var(--header-button-bg-hover);
+}
+
+.app-body {
+    position: relative;
+    overflow-y: auto;
+
+    background-color: var(--application-primary-bg);
+
+    width: 100%;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb-bg) var(--scrollbar-track-bg);
+
+    box-sizing: border-box;
+    border: 2px solid var(--application-content-border);
+}
+
+.app-scroll-body {
+    position: relative;
+
+    height: auto;
+
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+/* ======== ShortCut Style ========= */
+.shortcut {
+    background-color: var(--navigation-bg);
+    cursor: pointer;
+}
+
+.shortcut:hover {
+    background-color: var(--navigation-bg-hover);
+}
+
+.shortcut-text {
+    font-family: var(--shortcut-font);
+    color: var(--text-nav);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.shortcut-text:hover {
+    color: var(--text-nav-hover);
+}
+
+.shortcut-icon {
+    width: 32px;
+    height: 32px;
+    display: block;
+    margin: 0 auto 8px;
+}
+
+/* ======== About Me Style ========= */
+
+/* ======== Projects Style ========= */
