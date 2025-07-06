@@ -1,16 +1,18 @@
 import React from 'react';
-import type { ShortcutProperties } from './Types';
-import '../../styles/ApplicationStyles.css';
+import type { ShortcutProperties } from './Properties.ts';
+import '../../styles/applications/Shortcuts.css';
 
-const Shortcut: React.FC<ShortcutProperties> = ({ appInfo, onOpen }) => {
+const AppShortcut: React.FC<ShortcutProperties> = ({ appInfo, onClick }) => {
     return (
-        <div
-            className="shortcut"
-            onClick={onOpen}        >
-            <img src={appInfo.iconSrc} alt={appInfo.name} className="shortcut-icon" />
-            <h4 className="shortcut-text">{appInfo.name}</h4>
-        </div>
+        <button className="shortcut" onClick={onClick}>
+            <img
+                src={appInfo.iconSrc}
+                alt={appInfo.name + '_icon'}
+                className="shortcut-icon"
+            />
+            <p className="shortcut-label">{appInfo.name }</p>
+        </button>
     );
-};
+}
 
-export default Shortcut;
+export default AppShortcut;

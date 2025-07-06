@@ -1,0 +1,90 @@
+@import url(../Fonts.css);
+@import url(../Colors.css);
+
+:root {
+    --taskbar-height: clamp(40px, 8vh, 60px);
+    --shortcut-cont-width: clamp(200px, 25%, 300px);
+    --shortcut-cont-padding: clamp(5px, 1vw, 15px);
+
+    --background-img-path: url(../../assets/main/background.png );
+}
+
+.desktop {
+    position: relative;
+    overflow: hidden;
+
+    width: 100%;
+    height: calc(100% - var(--taskbar-height));
+    background-image: var(--background-img-path);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: aliceblue;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.taskbar {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--taskbar-height);
+    background-color: var(--taskbar-primary-bg);
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 clamp(10px, 2vw, 30px);
+    box-shadow: 0 -4px 5px var(--taskbar-shadow);
+}
+
+.shortcutContainer {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    float: left;
+    max-height: calc(100% - var(--taskbar-height));
+    width: var(--shortcut-cont-width);
+    min-width: 150px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: var(--shortcut-cont-padding);
+    box-sizing: border-box;
+    gap: clamp(5px, 1vw, 10px);
+}
+
+/* Remove old fixed shortcut styling - now handled by Shortcuts.css */
+
+/* Responsive breakpoints for desktop layout */
+/* Mobile devices */
+@media only screen and (max-width: 600px) {
+    :root {
+        --taskbar-height: clamp(35px, 10vh, 50px);
+        --shortcut-cont-width: clamp(120px, 35%, 180px);
+        --shortcut-cont-padding: clamp(3px, 1.5vw, 8px);
+    }
+    
+    .shortcutContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Tablet devices */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    :root {
+        --taskbar-height: clamp(40px, 8vh, 55px);
+        --shortcut-cont-width: clamp(150px, 30%, 220px);
+        --shortcut-cont-padding: clamp(5px, 1.2vw, 12px);
+    }
+}
+
+/* Large screens */
+@media only screen and (min-width: 1200px) {
+    :root {
+        --taskbar-height: clamp(50px, 6vh, 70px);
+        --shortcut-cont-width: clamp(200px, 20%, 280px);
+        --shortcut-cont-padding: clamp(10px, 1vw, 20px);
+    }
+}

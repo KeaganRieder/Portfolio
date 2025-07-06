@@ -34,7 +34,7 @@
 
     /* Navigation */
     --navigation-bg: transparent;
-    --navigation-bg-hover: #d3d3d3;
+    --navigation-bg-hover: #d3d3d375;
 
     /* Buttons */
     --header-button-bg: transparent;
@@ -45,6 +45,7 @@
     --taskbar-primary-bg-hover: #575f68;
     --taskbar-primary--light-bg: #aab2b9;
     --taskbar-primary--light-bg-hover: #cad3db;
+    --taskbar-shadow: rgba(0, 0, 0, 0.1);
 
     /* ============================== */
     /*           TEXT COLORS          */

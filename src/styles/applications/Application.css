@@ -1,0 +1,103 @@
+@import url(../Fonts.css);
+@import url(../Colors.css);
+
+:root {
+    --header-height: 50px;
+    --content-height: calc(100% - var(--header-height) - 10px);
+}
+
+.app {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    width: 90%;
+    height: 90%;
+    background-color: var(--application-inner-border);
+    box-sizing: border-box;
+    border: 2px solid var(--application-outer-border);
+    padding: 5px;
+    padding-bottom: 10px;
+}
+
+.header {
+    position: relative;
+    background-color: var(--application-header-bg);
+    width: 100%;
+    height: var(--header-height);
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+    font-family: var(--header-font);
+    font-size: 2em;
+    color: var(--text-header-primary);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 10px;
+    margin: 0;
+}
+
+.x-button {
+    background-color: var(--header-button-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin-right: 20px;
+}
+
+.x-button:hover {
+    background-color: var(--header-button-bg-hover);
+}
+
+.x-button-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.content {
+    font-family: var(--body-primary-font);
+    color: var(--text-body-primary);
+    font-size: 1.25rem;
+
+
+    position: relative;
+    overflow-y: auto;
+
+    background-color: var(--application-primary-bg);
+
+    width: 100%;
+    height: var(--content-height);
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb-bg) var(--scrollbar-track-bg);
+
+    box-sizing: border-box;
+    border: 2px solid var(--application-content-border);
+    padding: 10px;
+
+}
+
+.scroll-content {
+    position: relative;
+
+    height: auto;
+
+    box-sizing: border-box;
+}
