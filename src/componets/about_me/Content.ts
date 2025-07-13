@@ -4,15 +4,15 @@ export const ArtistStatement: string = `I’m a programmer and artist, currently
 const Skills = [
     {
         category: "Languages",
-        skills: ["JavaScript", "TypeScript", "HTML", "CSS", "C++", "C#", "Python"]
+        skills: ["JavaScript", "TypeScript", "HTML", "CSS", "C++", "C#", "Processing"]
     },
     {
         category: "Game Engines",
-        skills: ["Unity", "Godot", "Unreal Engine"]
+        skills: ["Unity", "Godot"]
     },
     {
         category: "Tools",
-        skills: ["Git", "VSCode", "Blender", "Processing", "Aseprite", "Photoshop", "Illustrator"]
+        skills: ["Git", "VSCode", "Blender", "Aseprite", "Photoshop", "Illustrator"]
     },
 ];
 

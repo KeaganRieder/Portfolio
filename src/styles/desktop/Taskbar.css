@@ -1,0 +1,103 @@
+@import url(../Fonts.css);
+@import url(../Colors.css);
+
+.taskbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--taskbar-height);
+    background-color: var(--taskbar-primary-bg);
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    box-shadow: 0 -4px 5px var(--taskbar-shadow);
+}
+
+.taskbar-shortcuts-container {
+    display: flex;
+    height: 100%;
+    padding: 5px;
+
+    font-family: var(--shortcut-font);
+    color: var(--text-nav);
+    text-shadow: var(--text-shadow);
+    font-size: 1em;
+    text-align: center;
+    gap: 5px;
+
+}
+
+.taskbar-shortcuts-start {
+    background-color: var(--taskbar-start-bg);
+
+    border-top: 2px solid var(--taskbar-reflection);
+    border-left: 2px solid var(--taskbar-reflection);
+    border-bottom: 2px solid var(--taskbar-shadow);
+    border-right: 2px solid var(--taskbar-shadow);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.taskbar-shortcuts-start:hover {
+    background-color: var(--taskbar-start-bg-hover);
+}
+
+.taskbar-shortcuts-start img {
+    width: 30%;
+}
+
+.taskbar-shortcut {
+    background-color: var(--taskbar-shortcut-bg);
+
+    border-top: 2px solid var(--taskbar-reflection);
+    border-left: 2px solid var(--taskbar-reflection);
+    border-bottom: 2px solid var(--taskbar-shadow);
+    border-right: 2px solid var(--taskbar-shadow);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.taskbar-shortcut:hover {
+    background-color: var(--taskbar-shortcut-bg-hover);
+}
+
+.taskbar-shortcut img {
+    width: 30%;
+
+}
+
+.taskbar-shortcut-active {
+    background-color: var(--taskbar-shortcut-active-bg);
+
+    border-top: 2px solid var(--taskbar-shadow);
+    border-left: 2px solid var(--taskbar-shadow);
+    border-bottom: 2px solid var(--taskbar-reflection);
+    border-right: 2px solid var(--taskbar-reflection);
+    padding: 5px;
+}
+
+.clock {
+    position: relative;
+    float: right;
+
+    text-align: right;
+    margin-right: 20px;
+}
+
+.clock .time {
+    font-family: var(--shortcut-font);
+    font-size: 1.25em;
+    color: var(--text-header-secondary);
+    line-height: 1.2;
+}
+
+.clock .date {
+    font-family: var(--shortcut-font);
+    font-size: 1.25em;
+    color: var(--text-header-secondary);
+    line-height: 1;
+}

@@ -2,8 +2,8 @@
     /* ============================== */
     /*       BACKGROUND COLORS        */
     /* ============================== */
+
     /* Application */
-    
     --application-primary-bg: #415a77;
     --application-primary-bg-hover: #8aa3c4;
     --application-primary-bg-dark: #1b263b;
@@ -19,6 +19,7 @@
     --application-outer-border: #6c757d;
 
     --application-shadow: #000000;
+    --application-reflection: #9ca2ac;
 
     /* Application Content */
     --application-content-header1-bg: #4f5d70;
@@ -28,24 +29,42 @@
     --application-content-border: #606469;
 
     /* Project Showcase */
-    --project-showcase-bg: #8aa3c4;
-    --project-showcase-bg-hover: #a4c2e9;
-    --project-showcase-header-bg: #34383d;
+    --project-overview-bg: #8aa3c4;
+    --project-overview-bg-hover: #a4c2e9;
+    --project-overview-header-bg: #34383d;
+
+    --projects-bg: #2c3e5f;
+
+    --project-shadow: #000000;
+    --project-reflection: #9ca2ac;
 
     /* Navigation */
     --navigation-bg: transparent;
     --navigation-bg-hover: #d3d3d375;
 
+    --link-primary: #7c91a8;
+    --link-primary-hover: #a7c1df;
+
     /* Buttons */
     --header-button-bg: transparent;
     --header-button-bg-hover: #38414e;
-    
+
     /* TaskBar */
     --taskbar-primary-bg: #34383d;
     --taskbar-primary-bg-hover: #575f68;
     --taskbar-primary--light-bg: #aab2b9;
     --taskbar-primary--light-bg-hover: #cad3db;
-    --taskbar-shadow: rgba(0, 0, 0, 0.1);
+
+    --taskbar-start-bg: #4f5d70;
+    --taskbar-start-bg-hover: #909aa3;
+
+    --taskbar-shortcut-bg: #51575f;
+    --taskbar-shortcut-bg-hover: #94a0ad;
+    --taskbar-shortcut-active-bg: #3a4046;
+
+    --taskbar-shadow: #292828;
+    --taskbar-reflection: #dfdfdf;
+
 
     /* ============================== */
     /*           TEXT COLORS          */
@@ -54,11 +73,12 @@
     --text-header-secondary: #d8dee4;
     --text-header-tertiary: #c2c7cc;
 
+
     --text-body-primary: #ffffff;
     --text-body-secondary: #e4e2e2;
 
     --text-nav: #ffffff;
-    --text-nave-hover: #d3d3d3;
+    --text-nav-hover: #d3d3d3;
     --text-link: #badafa;
     --text-link-hover: #d3d3d3;
 
@@ -70,6 +90,6 @@
     --scrollbar-thumb-bg: #6c757d;
     --scrollbar-track-bg: #34383d;
 
-    
-    
+
+
 }

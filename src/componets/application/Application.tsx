@@ -1,14 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import AppShortcut from './Shortcut.tsx';
 import type { AppProperties } from './Properties.ts';
 import '../../styles/applications/Application.css';
+import '../../styles/desktop/Taskbar.css';
 import xButton from '../../assets/apps/close_button.png';
- 
+
 
 const Application: React.FC<AppProperties> = ({ appInfo, children, visible = false }) => {
 
     const [isVisible, setIsVisible] = useState(visible);
+    const [shortcutsContainer, setShortcutsContainer] = useState<HTMLElement | null>(null);
+    const [appTaskbarContainer, setAppTaskbar] = useState<HTMLElement | null>(null);
+
+    useEffect(() => {
+        // Find the shortcuts container after component mounts
+        const shortcutContainer = document.getElementById('shortcuts');
+        setShortcutsContainer(shortcutContainer);
+
+        // Find the taskbar container after component mounts
+        const taskbarContainer = document.getElementById('taskbar-shortcuts');
+        setAppTaskbar(taskbarContainer);
+    }, []);
 
     const OpenApp = () => {
         if (!isVisible) {
@@ -25,9 +38,12 @@ const Application: React.FC<AppProperties> = ({ appInfo, children, visible = fal
         <AppShortcut appInfo={appInfo} onClick={OpenApp} />
     );
 
-    // const appTaskbarIcon = (
-    //     <div> todo </div>
-    // )
+    const appTaskbar = (
+        <div className='taskbar-shortcut' style={{ display: isVisible ? 'flex' : 'none' }} onClick={OpenApp}>
+            <img src={appInfo.iconSrc} alt={appInfo.name} className='taskbar-icon' />
+            <span className='taskbar-icon-text'>{appInfo.name}</span>
+        </div>
+    )
 
     return (
         <>
@@ -43,7 +59,8 @@ const Application: React.FC<AppProperties> = ({ appInfo, children, visible = fal
                     {children}
                 </section>
             </div>
-            {ReactDOM.createPortal(appShortcut, document.getElementById('shortcuts')!)}
+            {shortcutsContainer && ReactDOM.createPortal(appShortcut, shortcutsContainer)}
+            {appTaskbarContainer && ReactDOM.createPortal(appTaskbar, appTaskbarContainer)}
         </>
     );
 }

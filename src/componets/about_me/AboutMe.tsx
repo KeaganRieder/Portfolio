@@ -1,13 +1,16 @@
 import React from 'react';
-import type { AppInfo } from '../application/Properties.ts';
 import Application from '../application/Application.tsx';
-import '../../styles/applications/AboutMe.css';
+import JobMaterials from './JobMaterials.tsx';
+import Skills from './Content.ts';
 
 import textDocIcon from '../../assets/apps/text_doc.png';
 import profilePic from '../../assets/apps/profile.gif';
 
 import { Biography, ArtistStatement } from './Content.ts';
-import Skills from './Content.ts';
+import type { AppInfo } from '../application/Properties.ts';
+
+import '../../styles/applications/AboutMe.css';
+
 const AboutMe: React.FC = () => {
     const appInfo: AppInfo = {
         name: 'About_Me',
@@ -23,7 +26,7 @@ const AboutMe: React.FC = () => {
                 {Biography}
             </p>
 
-<div>click here to download resume and artist cv</div>
+            <JobMaterials />
 
             <div className='skills-container'>
                 <h2 className='about-me-header'> Skills</h2>
@@ -52,7 +55,7 @@ const AboutMe: React.FC = () => {
 
     return (
         <>
-            <Application appInfo={appInfo} visible={true}>
+            <Application appInfo={appInfo} visible={false}>
                 {content}
             </Application>
         </>);
