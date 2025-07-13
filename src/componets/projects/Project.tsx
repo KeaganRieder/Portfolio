@@ -8,8 +8,8 @@ import '../../styles/applications/Project.css';
 export interface ProjectInfo {
     name: string;
 }
-
-const Project: React.FC<ProjectInfo> = (ProjectInfo) => {
+// ProjectInfo
+const Project: React.FC<ProjectInfo> = () => {
 
     const appInfo: AppInfo = {
         name: 'Project',
