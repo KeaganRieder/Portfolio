@@ -16,13 +16,14 @@ const Project: React.FC<ProjectInfo> = (ProjectInfo) => {
         iconSrc: textDocIcon,
     };
 
-    const projectOverview = (
-        <div >
-            <h2>{ProjectInfo.name}</h2>
-            {/* <img></img> todo figure out */}
-            <p>This section will contain details about the project, including its name and category.</p>
-        </div>
-    );
+    // TODO: Planned feature - commenting out to fix build errors
+    // const projectOverview = (
+    //     <div >
+    //         <h2>{ProjectInfo.name}</h2>
+    //         {/* <img></img> todo figure out */}
+    //         <p>This section will contain details about the project, including its name and category.</p>
+    //     </div>
+    // );
 
     const content = (
         <></>

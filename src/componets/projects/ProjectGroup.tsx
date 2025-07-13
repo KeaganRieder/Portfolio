@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import textDocIcon from '../../assets/apps/text_doc.png';
-import Project from './Project.tsx';
+// TODO: Planned feature - commenting out to fix build errors
+// import textDocIcon from '../../assets/apps/text_doc.png';
+// import Project from './Project.tsx';
 
 import folderIcon from '../../assets/apps/folder.png';
 
@@ -17,7 +18,8 @@ export interface ProjectGroupInfo {
 
 const ProjectGroup: React.FC<ProjectGroupInfo> = ({name, onClick, isActive}) => {
 
-    const [isOpen, setIsOpen] = useState(false);
+    // TODO: Planned feature - commenting out to fix build errors
+    // const [isOpen, setIsOpen] = useState(false);
     const [categoryContainer, setGroupContainer] = useState<HTMLElement | null>(null);
     const [groupContainer, setProjectContainer] = useState<HTMLElement | null>(null);
 

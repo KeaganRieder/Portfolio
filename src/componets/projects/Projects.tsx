@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+// TODO: Planned feature - commenting out to fix build errors
+// import { useEffect } from 'react';
 
 import Application from '../application/Application.tsx';
 import ProjectGroup from './ProjectGroup.tsx';
@@ -6,7 +8,8 @@ import type { AppInfo } from '../application/Properties.ts';
 
 import folderIcon from '../../assets/apps/folder.png';
 import backButton from '../../assets/apps/close_button.png';
-import forwardButton from '../../assets/apps/close_button.png';
+// TODO: Planned feature - commenting out to fix build errors
+// import forwardButton from '../../assets/apps/close_button.png';
 
 import '../../styles/applications/Project.css';
 
