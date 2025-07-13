@@ -1,0 +1,108 @@
+/* Application Window Styles */
+@import url(../Fonts.css);
+@import url(../Colors.css);
+
+:root {
+    --header-height: 50px;
+    --content-height: calc(100% - var(--header-height) - 10px);
+}
+
+/* Main Application Window */
+.app {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    width: 90%;
+    height: 90%;
+    background-color: var(--application-inner-border);
+    box-sizing: border-box;
+    border-top: 2px solid var(--application-reflection);
+    border-left: 2px solid var(--application-reflection);
+    border-bottom: 2px solid var(--application-shadow);
+    border-right: 2px solid var(--application-shadow);
+    padding: 5px 5px 10px 5px;
+}
+
+/* Application Header */
+.header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--application-header-bg);
+    width: 100%;
+    height: var(--header-height);
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    padding: 2px;
+}
+
+.title {
+    font-family: var(--header-font);
+    font-size: 2em;
+    color: var(--text-header-primary);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 10px;
+    margin: 0;
+}
+
+/* Header Button */
+.header button {
+    background-color: var(--header-button-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin-right: 20px;
+    transition: background-color 0.2s ease;
+    border-top: 2px solid var(--application-reflection);
+    border-left: 2px solid var(--application-reflection);
+    border-bottom: 2px solid var(--application-shadow);
+    border-right: 2px solid var(--application-shadow);
+}
+
+.header button:hover {
+    background-color: var(--header-button-bg-hover);
+}
+
+.header button img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* Application Content */
+.content {
+    position: relative;
+    overflow-y: auto;
+    background-color: var(--application-primary-bg);
+    width: 100%;
+    height: var(--content-height);
+    box-sizing: border-box;
+    border: 2px solid var(--application-content-border);
+    padding: 10px;
+    
+    /* Typography */
+    font-family: var(--body-primary-font);
+    color: var(--text-body-primary);
+    font-size: 1.25rem;
+    
+    /* Scrollbar Styling */
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb-bg) var(--scrollbar-track-bg);
+}
+
+.scroll-content {
+    position: relative;
+    height: auto;
+    box-sizing: border-box;
+}

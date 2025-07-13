@@ -1,0 +1,20 @@
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+
+:root {
+    /* ============================== */
+    /*             FONTS              */
+    /* ============================== */
+
+    --header-primary-font: 'Silkscreen', monospace;
+    --header-secondary-font: 'Roboto', sans-serif;
+    --header-font: var(--header-primary-font);
+
+    --body-primary-font: 'Roboto', sans-serif;
+
+    --shortcut-font: 'Silkscreen', monospace;
+    --nav-font: 'Silkscreen', monospace;
+    --link-font: 'Roboto', sans-serif;
+}

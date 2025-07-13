@@ -1,0 +1,50 @@
+/* Desktop Shortcut Styles */
+@import url(../Fonts.css);
+@import url(../Colors.css);
+
+:root {
+    --shortcut-size: min(80px, 8vw);
+    --shortcut-gap: min(5px, 0.5vw);
+}
+
+/* Shortcut Container */
+.shortcut {
+    background-color: var(--navigation-bg);
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5px;
+    transition: background-color 0.2s ease;
+    min-width: var(--shortcut-size);
+    margin: var(--shortcut-gap);
+}
+
+.shortcut:hover {
+    background-color: var(--navigation-bg-hover);
+}
+
+/* Shortcut Icon */
+.shortcut-icon {
+    width: var(--shortcut-size);
+    height: auto;
+    object-fit: contain;
+}
+
+/* Shortcut Label */
+.shortcut-label {
+    font-family: var(--shortcut-font);
+    color: var(--text-nav);
+    text-shadow: 1px 1px 1px var(--text-shadow);
+    font-size: 1.25em;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: calc(var(--shortcut-size) * 1.2);
+}
+
+.shortcut:hover .shortcut-label {
+    color: var(--text-nav-hover);
+}
