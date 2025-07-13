@@ -1,3 +1,4 @@
+/* Application Window Styles */
 @import url(../Fonts.css);
 @import url(../Colors.css);
 
@@ -6,6 +7,7 @@
     --content-height: calc(100% - var(--header-height) - 10px);
 }
 
+/* Main Application Window */
 .app {
     position: absolute;
     top: 50%;
@@ -20,21 +22,21 @@
     border-left: 2px solid var(--application-reflection);
     border-bottom: 2px solid var(--application-shadow);
     border-right: 2px solid var(--application-shadow);
-    padding: 5px;
-    padding-bottom: 10px;
+    padding: 5px 5px 10px 5px;
 }
 
+/* Application Header */
 .header {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: var(--application-header-bg);
     width: 100%;
     height: var(--header-height);
     box-sizing: border-box;
     margin-bottom: 10px;
     padding: 2px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
 .title {
@@ -49,6 +51,7 @@
     margin: 0;
 }
 
+/* Header Button */
 .header button {
     background-color: var(--header-button-bg);
     display: flex;
@@ -59,12 +62,12 @@
     width: 40px;
     height: 40px;
     padding: 0;
+    margin-right: 20px;
     transition: background-color 0.2s ease;
     border-top: 2px solid var(--application-reflection);
     border-left: 2px solid var(--application-reflection);
     border-bottom: 2px solid var(--application-shadow);
     border-right: 2px solid var(--application-shadow);
-    margin-right: 20px;
 }
 
 .header button:hover {
@@ -77,33 +80,29 @@
     object-fit: contain;
 }
 
+/* Application Content */
 .content {
-    font-family: var(--body-primary-font);
-    color: var(--text-body-primary);
-    font-size: 1.25rem;
-
-
     position: relative;
     overflow-y: auto;
-
     background-color: var(--application-primary-bg);
-
     width: 100%;
     height: var(--content-height);
-
-    scrollbar-width: thin;
-    scrollbar-color: var(--scrollbar-thumb-bg) var(--scrollbar-track-bg);
-
     box-sizing: border-box;
     border: 2px solid var(--application-content-border);
     padding: 10px;
-
+    
+    /* Typography */
+    font-family: var(--body-primary-font);
+    color: var(--text-body-primary);
+    font-size: 1.25rem;
+    
+    /* Scrollbar Styling */
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb-bg) var(--scrollbar-track-bg);
 }
 
 .scroll-content {
     position: relative;
-
     height: auto;
-
     box-sizing: border-box;
 }

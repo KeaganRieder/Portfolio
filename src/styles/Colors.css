@@ -3,7 +3,7 @@
     /*       BACKGROUND COLORS        */
     /* ============================== */
 
-    /* Application */
+    /* Application Background Colors */
     --application-primary-bg: #415a77;
     --application-primary-bg-hover: #8aa3c4;
     --application-primary-bg-dark: #1b263b;
@@ -15,45 +15,45 @@
     --application-header-bg: #4f5d70;
     --application-footer-bg: #4f5d70;
 
+    /* Application Borders & Effects */
     --application-inner-border: #333538;
     --application-outer-border: #6c757d;
+    --application-content-border: #606469;
 
     --application-shadow: #000000;
     --application-reflection: #9ca2ac;
 
-    /* Application Content */
+    /* Content Headers */
     --application-content-header1-bg: #4f5d70;
     --application-content-header2-bg: #4f5d70;
     --application-content-header3-bg: #4f5d70;
 
-    --application-content-border: #606469;
-
-    /* Project Showcase */
+    /* Project Showcase Colors */
     --project-overview-bg: #8aa3c4;
     --project-overview-bg-hover: #a4c2e9;
     --project-overview-header-bg: #34383d;
-
     --projects-bg: #2c3e5f;
 
     --project-shadow: #000000;
     --project-reflection: #9ca2ac;
 
-    /* Navigation */
+    /* Navigation Colors */
     --navigation-bg: transparent;
     --navigation-bg-hover: #d3d3d375;
 
+    /* Link Colors */
     --link-primary: #7c91a8;
     --link-primary-hover: #a7c1df;
 
-    /* Buttons */
+    /* Button Colors */
     --header-button-bg: transparent;
     --header-button-bg-hover: #38414e;
 
-    /* TaskBar */
+    /* TaskBar Colors */
     --taskbar-primary-bg: #34383d;
     --taskbar-primary-bg-hover: #575f68;
-    --taskbar-primary--light-bg: #aab2b9;
-    --taskbar-primary--light-bg-hover: #cad3db;
+    --taskbar-primary-light-bg: #aab2b9;
+    --taskbar-primary-light-bg-hover: #cad3db;
 
     --taskbar-start-bg: #4f5d70;
     --taskbar-start-bg-hover: #909aa3;
@@ -65,23 +65,28 @@
     --taskbar-shadow: #292828;
     --taskbar-reflection: #dfdfdf;
 
-
     /* ============================== */
     /*           TEXT COLORS          */
     /* ============================== */
+    
+    /* Header Text */
     --text-header-primary: #f1f8ff;
     --text-header-secondary: #d8dee4;
     --text-header-tertiary: #c2c7cc;
 
-
+    /* Body Text */
     --text-body-primary: #ffffff;
     --text-body-secondary: #e4e2e2;
 
+    /* Navigation Text */
     --text-nav: #ffffff;
     --text-nav-hover: #d3d3d3;
+    
+    /* Link Text */
     --text-link: #badafa;
     --text-link-hover: #d3d3d3;
 
+    /* Text Effects */
     --text-shadow: #000000;
 
     /* ============================== */
@@ -89,7 +94,4 @@
     /* ============================== */
     --scrollbar-thumb-bg: #6c757d;
     --scrollbar-track-bg: #34383d;
-
-
-
 }
