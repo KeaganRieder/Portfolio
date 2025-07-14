@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import AppShortcut from './componets/application/Shortcut';
-import AboutMe from './componets/about_me/AboutMe';
-import Projects from './componets/projects/Projects';
+import AppShortcut from './components/application/Shortcut';
+import AboutMe from './components/about_me/AboutMe';
+import Projects from './components/projects/Projects';
 import './styles/desktop/Desktop.css';
 import './styles/desktop/Taskbar.css';
 
@@ -39,19 +39,18 @@ function Desktop() {
 
   const TaskBar = (
     <div id='taskbar' className='taskbar'>
-      <section className='clock'>
-        <div className='time'>{formatTime(currentTime)}</div>
-        <div className='date'>{formatDate(currentTime)}</div>
-      </section>
-
-      <section id='taskbar-shortcuts' className='taskbar-shortcuts-container'>
+       <section id='taskbar-shortcuts' className='taskbar-shortcuts-container'>
         <section className='taskbar-shortcuts-start'>
           <img src={emailIcon} alt='start' />
           <span>Start</span>
         </section>
-
-        {/* <div className='taskbar-shortcut-active'>hey</div> */}
       </section>
+
+      <section className='clock'>
+        <div className='time'>{formatTime(currentTime)}</div>
+        <div className='date'>{formatDate(currentTime)}</div>
+      </section>
+ 
 
     </div>
   )
