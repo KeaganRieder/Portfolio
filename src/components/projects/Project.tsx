@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import Application from '../application/Application.tsx';
 
 import textDocIcon from '../../assets/apps/text_doc.png';
 import type { ProjectInfo } from './ProjectInfo.ts';
-import type { AppInfo } from '../application/ApplicationProperties.ts';
 
 import '../../styles/applications/Project.css';
 
