@@ -1,7 +1,11 @@
 /* Taskbar Styles */
 @import url(../Fonts.css);
 @import url(../Colors.css);
+@import url(./Desktop.css);
 
+:root {
+    --clock-width: 30%;
+}
 /* Main Taskbar */
 .taskbar {
     position: absolute;
@@ -10,9 +14,7 @@
     width: 100%;
     height: var(--taskbar-height);
     background-color: var(--taskbar-primary-bg);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+ 
     padding: 10px;
     box-shadow: 0 -4px 5px var(--taskbar-shadow);
 }
@@ -21,44 +23,27 @@
 .taskbar-shortcuts-container {
     display: flex;
     height: 100%;
+    width: calc(90% - var(--clock-width) - 50px);
+    float: left;
+
     padding: 5px;
     font-family: var(--shortcut-font);
     color: var(--text-nav);
     text-shadow: 1px 1px 1px var(--text-shadow);
-    font-size: 1em;
+    font-size: 1.2em;
     text-align: center;
     gap: 5px;
 }
 
-/* Start Button */
-.taskbar-shortcuts-start {
-    background-color: var(--taskbar-start-bg);
-    border-top: 2px solid var(--taskbar-reflection);
-    border-left: 2px solid var(--taskbar-reflection);
-    border-bottom: 2px solid var(--taskbar-shadow);
-    border-right: 2px solid var(--taskbar-shadow);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
 
-.taskbar-shortcuts-start:hover {
-    background-color: var(--taskbar-start-bg-hover);
-}
-
-.taskbar-shortcuts-start img {
-    width: 30%;
-}
-
-/* Taskbar Shortcuts */
+/* Taskbar buttons */
 .taskbar-shortcut {
     background-color: var(--taskbar-shortcut-bg);
     border-top: 2px solid var(--taskbar-reflection);
     border-left: 2px solid var(--taskbar-reflection);
     border-bottom: 2px solid var(--taskbar-shadow);
     border-right: 2px solid var(--taskbar-shadow);
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -71,7 +56,7 @@
 }
 
 .taskbar-shortcut img {
-    width: 30%;
+    width: 40%;
 }
 
 /* Active Taskbar Shortcut */
@@ -84,8 +69,28 @@
     padding: 5px;
 }
 
+
+/* Start Button */
+.taskbar-start {
+    max-width: 15%;
+
+    margin-right: 20px ;
+}
+
+.taskbar-shortcuts-start:hover {
+    background-color: var(--taskbar-start-bg-hover);
+}
+
+.taskbar-shortcuts-start img {
+    width: 25%;
+    margin-right: 10px;
+    box-sizing: border-box;
+}
+
 /* Clock */
 .clock {
+    width: var(--clock-width);
+    display: inline;
     position: relative;
     float: right;
     text-align: right;

@@ -1,5 +1,5 @@
 import React from 'react';
-import type { ShortcutProperties } from './Properties.ts';
+import type { ShortcutProperties } from './ApplicationProperties.ts';
 import '../../styles/applications/Shortcuts.css';
 
 const AppShortcut: React.FC<ShortcutProperties> = ({ appInfo, onClick }) => {

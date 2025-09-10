@@ -1,39 +1,65 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import ReactDOM from 'react-dom';
 import Application from '../application/Application.tsx';
+
 import textDocIcon from '../../assets/apps/text_doc.png';
-import type { AppInfo } from '../application/Properties.ts';
+import type { ProjectInfo } from './ProjectInfo.ts';
+import type { AppInfo } from '../application/ApplicationProperties.ts';
 
 import '../../styles/applications/Project.css';
 
-export interface ProjectInfo {
-    name: string;
-}
-// ProjectInfo
-const Project: React.FC<ProjectInfo> = () => {
+const Project: React.FC<ProjectInfo> = ({ projectName, description, hasApp, appContent, GitHubUrl, demoUrl }) => {
+    const [projectApplicationContainer, setProjectApplicationContainer] = React.useState<HTMLElement | null>(null);
 
-    const appInfo: AppInfo = {
-        name: 'Project',
-        iconSrc: textDocIcon,
-    };
+ useEffect(() => {
+        // Find the project application container after component mounts
+        const projectContainer = document.getElementById('root');
+        setProjectApplicationContainer(projectContainer);
+    }, []);
 
-    // TODO: Planned feature - commenting out to fix build errors
-    // const projectOverview = (
-    //     <div >
-    //         <h2>{ProjectInfo.name}</h2>
-    //         {/* <img></img> todo figure out */}
-    //         <p>This section will contain details about the project, including its name and category.</p>
-    //     </div>
-    // );
+    const githubLink = (
+        GitHubUrl ? (
+            <div className="project-link">
+                <a href={GitHubUrl} target="_blank" rel="noopener noreferrer"> Github </a>
+            </div>
+        ) : null
 
-    const content = (
-        <></>
+    )
+    const demoLink = (
+        demoUrl ? (
+            <div className="project-link">
+                <a href={demoUrl} target="_blank" rel="noopener noreferrer"> Demo </a>
+            </div>
+        ) : null
+    )
+    const projectOverview = (
+        <div className="project-overview">
+            <h2>{projectName}</h2>
+            <p>{description}</p>
+            {githubLink}
+            {demoLink}
+        </div>
+    )
+
+    const projectApp = (
+        hasApp ? (
+            projectApplicationContainer && ReactDOM.createPortal(
+                <Application appInfo={{
+                    name: projectName,
+                    iconSrc: textDocIcon,
+                    hasShortcut: false,
+                }} visible={false}>
+                    {appContent}
+                </Application>, projectApplicationContainer)
+        ) : null
     );
 
     return (
-        <Application appInfo={appInfo} visible={false}>
-            {content}
-        </Application>
+        <>
+            {projectOverview}
+            {projectApp}
+        </>
     );
-};
+}
 
 export default Project;

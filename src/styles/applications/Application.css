@@ -10,12 +10,9 @@
 /* Main Application Window */
 .app {
     position: absolute;
-    top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
     overflow: hidden;
-    width: 90%;
-    height: 90%;
+
     background-color: var(--application-inner-border);
     box-sizing: border-box;
     border-top: 2px solid var(--application-reflection);
@@ -37,6 +34,8 @@
     box-sizing: border-box;
     margin-bottom: 10px;
     padding: 2px;
+
+    cursor: "grab",
 }
 
 .title {
@@ -73,7 +72,12 @@
 .header button:hover {
     background-color: var(--header-button-bg-hover);
 }
-
+.header button:active {
+   border-top: 2px solid var(--application-shadow);
+    border-left: 2px solid var(--application-shadow);
+    border-bottom: 2px solid var(--application-reflection);
+    border-right: 2px solid var(--application-reflection);
+}
 .header button img {
     width: 24px;
     height: 24px;

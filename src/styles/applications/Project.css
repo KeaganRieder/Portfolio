@@ -3,29 +3,34 @@
 @import url(../Colors.css);
 
 :root {
-    --header-height: 50px;
+    --header-height: 60px;
     --project-container-height: calc(100% - var(--header-height) - 10px);
 }
 
-/* Project Container Header */
-.project-container-header {
+
+
+/* project Containers*/
+.project-header-container {
     position: relative;
     display: flex;
     align-items: center;
-    background-color: var(--application-header-bg);
     width: 100%;
     height: var(--header-height);
+    background-color: var(--application-header-bg);
+
     box-sizing: border-box;
+
+    padding: 5px;
     margin-bottom: 10px;
-    padding: 2px;
-    border-top: 2px solid var(--application-reflection);
-    border-left: 2px solid var(--application-reflection);
-    border-bottom: 2px solid var(--application-shadow);
-    border-right: 2px solid var(--application-shadow);
+
+    border-top: 2px solid var(--application-shadow);
+    border-left: 2px solid var(--application-shadow);
+    border-bottom: 2px solid var(--application-reflection);
+    border-right: 2px solid var(--application-reflection);
 }
 
-.project-container-header h2 {
-    font-family: var(--header-font);
+.project-header-container h2 {
+    font-family: var(--header-secondary-font);
     font-size: 2em;
     color: var(--text-header-primary);
     height: 100%;
@@ -36,13 +41,7 @@
     margin: 0;
 }
 
-.project-container-header div {
-    display: flex;
-    gap: 10px;
-    margin-left: 10px;
-}
-
-.project-container-header button {
+.project-header-container button {
     background-color: var(--header-button-bg);
     display: flex;
     align-items: center;
@@ -59,95 +58,207 @@
     border-left: 2px solid var(--application-reflection);
     border-bottom: 2px solid var(--application-shadow);
     border-right: 2px solid var(--application-shadow);
+
 }
 
-.project-container-header button:hover {
+.project-header-container button:hover {
     background-color: var(--header-button-bg-hover);
 }
 
-.project-container-header button img {
-    width: 24px;
-    height: 24px;
+.project-header-container button:active {
+    border-top: 2px solid var(--application-shadow);
+    border-left: 2px solid var(--application-shadow);
+    border-bottom: 2px solid var(--application-reflection);
+    border-right: 2px solid var(--application-reflection);
+}
+
+.project-header-container button img {
+    width: 100%;
+    height: 100%;
     object-fit: contain;
 }
 
-/* Project Container */
-.project-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    background-color: var(--projects-bg);
-    border-top: 2px solid var(--project-shadow);
-    border-left: 2px solid var(--project-shadow);
-    border-bottom: 2px solid var(--project-reflection);
-    border-right: 2px solid var(--project-reflection);
+.project-category-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    max-width: 100%;
+    gap: 20px;
+    padding: 20px;
     height: var(--project-container-height);
-    box-sizing: border-box;
-    padding: 10px;
     overflow-y: auto;
-    width: 100%;
+    background-color: var(--application-primary-bg-dark);
+    box-sizing: border-box;
 }
 
-/* Project Group */
-.project-group {
+
+
+.project-category-container:has(.project-overview-container) {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-category-button {
     background-color: var(--navigation-bg);
+
     cursor: pointer;
-    border: none;
-    border-radius: 4px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 0.5px;
+    min-width: 100px;
+    margin: 20px;
     transition: background-color 0.2s ease;
-    flex: 0 0 calc(25% - 20px);
-    aspect-ratio: 1;
-    min-height: 120px;
-    max-height: 220px;
-    margin: var(--shortcut-gap);
-    padding: 10px;
-    box-sizing: border-box;
 }
 
-.project-group:hover {
+.project-category-button:hover {
     background-color: var(--navigation-bg-hover);
 }
 
-.project-group-icon {
-    width: 50%;
+.project-category-button img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 5px;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
 }
 
-.project-group-label {
-    font-family: var(--body-primary-font);
-    color: var(--text-body-primary);
-    font-size: 1.25rem;
+.project-category-button h3 {
+    font-family: var(--header-secondary-font);
+    font-size: 1.2em;
+    color: var(--text-header-primary);
     text-align: center;
-    line-height: 1.2;
-    max-width: 100%;
+    margin: 0;
     word-wrap: break-word;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-    -webkit-box-orient: vertical;
-    flex-shrink: 0;
 }
 
-/* Project Overview */
-.project-overview {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--body-primary-font);
-    color: var(--text-body-primary);
-    font-size: 1.25rem;
-    background-color: var(--project-overview-bg);
-    flex: 0 0 calc(25% - 20px);
-    aspect-ratio: 1;
-    box-sizing: border-box;
-    padding: 5px;
+.project-overview-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0;
+    height: auto;
 }
+
+.project-overview {
+    background-color: var(--project-overview-bg);
+    padding: 20px;
+   
+    border-top: 2px solid var(--project-reflection);
+    border-left: 2px solid var(--project-reflection);
+    border-bottom: 2px solid var(--project-shadow);
+    border-right: 2px solid var(--project-shadow);
+}
+
 
 .project-overview h2 {
-    font-size: 1.5rem;
+    font-family: var(--header-secondary-font);
+    font-size: 1.8em;
+    color: var(--text-header-primary);
+    margin: 0 0 10px 0;
+    text-shadow: 1px 1px 2px var(--text-shadow);
+}
+
+.project-overview p {
+    font-family: var(--body-primary-font);
+    font-size: 1.1em;
+    color: var(--text-body-primary);
+    line-height: 1.6;
+    margin: 0 0 15px 0;
+}
+
+/* project Text Styles */
+.project-link {
+    display: inline-block;
+    margin: 5px 10px 5px 0;
+}
+
+.project-link a {
+    font-family: var(--link-font);
+    color: var(--text-link);
+    text-decoration: none;
+    padding: 8px 16px;
+    background-color: var(--link-primary);
+    border-radius: 4px;
+    border-top: 2px solid var(--application-reflection);
+    border-left: 2px solid var(--application-reflection);
+    border-bottom: 2px solid var(--application-shadow);
+    border-right: 2px solid var(--application-shadow);
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.project-link a:hover {
+    background-color: var(--link-primary-hover);
+    color: var(--text-link-hover);
+}
+
+.project-link a:active {
+    border-top: 2px solid var(--application-shadow);
+    border-left: 2px solid var(--application-shadow);
+    border-bottom: 2px solid var(--application-reflection);
+    border-right: 2px solid var(--application-reflection);
+}
+
+/* Scrollbar Styling */
+.project-category-container::-webkit-scrollbar {
+    width: 12px;
+}
+
+.project-category-container::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-bg);
+    border-radius: 6px;
+}
+
+.project-category-container::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb-bg);
+    border-radius: 6px;
+    border: 2px solid var(--scrollbar-track-bg);
+}
+
+.project-category-container::-webkit-scrollbar-thumb:hover {
+    background: var(--application-primary-bg-hover);
+}
+
+/* Responsive grid that ensures max 4 columns */
+@media (min-width: 1200px) {
+    .project-category-container {
+        grid-template-columns: repeat(4, 1fr);
+        margin: 0 auto;
+    }
+
+    .project-overview-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 900px) {
+    .project-category-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .project-overview-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 899px) and (min-width: 600px) {
+    .project-category-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-overview-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 599px) {
+    .project-category-container {
+        grid-template-columns: 1fr;
+    }
+
+    .project-overview-container {
+        grid-template-columns: 1fr;
+    }
 }

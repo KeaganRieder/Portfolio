@@ -1,6 +1,7 @@
 export interface AppInfo {
     name: string;
     iconSrc: string;
+    hasShortcut?: boolean;
 }
 
 export interface ShortcutProperties {

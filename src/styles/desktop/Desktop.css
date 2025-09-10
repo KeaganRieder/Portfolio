@@ -3,7 +3,7 @@
 @import url(../Colors.css);
 
 :root {
-    --taskbar-height: clamp(40px, 8vh, 60px);
+    --taskbar-height: clamp(80px, 9vh, 90px);
     --shortcut-cont-width: clamp(200px, 25%, 300px);
     --shortcut-cont-padding: clamp(5px, 1vw, 15px);
     --background-img-path: url(../../assets/main/background.png);
@@ -14,7 +14,7 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: calc(100% - var(--taskbar-height));
+    height: calc(100% - var(--taskbar-height) - .25%);
     background-image: var(--background-img-path);
     background-size: cover;
     background-position: center;

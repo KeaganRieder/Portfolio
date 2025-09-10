@@ -7,7 +7,7 @@ import textDocIcon from '../../assets/apps/text_doc.png';
 import profilePic from '../../assets/apps/profile.gif';
 
 import { Biography, ArtistStatement } from './Content.ts';
-import type { AppInfo } from '../application/Properties.ts';
+import type { AppInfo } from '../application/ApplicationProperties.ts';
 
 import '../../styles/applications/AboutMe.css';
 
@@ -15,7 +15,7 @@ const AboutMe: React.FC = () => {
     const appInfo: AppInfo = {
         name: 'About_Me',
         iconSrc: textDocIcon,
-
+        hasShortcut: true,
     };
 
     const content = (
@@ -43,9 +43,8 @@ const AboutMe: React.FC = () => {
                     ))}
                 </ul>
             </div>
-
+            <h2 className='about-me-header'> Artist Statement </h2>
             <p>
-                <h2 className='about-me-header'> Artist Statement </h2>
 
                 {ArtistStatement}
             </p>
