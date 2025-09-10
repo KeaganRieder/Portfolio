@@ -136,8 +136,10 @@
 .project-overview-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    
     gap: 20px;
     padding: 0;
+    max-width: 100%;
     height: auto;
 }
 
@@ -166,6 +168,13 @@
     color: var(--text-body-primary);
     line-height: 1.6;
     margin: 0 0 15px 0;
+}
+
+.project-overview img {
+   width: 100%;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
 }
 
 /* project Text Styles */

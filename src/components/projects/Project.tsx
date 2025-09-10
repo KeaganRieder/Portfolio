@@ -7,7 +7,7 @@ import type { ProjectInfo } from './ProjectInfo.ts';
 
 import '../../styles/applications/Project.css';
 
-const Project: React.FC<ProjectInfo> = ({ projectName, description, hasApp, appContent, GitHubUrl, demoUrl }) => {
+const Project: React.FC<ProjectInfo> = ({ projectName, description, hasApp, appContent, GitHubUrl, demoUrl,displayImg }) => {
     const [projectApplicationContainer, setProjectApplicationContainer] = React.useState<HTMLElement | null>(null);
 
  useEffect(() => {
@@ -34,6 +34,7 @@ const Project: React.FC<ProjectInfo> = ({ projectName, description, hasApp, appC
     const projectOverview = (
         <div className="project-overview">
             <h2>{projectName}</h2>
+            {displayImg && <img src={displayImg} alt={`${projectName}_display`} className="project-image" />}
             <p>{description}</p>
             {githubLink}
             {demoLink}

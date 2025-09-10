@@ -31,6 +31,7 @@ const projectOverviewContainer = (
                         appContent={project.appContent}
                         GitHubUrl={project.GitHubUrl}
                         demoUrl={project.demoUrl}
+                        displayImg={project.displayImg}
                     />))}
     </div>
 )
