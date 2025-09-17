@@ -12,5 +12,7 @@ export interface ShortcutProperties {
 export interface AppProperties {
     appInfo: AppInfo; 
     children: React.ReactNode;
-    visible?: boolean; 
+    visible?: boolean;
+    onClose?: () => void;
+    initialZIndex?: number;
 }

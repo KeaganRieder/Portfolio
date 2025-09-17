@@ -56,7 +56,11 @@
 }
 
 .taskbar-shortcut img {
-    width: 40%;
+    width: 15%;
+    height: auto;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
 }
 
 /* Active Taskbar Shortcut */
@@ -79,12 +83,6 @@
 
 .taskbar-shortcuts-start:hover {
     background-color: var(--taskbar-start-bg-hover);
-}
-
-.taskbar-shortcuts-start img {
-    width: 25%;
-    margin-right: 10px;
-    box-sizing: border-box;
 }
 
 /* Clock */

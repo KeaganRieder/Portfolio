@@ -2,7 +2,7 @@ import React from 'react';
 import Project from './Project';
 
 import folderIcon from '../../assets/apps/folder.png';
-import type { ProjectInfo } from './ProjectInfo';
+import type { ProjectInfo } from './ProjectInfo.tsx';
 import '../../styles/applications/Project.css';
 
 export interface ProjectCategoryInfo {
@@ -27,7 +27,7 @@ const projectOverviewContainer = (
                         key={`${categoryName}-${project.projectName}-${index}`}
                         projectName={project.projectName}
                         description={project.description}
-                        hasApp={project.hasApp}
+                        vidInfo={project.vidInfo}
                         appContent={project.appContent}
                         GitHubUrl={project.GitHubUrl}
                         demoUrl={project.demoUrl}

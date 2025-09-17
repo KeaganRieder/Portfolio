@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Application from '../application/Application.tsx';
 import ProjectCategory from './ProjectCategory.tsx';
 import type { AppInfo } from '../application/ApplicationProperties.ts';
-import { projectData } from './ProjectInfo.ts';
+import { projectData } from './ProjectInfo.tsx';
 
 import folderIcon from '../../assets/apps/folder.png';
 import backButton from '../../assets/apps/close_button.png';

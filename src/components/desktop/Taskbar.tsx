@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 
 import '../../styles/desktop/Desktop.css';
 
-import profilePic from '../../assets/apps/profile.gif';
 
 
 const TaskBar: React.FC = () => {
@@ -38,10 +37,7 @@ const TaskBar: React.FC = () => {
             <div id='taskbar' className='taskbar'>
 
                 <section id='taskbar-shortcuts' className='taskbar-shortcuts-container'>
-                    <section className='taskbar-shortcut taskbar-start '>
-                        <img src={profilePic} alt='start' />
-                        <span>Start</span>
-                    </section>
+                    
                 </section>
 
                 <section className='clock'>

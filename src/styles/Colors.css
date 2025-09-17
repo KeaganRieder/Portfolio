@@ -29,13 +29,16 @@
     --application-content-header3-bg: #4f5d70;
 
     /* Project Showcase Colors */
-    --project-overview-bg: #8aa3c4;
+    --project-overview-bg: #70829b;
+
     --project-overview-bg-hover: #a4c2e9;
     --project-overview-header-bg: #34383d;
     --projects-bg: #2c3e5f;
 
     --project-shadow: #000000;
-    --project-reflection: #9ca2ac;
+    --project-reflection: #b7bdc9;
+    --project-reflection-2: #ffffff;
+
 
     /* Navigation Colors */
     --navigation-bg: transparent;

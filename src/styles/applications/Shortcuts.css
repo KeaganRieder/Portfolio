@@ -31,6 +31,9 @@
     width: var(--shortcut-size);
     height: auto;
     object-fit: contain;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
 }
 
 /* Shortcut Label */

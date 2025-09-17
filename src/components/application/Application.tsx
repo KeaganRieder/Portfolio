@@ -9,10 +9,15 @@ import xButton from '../../assets/apps/close_button.png';
 type Position = { x: number; y: number };
 type Size = { width: number; height: number };
 
-const Application: React.FC<AppProperties> = ({ appInfo, children, visible = false }) => {
+const Application: React.FC<AppProperties> = ({ appInfo, children, visible = false, onClose, initialZIndex = 1000 }) => {
 
     const [isVisible, setIsVisible] = useState(visible);
-    const [zIndex, setZIndex] = useState(1000);
+    const [zIndex, setZIndex] = useState(initialZIndex);
+
+    // Sync with external visible prop
+    useEffect(() => {
+        setIsVisible(visible);
+    }, [visible]);
 
     const [shortcutsContainer, setShortcutsContainer] = useState<HTMLElement | null>(null);
     const [appTaskbarContainer, setAppTaskbar] = useState<HTMLElement | null>(null);
@@ -56,7 +61,7 @@ const Application: React.FC<AppProperties> = ({ appInfo, children, visible = fal
     const bringToFront = () => {
         // Get the highest z-index among all applications
         const allApps = document.querySelectorAll('.app');
-        let maxZIndex = 1000;
+        let maxZIndex = Math.max(initialZIndex, 1000); // Use the higher of initialZIndex or 1000
         
         allApps.forEach(app => {
             const currentZIndex = parseInt(window.getComputedStyle(app).zIndex) || 1000;
@@ -120,6 +125,7 @@ const Application: React.FC<AppProperties> = ({ appInfo, children, visible = fal
     const CloseApp = () => {
         if (isVisible) {
             setIsVisible(!isVisible);
+            onClose?.(); // Call the parent's close callback
         }
     }
 
