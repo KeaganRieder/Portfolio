@@ -80,11 +80,17 @@
 .job-materials-container a {
     display: block;
     padding: 5px;
+    text-decoration: none;
+}
+
+.job-materials-container p {
+    display: block;
+    padding: 0px;
+    margin: 0px;
     color: var(--link-primary);
     text-decoration: none;
     transition: color 0.2s ease;
 }
-
-.job-materials-container a:hover {
+.job-materials-container p:hover {
     color: var(--link-primary-hover);
 }

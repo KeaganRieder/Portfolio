@@ -25,7 +25,7 @@ const AboutMe: React.FC = () => {
             <p >
                 {Biography}
             </p>
-
+{/* todo add contact info */}
             <JobMaterials />
 
             <div className='skills-container'>

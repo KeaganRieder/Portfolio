@@ -14,7 +14,6 @@ import sunset from '../../assets/projects/art/pixel/sunset.png';
 import plantPotRendered from '../../assets/projects/art/3d_modals/plant_pot/PlantPot.png';
 import plantPotWorkSpace from '../../assets/projects/art/3d_modals/plant_pot/UnRendered.png';
 
-
 export interface ProjectInfo {
     projectName: string;
     description?: string;
@@ -29,10 +28,6 @@ export interface ProjectGroupInfo {
     projects: ProjectInfo[];
 }
 
-export interface DemoVidInfo {
-    description: string
-    url: string
-}
 
 export const projectData: ProjectGroupInfo[] = [
     {
@@ -68,7 +63,6 @@ export const projectData: ProjectGroupInfo[] = [
                         <p>{"Video showcasing the game in action"}</p>
                     </div>
                 ],
-
                 GitHubUrl: "https://github.com/KeaganRieder/UnderUs",
             },
             {
@@ -117,11 +111,23 @@ export const projectData: ProjectGroupInfo[] = [
             {
                 projectName: "N-Queen Problem",
                 description: "Solution to the classic N-Queen chess problem using backtracking.",
+                appContent: [
+                    <div className="project-vid">
+                        <iframe src={"https://www.youtube.com/embed/xPPZ5PR3LB0"} title={"Play through"} ></iframe>
+                        <p>{"Video showcasing the interactive work"}</p>
+                    </div>
+                ],
                 GitHubUrl: "to add",
             },
             {
                 projectName: "Missionaries and Cannibals ",
                 description: "A C++ program which uses breadth first search to solve the Missionaries and Cannibals problem.",
+                appContent: [
+                    <div className="project-vid">
+                        <iframe src={"https://www.youtube.com/embed/xPPZ5PR3LB0"} title={"Play through"} ></iframe>
+                        <p>{"Video showcasing the interactive work"}</p>
+                    </div>
+                ],
                 GitHubUrl: "https://github.com/KeaganRieder/Missionaries-and-Cannibals-Problem",
             }
         ]
@@ -132,12 +138,24 @@ export const projectData: ProjectGroupInfo[] = [
             {
                 projectName: "Interactive City Scape",
                 description: "An interactive digital art piece made using processing, that allows the user to interact and change a randomly generated cityscape.",
+                appContent: [
+                    <div className="project-vid">
+                        <iframe src={"https://www.youtube.com/embed/xPPZ5PR3LB0"} title={"Play through"} ></iframe>
+                        <p>{"Video showcasing the interactive work"}</p>
+                    </div>
+                ],
                 displayImg: interactiveCityDisplayImg,
                 GitHubUrl: "https://github.com/KeaganRieder/CityScape",
             },
             {
                 projectName: "Perlin Galaxy",
                 description: "Procedural galaxy generation using Perlin noise algorithms made in unity.",
+                appContent: [
+                    <div className="project-vid">
+                        <iframe src={"https://www.youtube.com/embed/xPPZ5PR3LB0"} title={"Play through"} ></iframe>
+                        <p>{"Video showcasing the interactive work"}</p>
+                    </div>
+                ],
                 displayImg: perlinGalaxyDisplayImg,
                 GitHubUrl: "https://github.com/KeaganRieder/PerlinNebulaGenerator",
             },

@@ -87,7 +87,4 @@ The built files will be in the `dist/` directory, ready for deployment to any st
 
 ##  Contact
 
-Feel free to explore the portfolio and reach out through the contact information provided in the About Me section.
-
-
-
+Feel free to explore the portfolio and reach out through my email provided in the email app or through my contact information found on my cover letter or resume.
