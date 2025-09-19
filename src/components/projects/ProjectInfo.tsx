@@ -6,13 +6,18 @@ import slimeClickerDisplayImg from '../../assets/projects/games/tic_tac_toe/boar
 import portfolioDisplayImg from '../../assets/projects/games/tic_tac_toe/board.png';
 import interactiveCityDisplayImg from '../../assets/projects/art/interactive/cityScape/ex.png';
 
-import perlinGalaxyDisplayImg from '../../assets/projects/art/interactive/perlin_galaxy/galaxy_ex.png';
 import homeAmongTheStairs from '../../assets/projects/art/pixel/home_among_the_stars.png';
 import snowySkies from '../../assets/projects/art/pixel/snowy_skies.png';
 import sunset from '../../assets/projects/art/pixel/sunset.png';
 
 import plantPotRendered from '../../assets/projects/art/3d_modals/plant_pot/PlantPot.png';
 import plantPotWorkSpace from '../../assets/projects/art/3d_modals/plant_pot/UnRendered.png';
+
+import untexturedAlone from '../../assets/projects/art/3d_modals/alone/un-textured1.png';
+import untextured2Alone from '../../assets/projects/art/3d_modals/alone/un-textured2.png';
+import untextured3Alone from '../../assets/projects/art/3d_modals/alone/un-textured3.png';
+import untextured4Alone from '../../assets/projects/art/3d_modals/alone/rendered-char.png';
+
 
 export interface ProjectInfo {
     projectName: string;
@@ -40,12 +45,12 @@ export const projectData: ProjectGroupInfo[] = [
                 appContent: [
                     <>
                         <div className="project-vid">
-                            <iframe src={"#"} title={"#"} ></iframe>
+                            <iframe src={"https://www.youtube.com/embed/DdnN6_jJuMg"} title={"human player winning against AI"} ></iframe>
                             <p>{"video of the player winning against the AI"}</p>
-
                         </div>
+                        <div></div>
                         <div className="project-vid">
-                            <iframe src={"#"} title={"#"} ></iframe>
+                            <iframe src={"https://www.youtube.com/embed/uUZJBoQ-Ke8"} title={"human player losing against AI"} ></iframe>
                             <p>{"video of the player losing against the AI"}</p>
                         </div>
                     </>
@@ -59,7 +64,7 @@ export const projectData: ProjectGroupInfo[] = [
                 description: "A text based adventure game created for a school project using C++.",
                 appContent: [
                     <div className="project-vid">
-                        <iframe src={"#"} title={"Play through"} ></iframe>
+                        <iframe src={"https://www.youtube.com/embed/LX4Vz6qQyP4"} title={"Play through"} ></iframe>
                         <p>{"Video showcasing the game in action"}</p>
                     </div>
                 ],
@@ -113,19 +118,19 @@ export const projectData: ProjectGroupInfo[] = [
                 description: "Solution to the classic N-Queen chess problem using backtracking.",
                 appContent: [
                     <div className="project-vid">
-                        <iframe src={"https://www.youtube.com/embed/xPPZ5PR3LB0"} title={"Play through"} ></iframe>
-                        <p>{"Video showcasing the interactive work"}</p>
+                        <iframe src={"https://www.youtube.com/embed/-P1VA-zGbr0"} title={"showcase"} ></iframe>
+                        <p>{"Video showcasing an example run of the program"}</p>
                     </div>
                 ],
                 GitHubUrl: "to add",
             },
             {
-                projectName: "Missionaries and Cannibals ",
+                projectName: "Missionaries and Cannibals",
                 description: "A C++ program which uses breadth first search to solve the Missionaries and Cannibals problem.",
                 appContent: [
                     <div className="project-vid">
-                        <iframe src={"https://www.youtube.com/embed/xPPZ5PR3LB0"} title={"Play through"} ></iframe>
-                        <p>{"Video showcasing the interactive work"}</p>
+                        <iframe src={"https://www.youtube.com/embed/SS98yc4f5cU"} title={"showcase"} ></iframe>
+                        <p>{"Video showcasing an example run of the program"}</p>
                     </div>
                 ],
                 GitHubUrl: "https://github.com/KeaganRieder/Missionaries-and-Cannibals-Problem",
@@ -146,18 +151,6 @@ export const projectData: ProjectGroupInfo[] = [
                 ],
                 displayImg: interactiveCityDisplayImg,
                 GitHubUrl: "https://github.com/KeaganRieder/CityScape",
-            },
-            {
-                projectName: "Perlin Galaxy",
-                description: "Procedural galaxy generation using Perlin noise algorithms made in unity.",
-                appContent: [
-                    <div className="project-vid">
-                        <iframe src={"https://www.youtube.com/embed/xPPZ5PR3LB0"} title={"Play through"} ></iframe>
-                        <p>{"Video showcasing the interactive work"}</p>
-                    </div>
-                ],
-                displayImg: perlinGalaxyDisplayImg,
-                GitHubUrl: "https://github.com/KeaganRieder/PerlinNebulaGenerator",
             },
             {
                 projectName: "Pixel Art Collection",
@@ -205,17 +198,32 @@ export const projectData: ProjectGroupInfo[] = [
             {
                 projectName: "Alone",
                 description: "A 3D render of a lone figure walking through a desolate landscape, created in Blender.",
-                displayImg: plantPotRendered,
-                appContent: [<section className='img-grid'>
-                    <div>
-                        <h3>Rendered img</h3>
-                        <img src={plantPotRendered} alt="Rendered img" />
+                displayImg: untextured4Alone,
+                appContent: [
+                    <><div className="project-vid">
+                        <iframe src={"https://www.youtube.com/embed/C0PK1KK15_A"} title={"showcase"} ></iframe>
+                        <p>{"Video showcasing the 3d rendered video"}</p>
                     </div>
-                    <div>
-                        <h3>workSpace</h3>
-                        <img src={plantPotWorkSpace} alt="workSpace" />
-                    </div>
-                </section>],
+                        <section className='img-grid'>
+                            <div>
+                                {/* <h3>workSpace 1</h3> */}
+                                <img src={untextured2Alone} alt="Rendered img" />
+                            </div>
+                            <div>
+                                {/* <h3>workSpace 2</h3> */}
+                                <img src={untexturedAlone} alt="workSpace" />
+                            </div>
+                            <div>
+                                {/* <h3>workSpace </h3> */}
+                                <img src={untextured3Alone} alt="workSpace" />
+                            </div>
+                             <div>
+                                {/* <h3>workSpace</h3> */}
+                                <img src={untextured4Alone} alt="workSpace" />
+                            </div>
+
+                        </section>
+                    </>],
             },
 
         ]
