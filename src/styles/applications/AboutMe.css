@@ -94,3 +94,64 @@
 .job-materials-container p:hover {
     color: var(--link-primary-hover);
 }
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .profile-pic {
+        width: 40%;
+        padding: 6px;
+    }
+    .about-me-header {
+        font-size: 1.5em;
+    }
+    .skills-list h3 {
+        font-size: 1.3em;
+    }
+    .skills-list li {
+        font-size: 1em;
+    }
+    .job-materials-container {
+        width: 90%;
+        padding: 6px;
+    }
+}
+
+@media (max-width: 600px) {
+    .profile-pic {
+        float: none;
+        display: block;
+        margin: 0 auto 10px auto;
+        width: 60%;
+        padding: 4px;
+    }
+    .about-me-header {
+        font-size: 1.1em;
+        text-align: center;
+        padding-left: 0;
+    }
+    .skills-container {
+        flex-direction: column;
+        gap: 2px;
+        padding: 2px;
+    }
+    .skills-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .skills-list h3 {
+        font-size: 1em;
+    }
+    .skills-list li {
+        font-size: 0.95em;
+    }
+    .skillCategory {
+        min-width: 120px;
+        margin-bottom: 6px;
+    }
+    .job-materials-container {
+        width: 100%;
+        padding: 4px;
+        margin: 2px 0;
+        font-size: 0.95em;
+    }
+}

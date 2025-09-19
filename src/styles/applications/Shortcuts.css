@@ -31,9 +31,17 @@
     width: var(--shortcut-size);
     height: auto;
     object-fit: contain;
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
+    /* Ensure pixel art stays crisp on all browsers */
+    image-rendering: pixelated !important;
+    image-rendering: crisp-edges !important;
+    image-rendering: -moz-crisp-edges !important;
+    image-rendering: -webkit-optimize-contrast !important;
+    image-rendering: optimize-contrast !important;
+    -ms-interpolation-mode: nearest-neighbor !important;
+    /* For Safari */
+    -webkit-image-rendering: pixelated !important;
+    /* For older browsers */
+    image-rendering: -o-pixelated !important;
 }
 
 /* Shortcut Label */
@@ -50,4 +58,37 @@
 
 .shortcut:hover .shortcut-label {
     color: var(--text-nav-hover);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    :root {
+        --shortcut-size: min(64px, 12vw);
+        --shortcut-gap: min(4px, 1vw);
+    }
+    .shortcut-label {
+        font-size: 1em;
+        max-width: calc(var(--shortcut-size) * 1.5);
+    }
+}
+
+@media (max-width: 600px) {
+    :root {
+        --shortcut-size: min(48px, 18vw);
+        --shortcut-gap: min(2px, 2vw);
+    }
+    .shortcut {
+        min-width: var(--shortcut-size);
+        margin: var(--shortcut-gap);
+        padding: 2px;
+    }
+    .shortcut-label {
+        font-size: 0.9em;
+        max-width: calc(var(--shortcut-size) * 2);
+        white-space: normal;
+        word-break: break-word;
+    }
+    .shortcut-icon {
+        width: var(--shortcut-size);
+    }
 }

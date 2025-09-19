@@ -110,3 +110,69 @@
     height: auto;
     box-sizing: border-box;
 }
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .app {
+        min-width: 260px;
+        max-width: 95vw;
+        min-height: 180px;
+        max-height: 90vh;
+        padding: 4px 2px 8px 2px;
+    }
+    .header {
+        height: 40px;
+        padding: 2px 4px;
+    }
+    .title {
+        font-size: 1.3em;
+        padding: 0 6px;
+    }
+    .header button {
+        width: 32px;
+        height: 32px;
+        margin-right: 8px;
+    }
+    .header button img {
+        width: 18px;
+        height: 18px;
+    }
+    .content {
+        font-size: 1em;
+        padding: 6px;
+    }
+}
+
+@media (max-width: 600px) {
+    .app {
+        min-width: 160px;
+        max-width: 100vw;
+        min-height: 120px;
+        max-height: 100vh;
+        padding: 2px 0 4px 0;
+    }
+    .header {
+        flex-direction: column;
+        height: auto;
+        gap: 4px;
+        padding: 2px 2px;
+    }
+    .title {
+        font-size: 1em;
+        padding: 0 2px;
+        text-align: center;
+    }
+    .header button {
+        width: 28px;
+        height: 28px;
+        margin: 2px 0 0 0;
+    }
+    .header button img {
+        width: 14px;
+        height: 14px;
+    }
+    .content {
+        font-size: 0.95em;
+        padding: 4px;
+    }
+}
