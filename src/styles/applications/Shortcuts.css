@@ -52,7 +52,6 @@
     font-size: 1.25em;
     text-align: center;
     white-space: nowrap;
-    overflow: hidden;
     max-width: calc(var(--shortcut-size) * 1.2);
 }
 
@@ -68,7 +67,7 @@
     }
     .shortcut-label {
         font-size: 1em;
-        max-width: calc(var(--shortcut-size) * 1.5);
+        max-width: calc(var(--shortcut-size));
     }
 }
 
