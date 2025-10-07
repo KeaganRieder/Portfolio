@@ -6,7 +6,7 @@ import Skills from './Content.ts';
 import textDocIcon from '../../assets/apps/text_doc.png';
 import profilePic from '../../assets/apps/profile.gif';
 
-import { Biography, ArtistStatement } from './Content.ts';
+import { Biography } from './Content.ts';
 import type { AppInfo } from '../application/ApplicationProperties.ts';
 
 import '../../styles/applications/AboutMe.css';
@@ -27,7 +27,6 @@ const AboutMe: React.FC = () => {
                     <p key={index}>{paragraph}</p>
                 ))}
             </div>
-{/* todo add contact info */}
             <JobMaterials />
 
             <div className='skills-container'>
@@ -46,11 +45,6 @@ const AboutMe: React.FC = () => {
                 </ul>
             </div>
             <h2 className='about-me-header'> Artist Statement </h2>
-            <div>
-                {ArtistStatement.split('\n\n').map((paragraph, index) => (
-                    <p key={index}>{paragraph}</p>
-                ))}
-            </div>
 
         </>
     );

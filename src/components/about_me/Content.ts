@@ -2,11 +2,11 @@ export const Biography: string = `
 I am a programmer and artist pursuing a BSC in Computer Science and a BFA in New Media 
 at the University of Lethbridge. My academic background allows me to combine technical 
 expertise with creative problem-solving, particularly in software development, interactive 
-media, and game design.\n
+media, and game design.
 
 I enjoy working with a variety of programming languages to design software solutions and 
 develop interactive experiences. Alongside coding, I create pixel art, tile sets, and 
-character models—skills that complement my interest in game development.\n
+character models—skills that complement my interest in game development.
 
 My passion for programming is rooted in a strong enjoyment of problem-solving and innovation. 
 This drive led me to computer science, where I focus on building technical skills, and later 
@@ -15,16 +15,16 @@ design and digital art. By pursuing both fields, I aim to develop a well-rounded
 that bridges technical development and artistic design.
 `;
 
-export const ArtistStatement: string = `
-I strive to merge digital art and programming to create interactive works that offer unique 
-and engaging experiences. My practice spans from generating pixel art and digital illustrations 
-to developing procedural systems that produce entirely new creations from randomness.\n
+// export const ArtistStatement: string = `
+// I strive to merge digital art and programming to create interactive works that offer unique 
+// and engaging experiences. My practice spans from generating pixel art and digital illustrations 
+// to developing procedural systems that produce entirely new creations from randomness.
 
-A central inspiration in my work is the challenge of deriving meaning from the unpredictable. 
-By incorporating semi- or fully-randomized elements, I aim to create pieces with an ever-evolving 
-nature, inviting viewers to encounter something fresh with each interaction. Adding interactivity 
-through code allows my work to respond dynamically, making every experience distinct and personal.
-`;
+// A central inspiration in my work is the challenge of deriving meaning from the unpredictable. 
+// By incorporating semi- or fully-randomized elements, I aim to create pieces with an ever-evolving 
+// nature, inviting viewers to encounter something fresh with each interaction. Adding interactivity 
+// through code allows my work to respond dynamically, making every experience distinct and personal.
+// `;
 
 const Skills = [
     {
