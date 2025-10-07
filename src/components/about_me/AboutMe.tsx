@@ -22,9 +22,11 @@ const AboutMe: React.FC = () => {
         <>
             <img className='profile-pic' src={profilePic} alt='profile'></img>
 
-            <p >
-                {Biography}
-            </p>
+            <div>
+                {Biography.split('\n\n').map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
+                ))}
+            </div>
 {/* todo add contact info */}
             <JobMaterials />
 
@@ -44,10 +46,11 @@ const AboutMe: React.FC = () => {
                 </ul>
             </div>
             <h2 className='about-me-header'> Artist Statement </h2>
-            <p>
-
-                {ArtistStatement}
-            </p>
+            <div>
+                {ArtistStatement.split('\n\n').map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
+                ))}
+            </div>
 
         </>
     );
