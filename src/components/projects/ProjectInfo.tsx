@@ -61,13 +61,7 @@ export const projectData: ProjectGroupInfo[] = [
             },
             {
                 projectName: "Under Us",
-                description: "A text based adventure game created for a school project using C++.",
-                appContent: [
-                    <div className="project-vid">
-                        <iframe src={"https://www.youtube.com/embed/LX4Vz6qQyP4"} title={"Play through"} ></iframe>
-                        <p>{"Video showcasing the game in action"}</p>
-                    </div>
-                ],
+                description: "A text based adventure game created in a group for school using C++.",
                 GitHubUrl: "https://github.com/KeaganRieder/UnderUs",
             },
             {

@@ -1,19 +1,30 @@
-export const Biography: string = `I'm a programmer and artist, currently attending the University of Lethbridge for a BFA in New Media and a BSc in Computer Science. 
-I enjoy working with various programming languages and tools to create software that solves problems or generates and makes interactive artwork. 
-When I'm not writing programs to make or solve problems, I'm drawing pixel art pieces, tile sets, and character models that can be used for games. 
+export const Biography: string = `
+I am a programmer and artist pursuing a BSC in Computer Science and a BFA in New Media 
+at the University of Lethbridge. My academic background allows me to combine technical 
+expertise with creative problem-solving, particularly in software development, interactive 
+media, and game design.\n
 
-Programming is a hobby and passion of mine, which I've had since middle school. I was introduced to and fell in love with the problem-solving aspects and the ability to create things with it. 
-This passion led me to attend the University of Lethbridge to expand my programming skills. While there, I would find out about the new media program that covered various skills and topics, including video game design and development. 
-Having a hobby of playing video games and a desire to develop and create games, I added new media as a second major. 
+I enjoy working with a variety of programming languages to design software solutions and 
+develop interactive experiences. Alongside coding, I create pixel art, tile sets, and 
+character models—skills that complement my interest in game development.\n
 
-Besides school work, I'm currently working on a game, which combines elements from automation games and colony sims to create different experiences. 
-The game's development is currently more of a hobby, a way to practice and learn new skills.`;
+My passion for programming is rooted in a strong enjoyment of problem-solving and innovation. 
+This drive led me to computer science, where I focus on building technical skills, and later 
+to the New Media program, where I explore the creative applications of technology in game 
+design and digital art. By pursuing both fields, I aim to develop a well-rounded skill set 
+that bridges technical development and artistic design.
+`;
 
-export const ArtistStatement: string = `I strive to blend digital art and code to create interactive works that offer unique experiences. 
-The programming side of my work spans from generating pixel art pieces and digital illustrations to creating procedural systems that bring something entirely new from randomness. 
+export const ArtistStatement: string = `
+I strive to merge digital art and programming to create interactive works that offer unique 
+and engaging experiences. My practice spans from generating pixel art and digital illustrations 
+to developing procedural systems that produce entirely new creations from randomness.\n
 
-One of my main inspirations is the challenge of deriving meaning from the unpredictable. By embracing semi- or fully-randomized elements, I aim to create pieces with an ever-evolving nature, inviting viewers to experience something fresh with each interaction. 
-Adding interactivity through code allows the work to respond dynamically to each viewer, making every encounter distinct and personal.`;
+A central inspiration in my work is the challenge of deriving meaning from the unpredictable. 
+By incorporating semi- or fully-randomized elements, I aim to create pieces with an ever-evolving 
+nature, inviting viewers to encounter something fresh with each interaction. Adding interactivity 
+through code allows my work to respond dynamically, making every experience distinct and personal.
+`;
 
 const Skills = [
     {
