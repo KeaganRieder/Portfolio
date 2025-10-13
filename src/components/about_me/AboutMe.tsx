@@ -44,8 +44,6 @@ const AboutMe: React.FC = () => {
                     ))}
                 </ul>
             </div>
-            <h2 className='about-me-header'> Artist Statement </h2>
-
         </>
     );
 
