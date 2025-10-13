@@ -1,9 +1,9 @@
 import React from 'react';
 import ticTacToeDisplayImg from '../../assets/projects/games/tic_tac_toe/board.png';
 import soulSyncDisplayImg from '../../assets/projects/games/soul_sync_title.png';
-import puddleClickDisplayImg from '../../assets/projects/games/tic_tac_toe/board.png';
-import slimeClickerDisplayImg from '../../assets/projects/games/tic_tac_toe/board.png';
-import portfolioDisplayImg from '../../assets/projects/games/tic_tac_toe/board.png';
+import puddleClickDisplayImg from '../../assets/projects/websites/puddle_clicker.png';
+import slimeClickerDisplayImg from '../../assets/projects/websites/slime_clicker.png';
+import portfolioDisplayImg from '../../assets/projects/websites/portfolio_pic.png';
 import interactiveCityDisplayImg from '../../assets/projects/art/interactive/cityScape/ex.png';
 
 import homeAmongTheStairs from '../../assets/projects/art/pixel/home_among_the_stars.png';

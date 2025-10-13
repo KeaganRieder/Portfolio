@@ -43,13 +43,6 @@ const Project: React.FC<ProjectInfo> = ({ projectName, description, appContent, 
         </div>
     )
 
-    // const vidElements = vidInfo ? vidInfo.map((vid, index) => (
-    //     <div key={index} className="project-vid">
-    //         <iframe  src={vid.url} title={vid.description} ></iframe>
-    //         <p>{vid.description}</p>
-    //     </div>
-    // )) : null
-
     const hasApp = appContent;
 
     const handleProjectClick = () => {
@@ -64,7 +57,6 @@ const Project: React.FC<ProjectInfo> = ({ projectName, description, appContent, 
         console.log(`Closing ${projectName} application`);
     };
 
-    // Update project overview to be clickable if app exists
     const clickableProjectOverview = hasApp ? (
         <div
             className="project-overview clickable"
