@@ -100,7 +100,7 @@ export const projectData: ProjectGroupInfo[] = [
                 projectName: "Portfolio",
                 description: "My portfolio website made with React and Typescript, which is the one you are currently on.",
                 displayImg: portfolioDisplayImg,
-                GitHubUrl: "https://github.com/KeaganRieder?tab=repositories&q=port&type=&language=&sort=",
+                GitHubUrl: "https://github.com/KeaganRieder/Portfolio",
             },
         ]
     },
