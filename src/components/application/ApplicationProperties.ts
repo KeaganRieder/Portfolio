@@ -4,11 +4,6 @@ export interface AppInfo {
     hasShortcut?: boolean;
 }
 
-export interface ShortcutProperties {
-    appInfo: AppInfo; 
-    onClick: () => void; 
-}
-
 export interface AppProperties {
     appInfo: AppInfo; 
     children: React.ReactNode;

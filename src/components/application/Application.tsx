@@ -131,7 +131,7 @@ const Application: React.FC<AppProperties> = ({ appInfo, children, visible = fal
 
     const appShortcut = (
         appInfo.hasShortcut ? (
-            <AppShortcut appInfo={appInfo} onClick={OpenApp} />
+            <AppShortcut name={appInfo.name} iconSrc={appInfo.iconSrc} action={OpenApp} />
         ) : null
     );
 

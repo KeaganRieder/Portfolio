@@ -20,50 +20,31 @@ const Desktop: React.FC = () => {
     const shortcutContainer = (
         <section id='shortcuts' className='shortcut-container'>
             <AppShortcut
-                appInfo={{ name: 'email', iconSrc: emailIcon, }}
-
-                onClick={() => { window.open('mailto:kagan@rieder.ca', '_blank'); }
-                }
+                name='email'
+                iconSrc={emailIcon}
+                action={() => { window.open('mailto:kagan@rieder.ca', '_blank'); }}
             />
             <AppShortcut
-                appInfo={{ name: 'linkedin', iconSrc: linkedinIcon, }}
-
-                onClick={() => { window.open("https://www.linkedin.com/in/keagan-rieder/", "_blank") }
-                }
+                name='linkedin'
+                iconSrc={linkedinIcon}
+                linkUrl="https://www.linkedin.com/in/keagan-rieder/"
             />
             <AppShortcut
-                appInfo={{ name: 'github', iconSrc: githubIcon, }}
-
-                onClick={() => { window.open("https://github.com/KeaganRieder", "_blank") }
-                }
+                name='github'
+                iconSrc={githubIcon}
+                linkUrl="https://github.com/KeaganRieder"
             />
             <AppShortcut
-                appInfo={{ name: 'resume', iconSrc: textDocIcon, }}
-
-                onClick={() => {
-                    const fileName = 'KeaganRieder-Resume.pdf';
-                    const link = document.createElement('a');
-                    link.href = `${resume}`;
-                    link.download = fileName;
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                }
-                }
+                name='resume'
+                iconSrc={textDocIcon}
+                fileName='KeaganRieder-Resume.pdf'
+                fileUrl={resume}
             />
             <AppShortcut
-                appInfo={{ name: 'artist_cv', iconSrc: textDocIcon, }}
-
-                onClick={() => {
-                    const fileName = 'KeaganRieder-ArtistCv.pdf';
-                    const link = document.createElement('a');
-                    link.href = `${artistCV}`;
-                    link.download = fileName;
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                }
-                }
+                name='artist_cv'
+                iconSrc={textDocIcon}
+                fileName='KeaganRieder-ArtistCv.pdf'
+                fileUrl={artistCV}
             />
         </section>
     )

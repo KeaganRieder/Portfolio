@@ -21,3 +21,24 @@
 
   gtag('config', 'G-2YCBHS70HF');
 </script>
+
+<!-- tracking -->
+<script>
+  // Read the query parameter ?src=___
+  const urlParams = new URLSearchParams(window.location.search);
+  const company = urlParams.get('src');
+
+  if (company) {
+    console.log("Company source:", company);
+
+    // Send the value to GA4
+    gtag('event', 'company_visit', {
+      company_name: company
+    });
+
+    // Also set as user property (optional)
+    gtag('set', 'user_properties', {
+      company_name: company
+    });
+  }
+</script>
