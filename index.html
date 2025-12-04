@@ -24,21 +24,27 @@
 
 <!-- tracking -->
 <script>
-  // Read the query parameter ?src=___
-  const urlParams = new URLSearchParams(window.location.search);
-  const company = urlParams.get('src');
+  // Only run after gtag has been defined
+  window.addEventListener('load', function () {
+    if (typeof gtag !== 'function') return;
 
-  if (company) {
-    console.log("Company source:", company);
+    const urlParams = new URLSearchParams(window.location.search);
+    const rawCompany = urlParams.get('src');
 
-    // Send the value to GA4
+    if (!rawCompany) return;
+
+    const company = rawCompany.trim(); // or .toLowerCase() if you prefer
+
+    console.log('Company source:', company);
+
+    // Custom event with a parameter
     gtag('event', 'company_visit', {
       company_name: company
     });
 
-    // Also set as user property (optional)
+    // Optional: set a user property
     gtag('set', 'user_properties', {
       company_name: company
     });
-  }
+  });
 </script>
