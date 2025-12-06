@@ -22,29 +22,3 @@
   gtag('config', 'G-2YCBHS70HF');
 </script>
 
-<!-- tracking -->
-<script>
-  // Only run after gtag has been defined
-  window.addEventListener('load', function () {
-    if (typeof gtag !== 'function') return;
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const rawCompany = urlParams.get('src');
-
-    if (!rawCompany) return;
-
-    const company = rawCompany.trim(); // or .toLowerCase() if you prefer
-
-    console.log('Company source:', company);
-
-    // Custom event with a parameter
-    gtag('event', 'company_visit', {
-      company_name: company
-    });
-
-    // Optional: set a user property
-    gtag('set', 'user_properties', {
-      company_name: company
-    });
-  });
-</script>
