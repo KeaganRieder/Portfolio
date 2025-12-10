@@ -22,6 +22,7 @@ import untextured4Alone from '../../assets/projects/art/3d_modals/alone/rendered
 export interface ProjectInfo {
     projectName: string;
     description?: string;
+    Tags: string[];
     displayImg?: string;
     appContent?: React.ReactNode[];
     GitHubUrl?: string;
@@ -41,7 +42,7 @@ export const projectData: ProjectGroupInfo[] = [
             {
                 projectName: "Tic Tac Toe",
                 description: "A tic tac toe game made in C++, using the minimax algorithm for the AI.",
-
+                Tags: ["C++", "Minimax Algorithm"],
                 appContent: [
                     <>
                         <div className="project-vid">
@@ -62,12 +63,13 @@ export const projectData: ProjectGroupInfo[] = [
             {
                 projectName: "Under Us",
                 description: "A text based adventure game created in a group for school using C++.",
+                Tags: ["C++", "Gtest", "Solid Principles"],
                 GitHubUrl: "https://github.com/KeaganRieder/UnderUs",
             },
             {
                 projectName: "Soul Sync",
                 description: "A 2 player split screen Coop platforming game, made in Godot.",
-
+                Tags: ["Godot", "C#"],
                 appContent: [
                     <div className="project-vid">
                         <iframe src={"https://www.youtube.com/embed/nJnVt020O08"} title={"Play through"} ></iframe>
@@ -85,20 +87,23 @@ export const projectData: ProjectGroupInfo[] = [
         projects: [
             {
                 projectName: "Puddle Clicker",
-                description: "A clicker game made with Figma for my new media web design class. Meant to bring awareness to predatory monetization practices in video games.",
+                description: "A clicker game for my new media web design class. Meant to bring awareness to predatory monetization practices in video games.",
+                Tags: ["Figma"],
                 displayImg: puddleClickDisplayImg,
                 demoUrl: "https://www.figma.com/proto/NhRJj4sD7KLSy60STONtx1/Assignment-1..?node-id=10-26&p=f&t=9i4VD6yduhIHpWIz-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=10%3A26",
             },
             {
                 projectName: "Slime Clicker",
-                description: "a web game made with HTML, CSS and JavaScript. In which has the player clicking slimes to earn points and buy upgrades.",
+                description: "A web game which has the player clicking slimes to earn points and buy upgrades.",
+                Tags: ["HTML", "CSS", "JavaScript"],
                 displayImg: slimeClickerDisplayImg,
                 GitHubUrl: "https://github.com/KeaganRieder/SlimeClicker",
                 demoUrl: "https://keaganrieder.github.io/SlimeClicker/",
             },
             {
                 projectName: "Portfolio",
-                description: "My portfolio website made with React and Typescript, which is the one you are currently on.",
+                description: "My portfolio website which is the one you are currently on.",
+                Tags: ["React", "TypeScript", "CSS"],
                 displayImg: portfolioDisplayImg,
                 GitHubUrl: "https://github.com/KeaganRieder/Portfolio",
             },
@@ -109,7 +114,8 @@ export const projectData: ProjectGroupInfo[] = [
         projects: [
             {
                 projectName: "N-Queen Problem",
-                description: "Solution to the classic N-Queen chess problem using backtracking.",
+                description: "Solution to the N-Queen chess problem using backtracking.",
+                Tags: ["Backtracking Algorithm", "C++"],
                 appContent: [
                     <div className="project-vid">
                         <iframe src={"https://www.youtube.com/embed/-P1VA-zGbr0"} title={"showcase"} ></iframe>
@@ -120,7 +126,8 @@ export const projectData: ProjectGroupInfo[] = [
             },
             {
                 projectName: "Missionaries and Cannibals",
-                description: "A C++ program which uses breadth first search to solve the Missionaries and Cannibals problem.",
+                description: "A program using Breadth First Search to solve the Missionaries and Cannibals problem.",
+                Tags: ["Breadth First Search", "C++"],
                 appContent: [
                     <div className="project-vid">
                         <iframe src={"https://www.youtube.com/embed/SS98yc4f5cU"} title={"showcase"} ></iframe>
@@ -136,7 +143,8 @@ export const projectData: ProjectGroupInfo[] = [
         projects: [
             {
                 projectName: "Interactive City Scape",
-                description: "An interactive digital art piece made using processing, that allows the user to interact and change a randomly generated cityscape.",
+                description: "An interactive digital art piece, that allows the user to interact and change a randomly generated cityscape.",
+                Tags: ["Processing"],
                 appContent: [
                     <div className="project-vid">
                         <iframe src={"https://www.youtube.com/embed/xPPZ5PR3LB0"} title={"Play through"} ></iframe>
@@ -148,7 +156,8 @@ export const projectData: ProjectGroupInfo[] = [
             },
             {
                 projectName: "Pixel Art Collection",
-                description: "A collection of pixel art pieces created using Aseprite.",
+                description: "A collection of pixel art pieces",
+                Tags: ["Aseprite"],
                 appContent: [
                     <>
                         <section className='img-grid'>
@@ -176,7 +185,8 @@ export const projectData: ProjectGroupInfo[] = [
         projects: [
             {
                 projectName: "Plant pot",
-                description: "A 3D model of a plant pot and mushroom created using Blender.",
+                description: "A 3D model of a plant pot and mushroom",
+                Tags: ["Blender"],
                 displayImg: plantPotRendered,
                 appContent: [<section className='img-grid'>
                     <div>
@@ -191,7 +201,8 @@ export const projectData: ProjectGroupInfo[] = [
             },
             {
                 projectName: "Alone",
-                description: "A 3D render of a lone figure walking through a desolate landscape, created in Blender.",
+                description: "A 3D render of a lone figure walking through a desolate landscape",
+                Tags: ["Blender"],
                 displayImg: untextured4Alone,
                 appContent: [
                     <><div className="project-vid">

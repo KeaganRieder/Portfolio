@@ -27,7 +27,7 @@ const projectOverviewContainer = (
                         key={`${categoryName}-${project.projectName}-${index}`}
                         projectName={project.projectName}
                         description={project.description}
-                        
+                        Tags={project.Tags}
                         appContent={project.appContent}
                         GitHubUrl={project.GitHubUrl}
                         demoUrl={project.demoUrl}

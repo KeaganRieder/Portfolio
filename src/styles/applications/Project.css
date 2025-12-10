@@ -209,6 +209,24 @@
     image-rendering: crisp-edges;
 }
 
+.project-tags {
+    margin: 0 0 10px 0;
+}
+
+.project-tag {
+    display: inline-block;
+    margin: 0 8px 8px 0;
+    padding: 4px 10px;
+    font-family: var(--body-primary-font);
+    font-size: 0.9em;
+    background-color: var(--navigation-bg);
+    color: var(--text-body-primary);
+    border-radius: 12px;
+    border-bottom: 2px solid var(--application-shadow) ;
+    border-top: 2px solid var(--application-reflection); 
+
+}
+
 .project-vid {
     display: block;
     width: 100%;
@@ -230,12 +248,15 @@
 
 
 /* project Text Styles */
-.project-link {
-    display: inline-block;
-    margin: 5px 10px 5px 0;
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 5px 0 10px 0;
 }
 
-.project-link a {
+.project-link a,
+.project-links a {
     font-family: var(--link-font);
     color: var(--text-link);
     text-decoration: none;
@@ -250,12 +271,14 @@
     font-weight: 500;
 }
 
-.project-link a:hover {
+.project-link a:hover,
+.project-links a:hover {
     background-color: var(--link-primary-hover);
     color: var(--text-link-hover);
 }
 
-.project-link a:active {
+.project-link a:active,
+.project-links a:active {
     border-top: 2px solid var(--application-shadow);
     border-left: 2px solid var(--application-shadow);
     border-bottom: 2px solid var(--application-reflection);

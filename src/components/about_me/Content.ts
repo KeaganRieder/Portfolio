@@ -15,21 +15,14 @@ design and digital art. By pursuing both fields, I aim to develop a well-rounded
 that bridges technical development and artistic design.
 `;
 
-// export const ArtistStatement: string = `
-// I strive to merge digital art and programming to create interactive works that offer unique 
-// and engaging experiences. My practice spans from generating pixel art and digital illustrations 
-// to developing procedural systems that produce entirely new creations from randomness.
-
-// A central inspiration in my work is the challenge of deriving meaning from the unpredictable. 
-// By incorporating semi- or fully-randomized elements, I aim to create pieces with an ever-evolving 
-// nature, inviting viewers to encounter something fresh with each interaction. Adding interactivity 
-// through code allows my work to respond dynamically, making every experience distinct and personal.
-// `;
-
 const Skills = [
     {
         category: "Languages",
-        skills: ["JavaScript", "TypeScript", "HTML", "CSS", "C++", "C#", "Processing"]
+        skills: ["JavaScript", "TypeScript", "React", "HTML", "CSS", "C++", "C#", "Processing"]
+    },
+    {
+        category: "Unit Testing",
+        skills: ["GDunit", "GTest"]
     },
     {
         category: "Game Engines",
@@ -39,6 +32,7 @@ const Skills = [
         category: "Tools",
         skills: ["Git", "VSCode", "Blender", "Aseprite", "Photoshop", "Illustrator"]
     },
+    
 ];
 
 export default Skills;
