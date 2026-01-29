@@ -1,0 +1,75 @@
+/* ============================== */
+/*     desktop  Colors        */
+/* ============================== */
+:root {
+    --color-desktop: transparent;
+
+    --color-shortcut-button: transparent;
+    --color-shortcut-button-highlight: #f0f0f0;
+
+    --color-taskbar: #f0f0f0;
+    --color-taskbar-shadow: #000000;
+    --color-taskbar-accent: #f0f0f0;
+
+    --color-taskbar-button: transparent;
+    --color-taskbar-button-highlight: #f0f0f0;
+    --color-taskbar-button-active: #f0f0f0;
+    --color-taskbar-button-shadow: #000000;
+    --color-taskbar-button-accent: #f0f0f0;
+}
+
+/* ============================== */
+/*     Application  Colors        */
+/* ============================== */
+:root {
+    --color-window: #524f4f;
+    --color-window-shadow: #f0f0f0;
+    --color-window-accent: #f0f0f0;
+
+    --color-header: #694848;
+    --color-header-shadow: #f0f0f0;
+    --color-header-accent: #f0f0f0;
+
+    --color-button-head: #944e4e;
+    --color-button-head-highlight: #f0f0f0;
+    --color-button-head-shadow: #f0f0f0;
+    --color-button-head-accent: #f0f0f0;
+
+    --color-content-main: #f0f0f0;
+    --color-content-main-shadow: #f0f0f0;
+    --color-content-main-accent: #f0f0f0;
+
+    --color-content-secondary: #f0f0f0;
+    --color-content-secondary-shadow: #f0f0f0;
+    --color-content-secondary-accent: #f0f0f0;
+
+    --color-button-content: transparent;
+    --color-button-content-highlight: #f0f0f0;
+    --color-button-content-shadow: #f0f0f0;
+    --color-button-content-accent: #f0f0f0;
+}
+
+/* ============================== */
+/*          Text  Colors          */
+/* ============================== */
+:root {
+    --color-header-text: #f0f0f0;
+    --color-header-text-highlight: #f0f0f0;
+    --color-header-text-shadow: #f0f0f0;
+
+    --color-subheader-text: #f0f0f0;
+    --color-subheader-text-highlight: #f0f0f0;
+    --color-subheader-text-shadow: #f0f0f0;
+
+    --color-body-text: #f0f0f0;
+    --color-body-text-highlight: #f0f0f0;
+    --color-body-text-shadow: #f0f0f0;
+
+    --color-shortcut-text: #f0f0f0;
+    --color-shortcut-text-highlight: #f0f0f0;
+    --color-shortcut-text-shadow: #000000;
+
+    --color-link: #f0f0f0;
+    --color-link-highlight: #f0f0f0;
+    --color-link-shadow: #f0f0f0;
+}

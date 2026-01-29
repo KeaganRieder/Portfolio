@@ -1,0 +1,206 @@
+@import url('../../style/color.css');
+@import url('../../style/font.css');
+
+:root {
+    --background-img-path: url(./assets/background.png);
+
+    --taskbar-height: clamp(80px, 9vh, 90px);
+
+    --shortcut-container-width: clamp(200px, 25%, 300px);
+    --shortcut-container-padding: clamp(5px, 1vw, 15px);
+
+    --desktop-height: calc(100% - var(--taskbar-height));
+}
+
+#desktop {
+    position: relative;
+    overflow: hidden;
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    background-color: var(--color-desktop);
+}
+
+#app-container {
+    position: relative;
+    overflow: hidden;
+
+    width: 100%;
+    height: var(--desktop-height);
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    background-image: var(--background-img-path);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#shortcut-container {
+    position: relative;
+    float: left;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: clamp(5px, 1vw, 10px);
+
+    width: var(--shortcut-container-width);
+    min-width: 150px;
+    max-height: var(--desktop-height);
+
+    padding: var(--shortcut-container-padding);
+    box-sizing: border-box;
+}
+
+#shortcut-container button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5px;
+
+    cursor: pointer;
+
+    border: none;
+    border-radius: 4px;
+
+    background-color: var(--color-shortcut-button);
+    transition: background-color 0.2s ease;
+}
+
+#shortcut-container button:hover {
+    background-color: var(--color-shortcut-button-highlight);
+    color: var(--color-shortcut-text-highlight);
+}
+
+#shortcut-container img {
+    image-rendering: pixelated !important;
+    image-rendering: crisp-edges !important;
+    image-rendering: -moz-crisp-edges !important;
+    image-rendering: -webkit-optimize-contrast !important;
+    image-rendering: optimize-contrast !important;
+    -ms-interpolation-mode: nearest-neighbor !important;
+
+    -webkit-image-rendering: pixelated !important;
+
+    image-rendering: -o-pixelated !important;
+}
+
+#shortcut-container h2 {
+    font-family: var(--font-shortcut);
+    font-size: 1.25em;
+
+    text-align: center;
+    white-space: nowrap;
+
+    color: var(--color-shortcut-text);
+    text-shadow: 1px 1px 1px var(--color-shortcut-text-shadow);
+
+    transition: color 0.2s ease;
+
+}
+
+#shortcut-container button:hover h2 {
+    background-color: var(--color-shortcut-button-highlight);
+    color: var(--color-shortcut-text-highlight);
+}
+
+
+#taskbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: var(--taskbar-height);
+
+    padding: 10px;
+    box-shadow: 0 -4px 5px var(--color-taskbar-shadow);
+
+    background-color: var(--taskbar-primary-bg);
+}
+
+#taskbar-shortcut-container {
+    display: flex;
+    height: 100%;
+    width: calc(90% - var(--clock-width) - 50px);
+    float: left;
+
+    padding: 5px;
+    gap: 5px;
+}
+
+#taskbar-shortcut-container button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    background-color: var(--color-taskbar-button);
+    transition: background-color 0.2s ease;
+
+    border-top: 2px solid var(--color-taskbar-button-accent);
+    border-left: 2px solid var(--color-taskbar-button-accent);
+    border-bottom: 2px solid var(--color-taskbar-button-shadow);
+    border-right: 2px solid var(--color-taskbar-button-shadow);
+}
+
+#taskbar-shortcut-container button:hover {
+    background-color: var(--color-taskbar-button-highlight);
+}
+
+#taskbar-shortcut-container button:active {
+    background-color: var(--color-taskbar-button-active);
+}
+
+#taskbar-shortcut-container h2 {
+    font-family: var(--font-shortcut);
+    font-size: 1.25em;
+
+    text-align: center;
+    white-space: nowrap;
+
+    color: var(--color-shortcut-text);
+    text-shadow: 1px 1px 1px var(--color-shortcut-text-shadow);
+
+    transition: color 0.2s ease;
+
+}
+
+#taskbar-shortcut-container h2:hover {
+    color: var(--color-shortcut-text-highlight);
+}
+
+#taskbar-shortcut-container img {
+    width: 25%;
+    height: auto;
+
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+#taskbar-clock {
+    display: inline;
+    position: relative;
+    float: right;
+    text-align: right;
+    margin-right: 20px;
+
+    font-family: var(--shortcut-font);
+    font-size: 1.25em;
+    color: var(--text-header-secondary);
+    line-height: 1.2;
+}
+
+#taskbar-clock div {
+    padding: 2px;
+}

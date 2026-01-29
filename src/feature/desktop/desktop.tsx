@@ -1,0 +1,128 @@
+
+import React, { useEffect, useState } from "react";
+import { ApplicationShortcut } from "../../components/shortcut/applicationShortcut";
+
+import './desktop.css'
+import { ShortcutRegistry } from "./shortcutRegistry";
+import { AppRegistry } from "./appRegistry";
+import { Application } from "../../components/application/application";
+
+import textDocIcon from '../../assets/apps/text_doc.png';
+
+export const Desktop: React.FC = () => {
+    const [currentTime, setCurrentTime] = useState(new Date());
+    const [shortcutContainer, setShortcutContainer] = useState<HTMLElement | null>(null);
+    const [taskbarContainer, setTaskbarContainer] = useState<HTMLElement | null>(null);
+    const [appContainer, setAppContainer] = useState<HTMLElement | null>(null);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentTime(new Date());
+        }, 1000);
+
+        return () => clearInterval(timer);
+    }, []);
+
+    const formatTime = (date: Date) => {
+        return date.toLocaleTimeString('en-US', {
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: true,
+        });
+    };
+
+    const formatDate = (date: Date) => {
+        return date.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+        });
+    };
+
+    const createTaskbar = () => {
+        const createClock = () => {
+            return (
+                <div id="taskbar-clock">
+                    <div className='time'>{formatTime(currentTime)}</div>
+                    <div className='date'>{formatDate(currentTime)}</div>
+                </div>
+            );
+        };
+        const createShortcutContainer = () => {
+            return (
+                <div
+                    id="taskbar-shortcut-container"
+                    ref={(element: HTMLElement | null) => setTaskbarContainer(element)}>
+                </div>
+            );
+        };
+
+        return (
+            <section id="taskbar">
+                {createClock()}
+                {createShortcutContainer()}
+            </section>
+        );
+    };
+
+    const createNavContainer = () => {
+        return (
+            <>
+                <section
+                    id="shortcut-container"
+                    ref={(element: HTMLElement | null) => setShortcutContainer(element)}
+                />
+                {shortcutContainer &&
+                    Object.values(ShortcutRegistry).map((def) => (
+                        <ApplicationShortcut
+                            key={def.id}
+                            {...def}
+                            parent={shortcutContainer}
+                        />
+                    ))}
+            </>
+        );
+    };
+
+    const createApps = () => {
+        return (
+            <>
+                {appContainer &&
+                    Object.values(AppRegistry).map((def) => (
+                        <Application
+                            key={def.id}
+                            {...def}
+                            parent={appContainer}
+                            shortcutContainer={shortcutContainer}
+                            taskbarContainer={taskbarContainer}
+                            shortcut={
+                                { id: def.id + '-shortcut', appName: def.appName, iconPath: textDocIcon }
+                            }
+                            taskbarShortcut={
+                                { id: def.id + '-taskbar-shortcut', appName: def.appName, iconPath: textDocIcon }
+                            }
+                        />
+                    ))}
+            </>
+        );
+    };
+
+    const createAppContainer = () => {
+        return (
+            <>
+                <section id="app-container" ref={(element: HTMLElement | null) => setAppContainer(element)}>
+                    {createNavContainer()}
+                </section>
+                {createApps()}
+            </>
+
+        );
+    };
+
+    return (
+        <section id="desktop" className="desktop">
+            {createAppContainer()}
+            {createTaskbar()}
+        </section>
+    );
+};
