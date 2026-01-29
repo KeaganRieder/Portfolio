@@ -102,7 +102,7 @@
     white-space: nowrap;
 
     color: var(--color-shortcut-text);
-    text-shadow: 1px 1px 1px var(--color-shortcut-text-shadow);
+    text-shadow: 4px 1px 4px var(--color-shortcut-text-shadow);
 
     transition: color 0.2s ease;
 
@@ -125,7 +125,7 @@
     padding: 10px;
     box-shadow: 0 -4px 5px var(--color-taskbar-shadow);
 
-    background-color: var(--taskbar-primary-bg);
+    background-color: var(--color-taskbar);
 }
 
 #taskbar-shortcut-container {
@@ -161,7 +161,7 @@
     background-color: var(--color-taskbar-button-active);
 }
 
-#taskbar-shortcut-container h2 {
+#taskbar-shortcut-container button h2 {
     font-family: var(--font-shortcut);
     font-size: 1.25em;
 
@@ -169,23 +169,22 @@
     white-space: nowrap;
 
     color: var(--color-shortcut-text);
-    text-shadow: 1px 1px 1px var(--color-shortcut-text-shadow);
+    text-shadow: 4px 1px 4px  var(--color-shortcut-text-shadow);
 
     transition: color 0.2s ease;
-
 }
 
-#taskbar-shortcut-container h2:hover {
+#taskbar-shortcut-container button h2:hover {
     color: var(--color-shortcut-text-highlight);
 }
 
 #taskbar-shortcut-container img {
+    aspect-ratio: 1 / 1;
     width: 25%;
-    height: auto;
 
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
+        image-rendering: pixelated;
+        /* image-rendering: -moz-crisp-edges;
+        image-rendering: crisp-edges; */
 }
 
 #taskbar-clock {
@@ -202,5 +201,10 @@
 }
 
 #taskbar-clock div {
-    padding: 2px;
+    font-family: var(--font-shortcut);
+    font-size: 1.25em;
+
+    color: var(--color-clock-text);
+    /* text-shadow: 4px 1px 2px  var(--color-clock-text-shadow); */
+    padding-right: 2px;
 }

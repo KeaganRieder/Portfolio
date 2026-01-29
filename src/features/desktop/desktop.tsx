@@ -4,7 +4,7 @@ import { ApplicationShortcut } from "../../components/shortcut/applicationShortc
 
 import './desktop.css'
 import { ShortcutRegistry } from "./shortcutRegistry";
-import { AppRegistry } from "./appRegistry";
+import { AppRegistry, CreateAppsFromRegistry } from "./appRegistry";
 import { Application } from "../../components/application/application";
 
 import textDocIcon from '../../assets/apps/text_doc.png';
@@ -88,21 +88,7 @@ export const Desktop: React.FC = () => {
         return (
             <>
                 {appContainer &&
-                    Object.values(AppRegistry).map((def) => (
-                        <Application
-                            key={def.id}
-                            {...def}
-                            parent={appContainer}
-                            shortcutContainer={shortcutContainer}
-                            taskbarContainer={taskbarContainer}
-                            shortcut={
-                                { id: def.id + '-shortcut', appName: def.appName, iconPath: textDocIcon }
-                            }
-                            taskbarShortcut={
-                                { id: def.id + '-taskbar-shortcut', appName: def.appName, iconPath: textDocIcon }
-                            }
-                        />
-                    ))}
+                    CreateAppsFromRegistry(appContainer, shortcutContainer, taskbarContainer)}
             </>
         );
     };

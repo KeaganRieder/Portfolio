@@ -8,15 +8,16 @@
 
 .application {
     position: absolute;
-    /* transform: translate(-50%, -50%); */
     overflow: hidden;
 
     background-color: var(--color-window);
     box-sizing: border-box;
+
     border-top: 2px solid var(--color-window-accent);
     border-left: 2px solid var(--color-window-accent);
     border-bottom: 2px solid var(--color-window-shadow);
     border-right: 2px solid var(--color-window-shadow);
+
     padding: 5px 5px 10px 5px;
 }
 
@@ -33,11 +34,12 @@
     box-sizing: border-box;
 
     background-color: var(--color-header);
+    border: 2px solid var(--color-header-accent);
 
-    cursor: "grab",
+    cursor: grab;
 }
 
-.header-button-group h1 {
+.application-header h1 {
     position: relative;
     float: left;
     display: flex;
@@ -63,18 +65,26 @@
     align-items: center;
 
     height: 100%;
-    gap: 5px;
+    padding-right: 10px;
+    gap: 10px;
 }
 
-.header-button-group img{
+.header-button-group img {
     height: 32px;
     object-fit: contain;
 }
 
 .header-button-group button {
+    aspect-ratio: 1 / 1;
+    height: 70%;
+
+    padding: 0;
+    display: grid;
+    place-items: center;
+
     background-color: var(--color-button-head);
     transition: background-color 0.2s ease;
-    border-top: 2px solid var( --color-button-head-accent);
+    border-top: 2px solid var(--color-button-head-accent);
     border-left: 2px solid var(--color-button-head-accent);
     border-bottom: 2px solid var(--color-button-head-shadow);
     border-right: 2px solid var(--color-button-head-shadow);
@@ -101,7 +111,7 @@
     font-family: var(--font-body);
     color: var(--color-body-text);
     font-size: 1.25rem;
-    
+
     scrollbar-width: thin;
     scrollbar-color: var(--scrollbar-thumb-bg) var(--scrollbar-track-bg);
 }
