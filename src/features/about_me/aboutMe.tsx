@@ -1,7 +1,8 @@
-import { Application } from "../../components/application/application";
-import type { applicationDefinition } from "../../components/application/definition";
 
-export const AboutMe: React.FC<applicationDefinition> = ({ id, appName, parent, shortcutContainer, taskbarContainer, content, shortcut, taskbarShortcut }) => {
+import { Application } from "../../components/application/application";
+import type { ApplicationDefinition } from "../../components/application/definition";
+
+export const AboutMe: React.FC<ApplicationDefinition> = ({info, containers, shortcuts}) => {
 
     const Bio = () => {
         
@@ -14,14 +15,9 @@ export const AboutMe: React.FC<applicationDefinition> = ({ id, appName, parent, 
 
     return (<>
         <Application
-            id={id}
-            appName={appName}
-            parent={parent}
-            shortcutContainer={shortcutContainer}
-            taskbarContainer={taskbarContainer}
-            content={content}
-            shortcut={shortcut}
-            taskbarShortcut={taskbarShortcut}
+            info={info}
+            containers={containers}
+            shortcuts={shortcuts}
         />
     </>
     );

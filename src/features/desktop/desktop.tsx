@@ -3,17 +3,18 @@ import React, { useEffect, useState } from "react";
 import { ApplicationShortcut } from "../../components/shortcut/applicationShortcut";
 
 import './desktop.css'
-import { ShortcutRegistry } from "./shortcutRegistry";
-import { AppRegistry, CreateAppsFromRegistry } from "./appRegistry";
-import { Application } from "../../components/application/application";
 
 import textDocIcon from '../../assets/apps/text_doc.png';
+import { ApplicationRegistry } from "./appRegistry";
 
 export const Desktop: React.FC = () => {
+
     const [currentTime, setCurrentTime] = useState(new Date());
     const [shortcutContainer, setShortcutContainer] = useState<HTMLElement | null>(null);
     const [taskbarContainer, setTaskbarContainer] = useState<HTMLElement | null>(null);
     const [appContainer, setAppContainer] = useState<HTMLElement | null>(null);
+
+    const appRegistry = ApplicationRegistry(shortcutContainer!, taskbarContainer!, appContainer!);
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -65,49 +66,22 @@ export const Desktop: React.FC = () => {
         );
     };
 
-    const createNavContainer = () => {
-        return (
-            <>
-                <section
-                    id="shortcut-container"
-                    ref={(element: HTMLElement | null) => setShortcutContainer(element)}
-                />
-                {shortcutContainer &&
-                    Object.values(ShortcutRegistry).map((def) => (
-                        <ApplicationShortcut
-                            key={def.id}
-                            {...def}
-                            parent={shortcutContainer}
-                        />
-                    ))}
-            </>
-        );
-    };
-
-    const createApps = () => {
-        return (
-            <>
-                {appContainer &&
-                    CreateAppsFromRegistry(appContainer, shortcutContainer, taskbarContainer)}
-            </>
-        );
-    };
-
-    const createAppContainer = () => {
+    const createDesktopContainer = () => {
         return (
             <>
                 <section id="app-container" ref={(element: HTMLElement | null) => setAppContainer(element)}>
-                    {createNavContainer()}
+                    <section
+                        id="shortcut-container"
+                        ref={(element: HTMLElement | null) => setShortcutContainer(element)}
+                    />
                 </section>
-                {createApps()}
             </>
-
         );
     };
 
     return (
         <section id="desktop" className="desktop">
-            {createAppContainer()}
+            {createDesktopContainer()}
             {createTaskbar()}
         </section>
     );

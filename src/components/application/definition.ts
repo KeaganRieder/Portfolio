@@ -1,13 +1,40 @@
+import type { ApplicationRegistryControls } from "../../features/desktop/appRegistry";
+import type { WindowVisibilityControls } from "./windowControls";
 import type { ShortcutDefinition } from "../shortcut/definition";
 
-export interface applicationDefinition {
+export interface ApplicationState {
+    value: any;
+    setValue: (id: string, value: any) => void;
+}
+
+export interface ApplicationBaseInfo {
     id: string;
     appName: string;
-    content?: React.ReactNode;
-    headerContent?: React.ReactNode;
-    parent?: HTMLElement | null;
-    shortcutContainer?: HTMLElement | null;
-    taskbarContainer?: HTMLElement | null;
-    taskbarShortcut?: ShortcutDefinition;
-    shortcut?: ShortcutDefinition;
+    tags?: string[];
+}
+
+export interface VisibilityControls {
+    appid: string;
+    zIndex: number;
+    RegistryControls: ApplicationRegistryControls;
+    initialVisibility?: boolean;
+}
+
+export interface ApplicationDefinition {
+    info: ApplicationBaseInfo;
+    visibilityControls: VisibilityControls;
+    applicationStateInfo?: { [key: string]: ApplicationState };
+    containers?: {
+        appContainer?: HTMLElement | null;
+        shortcutContainer?: HTMLElement | null;
+        taskbarContainer?: HTMLElement | null;
+    };
+    shortcuts?: {
+        desktop?: ShortcutDefinition;
+        taskbar?: ShortcutDefinition;
+    }
+    content?: {
+        body?: React.ReactNode;
+        header?: React.ReactNode;
+    }
 }
