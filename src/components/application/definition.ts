@@ -1,5 +1,4 @@
 import type { ApplicationRegistryControls } from "../../features/desktop/appRegistry";
-import type { WindowVisibilityControls } from "./windowControls";
 import type { ShortcutDefinition } from "../shortcut/definition";
 
 export interface ApplicationState {
@@ -23,7 +22,6 @@ export interface VisibilityControls {
 export interface ApplicationDefinition {
     info: ApplicationBaseInfo;
     visibilityControls: VisibilityControls;
-    applicationStateInfo?: { [key: string]: ApplicationState };
     containers?: {
         appContainer?: HTMLElement | null;
         shortcutContainer?: HTMLElement | null;
@@ -36,5 +34,7 @@ export interface ApplicationDefinition {
     content?: {
         body?: React.ReactNode;
         header?: React.ReactNode;
+        headerButtons?: React.ReactNode;
+
     }
 }

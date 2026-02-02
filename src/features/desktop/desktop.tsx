@@ -1,20 +1,19 @@
-
 import React, { useEffect, useState } from "react";
-import { ApplicationShortcut } from "../../components/shortcut/applicationShortcut";
 
 import './desktop.css'
 
-import textDocIcon from '../../assets/apps/text_doc.png';
+// import textDocIcon from '../../assets/apps/text_doc.png';
 import { ApplicationRegistry } from "./appRegistry";
+import SearchBar from "../../components/search_bar/serachBar";
 
 export const Desktop: React.FC = () => {
 
     const [currentTime, setCurrentTime] = useState(new Date());
-    const [shortcutContainer, setShortcutContainer] = useState<HTMLElement | null>(null);
-    const [taskbarContainer, setTaskbarContainer] = useState<HTMLElement | null>(null);
-    const [appContainer, setAppContainer] = useState<HTMLElement | null>(null);
+    // const [shortcutContainer, setShortcutContainer] = useState<HTMLElement | null>(null);
+    // const [taskbarContainer, setTaskbarContainer] = useState<HTMLElement | null>(null);
+    // const [appContainer, setAppContainer] = useState<HTMLElement | null>(null);
 
-    const appRegistry = ApplicationRegistry(shortcutContainer!, taskbarContainer!, appContainer!);
+    const appRegistry = ApplicationRegistry();
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -53,13 +52,18 @@ export const Desktop: React.FC = () => {
             return (
                 <div
                     id="taskbar-shortcut-container"
-                    ref={(element: HTMLElement | null) => setTaskbarContainer(element)}>
+                    ref={(element: HTMLElement | null) => appRegistry.setTaskbarShortcutContainer(element)}
+                >
+                    <SearchBar placeholder="Search..." onSearchChange={(query: string) => {
+                        console.log("Searching for: " + query);
+                    }} />
                 </div>
             );
         };
 
         return (
             <section id="taskbar">
+
                 {createClock()}
                 {createShortcutContainer()}
             </section>
@@ -69,12 +73,14 @@ export const Desktop: React.FC = () => {
     const createDesktopContainer = () => {
         return (
             <>
-                <section id="app-container" ref={(element: HTMLElement | null) => setAppContainer(element)}>
+                <section id="app-container" ref={(element: HTMLElement | null) => appRegistry.setAppContainer(element)}>
                     <section
                         id="shortcut-container"
-                        ref={(element: HTMLElement | null) => setShortcutContainer(element)}
+                        ref={(element: HTMLElement | null) => appRegistry.setShortcutContainer(element)}
                     />
                 </section>
+                {appRegistry.CreateExternalApps()}
+                {appRegistry.createAppsFromRegistry()}
             </>
         );
     };

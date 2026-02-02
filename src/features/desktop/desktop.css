@@ -113,7 +113,6 @@
     color: var(--color-shortcut-text-highlight);
 }
 
-
 #taskbar {
     position: absolute;
     bottom: 0;
@@ -127,7 +126,17 @@
 
     background-color: var(--color-taskbar);
 }
+#taskbar .searchbar {
+    display: flex;
 
+    position: relative;
+    float: left;
+
+    width: calc(10% - 50px);
+    height: 100%;
+
+    margin-right: 10px;
+}
 #taskbar-shortcut-container {
     display: flex;
     height: 100%;

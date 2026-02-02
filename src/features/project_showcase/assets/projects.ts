@@ -1,12 +1,30 @@
-// import type { ProjectDefinition } from "../definition";
+import type { ProjectEntry } from "../project";
 
-// export const Projects: ProjectDefinition[] = [
-//     {
-//         id: "tic-tac-toe",
-//         title: "Tic Tac Toe",
-//         categoryId: "games",
-//         description: "A tic tac toe game made in C++, using the minimax algorithm for the AI.",
-//         tags: ["C++", "Minimax Algorithm"],
-//     }
-
-// ];
+export const Projects: ProjectEntry[] = [
+    {
+        id: "project_1",
+        categoryID: "web_dev",
+        name: "Portfolio Website",
+        tags: ["React", "TypeScript", "CSS"],
+        overviewContents: {
+            description: "A personal portfolio website to showcase my projects and skills.",
+            links: [
+                { label: "GitHub", url: "temp.com" },
+                { label: "Live Demo", url: "temp.com" }
+            ]
+        }
+    },
+     {
+        id: "project_2",
+        categoryID: "test",
+        name: "Portfolio Website",
+        tags: ["React", "TypeScript", "CSS"],
+        overviewContents: {
+            description: "A personal portfolio website to showcase my projects and skills.",
+            links: [
+                { label: "GitHub", url: "temp.com" },
+                { label: "Live Demo", url: "temp.com" }
+            ]
+        }
+    },
+];

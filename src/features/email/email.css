@@ -1,0 +1,66 @@
+ .email-form {
+	 display: flex;
+	 flex-direction: column;
+	 gap: 12px;
+ }
+
+ .email-form label {
+	 display: flex;
+	 flex-direction: column;
+	 gap: 6px;
+	 font-size: 14px;
+ }
+
+ .email-form input,
+ .email-form textarea {
+	 border: 1px solid #d0d0d0;
+	 border-radius: 6px;
+	 padding: 10px 12px;
+	 font-size: 14px;
+	 background: #ffffff;
+	 color: #111;
+ }
+
+ .email-form textarea {
+	 resize: vertical;
+	 min-height: 140px;
+ }
+
+ .email-form button {
+	 align-self: flex-start;
+	 padding: 10px 16px;
+	 border-radius: 6px;
+	 border: none;
+	 background: #222;
+	 color: #fff;
+	 cursor: pointer;
+	 transition: transform 120ms ease, box-shadow 120ms ease;
+ }
+
+ .email-form button:disabled {
+	 opacity: 0.7;
+	 cursor: not-allowed;
+ }
+
+ .email-form button:not(:disabled):hover {
+	 transform: translateY(-1px);
+	 box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+ }
+
+ .email-form__error {
+	 color: #b00020;
+	 font-size: 13px;
+ }
+
+ .email-form__success {
+	 color: #0a7a2f;
+	 font-size: 13px;
+ }
+
+ .email-form__honeypot {
+	 position: absolute;
+	 left: -9999px;
+	 width: 1px;
+	 height: 1px;
+	 overflow: hidden;
+ }

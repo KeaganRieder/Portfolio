@@ -1,11 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 
 import type { Position, Size } from "../../types/vectors";
-import type { ApplicationState, VisibilityControls } from './definition';
-import type { ApplicationRegistryControls } from '../../features/desktop/appRegistry';
+import type { VisibilityControls } from './definition';
 
-
-export const WindowVisibilityControls = (visibilityControls: VisibilityControls) => { 
+export const WindowVisibilityControls = (visibilityControls: VisibilityControls) => {
     const { appid, RegistryControls, initialVisibility = true } = visibilityControls;
     const [isVisible, setIsVisible] = useState(initialVisibility);
     const [isMinimized, setIsMinimized] = useState(false);
@@ -20,6 +18,7 @@ export const WindowVisibilityControls = (visibilityControls: VisibilityControls)
         setIsVisible(true);
         setIsMinimized(false);
         RegistryControls.addAppWindowFunction({ id: appid });
+        RegistryControls.bringToFrontFunction(appid);
     };
 
     const close = () => {
@@ -40,13 +39,21 @@ export const WindowVisibilityControls = (visibilityControls: VisibilityControls)
         close,
         minimize,
     };
-
 }
 
+export const WindowRectControls = (sizeBounds: Size, initialSizeOffset: Size = { width: 0, height: 0 }, initialPositionOffset: Position = { x: 0, y: 0 }) => {
+    const initialWidth = Math.min(window.innerWidth * 1, 1700) + initialSizeOffset.width;
+    const initialHeight = Math.min(window.innerHeight * 0.8, 800) + initialSizeOffset.height;
 
-export const WindowRectControls = (sizeBounds: Size, initialSize: Size = { width: 0, height: 0 }, initialPosition: Position = { x: 0, y: 0 }) => {
-    const [size, setSize] = useState<Size>(initialSize);
-    const [position, setPos] = useState<Position>(initialPosition);
+    const [size, setSize] = useState<Size>({
+        width: initialWidth,
+        height: initialHeight
+    });
+
+    const [position, setPos] = useState<Position>(() => ({
+        x: Math.max((sizeBounds.width - initialWidth ) / 2 + initialPositionOffset.x, 0),
+        y: Math.max((sizeBounds.height - initialHeight ) / 2 + initialPositionOffset.y, 0),
+    }));
     const offset = useRef<Position>({ x: 0, y: 0 });
 
     const [isDragging, setIsDragging] = React.useState(false);
@@ -58,26 +65,34 @@ export const WindowRectControls = (sizeBounds: Size, initialSize: Size = { width
             x: event.clientX - position.x,
             y: event.clientY - position.y
         };
+        event.preventDefault();
     }
 
-    const onMouseMove = (e: MouseEvent) => {
-        if (isDragging) {
+    useEffect(() => {
+        const handleMouseMove = (e: MouseEvent) => {
+            if (!isDragging) return;
             setPos({
                 x: e.clientX - offset.current.x,
                 y: e.clientY - offset.current.y
             });
-        }
-    };
+        };
 
-    const onMouseUp = () => {
-        setIsDragging(false);
-    };
+        const handleMouseUp = () => {
+            setIsDragging(false);
+        };
+
+        window.addEventListener('mousemove', handleMouseMove);
+        window.addEventListener('mouseup', handleMouseUp);
+
+        return () => {
+            window.removeEventListener('mousemove', handleMouseMove);
+            window.removeEventListener('mouseup', handleMouseUp);
+        };
+    }, [isDragging]);
 
     return {
         size,
         position,
         onMouseDown,
-        onMouseMove,
-        onMouseUp,
     }
 }

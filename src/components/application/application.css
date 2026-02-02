@@ -113,11 +113,12 @@
     font-size: 1.25rem;
 
     scrollbar-width: thin;
-    scrollbar-color: var(--scrollbar-thumb-bg) var(--scrollbar-track-bg);
+    scrollbar-color: var(--color-scrollbar-thumb-bg) var(--color-scrollbar-track-bg);
 }
 
 .application-content-scroll-container {
     position: relative;
     height: auto;
     box-sizing: border-box;
+    
 }

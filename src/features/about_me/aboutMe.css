@@ -1,0 +1,104 @@
+@import url('../../style/color.css');
+@import url('../../style/font.css');
+
+.biography {
+    width: 100%;
+    height: auto;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+
+    font: var(--font-body);
+    color: var(--color-body-text);
+    font-size: 1.25rem;
+}
+
+.biography img {
+    aspect-ratio: 1 / 1;
+    width: 30%;
+    flex: 0 0 auto;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.biography a {
+    font: var(--font-body);
+    color: var(--color-link);
+}
+
+.biography a:hover {
+    color: var(--color-link-highlight);
+}
+
+@media (max-width: 768px) {
+    .biography {
+        flex-direction: column;
+    }
+
+    .biography img {
+        width: 50%;
+        max-width: none;
+        align-self: center;
+    }
+}
+
+
+.skills-section {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: var(--color-content-secondary);
+    box-shadow: 1px 5px 5px black;
+}
+
+.skills-section h2 {
+     font: var(--color-header-text);
+    color: var(--color-body-text);
+    font-size: 2rem;
+}
+
+.skills-section h3 {
+     font: var(--color-subheader-text);
+    color: var(--color-body-text);
+    font-size: 1.5rem;
+}
+
+.skills-section p {
+    font: var(--font-body);
+    color: var(--color-body-text);
+    font-size: 1rem;
+}
+
+.skill-category {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.skill-entry {
+    padding: 2px;
+    margin: 2px;
+}
+
+
+.skill-entry-hoverable {
+    border-top: 2px solid var(--color-content-secondary-accent);
+    border-left: 2px solid var(--color-content-secondary-accent);
+    border-bottom: 4px solid var(--color-window-shadow);
+    border-right: 4px solid var(--color-window-shadow);
+    padding: 2px;
+    margin: 2px;
+}
+
+.skill-entry-hoverable:hover {
+    background-color: var(--color-content-secondary-highlight);
+    cursor: default;
+}
