@@ -10,6 +10,8 @@
     --shortcut-container-padding: clamp(5px, 1vw, 15px);
 
     --desktop-height: calc(100% - var(--taskbar-height));
+    --clock-width: clamp(500px, 30%, 150px);
+    --searchbar-width: clamp(150px, 20%, 250px);
 }
 
 #desktop {
@@ -126,6 +128,15 @@
 
     background-color: var(--color-taskbar);
 }
+
+#taskbar-searchbar-container{
+    float: left;
+
+    width: var(--searchbar-width);
+}
+#taskbar-searchbar-container input{
+    width: 20%;
+}
 #taskbar .searchbar {
     display: flex;
 
@@ -137,14 +148,26 @@
 
     margin-right: 10px;
 }
+
 #taskbar-shortcut-container {
     display: flex;
     height: 100%;
-    width: calc(90% - var(--clock-width) - 50px);
+    width: calc(100% - var(--clock-width) - var(--searchbar-width) - 50px);
     float: left;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+#taskbar-shortcut-container .taskbar-shortcut-scroll-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    width: auto;
+    height: 100%;
 
     padding: 5px;
-    gap: 5px;
+    box-sizing: border-box;
 }
 
 #taskbar-shortcut-container button {
@@ -178,7 +201,7 @@
     white-space: nowrap;
 
     color: var(--color-shortcut-text);
-    text-shadow: 4px 1px 4px  var(--color-shortcut-text-shadow);
+    text-shadow: 4px 1px 4px var(--color-shortcut-text-shadow);
 
     transition: color 0.2s ease;
 }
@@ -190,10 +213,7 @@
 #taskbar-shortcut-container img {
     aspect-ratio: 1 / 1;
     width: 25%;
-
-        image-rendering: pixelated;
-        /* image-rendering: -moz-crisp-edges;
-        image-rendering: crisp-edges; */
+    image-rendering: pixelated;
 }
 
 #taskbar-clock {
@@ -202,6 +222,8 @@
     float: right;
     text-align: right;
     margin-right: 20px;
+
+    width: var(--clock-width);
 
     font-family: var(--shortcut-font);
     font-size: 1.25em;

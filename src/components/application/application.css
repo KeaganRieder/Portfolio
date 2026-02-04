@@ -52,7 +52,7 @@
     margin: 0;
 
     font-family: var(--font-header);
-    font-size: 2em;
+    font-size: 2rem;
 
     color: var(--color-header-text);
 }

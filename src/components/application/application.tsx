@@ -6,8 +6,8 @@ import type { ApplicationDefinition } from "./definition";
 
 import './application.css'
 
-import xButtonIcon from '../../assets/apps/close_button.png';
-import minimizeButtonIcon from '../../assets/apps/close_button.png';
+import xButtonIcon from '../../assets/apps/x_icon.png';
+import minimizeButtonIcon from '../../assets/apps/minimize_Icon.png';
 import { WindowRectControls, WindowVisibilityControls } from "./windowControls";
 
 export const Application: React.FC<ApplicationDefinition> = ({ info, visibilityControls, containers, shortcuts, content }) => {
@@ -37,7 +37,7 @@ export const Application: React.FC<ApplicationDefinition> = ({ info, visibilityC
         appid: info.id,
         RegistryControls: visibilityControls.RegistryControls,
         initialVisibility: visibilityControls.initialVisibility ?? true,
-        zIndex: visibilityControls.zIndex ?? 1
+        zIndex: visibilityControls.zIndex ?? 1,
     });
     const windowRectControls = WindowRectControls(
         containerSize,
@@ -106,7 +106,7 @@ export const Application: React.FC<ApplicationDefinition> = ({ info, visibilityC
                         transform: `translate(${windowRectControls.position.x}px, ${windowRectControls.position.y}px)`,
                         zIndex: visibilityControls.zIndex,
                     }}
-                    onMouseDown={() => visibilityControls.RegistryControls.bringToFrontFunction(info.id)}>
+                    onMouseDown={() => visibilityControls.RegistryControls.bringToFront(info.id)}>
                     {appHeader()}
                     {appContent()}
                 </section>

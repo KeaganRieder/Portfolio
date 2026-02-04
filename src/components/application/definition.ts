@@ -17,6 +17,9 @@ export interface VisibilityControls {
     zIndex: number;
     RegistryControls: ApplicationRegistryControls;
     initialVisibility?: boolean;
+    openFunctionAdditions?: () => void;
+    closeFunctionAdditions?: () => void;
+    minimizeFunctionAdditions?: () => void;
 }
 
 export interface ApplicationDefinition {

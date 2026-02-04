@@ -1,0 +1,69 @@
+@import url('../../../style/color.css');
+@import url('../../../style/font.css');
+
+.project-overview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--color-project-overview-content);
+    font: var(--font-body);
+    color: var(--color-body-text);
+
+    border-top: 2px solid var(--color-project-overview-content-accent);
+    border-left: 2px solid var(--color-project-overview-content-accent);
+    border-bottom: 2px solid var(--color-project-overview-content-shadow);
+    border-right: 2px solid var(--color-project-overview-content-shadow);
+}
+
+.project-overview .project-images {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+}
+
+.project-overview .project-images img {
+    height: 100px;
+    border: 1px solid var(--color-project-overview-content-accent);
+}
+
+.project-overview .project-tags {
+    display: flex;
+    gap: 0.5rem;
+
+    font: var(--font-body);
+    color: var(--color-body-text);
+    font-size: 1rem;
+}
+
+.project-overview .project-tags span {
+    padding: 5px;
+    border-radius: 10px;
+    background-color: var(--color-project-overview-content-secondary);
+}
+
+.project-overview .project-description {
+    font: var(--font-body);
+    color: var(--color-body-text);
+    font-size: 1rem;
+}
+
+.project-overview .project-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.project-overview .project-links a {
+    font: var(--font-body);
+    color: var(--color-link);
+}
+
+.project-overview .project-links a:hover {
+    color: var(--color-link-highlight);
+}
+
+.project-overview:hover {
+    background-color: var(--color-project-overview-content-highlight);
+}

@@ -9,9 +9,6 @@ import SearchBar from "../../components/search_bar/serachBar";
 export const Desktop: React.FC = () => {
 
     const [currentTime, setCurrentTime] = useState(new Date());
-    // const [shortcutContainer, setShortcutContainer] = useState<HTMLElement | null>(null);
-    // const [taskbarContainer, setTaskbarContainer] = useState<HTMLElement | null>(null);
-    // const [appContainer, setAppContainer] = useState<HTMLElement | null>(null);
 
     const appRegistry = ApplicationRegistry();
 
@@ -50,22 +47,29 @@ export const Desktop: React.FC = () => {
         };
         const createShortcutContainer = () => {
             return (
-                <div
-                    id="taskbar-shortcut-container"
-                    ref={(element: HTMLElement | null) => appRegistry.setTaskbarShortcutContainer(element)}
-                >
-                    <SearchBar placeholder="Search..." onSearchChange={(query: string) => {
-                        console.log("Searching for: " + query);
-                    }} />
+                <div id="taskbar-shortcut-container">
+                    <div className="taskbar-shortcut-scroll-container"
+                        ref={(element: HTMLElement | null) => appRegistry.setTaskbarShortcutContainer(element)}
+                    >
+                    </div>
                 </div>
             );
         };
-
+        const taskbarSearchBar = () => {
+            return (
+                <div id="taskbar-searchbar-container">
+                    <SearchBar placeholder="Search..." onSearchChange={(query: string) => {
+                        // console.log("Searching for: " + query);
+                    }} />
+                </div>
+            );
+        }
         return (
             <section id="taskbar">
-
+                {taskbarSearchBar()}
                 {createClock()}
                 {createShortcutContainer()}
+
             </section>
         );
     };
@@ -81,6 +85,7 @@ export const Desktop: React.FC = () => {
                 </section>
                 {appRegistry.CreateExternalApps()}
                 {appRegistry.createAppsFromRegistry()}
+                {appRegistry.createProjectsFromRegistry()}
             </>
         );
     };

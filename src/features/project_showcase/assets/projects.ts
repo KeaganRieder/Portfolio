@@ -2,29 +2,65 @@ import type { ProjectEntry } from "../project";
 
 export const Projects: ProjectEntry[] = [
     {
-        id: "project_1",
-        categoryID: "web_dev",
-        name: "Portfolio Website",
-        tags: ["React", "TypeScript", "CSS"],
+        id: "project_hello_world",
+        categoryID: "demo_projects",
+        name: "Hello World App",
+        tags: ["Demo", "Example"],
+        iconPath: "https://via.placeholder.com/100",
         overviewContents: {
-            description: "A personal portfolio website to showcase my projects and skills.",
+            imagePaths: ["https://via.placeholder.com/300x200"],
+            description: "A simple Hello World application demonstrating basic functionality.",
             links: [
-                { label: "GitHub", url: "temp.com" },
-                { label: "Live Demo", url: "temp.com" }
+                { label: "GitHub", url: "" },
+                { label: "Live Demo", url: "" }
             ]
         }
     },
-     {
-        id: "project_2",
-        categoryID: "test",
-        name: "Portfolio Website",
-        tags: ["React", "TypeScript", "CSS"],
+    {
+        id: "project_hello_world_2",
+        categoryID: "demo_projects",
+        name: "Hello World App",
+        tags: ["Demo", "Example"],
+        iconPath: "https://via.placeholder.com/100",
         overviewContents: {
-            description: "A personal portfolio website to showcase my projects and skills.",
+            imagePaths: ["https://via.placeholder.com/300x200","https://via.placeholder.com/300x200",
+                "https://via.placeholder.com/300x200"
+            ],
+            description: "A simple Hello World application demonstrating basic functionality.",
             links: [
-                { label: "GitHub", url: "temp.com" },
-                { label: "Live Demo", url: "temp.com" }
+                { label: "GitHub", url: "" },
+                { label: "Live Demo", url: "" }
             ]
         }
     },
+    {
+        id: "project_hello_world",
+        categoryID: "demo_projects-2",
+        name: "Hello World App",
+        tags: ["Demo", "Example"],
+        iconPath: "https://via.placeholder.com/100",
+        overviewContents: {
+            imagePaths: ["https://via.placeholder.com/300x200"],
+            description: "A simple Hello World application demonstrating basic functionality.",
+            links: [
+                { label: "GitHub", url: "" },
+                { label: "Live Demo", url: "" }
+            ]
+        }
+    },
+    {
+        id: "project_hello_world",
+        categoryID: "demo_projects-3",
+        name: "Hello World App",
+        tags: ["Demo", "Example"],
+        iconPath: "https://via.placeholder.com/100",
+        overviewContents: {
+            imagePaths: ["https://via.placeholder.com/300x200"],
+            description: "A simple Hello World application demonstrating basic functionality.",
+            links: [
+                { label: "GitHub", url: "" },
+                { label: "Live Demo", url: "" }
+            ]
+        }
+    }
 ];

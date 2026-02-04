@@ -4,7 +4,11 @@ import type { Position, Size } from "../../types/vectors";
 import type { VisibilityControls } from './definition';
 
 export const WindowVisibilityControls = (visibilityControls: VisibilityControls) => {
-    const { appid, RegistryControls, initialVisibility = true } = visibilityControls;
+    const {
+        appid,
+        RegistryControls,
+        initialVisibility = true,
+    } = visibilityControls;
     const [isVisible, setIsVisible] = useState(initialVisibility);
     const [isMinimized, setIsMinimized] = useState(false);
 
@@ -17,20 +21,19 @@ export const WindowVisibilityControls = (visibilityControls: VisibilityControls)
     const open = () => {
         setIsVisible(true);
         setIsMinimized(false);
-        RegistryControls.addAppWindowFunction({ id: appid });
-        RegistryControls.bringToFrontFunction(appid);
-    };
+        RegistryControls.openAppWindow({ id: appid });
+        RegistryControls.bringToFront(appid);    };
 
     const close = () => {
+
         setIsVisible(false);
         setIsMinimized(false);
-        RegistryControls.removeAppWindowFunction(appid);
+        RegistryControls.closeAppWindow(appid);
     };
 
     const minimize = () => {
         setIsMinimized(true);
-        RegistryControls.removeAppWindowFunction(appid);
-    };
+        RegistryControls.closeAppWindow(appid);    };
 
     return {
         isVisible: isVisible && !isMinimized,
@@ -51,8 +54,8 @@ export const WindowRectControls = (sizeBounds: Size, initialSizeOffset: Size = {
     });
 
     const [position, setPos] = useState<Position>(() => ({
-        x: Math.max((sizeBounds.width - initialWidth ) / 2 + initialPositionOffset.x, 0),
-        y: Math.max((sizeBounds.height - initialHeight ) / 2 + initialPositionOffset.y, 0),
+        x: Math.max((sizeBounds.width - initialWidth) / 2 + initialPositionOffset.x, 0),
+        y: Math.max((sizeBounds.height - initialHeight) / 2 + initialPositionOffset.y, 0),
     }));
     const offset = useRef<Position>({ x: 0, y: 0 });
 

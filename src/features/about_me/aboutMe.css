@@ -59,13 +59,13 @@
 }
 
 .skills-section h2 {
-     font: var(--color-header-text);
+    font: var(--color-header-text);
     color: var(--color-body-text);
     font-size: 2rem;
 }
 
 .skills-section h3 {
-     font: var(--color-subheader-text);
+    font: var(--color-subheader-text);
     color: var(--color-body-text);
     font-size: 1.5rem;
 }
