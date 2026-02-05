@@ -10,6 +10,7 @@
     --color-taskbar: #343538c0;
     --color-taskbar-accent: #f0f0f0;
     --color-taskbar-shadow: #393d41;
+    --color-taskbar-secondary: #414142b6;
 
     --color-taskbar-button: transparent;
     --color-taskbar-button-highlight: #bdbaba;
@@ -32,8 +33,8 @@
 
     --color-button-head: transparent;
     --color-button-head-highlight: #9796967e;
-    --color-button-head-accent: transparent;
-    --color-button-head-shadow: transparent;
+    --color-button-head-accent: #6a7077;
+    --color-button-head-shadow: #212529;
 
     --color-content-main: #415a77;
     --color-content-main-accent: #6a7077;
@@ -56,7 +57,7 @@
     --color-project-overview-content-shadow: #212529;
     --color-project-overview-content-secondary: #676869;
 
-
+    
     --color-scrollbar-thumb-bg: #6c757d;
     --color-scrollbar-track-bg: #34383d;
 }

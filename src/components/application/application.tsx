@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 
-import { ApplicationShortcut } from "../shortcut/applicationShortcut";
+import { ApplicationShortcut, ApplicationTaskbarShortcut } from "../shortcut/applicationShortcut";
 import type { ApplicationDefinition } from "./definition";
 
 import './application.css'
@@ -58,7 +58,7 @@ export const Application: React.FC<ApplicationDefinition> = ({ info, visibilityC
     const TryToCreateTaskbarShortcut = () => {
         if ((visibilityController.isVisible || visibilityController.isMinimized) && shortcuts?.taskbar) {
             shortcuts.taskbar.onClickAction = visibilityController.open;
-            return <ApplicationShortcut {...shortcuts.taskbar} parent={containers?.taskbarContainer} />;
+            return <ApplicationTaskbarShortcut {...shortcuts.taskbar} parent={containers?.taskbarContainer} />;
         }
         return <></>;
     };

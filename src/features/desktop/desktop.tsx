@@ -47,11 +47,10 @@ export const Desktop: React.FC = () => {
         };
         const createShortcutContainer = () => {
             return (
-                <div id="taskbar-shortcut-container">
-                    <div className="taskbar-shortcut-scroll-container"
-                        ref={(element: HTMLElement | null) => appRegistry.setTaskbarShortcutContainer(element)}
-                    >
-                    </div>
+                <div id="taskbar-shortcut-container"
+                    ref={(element: HTMLElement | null) => appRegistry.setTaskbarShortcutContainer(element)}
+                >
+
                 </div>
             );
         };

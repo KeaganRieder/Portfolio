@@ -8,11 +8,10 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearchChange, placeholder = "Se
     };
 
     return (
-        <input
+        <input className="searchbar"
             type="text"
             placeholder={placeholder}
             onChange={handleChange}
-            style={{ padding: '10px', fontSize: '16px', width: '300px' }}
         />
     );
 };
