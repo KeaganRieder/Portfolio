@@ -3,11 +3,10 @@ import { Application } from "../../components/application/application";
 import type { VisibilityControls } from "../../components/application/definition";
 import { ProjectCategoryButton, type ProjectCategoryEntry } from "./ProjectCategories";
 
+import './styles/category.css'
 import folderIcon from "../../assets/apps/folder.png";
 
-import './styles/category.css'
-
-export interface ProjectShowcaseProps {
+export interface ProjectShowcaseProperties {
     categories: ProjectCategoryEntry[];
     visibilityControls: VisibilityControls;
     containers: {
@@ -21,7 +20,7 @@ export interface ProjectShowcaseProps {
     }
 }
 
-export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ categories, visibilityControls, containers, controls }) => {
+export const ProjectShowcase: React.FC<ProjectShowcaseProperties> = ({ categories, visibilityControls, containers, controls }) => {
     const categoryButtons = () => {
         if (!categories.length) {
             return <p>No projects available yet.</p>;

@@ -1,24 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import { Projects } from "./projectList";
 import type { ApplicationRegistryControls } from "../desktop/appRegistry";
-import { ProjectApp, type ProjectEntry } from "./project";
+import { ProjectApp} from "./project/project";
+import type { ProjectEntryProperties } from "./project/projectModels";
 import { ProjectCategoryApp, type ProjectCategoryEntry } from "./ProjectCategories";
+import { ProjectShowcase } from "./projectShowcase";
 
 import folderIcon from "../../assets/apps/folder.png";
-import { ProjectShowcase } from "./projectShowcase";
+import { ProjectsEntries } from "../../assets/projects/projectsEntries";
 
 export interface ProjectRegistryWindowData {
     id: string;
-    projectWindow: React.FC<ProjectEntry> | React.FC<ProjectCategoryEntry>;
-    version?: number; // bump to force remount/visibility reset
-}
-
-export interface ProjectRegistryControls {
-    openCategory: (id: string) => void;
-    closeCategory: (id: string) => void;
-    openProject: (id: string) => void;
-    closeProject: (id: string) => void;
+    projectWindow: React.FC<ProjectEntryProperties> | React.FC<ProjectCategoryEntry>;
+    zIndex?: number; 
 }
 
 export const ProjectRegistry = (appRegistryControls: ApplicationRegistryControls, containers: {
@@ -26,22 +20,21 @@ export const ProjectRegistry = (appRegistryControls: ApplicationRegistryControls
     shortcutContainer?: HTMLElement | null;
     taskbarContainer?: HTMLElement | null;
 }) => {
-    const [projectEntries, setProjectEntries] = useState<ProjectEntry[]>([]);
+    const [projectEntries, setProjectEntries] = useState<ProjectEntryProperties[]>([]);
     const [categories, setCategories] = useState<ProjectCategoryEntry[]>([]);
     const [openWindows, setOpenWindows] = useState<ProjectRegistryWindowData[]>([]);
-    const projectEntriesRef = useRef<ProjectEntry[]>([]);
+    const projectEntriesRef = useRef<ProjectEntryProperties[]>([]);
 
     useEffect(() => {
         readProjects();
     }, []);
 
     useEffect(() => {
-        console.log("Project entries updated:", projectEntries);
         projectEntriesRef.current = projectEntries;
     }, [projectEntries]);
 
     const readProjects = () => {
-        Projects.forEach((project) => {
+        ProjectsEntries.forEach((project) => {
             addProject(project);
             addProjectToCategory(project.categoryID, project);
         });
@@ -49,13 +42,12 @@ export const ProjectRegistry = (appRegistryControls: ApplicationRegistryControls
 
     const getCategory = (id: string) => {
         return categories.find(category => category.id === id);
-    }
-
+    };
     const getAllCategories = () => {
         return categories;
-    }
+    };
 
-    const addProjectToCategory = (id: string, project: ProjectEntry) => {
+    const addProjectToCategory = (id: string, project: ProjectEntryProperties) => {
         setCategories((prev) => {
             const existing = prev.find(category => category.id === id);
             if (existing) {
@@ -79,7 +71,7 @@ export const ProjectRegistry = (appRegistryControls: ApplicationRegistryControls
 
     };
 
-    const addProject = (project: ProjectEntry) => {
+    const addProject = (project: ProjectEntryProperties) => {
         setProjectEntries((prev) => {
             const alreadyExists = prev.some(p => p.id === project.id);
             if (alreadyExists) return prev;
@@ -102,16 +94,15 @@ export const ProjectRegistry = (appRegistryControls: ApplicationRegistryControls
                 id: windowId,
             });
             setOpenWindows((prev) => {
-                const existing = prev.find(w => w.id === category.id);
+                const existing = prev.find(window => window.id === category.id);
                 if (existing) {
-                    return prev.map(w => w.id === category.id ? { ...w, version: (w.version ?? 0) + 1 } : w);
+                    return prev.map(window => window.id === category.id ? { ...window, zIndex: (window.zIndex ?? 0) + 1 } : window);
                 }
-                return [...prev, { id: category.id, projectWindow: ProjectCategoryApp, version: 0 }];
+                return [...prev, { id: category.id, projectWindow: ProjectCategoryApp, zIndex: 0 }];
             });
 
         }
     };
-
     const openProject = (id: string) => {
         const project = projectEntriesRef.current.find(proj => proj.id === id);
         console.log(projectEntriesRef.current);
@@ -124,9 +115,9 @@ export const ProjectRegistry = (appRegistryControls: ApplicationRegistryControls
             setOpenWindows((prev) => {
                 const existing = prev.find(w => w.id === project.id);
                 if (existing) {
-                    return prev.map(w => w.id === project.id ? { ...w, version: (w.version ?? 0) + 1 } : w);
+                    return prev.map(window => window.id === project.id ? { ...window, zIndex: (window.zIndex ?? 0) + 1 } : window);
                 }
-                return [...prev, { id: project.id, projectWindow: ProjectApp, version: 0 }];
+                return [...prev, { id: project.id, projectWindow: ProjectApp, zIndex: 0 }];
             });
         };
     };
@@ -149,7 +140,7 @@ export const ProjectRegistry = (appRegistryControls: ApplicationRegistryControls
             }
         } />
 
-    }
+    };
     const displayOpen = () => {
         return openWindows.map((windowData) => {
             const projectData = getProject(windowData.id);
@@ -164,7 +155,7 @@ export const ProjectRegistry = (appRegistryControls: ApplicationRegistryControls
                     },
                     containers: containers,
                 };
-                return <ProjectApp key={`${projectData.id}:${windowData.version ?? 0}`} {...projectData} />;
+                return <ProjectApp key={`${projectData.id}:${windowData.zIndex ?? 0}`} {...projectData} />;
             }
 
             else if (categoryData) {
@@ -177,10 +168,11 @@ export const ProjectRegistry = (appRegistryControls: ApplicationRegistryControls
                     containers: containers,
                     iconPath: folderIcon,
                 };
-                return <ProjectCategoryApp key={`${categoryData.id}:${windowData.version ?? 0}`} {...categoryData} />;
+                return <ProjectCategoryApp key={`${categoryData.id}:${windowData.zIndex ?? 0}`} {...categoryData} />;
             }
         });
-    }
+    };
+
     return {
         getCategory,
         getAllCategories,

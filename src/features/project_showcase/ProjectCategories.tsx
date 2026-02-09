@@ -1,16 +1,18 @@
 import ReactDOM from "react-dom";
 
 import type { VisibilityControls } from "../../components/application/definition";
-import { ProjectOverviewContainer, type ProjectEntry } from "./project";
+import { ProjectOverviewContainer } from "./project/project";
 import { Application } from "../../components/application/application";
 
+import type { ProjectEntryProperties } from "./project/projectModels";
+
 import "./styles/category.css";
-import "./styles/project.css";
+import "./styles/projectBase.css";
 
 export interface ProjectCategoryEntry {
     id: string;
     name: string;
-    projects: ProjectEntry[];
+    projects: ProjectEntryProperties[];
 
     controls: {
         openCategory: (id: string) => void;

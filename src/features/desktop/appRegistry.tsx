@@ -25,12 +25,12 @@ interface AppWindowData {
     zIndex?: number;
 }
 
-export type SearchResultKind = "app" | "shortcut" | "project" | "category" | "project_showcase";
+export type AppType = "app" | "project" | "category" | "project_showcase";
 
 export interface AppLookupResult {
     id: string;
     name: string;
-    kind: SearchResultKind;
+    type: AppType;
 }
 
 export interface ApplicationRegistryControls {
@@ -160,23 +160,16 @@ export const ApplicationRegistry = () => {
         if (!normalized) return [];
 
         const results = new Map<string, AppLookupResult>();
-        const addResult = (kind: SearchResultKind, id: string, name: string) => {
+        const addResult = (kind: AppType, id: string, name: string) => {
             const key = `${kind}:${id}`;
             if (!results.has(key)) {
-                results.set(key, { id, name, kind });
+                results.set(key, { id, name, type: kind });
             }
         };
 
         appRegistry.forEach(app => {
             if (app.id.toLowerCase().includes(normalized) || app.name.toLowerCase().includes(normalized)) {
                 addResult("app", app.id, app.name);
-            }
-        });
-
-        shortcutRegistry.forEach(shortcut => {
-            const shortcutName = shortcut.appName;
-            if (shortcutName.toLowerCase().includes(normalized)) {
-                addResult("shortcut", shortcut.appName, shortcutName);
             }
         });
 
@@ -192,7 +185,6 @@ export const ApplicationRegistry = () => {
             }
         });
 
-        // allow the main showcase entry to be discoverable
         if ("project showcase".includes(normalized) || "showcase".includes(normalized)) {
             addResult("project_showcase", "project_showcase_app", "Project Showcase");
         }
@@ -201,9 +193,8 @@ export const ApplicationRegistry = () => {
     };
 
     const openSearchResult = (result: AppLookupResult) => {
-        switch (result.kind) {
-            case "app":
-            case "shortcut": {
+        switch (result.type) {
+            case "app":{
                 const shortcutId = `${result.id}_shortcut`;
                 const shortcutButton = document.getElementById(shortcutId) as HTMLButtonElement | null;
                 if (shortcutButton) {

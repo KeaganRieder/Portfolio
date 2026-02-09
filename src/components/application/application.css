@@ -99,6 +99,7 @@
 .application-content {
     position: relative;
     overflow-y: auto;
+    overflow-x: hidden;
     width: 100%;
     height: var(--content-height);
 
@@ -118,7 +119,7 @@
 
 .application-content-scroll-container {
     position: relative;
+    width: 100%;
     height: auto;
     box-sizing: border-box;
-    
 }

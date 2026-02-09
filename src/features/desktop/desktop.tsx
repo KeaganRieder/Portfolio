@@ -80,7 +80,7 @@ export const Desktop: React.FC = () => {
                     <div id="taskbar-search-results-container" style={{ left: searchResultsContainerOffset.left, bottom: searchResultsContainerOffset.bottom }}>
                         {searchResults.map(result => (
                             <button
-                                key={`${result.kind}:${result.id}`}
+                                key={`${result.type}:${result.id}`}
                                 className="search-result"
                                 onClick={() => handleResultClick(result)}
                             >

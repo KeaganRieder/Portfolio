@@ -1,0 +1,25 @@
+@import url('../../../style/color.css');
+@import url('../../../style/font.css');
+
+.pixelated-image {
+    image-rendering: pixelated;
+}
+
+.gallery {
+    columns: 4 220px;
+    column-gap: 16px;
+}
+
+.gallery-item {
+    position: relative;
+    height: auto;
+    background-color: var(--color-project-gallery-item-bg);
+    box-sizing: border-box;
+}
+
+.gallery-item a img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    border: 2px solid var(--color-project-gallery-border);
+}

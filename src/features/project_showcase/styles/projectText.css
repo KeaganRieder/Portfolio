@@ -1,0 +1,29 @@
+@import url('../../../style/color.css');
+@import url('../../../style/font.css');
+
+.application-content p {
+    font: var(--font-body);
+    color: var(--color-body-text);
+    font-size: 1.25rem;
+}
+
+.application-content h2 {
+    font: var(--font-secondary-header);
+    color: var(--color-subheader-text);
+    font-size: 1.75rem;
+}
+
+.application-content h3 {
+    font: var(--font-secondary-header);
+    color: var(--color-subheader-text);
+    font-size: 1.5rem;
+}
+
+.application-content a {
+    font: var(--font-body);
+    color: var(--color-link);
+}
+
+.application-content a:hover {
+    color: var(--color-link-highlight);
+}
