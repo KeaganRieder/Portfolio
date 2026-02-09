@@ -26,6 +26,10 @@ export interface ProjectEntry {
             taskbarContainer?: HTMLElement | null;
         };
     }
+    content?: {
+        demos: { label: string; url: string }[];
+
+    }
 }
 
 export const ProjectOverviewContainer = (projectInfo: ProjectEntry) => {
@@ -62,12 +66,13 @@ export const ProjectOverviewContainer = (projectInfo: ProjectEntry) => {
         </>
     );
 }
+
 export const ProjectApp: React.FC<ProjectEntry> = (projectInfo: ProjectEntry) => {
 
     const body = () => {
         return (<>
-            <h2>{projectInfo.name}</h2>
-            {overView()}
+            {/* <h2>{projectInfo.name}</h2> */}
+            {/* {overView()} */}
         </>);
     }
 
@@ -97,7 +102,6 @@ export const ProjectApp: React.FC<ProjectEntry> = (projectInfo: ProjectEntry) =>
             </>
         );
     }
-
 
     if (projectInfo.applicationData) {
         return (<Application

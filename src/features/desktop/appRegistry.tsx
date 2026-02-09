@@ -25,6 +25,14 @@ interface AppWindowData {
     zIndex?: number;
 }
 
+export type SearchResultKind = "app" | "shortcut" | "project" | "category" | "project_showcase";
+
+export interface AppLookupResult {
+    id: string;
+    name: string;
+    kind: SearchResultKind;
+}
+
 export interface ApplicationRegistryControls {
     openAppWindow: (windowData: AppWindowData) => void;
     updateAppWindow: (id: string, updatedData: Partial<AppWindowData>) => void;
@@ -91,7 +99,7 @@ export const ApplicationRegistry = () => {
         if (getAppWindowInfo(windowData.id)) {
             windowData.zIndex = openWindows.length + 1;
             updateAppWindow(windowData.id, windowData);
-            return ;
+            return;
         }
 
         if (windowData.zIndex === undefined) {
@@ -147,12 +155,103 @@ export const ApplicationRegistry = () => {
             taskbarContainer,
         });
 
+    const getSearchResults = (query: string): AppLookupResult[] => {
+        const normalized = query.trim().toLowerCase();
+        if (!normalized) return [];
+
+        const results = new Map<string, AppLookupResult>();
+        const addResult = (kind: SearchResultKind, id: string, name: string) => {
+            const key = `${kind}:${id}`;
+            if (!results.has(key)) {
+                results.set(key, { id, name, kind });
+            }
+        };
+
+        appRegistry.forEach(app => {
+            if (app.id.toLowerCase().includes(normalized) || app.name.toLowerCase().includes(normalized)) {
+                addResult("app", app.id, app.name);
+            }
+        });
+
+        shortcutRegistry.forEach(shortcut => {
+            const shortcutName = shortcut.appName;
+            if (shortcutName.toLowerCase().includes(normalized)) {
+                addResult("shortcut", shortcut.appName, shortcutName);
+            }
+        });
+
+        projectRegistry.getAllProjects().forEach(project => {
+            if (project.id.toLowerCase().includes(normalized) || project.name.toLowerCase().includes(normalized)) {
+                addResult("project", project.id, project.name ?? project.id);
+            }
+        });
+
+        projectRegistry.getAllCategories().forEach(category => {
+            if (category.id.toLowerCase().includes(normalized) || category.name.toLowerCase().includes(normalized)) {
+                addResult("category", category.id, category.name ?? category.id);
+            }
+        });
+
+        // allow the main showcase entry to be discoverable
+        if ("project showcase".includes(normalized) || "showcase".includes(normalized)) {
+            addResult("project_showcase", "project_showcase_app", "Project Showcase");
+        }
+
+        return Array.from(results.values()).sort((a, b) => a.name.localeCompare(b.name));
+    };
+
+    const openSearchResult = (result: AppLookupResult) => {
+        switch (result.kind) {
+            case "app":
+            case "shortcut": {
+                const shortcutId = `${result.id}_shortcut`;
+                const shortcutButton = document.getElementById(shortcutId) as HTMLButtonElement | null;
+                if (shortcutButton) {
+                    shortcutButton.click();
+                    return true;
+                }
+                openAppWindow({ id: result.id });
+                bringToFront(result.id);
+                return true;
+            }
+            case "project": {
+                projectRegistry.openProject(result.id);
+                return true;
+            }
+            case "category": {
+                projectRegistry.openCategory(result.id);
+                return true;
+            }
+            case "project_showcase": {
+                openAppWindow({ id: "project_showcase_app" });
+                bringToFront("project_showcase_app");
+                return true;
+            }
+            default:
+                return false;
+        }
+    };
+
+    const searchAndOpenApp = (queryOrResult: string | AppLookupResult) => {
+        const candidate = (() => {
+            if (typeof queryOrResult !== "string") return queryOrResult;
+            const normalized = queryOrResult.trim().toLowerCase();
+            if (!normalized) return undefined;
+            const matches = getSearchResults(normalized);
+            return matches.find(match => match.id.toLowerCase() === normalized || match.name.toLowerCase() === normalized) ?? matches[0];
+        })();
+
+        if (!candidate) return false;
+        return openSearchResult(candidate);
+    };
+
     const createProjectsFromRegistry = () => {
         return <>
             {projectRegistry.displayOpen()}
             {projectRegistry.createProjectShowcase()}
         </>;
     };
+    
     const createAppsFromRegistry = () => {
         return appRegistry.map((app) => {
             const AppComponent = app.component;
@@ -191,6 +290,8 @@ export const ApplicationRegistry = () => {
         setAppContainer,
         setShortcutContainer,
         setTaskbarShortcutContainer: setTaskbarContainer,
+        searchAndOpenApp,
+        getSearchResults,
 
         openAppWindow,
         updateAppWindow,

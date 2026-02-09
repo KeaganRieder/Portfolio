@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import { Projects } from "./assets/projects";
+import { Projects } from "./projectList";
 import type { ApplicationRegistryControls } from "../desktop/appRegistry";
 import { ProjectApp, type ProjectEntry } from "./project";
 import { ProjectCategoryApp, type ProjectCategoryEntry } from "./ProjectCategories";
@@ -51,6 +51,10 @@ export const ProjectRegistry = (appRegistryControls: ApplicationRegistryControls
         return categories.find(category => category.id === id);
     }
 
+    const getAllCategories = () => {
+        return categories;
+    }
+
     const addProjectToCategory = (id: string, project: ProjectEntry) => {
         setCategories((prev) => {
             const existing = prev.find(category => category.id === id);
@@ -92,9 +96,10 @@ export const ProjectRegistry = (appRegistryControls: ApplicationRegistryControls
 
     const openCategory = (id: string) => {
         const category = getCategory(id);
+        const windowId = `${id}_app`;
         if (category) {
             appRegistryControls.openAppWindow({
-                id: category.id,
+                id: windowId,
             });
             setOpenWindows((prev) => {
                 const existing = prev.find(w => w.id === category.id);
@@ -110,10 +115,11 @@ export const ProjectRegistry = (appRegistryControls: ApplicationRegistryControls
     const openProject = (id: string) => {
         const project = projectEntriesRef.current.find(proj => proj.id === id);
         console.log(projectEntriesRef.current);
+        const windowId = `${id}_app`;
 
         if (project) {
             appRegistryControls.openAppWindow({
-                id: project.id,
+                id: windowId,
             });
             setOpenWindows((prev) => {
                 const existing = prev.find(w => w.id === project.id);
@@ -177,6 +183,7 @@ export const ProjectRegistry = (appRegistryControls: ApplicationRegistryControls
     }
     return {
         getCategory,
+        getAllCategories,
         addProjectToCategory,
         getProject,
         getAllProjects,

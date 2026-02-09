@@ -97,5 +97,6 @@ export const WindowRectControls = (sizeBounds: Size, initialSizeOffset: Size = {
         size,
         position,
         onMouseDown,
+        isDragging,
     }
 }

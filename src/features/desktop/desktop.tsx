@@ -3,13 +3,15 @@ import React, { useEffect, useState } from "react";
 import './desktop.css'
 
 // import textDocIcon from '../../assets/apps/text_doc.png';
-import { ApplicationRegistry } from "./appRegistry";
+import { ApplicationRegistry, type AppLookupResult } from "./appRegistry";
 import SearchBar from "../../components/search_bar/serachBar";
 
 export const Desktop: React.FC = () => {
 
     const [currentTime, setCurrentTime] = useState(new Date());
-
+    const [searchQuery, setSearchQuery] = useState("");
+    const [searchResults, setSearchResults] = useState<AppLookupResult[]>([]);
+    const [searchResultsContainerOffset, setSearchResultsContainerOffset] = React.useState<{ left: number; bottom: number }>({ left: 0, bottom: 0 });
     const appRegistry = ApplicationRegistry();
 
     useEffect(() => {
@@ -36,6 +38,60 @@ export const Desktop: React.FC = () => {
         });
     };
 
+    const taskbarSearchBar = () => {
+        const handleSearchChange = (query: string) => {
+            setSearchQuery(query);
+            setSearchResults(appRegistry.getSearchResults(query));
+        };
+        const clearSearch = () => {
+            setSearchQuery("");
+            setSearchResults([]);
+        };
+        const handleSearchSubmit = (query: string) => {
+            const wasOpened = appRegistry.searchAndOpenApp(query || searchQuery);
+            if (wasOpened) {
+                clearSearch();
+            }
+        };
+        const handleResultClick = (result: AppLookupResult) => {
+            appRegistry.searchAndOpenApp(result);
+            clearSearch();
+        };
+
+        const mapResultContainerOffset = (searchBarElement: HTMLInputElement | null) => {
+            if (searchBarElement && searchResultsContainerOffset.left === 0 && searchResultsContainerOffset.bottom === 0) {
+                const rect = searchBarElement.getBoundingClientRect();
+                setSearchResultsContainerOffset({ left: 0, bottom: rect.height + 5 });
+
+            }
+        }
+
+        return (
+            <div id="taskbar-searchbar-container">
+                <SearchBar
+                    placeholder="Search apps..."
+                    value={searchQuery}
+                    onSearchChange={handleSearchChange}
+                    onSearchSubmit={handleSearchSubmit}
+                    ref={mapResultContainerOffset}
+                />
+                {
+                    searchResults.length > 0 &&
+                    <div id="taskbar-search-results-container" style={{ left: searchResultsContainerOffset.left, bottom: searchResultsContainerOffset.bottom }}>
+                        {searchResults.map(result => (
+                            <button
+                                key={`${result.kind}:${result.id}`}
+                                className="search-result"
+                                onClick={() => handleResultClick(result)}
+                            >
+                                {result.name}
+                            </button>
+                        ))}
+                    </div>}
+            </div>
+        );
+    }
+
     const createTaskbar = () => {
         const createClock = () => {
             return (
@@ -54,15 +110,7 @@ export const Desktop: React.FC = () => {
                 </div>
             );
         };
-        const taskbarSearchBar = () => {
-            return (
-                <div id="taskbar-searchbar-container">
-                    <SearchBar placeholder="Search..." onSearchChange={(query: string) => {
-                        // console.log("Searching for: " + query);
-                    }} />
-                </div>
-            );
-        }
+
         return (
             <section id="taskbar">
                 {taskbarSearchBar()}
@@ -79,7 +127,7 @@ export const Desktop: React.FC = () => {
                 <section id="app-container" ref={(element: HTMLElement | null) => appRegistry.setAppContainer(element)}>
                     <section
                         id="shortcut-container"
-                        ref={(element: HTMLElement | null) => appRegistry.setShortcutContainer(element)}
+                        ref={(element: HTMLElement | null) => { appRegistry.setShortcutContainer(element); }}
                     />
                 </section>
                 {appRegistry.CreateExternalApps()}

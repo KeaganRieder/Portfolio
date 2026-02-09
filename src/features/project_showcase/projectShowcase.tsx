@@ -40,13 +40,15 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ categories, vi
                 />
             ))}
         </div>
-
     };
 
+    const projectSearchBar = () => {
+        
+    }
     return (
         <Application
             info={{
-                id: "project_showcase",
+                id: "project_showcase_app",
                 appName: "Projects",
                 tags: ["portfolio", "projects"],
             }}

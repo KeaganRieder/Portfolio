@@ -14,7 +14,7 @@ export const Application: React.FC<ApplicationDefinition> = ({ info, visibilityC
 
     const [containerSize, setContainerSize] = useState<{ width: number, height: number }>({
         width: window.innerWidth,
-        height: window.innerHeight 
+        height: window.innerHeight
     });
 
     useEffect(() => {
@@ -46,6 +46,13 @@ export const Application: React.FC<ApplicationDefinition> = ({ info, visibilityC
     );
 
     const headerElement = useRef<HTMLElement | null>(null);
+    const isOpenInRegistry = visibilityControls.RegistryControls.getAppWindowInfo(info.id) !== undefined;
+
+    useEffect(() => {
+        if (isOpenInRegistry) {
+            visibilityController.open();
+        }
+    }, [isOpenInRegistry]);
 
     const TryToCreateShortcut = () => {
         if (shortcuts?.desktop) {
@@ -54,7 +61,7 @@ export const Application: React.FC<ApplicationDefinition> = ({ info, visibilityC
         }
         return <></>;
     };
-    
+
     const TryToCreateTaskbarShortcut = () => {
         if ((visibilityController.isVisible || visibilityController.isMinimized) && shortcuts?.taskbar) {
             shortcuts.taskbar.onClickAction = visibilityController.open;
@@ -75,8 +82,11 @@ export const Application: React.FC<ApplicationDefinition> = ({ info, visibilityC
 
     const appHeader = () => {
         return (
-            <div id={`${info.id}-header`} className="application-header" onMouseDown={windowRectControls.onMouseDown}
-                ref={(element: HTMLElement | null) => { headerElement.current = element; }}>
+            <div id={`${info.id}-header`} className="application-header"
+                onMouseDown={windowRectControls.onMouseDown}
+                ref={(element: HTMLElement | null) => { headerElement.current = element; }}
+                style={{ cursor: windowRectControls.isDragging ? 'grabbing' : 'grab' }}
+                >
                 <h1>{info.appName}</h1>
 
                 {content?.header && (
@@ -97,6 +107,7 @@ export const Application: React.FC<ApplicationDefinition> = ({ info, visibilityC
     }
 
     const appBody = () => {
+        const resolvedZIndex = visibilityControls.RegistryControls.getAppWindowZIndex(info.id);
         if (visibilityController.isVisible) {
             return (
                 <section id={info.id}
@@ -104,7 +115,7 @@ export const Application: React.FC<ApplicationDefinition> = ({ info, visibilityC
                         width: `${windowRectControls.size.width}px`,
                         height: `${windowRectControls.size.height}px`,
                         transform: `translate(${windowRectControls.position.x}px, ${windowRectControls.position.y}px)`,
-                        zIndex: visibilityControls.zIndex,
+                        zIndex: resolvedZIndex,
                     }}
                     onMouseDown={() => visibilityControls.RegistryControls.bringToFront(info.id)}>
                     {appHeader()}
