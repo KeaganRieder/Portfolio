@@ -8,7 +8,7 @@ export const PixelArtDrawingsInfo: ProjectEntryProperties = {
     id: "pixel_art_drawings",
     categoryID: "pixel_art",
     name: "Pixel Art Drawings",
-    tags: ["Aseprite"],
+    tags: [{skill: {id: "aesprite", name: "Aesprite"}}, {name: "Pixel Art"}, {name: "Drawings"}],
     iconPath: icon,
     overviewContents: {
         imagePaths: readImageGroup(images, true),

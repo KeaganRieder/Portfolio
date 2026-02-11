@@ -1,0 +1,47 @@
+@import url('../../../style/color.css');
+@import url('../../../style/font.css');
+
+.biography {
+    width: 100%;
+    height: auto;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+
+    font: var(--font-body);
+    color: var(--color-body-text);
+    font-size: 1.25rem;
+}
+
+.biography img {
+    aspect-ratio: 1 / 1;
+    width: 30%;
+    flex: 0 0 auto;
+    box-sizing: border-box;
+    padding: 10px;
+    image-rendering: pixelated;
+}
+
+.biography a {
+    font: var(--font-body);
+    color: var(--color-link);
+}
+
+.biography a:hover {
+    color: var(--color-link-highlight);
+}
+
+@media (max-width: 768px) {
+    .biography {
+        flex-direction: column;
+    }
+
+    .biography img {
+        width: 50%;
+        max-width: none;
+        align-self: center;
+    }
+}

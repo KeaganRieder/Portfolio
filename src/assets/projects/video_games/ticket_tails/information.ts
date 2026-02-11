@@ -7,7 +7,7 @@ export const TicketTailsInfo: ProjectEntryProperties = {
     id: "ticket_tails",
     categoryID: "video_games",
     name: "Ticket Tails",
-    tags: ["C#", "Godot", "GGJAM"],
+    tags: [{skill: {id: "csharp", name: "C#"}}, {skill: {id: "godot", name: "Godot"}}, {name: "GGJAM"}],
     iconPath: icon,
     overviewContents: {
         imagePaths: readImageGroup(images, false),
@@ -15,7 +15,11 @@ export const TicketTailsInfo: ProjectEntryProperties = {
         links: [
             { label: "GitHub", url: "https://github.com/KeaganRieder/Ticket-Tails" },
             { label: "Game Jam", url: "https://globalgamejam.org/games/2026/ticket-tails-4" },
-            { label: "Demo Video", url: "https://youtu.be/5hX6XXJyUm8" }
         ]
-    }
+    },
+    content: [
+        {
+            sectionInfo: { type: "video", src: "https://www.youtube.com/embed/5hX6XXJyUm8", alt: "Ticket Tails Video" },
+        }
+    ]
 }

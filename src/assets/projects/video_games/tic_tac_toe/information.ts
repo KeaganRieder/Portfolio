@@ -7,7 +7,7 @@ export const TicTacToeInfo: ProjectEntryProperties = {
     id: "tic_tac_toe",
     categoryID: "video_games",
     name: "Tic Tac Toe",
-    tags: ["C++","Minimax Algorithm"],
+    tags: [{skill: {id: "cpp", name: "C++"}}, {name: "Minimax Algorithm"}],
     iconPath: icon,
     overviewContents: {
         imagePaths: readImageGroup(images, false),
@@ -17,7 +17,21 @@ export const TicTacToeInfo: ProjectEntryProperties = {
 
             { label: "Showcase-Win", url: "https://www.youtube.com/embed/DdnN6_jJuMg" },
             { label: "Showcase-Loss", url: "https://www.youtube.com/embed/uUZJBoQ-Ke8" },
-            
+
         ]
-    }
+    },
+    content: [
+        {
+            sectionInfo: { type: "subHeader", text: "Player Win Example" },
+        },
+        {
+            sectionInfo: { type: "video", src: "https://www.youtube.com/embed/DdnN6_jJuMg", alt: "Tic Tac Toe Showcase Win Video" },
+        },
+        {
+            sectionInfo: { type: "subHeader", text: "Player loss Example" },
+        },
+        {
+            sectionInfo: { type: "video", src: "https://www.youtube.com/embed/uUZJBoQ-Ke8", alt: "Tic Tac Toe Showcase Loss Video" },
+        }
+    ]
 }

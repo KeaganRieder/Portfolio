@@ -7,7 +7,7 @@ export const PortfolioInfo: ProjectEntryProperties = {
     id: "portfolio",
     categoryID: "websites",
     name: "Portfolio Website",
-    tags: ["JavaScript", "React", "CSS"],
+    tags: [{skill: {id: "react", name: "React"}}, {skill: {id: "typescript", name: "TypeScript"}}, {skill: {id: "css", name: "CSS"}}],
     iconPath: icon,
     overviewContents: {
         imagePaths: readImageGroup(images, false),

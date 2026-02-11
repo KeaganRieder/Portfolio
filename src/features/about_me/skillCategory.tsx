@@ -1,19 +1,19 @@
-import { Skill, type SkillEntry } from "./skill";
+import { SkillEntry, type SkillEntryInfo } from "./skillEntry";
 
 export interface SkillCategoryEntry {
     id: string;
     name: string;
-    skills: SkillEntry[];
+    skills: SkillEntryInfo[];
 }
 
 export const SkillCategory: React.FC<SkillCategoryEntry> = ({id, name, skills }) => {
 
     const skillElements = skills.map((skill) => {
         return (
-            <Skill
-                id={skill.id}
+            <SkillEntry
+                key={skill.skill.id}
+                skill={skill.skill}
                 categoryID={skill.categoryID}
-                name={skill.name}
                 hover={skill.hover}
             />
         );

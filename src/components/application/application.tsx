@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
 
 import { ApplicationShortcut, ApplicationTaskbarShortcut } from "../shortcut/applicationShortcut";
@@ -12,27 +12,6 @@ import { WindowRectControls, WindowVisibilityControls } from "./windowControls";
 
 export const Application: React.FC<ApplicationDefinition> = ({ info, visibilityControls, containers, shortcuts, content }) => {
 
-    const [containerSize, setContainerSize] = useState<{ width: number, height: number }>({
-        width: window.innerWidth,
-        height: window.innerHeight
-    });
-
-    useEffect(() => {
-        const updateContainerSize = () => {
-            const target = containers?.appContainer;
-            if (target) {
-                const rect = target.getBoundingClientRect();
-                setContainerSize({ width: rect.width, height: rect.height });
-            } else {
-                setContainerSize({ width: Math.min(window.innerWidth * 1, 1700), height: Math.min(window.innerHeight * 0.9, 800) });
-            }
-        };
-
-        updateContainerSize();
-        window.addEventListener('resize', updateContainerSize);
-        return () => window.removeEventListener('resize', updateContainerSize);
-    }, [containers?.appContainer]);
-
     const visibilityController = WindowVisibilityControls({
         appid: info.id,
         RegistryControls: visibilityControls.RegistryControls,
@@ -40,9 +19,12 @@ export const Application: React.FC<ApplicationDefinition> = ({ info, visibilityC
         zIndex: visibilityControls.zIndex ?? 1,
     });
     const windowRectControls = WindowRectControls(
-        containerSize,
         { width: 0, height: 0 },
-        { x: 0, y: -50 }
+        { x: 0, y: -50 },
+        containers?.appContainer ? {
+            width: containers.appContainer.clientWidth,
+            height: containers.appContainer.clientHeight,
+        } : undefined
     );
 
     const headerElement = useRef<HTMLElement | null>(null);
@@ -86,7 +68,7 @@ export const Application: React.FC<ApplicationDefinition> = ({ info, visibilityC
                 onMouseDown={windowRectControls.onMouseDown}
                 ref={(element: HTMLElement | null) => { headerElement.current = element; }}
                 style={{ cursor: windowRectControls.isDragging ? 'grabbing' : 'grab' }}
-                >
+            >
                 <h1>{info.appName}</h1>
 
                 {content?.header && (

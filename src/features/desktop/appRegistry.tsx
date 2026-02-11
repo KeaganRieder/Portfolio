@@ -12,7 +12,7 @@ import resume from '../../assets/job_mat/resume.pdf';
 import artistCV from '../../assets/job_mat/artistCv.pdf';
 import { ApplicationShortcut } from "../../components/shortcut/applicationShortcut";
 import { Email } from "../email/email";
-import { ProjectRegistry } from "../project_showcase/projectRegistery";
+import { ProjectRegistry } from "../project_showcase/projectRegistry";
 
 export interface AppRegistryEntry {
     id: string;
@@ -39,6 +39,8 @@ export interface ApplicationRegistryControls {
     getAppWindowInfo: (id: string) => AppWindowData | undefined;
     getListOfOpenWindows: () => AppWindowData[];
     closeAppWindow: (id: string) => void;
+
+    searchAndOpenApp: (queryOrResult: string | AppLookupResult) => boolean;
 
     getAppWindowZIndex: (id: string) => number;
     updateAppWindowZIndex: (id: string, updatedZIndex: number) => void;
@@ -121,7 +123,6 @@ export const ApplicationRegistry = () => {
         return openWindows;
     }
     const closeAppWindow = (id: string) => {
-        console.log("Closing app window:", id);
         setOpenWindows(prevWindows => prevWindows.filter(window => window.id !== id));
     }
 
@@ -142,18 +143,6 @@ export const ApplicationRegistry = () => {
         const maxZIndex = openWindows.reduce((max, window) => Math.max(max, window.zIndex ?? 0), 0);
         updateAppWindowZIndex(id, maxZIndex + 1);
     }
-
-    const projectRegistry = ProjectRegistry(
-        {
-            openAppWindow, updateAppWindow, getAppWindowInfo, closeAppWindow,
-            getAppWindowZIndex, getListOfOpenWindows, updateAppWindowZIndex,
-            bringToFront
-        },
-        {
-            appContainer,
-            shortcutContainer,
-            taskbarContainer,
-        });
 
     const getSearchResults = (query: string): AppLookupResult[] => {
         const normalized = query.trim().toLowerCase();
@@ -194,7 +183,7 @@ export const ApplicationRegistry = () => {
 
     const openSearchResult = (result: AppLookupResult) => {
         switch (result.type) {
-            case "app":{
+            case "app": {
                 const shortcutId = `${result.id}_shortcut`;
                 const shortcutButton = document.getElementById(shortcutId) as HTMLButtonElement | null;
                 if (shortcutButton) {
@@ -236,13 +225,33 @@ export const ApplicationRegistry = () => {
         return openSearchResult(candidate);
     };
 
+    const projectRegistry = ProjectRegistry(
+        {
+            openAppWindow,
+            updateAppWindow,
+            getAppWindowInfo,
+            getListOfOpenWindows,
+            closeAppWindow,
+            getAppWindowZIndex,
+            updateAppWindowZIndex,
+            bringToFront,
+            searchAndOpenApp,
+        },
+        {
+            appContainer,
+            shortcutContainer,
+            taskbarContainer,
+        });
+
+
+
     const createProjectsFromRegistry = () => {
         return <>
             {projectRegistry.displayOpen()}
             {projectRegistry.createProjectShowcase()}
         </>;
     };
-    
+
     const createAppsFromRegistry = () => {
         return appRegistry.map((app) => {
             const AppComponent = app.component;
@@ -250,6 +259,7 @@ export const ApplicationRegistry = () => {
                 key={app.id}
                 info={{ id: app.id, appName: app.id }}
                 containers={{ shortcutContainer, taskbarContainer, appContainer }}
+                projectRegistry={projectRegistry}
                 visibilityControls={{
                     appid: app.id, zIndex: getAppWindowZIndex(app.id),
                     RegistryControls: {
@@ -257,6 +267,9 @@ export const ApplicationRegistry = () => {
                         updateAppWindow: updateAppWindow,
                         getAppWindowInfo: getAppWindowInfo,
                         closeAppWindow: closeAppWindow,
+
+                        searchAndOpenApp: searchAndOpenApp,
+
                         getAppWindowZIndex: getAppWindowZIndex,
                         getListOfOpenWindows: getListOfOpenWindows,
                         updateAppWindowZIndex: updateAppWindowZIndex,

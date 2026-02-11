@@ -113,7 +113,6 @@ export const ImageSection: React.FC<ImageSectionProps> = ({ imageData, styleOver
                         body: (
                             <>
                                 <img src={imageData.src} alt={imageData.name} className={"app-image "+ (imageData.isPixelated ? "pixelated-image" : "")} />
-                                {/* {imageData.caption && <p className="app-image-caption">{imageData.caption}</p>} */}
                             </>
                         ),
                         contentContainerStyle: "app-image-container"

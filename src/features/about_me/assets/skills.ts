@@ -1,64 +1,93 @@
-import type { SkillEntry } from "../skill";
+import type { SkillEntryInfo } from "../skillEntry";
 
-export const Skills: SkillEntry[] = [
+export const Skills: SkillEntryInfo[] = [
     {
-        id: "c#",
+        skill: {
+            id: "csharp",
+            name: "C#"
+        },
         categoryID: "languages",
-        name: "C#",
         hover: {
             usage: "Weekly"
         }
     },
     {
-        id: "c++",
+        skill: {
+            id: "cpp",
+            name: "C++"
+        },
         categoryID: "languages",
-        name: "C++",
         hover: {
             usage: "Weekly"
         }
     },
     {
-        id: "html",
+        skill: {
+            id: "html",
+            name: "HTML"
+        },
         categoryID: "languages",
-        name: "HTML",
         hover: {
             usage: "Daily"
         }
     },
+
     {
-        id: "typescript",
+        skill: {
+            id: "javascript",
+            name: "JavaScript"
+        },
         categoryID: "languages",
-        name: "TypeScript",
         hover: {
             usage: "semi-Daily"
         }
     },
     {
-        id: "javaScript",
+        skill: {
+            id: "typescript",
+            name: "TypeScript"
+        },
         categoryID: "languages",
-        name: "JavaScript",
         hover: {
             usage: "semi-Daily"
         }
     },
     {
-        id: "godot",
+        skill: {
+            id: "react",
+            name: "React"
+        },
+        categoryID: "languages",
+        hover: {
+            usage: "semi-Daily"
+        }
+    },
+    {
+        skill: {
+            id: "godot",
+            name: "Godot"
+        },
         categoryID: "engines",
-        name: "Godot",
     },
     {
-        id: "git",
+        skill: {
+            id: "git",
+            name: "Git"
+        },
         categoryID: "tools",
-        name: "Git",
     },
     {
-        id: "blender",
+        skill: {
+            id: "blender",
+            name: "Blender"
+        },
         categoryID: "tools",
-        name: "Blender",
     },
     {
-        id: "aesprite",
+        skill: {
+            id: "aesprite",
+            name: "Aesprite"
+        },
         categoryID: "tools",
-        name: "Aesprite",
     }
 ];

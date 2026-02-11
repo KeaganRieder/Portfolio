@@ -4,7 +4,7 @@ import './desktop.css'
 
 // import textDocIcon from '../../assets/apps/text_doc.png';
 import { ApplicationRegistry, type AppLookupResult } from "./appRegistry";
-import SearchBar from "../../components/search_bar/serachBar";
+import SearchBar from "../../components/search_bar/searchBar";
 
 export const Desktop: React.FC = () => {
 
@@ -106,7 +106,6 @@ export const Desktop: React.FC = () => {
                 <div id="taskbar-shortcut-container"
                     ref={(element: HTMLElement | null) => appRegistry.setTaskbarShortcutContainer(element)}
                 >
-
                 </div>
             );
         };

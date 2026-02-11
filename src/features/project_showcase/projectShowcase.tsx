@@ -1,4 +1,4 @@
-import type React from "react";
+import React from "react";
 import { Application } from "../../components/application/application";
 import type { VisibilityControls } from "../../components/application/definition";
 import { ProjectCategoryButton, type ProjectCategoryEntry } from "./ProjectCategories";
@@ -41,9 +41,6 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProperties> = ({ categorie
         </div>
     };
 
-    const projectSearchBar = () => {
-        
-    }
     return (
         <Application
             info={{

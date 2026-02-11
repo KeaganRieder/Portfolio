@@ -1,18 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import type { ApplicationRegistryControls } from "../desktop/appRegistry";
-import { ProjectApp} from "./project/project";
+import { ProjectApp } from "./project/project";
 import type { ProjectEntryProperties } from "./project/projectModels";
 import { ProjectCategoryApp, type ProjectCategoryEntry } from "./ProjectCategories";
 import { ProjectShowcase } from "./projectShowcase";
 
 import folderIcon from "../../assets/apps/folder.png";
 import { ProjectsEntries } from "../../assets/projects/projectsEntries";
+import { SkillExamples } from "./skillExampleList";
 
 export interface ProjectRegistryWindowData {
     id: string;
     projectWindow: React.FC<ProjectEntryProperties> | React.FC<ProjectCategoryEntry>;
-    zIndex?: number; 
+    zIndex?: number;
 }
 
 export const ProjectRegistry = (appRegistryControls: ApplicationRegistryControls, containers: {
@@ -23,6 +24,8 @@ export const ProjectRegistry = (appRegistryControls: ApplicationRegistryControls
     const [projectEntries, setProjectEntries] = useState<ProjectEntryProperties[]>([]);
     const [categories, setCategories] = useState<ProjectCategoryEntry[]>([]);
     const [openWindows, setOpenWindows] = useState<ProjectRegistryWindowData[]>([]);
+
+    const skillExamples = SkillExamples();
     const projectEntriesRef = useRef<ProjectEntryProperties[]>([]);
 
     useEffect(() => {
@@ -70,11 +73,11 @@ export const ProjectRegistry = (appRegistryControls: ApplicationRegistryControls
         });
 
     };
-
     const addProject = (project: ProjectEntryProperties) => {
         setProjectEntries((prev) => {
-            const alreadyExists = prev.some(p => p.id === project.id);
+            const alreadyExists = prev.some(existingEntry => existingEntry.id === project.id);
             if (alreadyExists) return prev;
+            skillExamples.addExample(project.tags, {id: project.id, name: project.name});
             const next = [...prev, project];
             return next;
         });
@@ -105,7 +108,6 @@ export const ProjectRegistry = (appRegistryControls: ApplicationRegistryControls
     };
     const openProject = (id: string) => {
         const project = projectEntriesRef.current.find(proj => proj.id === id);
-        console.log(projectEntriesRef.current);
         const windowId = `${id}_app`;
 
         if (project) {
@@ -174,6 +176,7 @@ export const ProjectRegistry = (appRegistryControls: ApplicationRegistryControls
     };
 
     return {
+        skillExamples,
         getCategory,
         getAllCategories,
         addProjectToCategory,

@@ -48,7 +48,7 @@ export const ProjectRenderer = (content?: { sectionInfo: SectionType; styleName?
                     case 'readMe':
                         return <a key={index} className={styleName} href={sectionInfo.link} target="_blank" rel="noopener noreferrer">{sectionInfo.alt}</a>;
                     case 'video':
-                        return <video key={index} className={styleName} src={sectionInfo.src} controls />;
+                        return <iframe key={index} className={`project-video ${styleName}`} src={sectionInfo.src} title={sectionInfo.alt} allowFullScreen />;
                     case 'link':
                         return <a key={index} className={styleName} href={sectionInfo.url} target="_blank" rel="noopener noreferrer">{sectionInfo.label}</a>;
                     default:

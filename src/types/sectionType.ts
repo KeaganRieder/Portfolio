@@ -25,7 +25,6 @@ const normalizeImageSrc = (value: unknown): string => {
     if (value && typeof value === 'object' && 'default' in (value as Record<string, unknown>)) {
         const maybeDefault = (value as { default?: unknown }).default;
         if (typeof maybeDefault === 'string') {
-            console.log('Normalized image src from default export:', maybeDefault);
             return maybeDefault;
         }
     }

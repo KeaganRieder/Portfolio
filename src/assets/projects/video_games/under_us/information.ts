@@ -7,7 +7,7 @@ export const UnderUsInfo: ProjectEntryProperties = {
     id: "under_us",
     categoryID: "video_games",
     name: "Under Us",
-    tags: ["C++","SOLID Design","Gtest"],
+    tags: [{skill: {id: "cpp", name: "C++"}}, {name: "SOLID"}, {name: "Gtest"}],
     iconPath: icon,
     overviewContents: {
         imagePaths: readImageGroup(images, false),

@@ -1,0 +1,75 @@
+@import url('../../../style/color.css');
+@import url('../../../style/font.css');
+
+.skills-section {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: var(--color-skills-section);
+    box-shadow: 1px 5px 5px black;
+}
+
+.skills-section h2 {
+    font: var(--color-header-text);
+    color: var(--color-body-text);
+    font-size: 2rem;
+}
+
+.skills-section h3 {
+    font: var(--color-subheader-text);
+    color: var(--color-body-text);
+    font-size: 1.5rem;
+}
+
+.skills-section p {
+    font: var(--font-body);
+    color: var(--color-body-text);
+    font-size: 1rem;
+}
+
+.skill-category {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.skill-entry {
+    padding: 2px;
+    margin: 2px;
+}
+
+.skill-entry-hoverable {
+    border-top: 2px solid var(--color-skills-section-accent);
+    border-left: 2px solid var(--color-skills-section-accent);
+    border-bottom: 4px solid var(--color-window-shadow);
+    border-right: 4px solid var(--color-window-shadow);
+    padding: 2px;
+    margin: 2px;
+}
+
+.skill-entry-hoverable:hover {
+    cursor: default;
+}
+
+.example-button-container {
+    display: flex;
+    flex-direction: column;
+
+    align-content: center;
+    align-self: center;
+    gap: 10px;
+    width: 100%;
+    height: auto;
+}
+.example-button {
+    background-color: var(--color-skill-example);
+    border-radius: 10px;
+}
+.example-button:hover {
+    background-color: var(--color-skill-example-highlight);
+}

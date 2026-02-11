@@ -7,13 +7,16 @@ export const AloneInfo: ProjectEntryProperties = {
     id: "alone",
     categoryID: "3d_models",
     name: "Alone",
-    tags: ["3D Model", "Video", "Blender"],
+    tags: [{name: "3D Model"}, {name: "Video"}, {skill: {id: "blender", name: "Blender"}}],
     iconPath: icon,
     overviewContents: {
         imagePaths: readImageGroup(images, false),
         description: "A detailed 3D model of a solitary figure walking through a war torn environment.",
-        links: [
-            { label: "Video", url: "https://www.youtube.com/embed/C0PK1KK15_A" }
-        ]
-    }
+        links: []
+    },
+    content: [
+        {
+            sectionInfo: { type: "video", src: "https://www.youtube.com/embed/C0PK1KK15_A", alt: "Alone 3D Model Video" },
+        }
+    ]
 }
