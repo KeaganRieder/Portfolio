@@ -1,6 +1,8 @@
-import icon from '../../../../assets/apps/text_doc.png';
 import type { ProjectEntryProperties } from '../../../../features/project_showcase/project/projectModels';
-const images = import.meta.glob('./*.png', { eager: true });
+
+import { readImageGroup } from '../../../../types/sectionType';
+import icon from '../../../../assets/apps/text_doc.png';
+const images = import.meta.glob('./*.png', { eager: true, import: "default" });
 
 export const PixelArtDrawingsInfo: ProjectEntryProperties = {
     id: "pixel_art_drawings",
@@ -9,14 +11,14 @@ export const PixelArtDrawingsInfo: ProjectEntryProperties = {
     tags: ["Aseprite"],
     iconPath: icon,
     overviewContents: {
-        imagePaths: Object.values(images).map((image: any) => image.default),
+        imagePaths: readImageGroup(images, true),
         description: "A collection of pixel art pieces.",
         links: []
     },
     content: [
         {
-            sectionInfo: { type: "gallery", imagePaths: Object.values(images).map((image: any) => image.default) },
-            styleName: "pixelated-image"
+            sectionInfo: { type: "gallery", imageData: readImageGroup(images, true) },
         }
     ]
 }
+

@@ -73,7 +73,7 @@ export const Application: React.FC<ApplicationDefinition> = ({ info, visibilityC
     const appContent = () => {
         return (
             <div className="application-content">
-                <div className="application-content-scroll-container">
+                <div className={"application-content-scroll-container " + (content?.contentContainerStyle || "")}>
                     {content?.body}
                 </div>
             </div>

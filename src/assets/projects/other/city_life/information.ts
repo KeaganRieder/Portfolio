@@ -1,6 +1,7 @@
-import icon from '../../../../assets/apps/text_doc.png';
 import type { ProjectEntryProperties } from '../../../../features/project_showcase/project/projectModels';
-import nightTime from './nightTime.png';
+import { readImageGroup } from '../../../../types/sectionType';
+import icon from '../../../../assets/apps/text_doc.png';
+const images = import.meta.glob('./*.png', { eager: true, import: "default" });
 
 export const CityLifeInfo: ProjectEntryProperties = {
     id: "city_life",
@@ -9,7 +10,7 @@ export const CityLifeInfo: ProjectEntryProperties = {
     tags: ["Interactive Art", "Simulation"],
     iconPath: icon,
     overviewContents: {
-        imagePaths: [nightTime],
+        imagePaths: readImageGroup(images, false),
         description: "An interactive art project simulating city life with dynamic day and night cycles.",
         links: [
             { label: "GitHub", url: "https://github.com/KeaganRieder/CityScape" },

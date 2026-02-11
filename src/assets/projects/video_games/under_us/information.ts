@@ -1,7 +1,7 @@
-import icon from '../../../../assets/apps/text_doc.png';
 import type { ProjectEntryProperties } from '../../../../features/project_showcase/project/projectModels';
-
-const images = import.meta.glob('./*.png', { eager: true });
+import { readImageGroup } from '../../../../types/sectionType';
+import icon from '../../../../assets/apps/text_doc.png';
+const images = import.meta.glob('./*.png', { eager: true, import: "default" });
 
 export const UnderUsInfo: ProjectEntryProperties = {
     id: "under_us",
@@ -10,7 +10,7 @@ export const UnderUsInfo: ProjectEntryProperties = {
     tags: ["C++","SOLID Design","Gtest"],
     iconPath: icon,
     overviewContents: {
-        imagePaths: Object.values(images).map((image: any) => image.default),
+        imagePaths: readImageGroup(images, false),
         description: "A text based adventure game created in a group for school using C++.",
         links: [
             { label: "GitHub", url: "https://github.com/KeaganRieder/UnderUs" },

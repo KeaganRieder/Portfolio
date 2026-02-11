@@ -1,5 +1,5 @@
 import type { VisibilityControls } from "../../../components/application/definition";
-import type { SectionType } from "../../../types/sectionType";
+import type { SectionType, ImageData } from "../../../types/sectionType";
 
 export interface ProjectEntryProperties {
     id: string;
@@ -12,7 +12,7 @@ export interface ProjectEntryProperties {
         openProject: (id: string) => void;
     }
     overviewContents: {
-        imagePaths?: string[];
+        imagePaths?: ImageData[];
         description: string;
         links: { label: string; url: string }[];
     };

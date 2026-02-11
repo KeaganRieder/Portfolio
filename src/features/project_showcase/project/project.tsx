@@ -4,9 +4,8 @@ import type { ProjectEntryProperties } from "./projectModels";
 import "../styles/projectBase.css";
 import "../styles/ProjectSections.css";
 
-
-
 import { ProjectRenderer } from "./ProjectRenderer";
+import { ImageSection } from "../../../components/projectSections/image";
 
 export const ProjectOverviewContainer = (projectInfo: ProjectEntryProperties) => {
     const onClick = () => {
@@ -20,9 +19,9 @@ export const ProjectOverviewContainer = (projectInfo: ProjectEntryProperties) =>
     return (
         <>
             <button className="project-overview" onClick={onClick}>
-                <div className="project-images">
+                <div className="gallery">
                     {projectInfo.overviewContents.imagePaths?.map((path, index) => (
-                        <img key={index} src={path} alt={`${projectInfo.name} screenshot ${index + 1}`} />
+                        <ImageSection key={index} imageData={path} inGallery={true} hoverConfigs={{ canHover: false }} />
                     ))}
                 </div>
                 <div className="project-tags">
@@ -47,7 +46,7 @@ export const ProjectApp: React.FC<ProjectEntryProperties> = (projectInfo: Projec
 
     const body = () => {
         return (<>
-            {ProjectRenderer(projectInfo.content)}
+            {ProjectRenderer(projectInfo.content, projectInfo.applicationData ? projectInfo : undefined)}
         </>);
     }
 
@@ -70,7 +69,7 @@ export const ProjectApp: React.FC<ProjectEntryProperties> = (projectInfo: Projec
             content={{ body: body(), }}
         />)
     }
-    
+
     return <></>
 
 }

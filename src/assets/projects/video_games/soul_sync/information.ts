@@ -1,7 +1,7 @@
-import icon from '../../../../assets/apps/text_doc.png';
 import type { ProjectEntryProperties } from '../../../../features/project_showcase/project/projectModels';
-
-const images = import.meta.glob('./*.png', { eager: true });
+import { readImageGroup } from '../../../../types/sectionType';
+import icon from '../../../../assets/apps/text_doc.png';
+const images = import.meta.glob('./*.png', { eager: true, import: "default" });
 
 export const SoulSyncInfo: ProjectEntryProperties = {
     id: "soul_sync",
@@ -10,7 +10,7 @@ export const SoulSyncInfo: ProjectEntryProperties = {
     tags: ["C#","Godot"],
     iconPath: icon,
     overviewContents: {
-        imagePaths: Object.values(images).map((image: any) => image.default),
+        imagePaths: readImageGroup(images, false),
         description: "A 2 player split screen Coop platforming game, made in Godot.",
         links: [
             { label: "GitHub", url: "https://github.com/KeaganRieder/SoulSync" },

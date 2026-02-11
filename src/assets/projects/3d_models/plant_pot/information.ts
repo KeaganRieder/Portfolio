@@ -1,7 +1,8 @@
-import icon from '../../../../assets/apps/text_doc.png';
 import type { ProjectEntryProperties } from '../../../../features/project_showcase/project/projectModels';
+import { readImageGroup } from '../../../../types/sectionType';
+import icon from '../../../../assets/apps/text_doc.png';
+const images = import.meta.glob('./*.png', { eager: true, import: "default" });
 
-const images = import.meta.glob('./*.png', { eager: true });
 
 export const PlantPotInfo: ProjectEntryProperties = {
     id: "plant_pot",
@@ -10,7 +11,7 @@ export const PlantPotInfo: ProjectEntryProperties = {
     tags: ["3D Model", "Decor", "Blender"],
     iconPath: icon,
     overviewContents: {
-        imagePaths: Object.values(images).map((image: any) => image.default),
+        imagePaths: readImageGroup(images, false),
         description: "A detailed 3D model of a plant pot, showcasing both rendered and unrendered views.",
         links: []
     }

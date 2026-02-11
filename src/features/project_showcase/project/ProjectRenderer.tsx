@@ -1,6 +1,8 @@
+import { ImageSection } from "../../../components/projectSections/image";
 import type { SectionType } from "../../../types/sectionType";
+import type { ProjectEntryProperties } from "./projectModels";
 
-export const ProjectRenderer = (content?: { sectionInfo: SectionType; styleName?: string; }[]) => {
+export const ProjectRenderer = (content?: { sectionInfo: SectionType; styleName?: string; }[], applicationInfo?: ProjectEntryProperties) => {
     if (!content) return null;
 
     return (
@@ -20,16 +22,26 @@ export const ProjectRenderer = (content?: { sectionInfo: SectionType; styleName?
                             </pre>
                         );
                     case 'image':
-                        return <img key={index} className={styleName} src={sectionInfo.src} alt={sectionInfo.alt || 'Project image'} />;
+                        return <ImageSection
+                            key={index} imageData={sectionInfo.imageData}
+                            styleOverride={styleName}
+                            inGallery={false}
+                            hoverConfigs={{
+                                canHover: true,
+                            }}
+                            applicationData={applicationInfo?.applicationData}
+                        />;
                     case 'gallery':
                         return (
                             <div key={index} className={`gallery ${styleName}`}>
-                                {sectionInfo.imagePaths.map((src, imgIndex) => (
-                                    <div key={imgIndex} className="gallery-item">
-                                        <a target="_blank" href={src}>
-                                        <img src={src} alt={sectionInfo.captions ? sectionInfo.captions[imgIndex] : `Gallery image ${imgIndex + 1}`} />
-                                        </a>
-                                    </div>
+                                {sectionInfo.imageData.map((imageData, imgIndex) => (
+                                    <ImageSection key={imgIndex} imageData={imageData}
+                                        inGallery={true}
+                                        hoverConfigs={{
+                                            canHover: true,
+                                        }}
+                                        applicationData={applicationInfo?.applicationData}
+                                    />
                                 ))}
                             </div>
                         );

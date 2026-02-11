@@ -36,6 +36,7 @@ export interface ApplicationDefinition {
     }
     content?: {
         body?: React.ReactNode;
+        contentContainerStyle?: string;
         header?: React.ReactNode;
         headerButtons?: React.ReactNode;
 

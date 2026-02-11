@@ -1,5 +1,5 @@
-import icon from '../../../../assets/apps/text_doc.png';
 import type { ProjectEntryProperties } from '../../../../features/project_showcase/project/projectModels';
+import icon from '../../../../assets/apps/text_doc.png';
 
 export const NQueensInfo: ProjectEntryProperties = {
     id: "n_queens",

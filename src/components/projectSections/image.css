@@ -1,0 +1,12 @@
+@import url('../../style/color.css');
+@import url('../../style/font.css');
+
+.app-image {
+    height: 100%;
+}
+
+.app-image-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}

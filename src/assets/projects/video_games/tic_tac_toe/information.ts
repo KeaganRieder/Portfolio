@@ -1,7 +1,7 @@
-import icon from '../../../../assets/apps/text_doc.png';
 import type { ProjectEntryProperties } from '../../../../features/project_showcase/project/projectModels';
-
-const images = import.meta.glob('./*.png', { eager: true });
+import { readImageGroup } from '../../../../types/sectionType';
+import icon from '../../../../assets/apps/text_doc.png';
+const images = import.meta.glob('./*.png', { eager: true, import: "default" });
 
 export const TicTacToeInfo: ProjectEntryProperties = {
     id: "tic_tac_toe",
@@ -10,7 +10,7 @@ export const TicTacToeInfo: ProjectEntryProperties = {
     tags: ["C++","Minimax Algorithm"],
     iconPath: icon,
     overviewContents: {
-        imagePaths: Object.values(images).map((image: any) => image.default),
+        imagePaths: readImageGroup(images, false),
         description: "A tic tac toe game made in C++, using the minimax algorithm for the AI.",
         links: [
             { label: "GitHub", url: "https://github.com/KeaganRieder/TicTacToe" },

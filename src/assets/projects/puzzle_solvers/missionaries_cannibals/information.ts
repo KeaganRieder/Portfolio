@@ -1,6 +1,7 @@
-import icon from '../../../../assets/apps/text_doc.png';
 import type { ProjectEntryProperties } from '../../../../features/project_showcase/project/projectModels';
-const images = import.meta.glob('./*.png', { eager: true });
+import { readImageGroup } from '../../../../types/sectionType';
+import icon from '../../../../assets/apps/text_doc.png';
+const images = import.meta.glob('./*.png', { eager: true, import: "default" });
 
 export const MissionariesCannibalsInfo: ProjectEntryProperties = {
     id: "missionaries_cannibals",
@@ -9,11 +10,10 @@ export const MissionariesCannibalsInfo: ProjectEntryProperties = {
     tags: ["C++", "Backtracking"],
     iconPath: icon,
     overviewContents: {
-        imagePaths: Object.values(images).map((image: any) => image.default),
+        imagePaths: readImageGroup(images, false),
         description: "A program that solves the Missionaries & Cannibals problem using backtracking in C++.",
         links: [
             { label: "GitHub", url: "https://github.com/KeaganRieder/Missionaries-and-Cannibals-Problem" },
-
             { label: "Demo", url: "https://www.youtube.com/embed/SS98yc4f5cU" }
         ]
     }

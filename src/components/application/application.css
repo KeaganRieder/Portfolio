@@ -117,9 +117,13 @@
     scrollbar-color: var(--color-scrollbar-thumb-bg) var(--color-scrollbar-track-bg);
 }
 
+
+
 .application-content-scroll-container {
     position: relative;
     width: 100%;
     height: auto;
     box-sizing: border-box;
+   justify-content:left;
+
 }
