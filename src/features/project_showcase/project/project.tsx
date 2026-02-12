@@ -3,7 +3,6 @@ import type { ProjectEntryProperties, ProjectTag } from "./projectModels";
 
 import "../styles/projectBase.css";
 import "../styles/ProjectSections.css";
-import "../styles/projectVideo.css";
 
 import { ProjectRenderer } from "./ProjectRenderer";
 import { ImageSection } from "../../../components/projectSections/image";

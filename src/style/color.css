@@ -55,6 +55,13 @@
     --color-button-content-accent: #f0f0f0;
     --color-button-content-shadow: #212529;
 
+    --color-email-text-area: #414142;
+    --color-email-text-accent: #717e8d;
+    --color-email-text-shadow: #212529;
+
+    --color-email-text-button: #414142;
+    --color-email-text-button-highlight: #717e8d;
+
     --color-skills-section: #2d3e52;
     --color-skills-section-highlight: #445e7c;
     --color-skills-section-accent: #717e8d;
@@ -95,6 +102,8 @@
     --color-clock-text: #e9e6e6;
     --color-clock-text-highlight: #f0f0f0;
     --color-clock-text-shadow: #212529;
+
+    --color-email-text: #ffffff;
 
     --color-body-text: #d4d4d4;
     --color-body-text-highlight: #f0f0f0;
