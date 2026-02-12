@@ -6,9 +6,10 @@ import type { ProjectEntryProperties } from "./project/projectModels";
 import { ProjectCategoryApp, type ProjectCategoryEntry } from "./ProjectCategories";
 import { ProjectShowcase } from "./projectShowcase";
 
-import folderIcon from "../../assets/apps/folder.png";
 import { ProjectsEntries } from "../../assets/projects/projectsEntries";
 import { SkillExamples } from "./skillExampleList";
+
+import folderIcon from "../../assets/apps/icons/folder_icon.png";
 
 export interface ProjectRegistryWindowData {
     id: string;

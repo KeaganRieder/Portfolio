@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import './desktop.css'
-
-// import textDocIcon from '../../assets/apps/text_doc.png';
+import './styles/desktop.css';
 import { ApplicationRegistry, type AppLookupResult } from "./appRegistry";
 import SearchBar from "../../components/search_bar/searchBar";
 
@@ -124,10 +122,10 @@ export const Desktop: React.FC = () => {
         return (
             <>
                 <section id="app-container" ref={(element: HTMLElement | null) => appRegistry.setAppContainer(element)}>
-                    <section
-                        id="shortcut-container"
-                        ref={(element: HTMLElement | null) => { appRegistry.setShortcutContainer(element); }}
-                    />
+                    <section id="shortcut-container">
+                        <div className="shortcut-scroll-container"
+                        ref={(element: HTMLElement | null) => { appRegistry.setShortcutContainer(element); }}/>
+                    </section>
                 </section>
                 {appRegistry.CreateExternalApps()}
                 {appRegistry.createAppsFromRegistry()}

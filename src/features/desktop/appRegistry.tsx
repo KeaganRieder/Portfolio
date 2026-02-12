@@ -4,15 +4,16 @@ import { AboutMe } from "../about_me/aboutMe";
 import type { ShortcutDefinition } from "../../components/shortcut/definition";
 import { downloadFile, openLinkInNewTab } from "../../components/shortcut/clickActions";
 
-import githubIcon from '../../assets/apps/github.png';
-import linkedinIcon from '../../assets/apps/linkedin.png';
-import textDocIcon from '../../assets/apps/text_doc.png';
-
-import resume from '../../assets/job_mat/resume.pdf';
-import artistCV from '../../assets/job_mat/artistCv.pdf';
 import { ApplicationShortcut } from "../../components/shortcut/applicationShortcut";
 import { Email } from "../email/email";
 import { ProjectRegistry } from "../project_showcase/projectRegistry";
+
+import githubIcon from '../../assets/apps/icons/github_icon.png';
+import linkedinIcon from '../../assets/apps/icons/linkedin_icon.png';
+import textDocIcon from '../../assets/apps/icons/text_doc_icon.png';
+
+import resume from '../../assets/job_mat/resume.pdf';
+import artistCV from '../../assets/job_mat/artistCv.pdf';
 
 export interface AppRegistryEntry {
     id: string;

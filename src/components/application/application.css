@@ -124,3 +124,7 @@
     box-sizing: border-box;
     justify-content: left;
 }
+
+@media screen and (width <=40rem) {
+   
+}

@@ -14,7 +14,7 @@ export const ApplicationShortcut: React.FC<ShortcutDefinition> = ({ id, appName,
 
     const createButton = () => {
         return (<button id={id} onClick={onClickHandler}>
-            <img src={iconPath} alt={`${appName} icon`} />
+            <img className ="shortcut-icon" src={iconPath} alt={`${appName} icon`} />
             <h2>{appName}</h2>
         </button>);
     }
@@ -56,7 +56,7 @@ export const ApplicationTaskbarShortcut: React.FC<ShortcutDefinition> = ({ id, a
                 onMouseEnter={onMouseEnterHandler}
                 onMouseLeave={onMouseLeaveHandler}
             >
-                <img src={iconPath} alt={`${appName} icon`} />
+                <img className ="shortcut-icon" src={iconPath} alt={`${appName} icon`} />
             </button>
             {isHovered && (
                 <div className="shortcut-info" style={{ left: tooltipPosition.left, top: tooltipPosition.top }}>

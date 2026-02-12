@@ -1,11 +1,11 @@
 import { Application } from "../../../components/application/application";
 import type { ProjectEntryProperties, ProjectTag } from "./projectModels";
 
-import "../styles/projectBase.css";
-import "../styles/ProjectSections.css";
-
 import { ProjectRenderer } from "./ProjectRenderer";
 import { ImageSection } from "../../../components/projectSections/image";
+
+import "../styles/projectBase.css";
+import "../styles/ProjectSections.css";
 
 const formatProjectTag = (tag: ProjectTag): string => {
     if (tag.name) {

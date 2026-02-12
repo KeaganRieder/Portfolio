@@ -6,8 +6,8 @@ import type { ApplicationDefinition } from "./definition";
 
 import './application.css'
 
-import xButtonIcon from '../../assets/apps/x_icon.png';
-import minimizeButtonIcon from '../../assets/apps/minimize_Icon.png';
+import xButtonIcon from '../../assets/apps/buttons/x_button.png';
+import minimizeButtonIcon from '../../assets/apps/buttons/minimize_button.png';
 import { WindowRectControls, WindowVisibilityControls } from "./windowControls";
 
 export const Application: React.FC<ApplicationDefinition> = ({ info, visibilityControls, containers, shortcuts, content }) => {

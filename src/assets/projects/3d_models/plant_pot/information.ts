@@ -1,6 +1,6 @@
 import type { ProjectEntryProperties } from '../../../../features/project_showcase/project/projectModels';
 import { readImageGroup } from '../../../../types/sectionType';
-import icon from '../../../../assets/apps/text_doc.png';
+import icon from '../../../../assets/apps/icons/blender_icon.png';
 const images = import.meta.glob('./*.png', { eager: true, import: "default" });
 
 

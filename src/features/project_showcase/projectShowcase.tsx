@@ -4,7 +4,7 @@ import type { VisibilityControls } from "../../components/application/definition
 import { ProjectCategoryButton, type ProjectCategoryEntry } from "./ProjectCategories";
 
 import './styles/category.css'
-import folderIcon from "../../assets/apps/folder.png";
+import folderIcon from "../../assets/apps/icons/folder_icon.png";
 
 export interface ProjectShowcaseProperties {
     categories: ProjectCategoryEntry[];

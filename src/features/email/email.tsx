@@ -5,7 +5,7 @@ import emailjs from "@emailjs/browser";
 import { Application } from "../../components/application/application";
 import type { ApplicationDefinition } from "../../components/application/definition";
 
-import appIcon from "../../assets/apps/email.png";
+import appIcon from "../../assets/apps/icons/mail_icon.png";
 import './email.css';
 
 export const Email: React.FC<ApplicationDefinition> = ({ info, visibilityControls, containers }) => {

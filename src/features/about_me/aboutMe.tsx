@@ -12,7 +12,7 @@ import './styles/aboutMe.css'
 import './styles/skill.css'
 
 import profilePic from './assets/profile.gif';
-import textDocIcon from '../../assets/apps/text_doc.png';
+import textDocIcon from '../../assets/apps/icons/text_doc_icon.png';
 
 import resume from '../../assets/job_mat/resume.pdf';
 import artistCV from '../../assets/job_mat/artistCv.pdf';
