@@ -5,7 +5,7 @@ import { ProjectRenderer } from "./ProjectRenderer";
 import { ImageSection } from "../../../components/projectSections/image";
 
 import "../styles/projectBase.css";
-import "../styles/ProjectSections.css";
+import "../styles/projectSections.css";
 
 const formatProjectTag = (tag: ProjectTag): string => {
     if (tag.name) {
