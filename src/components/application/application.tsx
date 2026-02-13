@@ -66,6 +66,7 @@ export const Application: React.FC<ApplicationDefinition> = ({ info, visibilityC
         return (
             <div id={`${info.id}-header`} className="application-header"
                 onMouseDown={windowRectControls.onMouseDown}
+                onTouchStart={windowRectControls.OnTouchStart}
                 ref={(element: HTMLElement | null) => { headerElement.current = element; }}
                 style={{ cursor: windowRectControls.isDragging ? 'grabbing' : 'grab' }}
             >
@@ -78,7 +79,7 @@ export const Application: React.FC<ApplicationDefinition> = ({ info, visibilityC
                 <div className="header-button-group">
                     {content?.headerButtons}
                     <button onClick={visibilityController.minimize}>
-                        <img src={minimizeButtonIcon} alt="Minimize" />
+                        <img className="minimize-button" src={minimizeButtonIcon} alt="Minimize" />
                     </button>
                     <button onClick={visibilityController.close}>
                         <img src={xButtonIcon} alt="Close" />

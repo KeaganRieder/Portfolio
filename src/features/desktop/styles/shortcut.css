@@ -47,6 +47,7 @@
 
 .shortcut-scroll-container img {
     max-width: 75px;
+    image-rendering: pixelated;
     image-rendering: crisp-edges;
 }
 
@@ -68,7 +69,6 @@
     color: var(--color-shortcut-text-highlight);
 }
 
-/* pc = 70*/
 @media screen and (width <=40rem) {
     #shortcut-container {
 

@@ -1,6 +1,8 @@
 import React from "react";
 import type { Skill, skillExample } from "../../types/skill";
 
+import './styles/skill.css';
+
 export interface SkillEntryInfo {
     skill: Skill;
     categoryID: string;
@@ -55,7 +57,7 @@ export const SkillEntry: React.FC<SkillEntryInfo> = ({ skill, hover }) => {
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                 >
-                    <h3>{skill.name}</h3>
+                    <h3 className="skill-title">{skill.name}</h3>
                     {skillHoverBody()}
                 </div>
             );
@@ -67,7 +69,7 @@ export const SkillEntry: React.FC<SkillEntryInfo> = ({ skill, hover }) => {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
             >
-                <h3>{skill.name}</h3>
+                <h3 className="skill-title">{skill.name}</h3>
 
             </div>
         );

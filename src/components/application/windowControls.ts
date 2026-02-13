@@ -83,6 +83,15 @@ export const WindowRectControls =
             };
             event.preventDefault();
         }
+        const OnTouchStart = (event: React.TouchEvent) => {
+            setIsDragging(true);
+            const touch = event.touches[0];
+            dragOffset.current = {
+                x: touch.clientX - position.x,
+                y: touch.clientY - position.y
+            };
+            event.preventDefault();
+        }
         useEffect(() => {
             const handleMouseMove = (e: MouseEvent) => {
                 if (!isDragging) return;
@@ -99,17 +108,40 @@ export const WindowRectControls =
                     }
                 )
             };
+            const handleTouchMove = (e: TouchEvent) => {
+                if (!isDragging) return;
+                const touch = e.touches[0];
+                setCurrentOffset(
+                    {
+                        x: touch.clientX - dragOffset.current.x,
+                        y: touch.clientY - dragOffset.current.y
+                    }
+                )
+                setPos(
+                    {
+                        x: touch.clientX - dragOffset.current.x,
+                        y: touch.clientY - dragOffset.current.y
+                    }
+                )
+            }
 
             const handleMouseUp = () => {
                 setIsDragging(false);
             };
+            const handleTouchEnd = () => {
+                setIsDragging(false);
+            }
 
             window.addEventListener('mousemove', handleMouseMove);
             window.addEventListener('mouseup', handleMouseUp);
+            window.addEventListener('touchmove', handleTouchMove);
+            window.addEventListener('touchend', handleTouchEnd);
 
             return () => {
                 window.removeEventListener('mousemove', handleMouseMove);
                 window.removeEventListener('mouseup', handleMouseUp);
+                window.removeEventListener('touchmove', handleTouchMove);
+                window.removeEventListener('touchend', handleTouchEnd);
             };
         }, [isDragging]);
 
@@ -143,6 +175,7 @@ export const WindowRectControls =
             size,
             position,
             onMouseDown,
+            OnTouchStart,
             isDragging,
         }
     }

@@ -193,5 +193,7 @@
 }
 
 @media screen and (width <=40rem) {
-  
+  #taskbar{
+    display: none;
+  }
 }

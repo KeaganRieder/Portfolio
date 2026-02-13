@@ -42,7 +42,14 @@
     box-sizing: border-box;
 
     background-image: var(--background-img-path);
+    image-rendering: crisp-edges;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+@media screen and (width <=40rem) {
+    :root {
+        --desktop-height: calc(100%);
+    }
 }

@@ -13,22 +13,20 @@
     box-shadow: 1px 5px 5px black;
 }
 
-.skills-section h2 {
-    font: var(--color-header-text);
-    color: var(--color-body-text);
-    font-size: 2rem;
+.skill-entry {
+    padding: 2px;
+    margin: 2px;
+} 
+.skills-section .section-title {
+    font: var(--font-secondary-header);
+    color: var(--color-header-text);
+    font-size: 2.2rem;
 }
 
-.skills-section h3 {
-    font: var(--color-subheader-text);
-    color: var(--color-body-text);
-    font-size: 1.5rem;
-}
-
-.skills-section p {
-    font: var(--font-body);
-    color: var(--color-body-text);
-    font-size: 1rem;
+.skills-section .skill-title {
+    font: var(--font-subheader);
+    color: var(--color-skill-text);
+    font-size: 1.3rem;
 }
 
 .skill-category {
@@ -36,11 +34,6 @@
     min-width: 200px;
     margin-bottom: 10px;
     text-align: center;
-}
-
-.skill-entry {
-    padding: 2px;
-    margin: 2px;
 }
 
 .skill-entry-hoverable {
@@ -72,4 +65,11 @@
 }
 .example-button:hover {
     background-color: var(--color-skill-example-highlight);
+}
+
+@media screen and ((width <=40rem) or (height <=40rem)) {
+   .skills-section {
+    flex-direction: column;
+    
+}
 }

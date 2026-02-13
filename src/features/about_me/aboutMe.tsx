@@ -72,7 +72,7 @@ export const AboutMe: React.FC<ApplicationDefinition> = ({ info, visibilityContr
     const skillsSection = () => {
         return (
             <section className="skills-section">
-                <h2>Skills</h2>
+                <h2 className="section-title">Skills</h2>
                 {skillCategories.map((category) => (
                     <SkillCategory key={category.id} {...category} />
                 ))}

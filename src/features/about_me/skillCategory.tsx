@@ -1,5 +1,7 @@
 import { SkillEntry, type SkillEntryInfo } from "./skillEntry";
 
+import './styles/skill.css';
+
 export interface SkillCategoryEntry {
     id: string;
     name: string;
@@ -19,9 +21,13 @@ export const SkillCategory: React.FC<SkillCategoryEntry> = ({id, name, skills })
         );
     });
 
+const getTitle = () => {
+    return name.charAt(0).toUpperCase() + name.slice(1);
+}
+
     return (<>
         <div id ={id} className="skill-category">
-            <h2>{name}</h2>
+            <h2 className="section-title">{getTitle()}</h2>
             <div className="skill-category-skill-list">
                 {skillElements}
             </div>
