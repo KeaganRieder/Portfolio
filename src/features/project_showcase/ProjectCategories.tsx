@@ -1,5 +1,3 @@
-import ReactDOM from "react-dom";
-
 import type { VisibilityControls } from "../../components/application/definition";
 import { ProjectOverviewContainer } from "./project/project";
 import { Application } from "../../components/application/application";
