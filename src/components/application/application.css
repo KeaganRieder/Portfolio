@@ -1,0 +1,153 @@
+@import url('../../style/color.css');
+@import url('../../style/font.css');
+
+:root {
+    --header-height: 10%;
+    --content-height: calc(100% - var(--header-height) - 10px);
+}
+
+.application {
+    position: absolute;
+    overflow: hidden;
+
+    background-color: var(--color-window);
+    box-sizing: border-box;
+
+    border-top: 2px solid var(--color-window-accent);
+    border-left: 2px solid var(--color-window-accent);
+    border-bottom: 2px solid var(--color-window-shadow);
+    border-right: 2px solid var(--color-window-shadow);
+
+    padding: 5px 5px 10px 5px;
+}
+
+.application-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: var(--header-height);
+    margin-bottom: 10px;
+    padding: 5px;
+    box-sizing: border-box;
+
+    background-color: var(--color-header);
+    border: 2px solid var(--color-header-accent);
+
+    cursor: grab;
+}
+
+.application-header h1 {
+    position: relative;
+    float: left;
+    display: flex;
+    align-items: center;
+
+    height: 100%;
+    box-sizing: border-box;
+
+    padding: 0 10px;
+    margin: 0;
+
+    font-family: var(--font-header);
+    font-size: 2rem;
+
+    color: var(--color-header-text);
+}
+
+.header-button-group {
+    position: relative;
+    float: right;
+
+    display: flex;
+    align-items: center;
+
+    height: 100%;
+    padding-right: 10px;
+    gap: 10px;
+}
+
+.header-button-group button {
+    aspect-ratio: 1 / 1;
+    height: 100%;
+    max-height: 40px;
+
+    padding: 2px;
+    display: grid;
+    place-items: center;
+
+    background-color: var(--color-button-head);
+    transition: background-color 0.2s ease;
+    border-top: 2px solid var(--color-button-head-accent);
+    border-left: 2px solid var(--color-button-head-accent);
+    border-bottom: 2px solid var(--color-button-head-shadow);
+    border-right: 2px solid var(--color-button-head-shadow);
+
+    cursor: pointer;
+}
+
+.header-button-group button:hover {
+    background-color: var(--color-button-head-highlight);
+}
+
+.header-button-group button img {
+    aspect-ratio: 1 / 1;
+    height: 100%;
+
+    max-height: 32px;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+.application-content {
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    height: var(--content-height);
+
+    box-sizing: border-box;
+    padding: 10px;
+    border: 2px solid var(--color-content-main-accent);
+
+    background-color: var(--color-content-main);
+
+    font-family: var(--font-body);
+    color: var(--color-body-text);
+    font-size: 1.25rem;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-scrollbar-thumb-bg) var(--color-scrollbar-track-bg);
+}
+
+.application-content-scroll-container {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    box-sizing: border-box;
+    justify-content: left;
+}
+
+@media screen and ((width <=40rem) or (height <=40rem)) {
+    .application-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .header-button-group button {
+
+        background-color: var(--color-button-head);
+        transition: background-color 0.2s ease;
+        border: none;
+    }
+
+    .header-button-group button img {
+        aspect-ratio: 1 / 1;
+        height: 100%;
+    }
+
+    .minimize-button {
+        display: none;
+    }
+}

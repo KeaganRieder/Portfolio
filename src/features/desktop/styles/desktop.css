@@ -1,0 +1,55 @@
+@import url('../../../style/color.css');
+@import url('../../../style/font.css');
+
+@import url('./taskbar.css');
+@import url('./shortcut.css');
+
+:root {
+    --background-img-path: url(.././assets/background.png);
+
+    --taskbar-height: clamp(80px, 9vh, 90px);
+
+    --shortcut-container-padding: clamp(5px, 1vw, 15px);
+
+    --desktop-height: calc(100% - var(--taskbar-height));
+    --clock-width: clamp(250px, 30%, 150px);
+    --searchbar-width: clamp(150px, 20%, 250px);
+}
+
+#desktop {
+    position: relative;
+    overflow: hidden;
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    background-color: var(--color-desktop);
+}
+
+#app-container {
+    position: relative;
+    overflow: hidden;
+
+    width: 100%;
+    height: var(--desktop-height);
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    background-image: var(--background-img-path);
+    image-rendering: crisp-edges;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media screen and (width <=40rem) {
+    :root {
+        --desktop-height: calc(100%);
+    }
+}

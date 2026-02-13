@@ -1,0 +1,84 @@
+@import url('../../../style/color.css');
+@import url('../../../style/font.css');
+
+
+#shortcut-container {
+    position: relative;
+    float: left;
+
+    min-width: 100px;
+    max-height: var(--desktop-height);
+
+    padding: var(--shortcut-container-padding);
+    box-sizing: border-box;
+    overflow-y: hidden;
+}
+
+.shortcut-scroll-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+
+    gap: clamp(5px, 1vw, 10px);
+
+    max-height: 600px;
+}
+
+.shortcut-scroll-container button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5px;
+
+    cursor: pointer;
+
+    border: none;
+    border-radius: 4px;
+
+    background-color: var(--color-shortcut-button);
+    transition: background-color 0.2s ease;
+}
+
+.shortcut-scroll-container button:hover {
+    background-color: var(--color-shortcut-button-highlight);
+    color: var(--color-shortcut-text-highlight);
+}
+
+.shortcut-scroll-container img {
+    max-width: 75px;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+.shortcut-scroll-container h2 {
+    font-family: var(--font-shortcut);
+    font-size: 1rem;
+
+    text-align: center;
+    white-space: nowrap;
+
+    color: var(--color-shortcut-text);
+    text-shadow: 4px 1px 4px var(--color-shortcut-text-shadow);
+
+    transition: color 0.2s ease;
+}
+
+.shortcut-scroll-container button:hover h2 {
+    background-color: var(--color-shortcut-button-highlight);
+    color: var(--color-shortcut-text-highlight);
+}
+
+@media screen and (width <=40rem) {
+    #shortcut-container {
+
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: #adadad83 #1c1c1c00;
+    }
+
+    .shortcut-scroll-container {
+
+        max-height: 1000px;
+    }
+}

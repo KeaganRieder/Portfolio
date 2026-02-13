@@ -1,0 +1,51 @@
+@import url('../../../style/color.css');
+@import url('../../../style/font.css');
+
+.category-button-container {
+    display: flex;
+    flex-direction: row;
+
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.category-button-container button {
+    font-family: var(--font-header);
+    font-size: 1rem;
+    color: var(--color-header-text);
+
+    background-color: transparent;
+    border: transparent;
+}
+
+.category-button-container button img {
+    aspect-ratio: 1 / 1;
+    max-width: 200px;
+    image-rendering: pixelated;
+}
+
+.category-button-container button h3 {
+    padding: 0px;
+    margin: 0px;
+}
+
+.category-button-container button:hover {
+    background-color: var(--color-button-content-highlight);
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+@media screen and ((width <=40rem) or (height <=40rem)) {
+    .category-button-container {
+    flex-direction: column;
+}
+   .category-button-container button img {
+    max-width: 100px;
+    image-rendering: pixelated;
+}
+}

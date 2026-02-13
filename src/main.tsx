@@ -1,7 +1,8 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
-import Desktop from './components/desktop/Desktop'
+import './main.css'
+import { Desktop } from './features/desktop/desktop'
+
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
