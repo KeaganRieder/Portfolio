@@ -6,7 +6,7 @@
     position: relative;
     float: left;
 
-    min-width: 200px;
+    min-width: 300px;
     max-height: 100%;
 
     padding: var(--shortcut-container-padding);
@@ -21,18 +21,20 @@
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
+    overflow-x: visible;
 
-    gap: clamp(5px, 1vw, 10px);
+    gap: 5px;
 
     max-height: 600px;
     width: auto;
+    scrollbar-color: #adadad83 #1c1c1c00;
 }
 
 .shortcut-scroll-container button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5px;
+    min-width: 80px;
 
     cursor: pointer;
 
@@ -50,6 +52,7 @@
 
 .shortcut-scroll-container img {
     max-width: 75px;
+    object-fit: contain;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
 }
