@@ -6,13 +6,13 @@
     position: relative;
     float: left;
 
-    width: auto;
     min-width: 200px;
     max-height: 100%;
 
     padding: var(--shortcut-container-padding);
     box-sizing: border-box;
     overflow-y: hidden;
+    overflow-x: visible;
     scrollbar-color: #adadad83 #1c1c1c00;
 }
 
@@ -25,6 +25,7 @@
     gap: clamp(5px, 1vw, 10px);
 
     max-height: 600px;
+    width: auto;
 }
 
 .shortcut-scroll-container button {
