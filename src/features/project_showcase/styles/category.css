@@ -40,12 +40,14 @@
     padding: 1rem;
 }
 
-@media screen and ((width <=40rem) or (height <=40rem)) {
+
+@media (max-width: 400px) {
     .category-button-container {
-    flex-direction: column;
-}
-   .category-button-container button img {
-    max-width: 100px;
-    image-rendering: pixelated;
-}
+        flex-direction: column;
+    }
+
+    .category-button-container button img {
+        max-width: 100px;
+        image-rendering: pixelated;
+    }
 }

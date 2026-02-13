@@ -192,7 +192,8 @@
     padding-right: 2px;
 }
 
-@media screen and (width <=40rem) {
+
+@media (max-width: 400px) {
   #taskbar{
     display: none;
   }
