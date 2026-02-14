@@ -16,7 +16,8 @@
 .skill-entry {
     padding: 2px;
     margin: 2px;
-} 
+}
+
 .skills-section .section-title {
     font: var(--font-secondary-header);
     color: var(--color-header-text);
@@ -59,17 +60,19 @@
     width: 100%;
     height: auto;
 }
+
 .example-button {
     background-color: var(--color-skill-example);
     border-radius: 10px;
 }
+
 .example-button:hover {
     background-color: var(--color-skill-example-highlight);
 }
 
-@media screen and ((width <=40rem) or (height <=40rem)) {
-   .skills-section {
-    flex-direction: column;
-    
-}
+@media (max-width: 400px) or (max-height: 400px) {
+    .skills-section {
+        flex-direction: column;
+
+    }
 }

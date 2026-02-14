@@ -192,9 +192,14 @@
     padding-right: 2px;
 }
 
+@media (max-width: 800px) or (max-height: 800px) {
+    #taskbar-searchbar-container {
+        display: none;
+    }
+}
 
-@media (max-width: 400px) {
-  #taskbar{
-    display: none;
-  }
+@media (max-width: 400px) or(max-height: 400px) {
+    #taskbar {
+        display: none;
+    }
 }
