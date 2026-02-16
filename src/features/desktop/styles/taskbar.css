@@ -198,7 +198,7 @@
     }
 }
 
-@media (max-width: 400px) or(max-height: 400px) {
+@media (max-width: 400px)  {
     #taskbar {
         display: none;
     }
