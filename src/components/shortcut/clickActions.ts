@@ -2,9 +2,6 @@ export const openLinkInNewTab = (url: string) => () => {
     window.open(url, '_blank');
 };
 
-export const downloadFile = (filePath: string, fileName: string) => () => {
-    const link = document.createElement('a');
-    link.href = filePath;
-    link.download = fileName;
-    link.click();
+export const openFile = (filePath: string, _fileName: string) => () => {
+    window.open(filePath, '_blank');
 };

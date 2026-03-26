@@ -87,11 +87,11 @@ export const AboutMe: React.FC<ApplicationDefinition> = ({ info, visibilityContr
                     <div >
                         <p> {Biography} </p>
                         <div className="job-materials">
-                            <a href={resume} download="KeaganRieder-Resume.pdf">
-                                <p>click here to download my Resume</p>
+                            <a href={resume} target="_blank" rel="noopener noreferrer">
+                                <p>My Resume</p>
                             </a>
-                            <a href={artistCV} download="KeaganRieder-ArtistCv.pdf">
-                                <p>click here to download my Artist CV</p>
+                            <a href={artistCV} target="_blank" rel="noopener noreferrer">
+                                <p>My Artist CV</p>
                             </a>
                         </div>
                     </div>

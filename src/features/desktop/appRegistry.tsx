@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { ApplicationDefinition } from "../../components/application/definition"
 import { AboutMe } from "../about_me/aboutMe";
 import type { ShortcutDefinition } from "../../components/shortcut/definition";
-import { downloadFile, openLinkInNewTab } from "../../components/shortcut/clickActions";
+import { openFile, openLinkInNewTab } from "../../components/shortcut/clickActions";
 
 import { ApplicationShortcut } from "../../components/shortcut/applicationShortcut";
 import { Email } from "../email/email";
@@ -82,14 +82,14 @@ export const ApplicationRegistry = () => {
             appName: "resume",
             iconPath: textDocIcon,
             parent: null,
-            onClickAction: downloadFile(resume, 'KeaganRieder-Resume.pdf')
+            onClickAction: openFile(resume, 'KeaganRieder-Resume.pdf')
         },
         {
             id: "artist_cv_shortcut",
             appName: "artist_cv",
             iconPath: textDocIcon,
             parent: null,
-            onClickAction: downloadFile(artistCV, 'KeaganRieder-ArtistCv.pdf')
+            onClickAction: openFile(artistCV, 'KeaganRieder-ArtistCv.pdf')
         }
     ];
 
