@@ -5,9 +5,9 @@ const images = import.meta.glob('./*.png', { eager: true, import: "default" });
 
 export const CityLifeInfo: ProjectEntryProperties = {
     id: "city_life",
-    categoryID: "interactive_art",
+    categoryID: "other",
     name: "City Life",
-    tags: [{name: "Interactive Art"}, {name: "Simulation"}, {skill: {id: "processing", name: "Processing"}}],
+    tags: [{name: "Other Art"}, {name: "Simulation"}, {skill: {id: "processing", name: "Processing"}}],
     iconPath: icon,
     overviewContents: {
         imagePaths: readImageGroup(images, false),
