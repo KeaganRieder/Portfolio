@@ -14,8 +14,6 @@ import './styles/skill.css'
 import profilePic from './assets/profile.gif';
 import textDocIcon from '../../assets/apps/icons/text_doc_icon.png';
 
-import resume from '../../assets/job_mat/resume.pdf';
-import artistCV from '../../assets/job_mat/artistCv.pdf';
 
 export const AboutMe: React.FC<ApplicationDefinition> = ({ info, visibilityControls, containers, projectRegistry }) => {
     const skillCategories = useMemo<SkillCategoryEntry[]>(() => {
@@ -87,11 +85,8 @@ export const AboutMe: React.FC<ApplicationDefinition> = ({ info, visibilityContr
                     <div >
                         <p> {Biography} </p>
                         <div className="job-materials">
-                            <a href={resume} target="_blank" rel="noopener noreferrer">
+                            <a href="https://keaganrieder.github.io/Resume-Site/" target="_blank" rel="noopener noreferrer">
                                 <p>My Resume</p>
-                            </a>
-                            <a href={artistCV} target="_blank" rel="noopener noreferrer">
-                                <p>My Artist CV</p>
                             </a>
                         </div>
                     </div>

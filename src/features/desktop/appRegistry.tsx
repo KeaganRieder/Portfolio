@@ -12,9 +12,6 @@ import githubIcon from '../../assets/apps/icons/github_icon.png';
 import linkedinIcon from '../../assets/apps/icons/linkedin_icon.png';
 import textDocIcon from '../../assets/apps/icons/text_doc_icon.png';
 
-import resume from '../../assets/job_mat/resume.pdf';
-import artistCV from '../../assets/job_mat/artistCv.pdf';
-
 export interface AppRegistryEntry {
     id: string;
     name: string;
@@ -82,15 +79,8 @@ export const ApplicationRegistry = () => {
             appName: "resume",
             iconPath: textDocIcon,
             parent: null,
-            onClickAction: openFile(resume, 'KeaganRieder-Resume.pdf')
+            onClickAction: openLinkInNewTab("https://keaganrieder.github.io/Resume-Site/")
         },
-        {
-            id: "artist_cv_shortcut",
-            appName: "artist_cv",
-            iconPath: textDocIcon,
-            parent: null,
-            onClickAction: openFile(artistCV, 'KeaganRieder-ArtistCv.pdf')
-        }
     ];
 
     const [openWindows, setOpenWindows] = useState<AppWindowData[]>([]);
