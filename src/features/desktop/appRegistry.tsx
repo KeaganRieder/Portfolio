@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { ApplicationDefinition } from "../../components/application/definition"
 import { AboutMe } from "../about_me/aboutMe";
 import type { ShortcutDefinition } from "../../components/shortcut/definition";
-import { openFile, openLinkInNewTab } from "../../components/shortcut/clickActions";
+import { openLinkInNewTab } from "../../components/shortcut/clickActions";
 
 import { ApplicationShortcut } from "../../components/shortcut/applicationShortcut";
 import { Email } from "../email/email";
