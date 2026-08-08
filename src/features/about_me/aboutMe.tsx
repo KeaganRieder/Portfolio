@@ -8,8 +8,8 @@ import { SkillCategory, type SkillCategoryEntry } from "./skillCategory";
 import type { SkillEntryInfo } from "./skillEntry";
 import { Skills } from "./assets/skills";
 
-import './styles/aboutMe.css'
-import './styles/skill.css'
+import './aboutMe.css'
+import './skill.css'
 
 import profilePic from './assets/profile.gif';
 

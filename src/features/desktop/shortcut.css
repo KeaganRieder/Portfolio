@@ -1,5 +1,5 @@
-@import url('../../../style/color.css');
-@import url('../../../style/font.css');
+@import url('../../style/color.css');
+@import url('../../style/font.css');
 
 
 #shortcut-container {

@@ -1,6 +1,6 @@
 import { SkillEntry, type SkillEntryInfo } from "./skillEntry";
 
-import './styles/skill.css';
+import './skill.css';
 
 export interface SkillCategoryEntry {
     id: string;

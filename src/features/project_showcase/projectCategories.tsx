@@ -4,8 +4,8 @@ import { Application } from "../../components/application/application";
 
 import type { ProjectEntryProperties } from "./project/projectModels";
 
-import "./styles/category.css";
-import "./styles/projectBase.css";
+import "./category.css";
+import "./projectBase.css";
 
 export interface ProjectCategoryEntry {
     id: string;

@@ -1,9 +1,9 @@
 import React from "react";
 import { Application } from "../../components/application/application";
 import type { VisibilityControls } from "../../components/application/definition";
-import { ProjectCategoryButton, type ProjectCategoryEntry } from "./ProjectCategories";
+import { ProjectCategoryButton, type ProjectCategoryEntry } from "./projectCategories";
 
-import './styles/category.css'
+import './category.css'
 import folderIcon from "../../assets/apps/icons/folder_icon.png";
 
 export interface ProjectShowcaseProperties {

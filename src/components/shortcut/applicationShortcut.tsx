@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { ButtonClickedEvent } from "../../services/AnalyticService";
+import { ButtonClickedEvent } from "../../services/analyticService";
 import type { ShortcutDefinition } from "./definition";
 
 export const ApplicationShortcut: React.FC<ShortcutDefinition> = ({ id, appName, parent, iconPath, onClickAction }) => {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import './styles/desktop.css';
+import './desktop.css';
 import { ApplicationRegistry, type AppLookupResult } from "../app_registry/appRegistry";
 import SearchBar from "../../components/search_bar/searchBar";
 

@@ -5,7 +5,7 @@ import { ProjectsEntries } from "../../assets/projects/projectsEntries";
 import { Skills } from "../about_me/assets/skills";
 
 import { ProjectApp } from "../project_showcase/project/project";
-import { ProjectCategoryApp, type ProjectCategoryEntry } from "../project_showcase/ProjectCategories";
+import { ProjectCategoryApp, type ProjectCategoryEntry } from "../project_showcase/projectCategories";
 import { ProjectShowcase } from "../project_showcase/projectShowcase";
 import type { ProjectEntryProperties } from "../project_showcase/project/projectModels";
 import type { skillExample } from "../../types/skill";

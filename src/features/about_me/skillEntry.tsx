@@ -1,7 +1,7 @@
 import React from "react";
 import type { Skill, skillExample } from "../../types/skill";
 
-import './styles/skill.css';
+import './skill.css';
 
 export interface SkillEntryInfo {
     skill: Skill;

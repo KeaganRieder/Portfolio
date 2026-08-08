@@ -1,11 +1,11 @@
-@import url('../../../style/color.css');
-@import url('../../../style/font.css');
+@import url('../../style/color.css');
+@import url('../../style/font.css');
 
 @import url('./taskbar.css');
 @import url('./shortcut.css');
 
 :root {
-    --background-img-path: url(../../../assets/main/background.png);
+    --background-img-path: url(../../assets/main/background.png);
 
     --taskbar-height: clamp(80px, 9vh, 90px);
 
