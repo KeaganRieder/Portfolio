@@ -8,6 +8,7 @@ import type { skillExample } from "../../types/skill";
 // "project_showcase" -> the one fixed "browse all projects" window
 export type RegistryEntryKind = "app" | "project" | "category" | "project_showcase";
 
+/** Data every registry entry's render function needs: window visibility state and DOM mount points. */
 export interface RenderContext {
     visibilityControls: VisibilityControls;
     containers?: {
@@ -17,6 +18,12 @@ export interface RenderContext {
     };
 }
 
+/**
+ * A single window the desktop can open, uniform across hand-written apps,
+ * individual projects, project categories, and the project showcase.
+ * ApplicationRegistry works entirely in terms of these so it doesn't need
+ * to know the specifics of any one kind.
+ */
 export interface RegistryEntry {
     id: string;
     name: string;
@@ -30,6 +37,11 @@ export interface RegistryEntry {
 
 // What AboutMe (and any future app) receives via the `projectRegistry` prop -
 // intentionally small, just what apps actually need from the project side.
+/**
+ * Bridges the app-registration system with the project-showcase system:
+ * apps like AboutMe use this to look up which projects demonstrate a given
+ * skill and to open those projects as windows.
+ */
 export interface ProjectHelpers {
     skillExamples: { examples: Record<string, skillExample[]> };
     openProject: (id: string) => void;

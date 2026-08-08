@@ -3,6 +3,10 @@ import React, { useState, useRef, useEffect } from 'react';
 import type { Position, Size } from "../../types/vectors";
 import type { VisibilityControls } from './definition';
 
+/**
+ * Manages a window's open/minimized/closed state and keeps the shared
+ * app registry (used for taskbar, z-index, etc.) in sync with it.
+ */
 export const WindowVisibilityControls = (visibilityControls: VisibilityControls) => {
     const {
         appid,
@@ -46,6 +50,8 @@ export const WindowVisibilityControls = (visibilityControls: VisibilityControls)
     };
 }
 
+// Window size is capped to a percentage of the viewport OR a max pixel
+// size, whichever is smaller, so windows never get comically large.
 const getWindowWidth = (percentSize: number, minWidth: number, offset: number) => {
     return Math.min(window.innerWidth * percentSize, minWidth) + offset;
 }
@@ -53,6 +59,10 @@ const getWindowHeight = (percentSize: number, minHeight: number, offset: number)
     return Math.min(window.innerHeight * percentSize, minHeight) + offset;
 }
 
+/**
+ * Handles a window's size/position state, including centering it within
+ * its container and dragging it via mouse or touch on the header.
+ */
 export const WindowRectControls =
     (
         initialSizeOffset: Size = { width: 0, height: 0 },
@@ -75,6 +85,8 @@ export const WindowRectControls =
 
         const [isDragging, setIsDragging] = React.useState(false);
 
+        // Record the pointer's offset from the window's current position so
+        // dragging can compute new positions relative to that fixed offset.
         const onMouseDown = (event: React.MouseEvent) => {
             setIsDragging(true);
             dragOffset.current = {
@@ -145,6 +157,9 @@ export const WindowRectControls =
             };
         }, [isDragging]);
 
+        // Re-center the window whenever its size changes (e.g. on viewport
+        // resize), but only after the user has dragged it at least once
+        // (dragOffset non-zero), preserving the drag-relative position.
         useEffect(() => {
             if (dragOffset.current.x !== 0 && dragOffset.current.y !== 0) {
                 setPos({
@@ -155,6 +170,7 @@ export const WindowRectControls =
 
         }, [size.width, size.height]);
 
+        // Recompute the capped window size whenever the browser is resized.
         useEffect(() => {
             const handleResize = () => {
                 const newWidth = getWindowWidth(0.8, 1500, initialSizeOffset.width);

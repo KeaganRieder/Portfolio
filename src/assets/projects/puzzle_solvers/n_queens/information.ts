@@ -1,3 +1,5 @@
+// Content/metadata entry for the "N Queens" C++ backtracking puzzle solver. Conforms to the
+// ProjectEntryProperties shape defined in projectModels.ts.
 import type { ProjectEntryProperties } from '../../../../features/project_showcase/project/projectModels';
 import icon from '../../../../assets/apps/icons/text_doc_icon.png';
 

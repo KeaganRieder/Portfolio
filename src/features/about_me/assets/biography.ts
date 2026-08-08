@@ -1,3 +1,7 @@
+/**
+ * Plain-text biography content displayed in the About Me app.
+ * Kept as a single template string so it's easy to edit without touching JSX.
+ */
 export const Biography: string = `
 I am a programmer and artist pursuing a BSC in Computer Science and a BFA in New Media 
 at the University of Lethbridge. My academic background allows me to combine technical 

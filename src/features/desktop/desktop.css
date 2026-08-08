@@ -4,6 +4,8 @@
 @import url('./taskbar.css');
 @import url('./shortcut.css');
 
+/* Shared sizing tokens for the desktop, taskbar and shortcuts, so all three
+   layouts stay in sync (e.g. app-container height depends on taskbar height). */
 :root {
     --background-img-path: url(../../assets/main/background.png);
 
@@ -16,6 +18,7 @@
     --searchbar-width: clamp(150px, 20%, 250px);
 }
 
+/* Full-viewport desktop surface; overflow hidden keeps windows/shortcuts clipped to it. */
 #desktop {
     position: relative;
     overflow: hidden;
@@ -30,6 +33,8 @@
     background-color: var(--color-desktop);
 }
 
+/* Area above the taskbar where app windows and desktop shortcuts live;
+   fills the desktop minus taskbar height and shows the background wallpaper. */
 #app-container {
     position: relative;
     overflow: hidden;
@@ -48,6 +53,8 @@
     background-repeat: no-repeat;
 }
 
+/* On narrow/mobile screens the taskbar is hidden (see taskbar.css), so let
+   the app container reclaim the full height instead of leaving a gap. */
 @media screen and (width <=40rem) {
     :root {
         --desktop-height: calc(100%);

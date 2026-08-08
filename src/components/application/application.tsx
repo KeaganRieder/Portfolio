@@ -10,6 +10,12 @@ import xButtonIcon from '../../assets/apps/buttons/x_button.png';
 import minimizeButtonIcon from '../../assets/apps/buttons/minimize_button.png';
 import { WindowRectControls, WindowVisibilityControls } from "./windowControls";
 
+/**
+ * Renders a draggable, focusable desktop-style application window (with
+ * header, minimize/close buttons, and scrollable content area), portaled
+ * into `containers.appContainer`. Also renders its optional desktop and
+ * taskbar shortcuts, which open the window when clicked.
+ */
 export const Application: React.FC<ApplicationDefinition> = ({ info, visibilityControls, containers, shortcuts, content }) => {
 
     const visibilityController = WindowVisibilityControls({
@@ -30,12 +36,17 @@ export const Application: React.FC<ApplicationDefinition> = ({ info, visibilityC
     const headerElement = useRef<HTMLElement | null>(null);
     const isOpenInRegistry = visibilityControls.RegistryControls.getAppWindowInfo(info.id) !== undefined;
 
+    // If the registry already lists this app as open (e.g. it was opened
+    // via a shortcut elsewhere before this instance mounted), sync local
+    // visibility state to match on mount/registry change.
     useEffect(() => {
         if (isOpenInRegistry) {
             visibilityController.open();
         }
     }, [isOpenInRegistry]);
 
+    // Renders the desktop shortcut icon (if provided), wiring its click
+    // handler to open this window.
     const TryToCreateShortcut = () => {
         if (shortcuts?.desktop) {
             shortcuts.desktop.onClickAction = visibilityController.open;
@@ -44,6 +55,8 @@ export const Application: React.FC<ApplicationDefinition> = ({ info, visibilityC
         return <></>;
     };
 
+    // Renders the taskbar icon, but only while the window is open or
+    // minimized (i.e. not when it's fully closed).
     const TryToCreateTaskbarShortcut = () => {
         if ((visibilityController.isVisible || visibilityController.isMinimized) && shortcuts?.taskbar) {
             shortcuts.taskbar.onClickAction = visibilityController.open;
@@ -52,6 +65,7 @@ export const Application: React.FC<ApplicationDefinition> = ({ info, visibilityC
         return <></>;
     };
 
+    // Scrollable body wrapper for the window's custom content.
     const appContent = () => {
         return (
             <div className="application-content">
@@ -62,6 +76,8 @@ export const Application: React.FC<ApplicationDefinition> = ({ info, visibilityC
         );
     };
 
+    // Draggable title bar with the app name, optional extra header content,
+    // and the minimize/close buttons. Mouse/touch down here starts a drag.
     const appHeader = () => {
         return (
             <div id={`${info.id}-header`} className="application-header"
@@ -89,6 +105,9 @@ export const Application: React.FC<ApplicationDefinition> = ({ info, visibilityC
         );
     }
 
+    // Full window: sized/positioned via inline styles from windowRectControls,
+    // stacked using the registry-resolved z-index, and only rendered when
+    // visible (returns nothing while closed/minimized).
     const appBody = () => {
         const resolvedZIndex = visibilityControls.RegistryControls.getAppWindowZIndex(info.id);
         if (visibilityController.isVisible) {
@@ -100,6 +119,7 @@ export const Application: React.FC<ApplicationDefinition> = ({ info, visibilityC
                         transform: `translate(${windowRectControls.position.x}px, ${windowRectControls.position.y}px)`,
                         zIndex: resolvedZIndex,
                     }}
+                    // Clicking anywhere on the window brings it to front.
                     onMouseDown={() => visibilityControls.RegistryControls.bringToFront(info.id)}>
                     {appHeader()}
                     {appContent()}

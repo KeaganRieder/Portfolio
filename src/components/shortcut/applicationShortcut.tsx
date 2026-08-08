@@ -3,6 +3,11 @@ import ReactDOM from "react-dom";
 import { ButtonClickedEvent } from "../../services/analyticService";
 import type { ShortcutDefinition } from "./definition";
 
+/**
+ * Desktop icon button that triggers an app's open action and logs an
+ * analytics event. Renders via a portal into `parent` if provided,
+ * otherwise inline.
+ */
 export const ApplicationShortcut: React.FC<ShortcutDefinition> = ({ id, appName, parent, iconPath, onClickAction }) => {
 
     const onClickHandler = () => {
@@ -26,6 +31,11 @@ export const ApplicationShortcut: React.FC<ShortcutDefinition> = ({ id, appName,
     return <>{createButton()}</>;
 };
 
+/**
+ * Taskbar icon variant of the app shortcut: icon-only button that shows a
+ * name tooltip on hover (positioned via the button's bounding rect), and
+ * triggers the same open action + analytics event as the desktop shortcut.
+ */
 export const ApplicationTaskbarShortcut: React.FC<ShortcutDefinition> = ({ id, appName, parent, iconPath, onClickAction }) => {
 
     const [isHovered, setIsHovered] = React.useState(false);
@@ -38,6 +48,8 @@ export const ApplicationTaskbarShortcut: React.FC<ShortcutDefinition> = ({ id, a
         ButtonClickedEvent(appName, { shortcut_name: appName });
     };
 
+    // Position the tooltip using the button's own screen rect so it lines
+    // up above/at the icon regardless of where it sits in the taskbar.
     const onMouseEnterHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
         const rect = event.currentTarget.getBoundingClientRect();
         setTooltipPosition({ left: rect.left + rect.width / 2, top: rect.top });

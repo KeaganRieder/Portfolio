@@ -1,6 +1,7 @@
 @import url('../../style/color.css');
 @import url('../../style/font.css');
 
+/* Skills panel: lays out skill categories in a row with a shaded backdrop. */
 .skills-section {
     display: flex;
     flex-direction: row;
@@ -13,23 +14,27 @@
     box-shadow: 1px 5px 5px black;
 }
 
+/* Plain (non-hoverable) skill entry: minimal spacing. */
 .skill-entry {
     padding: 2px;
     margin: 2px;
 }
 
+/* "Skills" section heading style. */
 .skills-section .section-title {
     font: var(--font-secondary-header);
     color: var(--color-header-text);
     font-size: 2.2rem;
 }
 
+/* Individual skill name text style within a category. */
 .skills-section .skill-title {
     font: var(--font-subheader);
     color: var(--color-skill-text);
     font-size: 1.3rem;
 }
 
+/* One category column (e.g. "languages"): flexes evenly and centers its heading. */
 .skill-category {
     flex: 1;
     min-width: 200px;
@@ -37,6 +42,7 @@
     text-align: center;
 }
 
+/* Skill entries that have hover content get an inset/beveled border to hint interactivity. */
 .skill-entry-hoverable {
     border-top: 2px solid var(--color-skills-section-accent);
     border-left: 2px solid var(--color-skills-section-accent);
@@ -46,10 +52,12 @@
     margin: 2px;
 }
 
+/* Keep the default cursor (no pointer) since hover reveals content in place, not a link. */
 .skill-entry-hoverable:hover {
     cursor: default;
 }
 
+/* Vertical stack of "open example project" buttons shown on skill hover. */
 .example-button-container {
     display: flex;
     flex-direction: column;
@@ -61,15 +69,18 @@
     height: auto;
 }
 
+/* Example-project button appearance. */
 .example-button {
     background-color: var(--color-skill-example);
     border-radius: 10px;
 }
 
+/* Example-project button hover state. */
 .example-button:hover {
     background-color: var(--color-skill-example-highlight);
 }
 
+/* Very small windows: stack skill categories vertically instead of in a row. */
 @media (max-width: 400px) or (max-height: 400px) {
     .skills-section {
         flex-direction: column;

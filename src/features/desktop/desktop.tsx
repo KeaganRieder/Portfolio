@@ -4,6 +4,11 @@ import './desktop.css';
 import { ApplicationRegistry, type AppLookupResult } from "../app_registry/appRegistry";
 import SearchBar from "../../components/search_bar/searchBar";
 
+/**
+ * Root component for the simulated desktop OS UI. Composes the desktop
+ * surface (shortcut icons + all registered app windows, via ApplicationRegistry)
+ * together with the taskbar (search bar, live clock, and open-app shortcuts).
+ */
 export const Desktop: React.FC = () => {
 
     const [currentTime, setCurrentTime] = useState(new Date());
@@ -20,6 +25,7 @@ export const Desktop: React.FC = () => {
         return () => clearInterval(timer);
     }, []);
 
+    /** Formats a Date as a 12-hour HH:MM string for the taskbar clock. */
     const formatTime = (date: Date) => {
         return date.toLocaleTimeString('en-US', {
             hour: '2-digit',
@@ -28,6 +34,7 @@ export const Desktop: React.FC = () => {
         });
     };
 
+    /** Formats a Date as a long-form date string for the taskbar clock. */
     const formatDate = (date: Date) => {
         return date.toLocaleDateString('en-US', {
             year: 'numeric',
@@ -36,6 +43,7 @@ export const Desktop: React.FC = () => {
         });
     };
 
+    /** Builds the taskbar's app search box, wiring it up to the app registry's search/open API. */
     const taskbarSearchBar = () => {
         const handleSearchChange = (query: string) => {
             setSearchQuery(query);
@@ -56,6 +64,8 @@ export const Desktop: React.FC = () => {
             clearSearch();
         };
 
+        // Ref callback used only to measure the search bar once (offset still at its
+        // initial 0,0) so the results dropdown can be positioned just above it.
         const mapResultContainerOffset = (searchBarElement: HTMLInputElement | null) => {
             if (searchBarElement && searchResultsContainerOffset.left === 0 && searchResultsContainerOffset.bottom === 0) {
                 const rect = searchBarElement.getBoundingClientRect();
@@ -90,6 +100,7 @@ export const Desktop: React.FC = () => {
         );
     }
 
+    /** Assembles the taskbar section: search bar, clock, and the container for open-app shortcuts. */
     const createTaskbar = () => {
         const createClock = () => {
             return (
@@ -99,6 +110,8 @@ export const Desktop: React.FC = () => {
                 </div>
             );
         };
+        // Empty div whose DOM node is handed to the registry; it portals/renders
+        // shortcut buttons for currently open apps directly into this element.
         const createShortcutContainer = () => {
             return (
                 <div id="taskbar-shortcut-container"
@@ -118,6 +131,11 @@ export const Desktop: React.FC = () => {
         );
     };
 
+    /**
+     * Assembles the main desktop surface: registers the app-window container and the
+     * desktop-shortcut container with the app registry (via refs), then renders every
+     * externally-registered app plus all apps the registry currently knows about.
+     */
     const createDesktopContainer = () => {
         return (
             <>

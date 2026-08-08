@@ -11,6 +11,12 @@ import githubIcon from '../../assets/apps/icons/github_icon.png';
 import linkedinIcon from '../../assets/apps/icons/linkedin_icon.png';
 import textDocIcon from '../../assets/apps/icons/text_doc_icon.png';
 
+/**
+ * The contract a feature folder must fulfil to "register" itself as a
+ * hand-written app (as opposed to an auto-generated project/category
+ * window). Dropping an appEntry.ts that exports one of these is enough to
+ * make an app appear as a desktop window - see appsEntries.ts.
+ */
 export interface AppRegistryEntry {
     id: string;
     name: string;
@@ -18,6 +24,7 @@ export interface AppRegistryEntry {
     component: React.FC<ApplicationDefinition>;
 }
 
+// Tracks which windows are currently open and their stacking order.
 interface AppWindowData {
     id: string;
     zIndex?: number;
@@ -25,12 +32,14 @@ interface AppWindowData {
 
 export type AppType = RegistryEntryKind;
 
+// Minimal shape returned by search, enough to identify and open a matching entry.
 export interface AppLookupResult {
     id: string;
     name: string;
     type: AppType;
 }
 
+/** Public API exposed to the rest of the UI (taskbar, search, shortcuts) for managing app windows. */
 export interface ApplicationRegistryControls {
     openAppWindow: (windowData: AppWindowData) => void;
     updateAppWindow: (id: string, updatedData: Partial<AppWindowData>) => void;
@@ -53,6 +62,14 @@ const windowIdFor = (id: string, kind: RegistryEntryKind): string => {
     return `${id}_app`; // project | category
 };
 
+/**
+ * Central hub of the desktop-simulation UI: owns the set of open windows,
+ * their z-order, and the container DOM nodes (desktop, taskbar, shortcuts).
+ * It combines the statically registered apps (About Me, Email, ...) with
+ * dynamically generated project/category/showcase windows (via
+ * buildRegistryEntries) into one uniform list of openable "entries", and
+ * exposes controls (open/close/focus/search) used throughout the app.
+ */
 export const ApplicationRegistry = () => {
     const [openWindows, setOpenWindows] = useState<AppWindowData[]>([]);
     const [shortcutContainer, setShortcutContainer] = useState<HTMLElement | null>(null);
@@ -121,6 +138,7 @@ export const ApplicationRegistry = () => {
     const { entries, categories, projectHelpers } = buildRegistryEntries({ openProject, openCategory });
     const entryMap = new Map(entries.map((entry) => [entry.id, entry] as const));
 
+    // Case-insensitive substring match against entry id/name, used by the search UI.
     const getSearchResults = (query: string): AppLookupResult[] => {
         const normalized = query.trim().toLowerCase();
         if (!normalized) return [];
@@ -135,6 +153,8 @@ export const ApplicationRegistry = () => {
         return Array.from(results.values()).sort((a, b) => a.name.localeCompare(b.name));
     };
 
+    // Accepts either a raw search string or an already-resolved AppLookupResult
+    // (e.g. from a search dropdown selection) and opens the matching window.
     const searchAndOpenApp = (queryOrResult: string | AppLookupResult): boolean => {
         const candidate = (() => {
             if (typeof queryOrResult !== "string") return queryOrResult;
@@ -158,6 +178,7 @@ export const ApplicationRegistry = () => {
         getAppWindowZIndex, updateAppWindowZIndex, bringToFront,
     };
 
+    // Static desktop shortcuts that link out to external sites (not app windows).
     const shortcutRegistry: ShortcutDefinition[] = [
         {
             id: "github_shortcut",
@@ -207,6 +228,7 @@ export const ApplicationRegistry = () => {
         });
     };
 
+    // Renders the external-link shortcuts (GitHub, LinkedIn, resume) into the shortcut container.
     const CreateExternalApps = () => {
         return shortcutRegistry.map(shortcut => {
             shortcut.parent = shortcutContainer;

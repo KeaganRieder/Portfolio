@@ -1,11 +1,15 @@
 @import url('../../style/color.css');
 @import url('../../style/font.css');
 
+/* Shared sizing tokens: header takes a fixed % of window height, content
+   fills the rest minus a small gap. */
 :root {
     --header-height: 10%;
     --content-height: calc(100% - var(--header-height) - 10px);
 }
 
+/* The window frame itself: absolutely positioned/sized via inline styles
+   from windowRectControls, with a beveled border to mimic a retro OS window. */
 .application {
     position: absolute;
     overflow: hidden;
@@ -21,6 +25,7 @@
     padding: 5px 5px 10px 5px;
 }
 
+/* Draggable title bar: flex row spacing the title from the button group. */
 .application-header {
     position: relative;
     display: flex;
@@ -57,6 +62,7 @@
     color: var(--color-header-text);
 }
 
+/* Right-aligned row of header controls (custom buttons + minimize/close). */
 .header-button-group {
     position: relative;
     float: right;
@@ -88,6 +94,7 @@
     cursor: pointer;
 }
 
+/* Highlight state on hover for header buttons. */
 .header-button-group button:hover {
     background-color: var(--color-button-head-highlight);
 }
@@ -101,6 +108,7 @@
     image-rendering: crisp-edges;
 }
 
+/* Scrollable content pane below the header; owns its own thin scrollbar theme. */
 .application-content {
     position: relative;
     overflow-y: auto;
@@ -122,6 +130,7 @@
     scrollbar-color: var(--color-scrollbar-thumb-bg) var(--color-scrollbar-track-bg);
 }
 
+/* Inner wrapper that expands to fill (or exceed) the content pane for scrolling. */
 .application-content-scroll-container {
     position: relative;
     width: 100%;
@@ -130,6 +139,8 @@
     justify-content: left;
 }
 
+/* Small-screen adjustments: smaller title, borderless header buttons, and
+   hide the minimize button (mobile windows are typically full-screen). */
 @media (max-width: 400px) {
     .application-header h1 {
         font-size: 1.5rem;

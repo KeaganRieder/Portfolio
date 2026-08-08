@@ -1,12 +1,18 @@
+/* Global CSS custom-property palette for the desktop-simulation UI.
+   Grouped by the part of the interface each variable set styles, so
+   components can reference semantic names instead of raw hex values. */
+
 /* ============================== */
 /*     desktop  Colors        */
 /* ============================== */
 :root {
+    /* Desktop background + icon shortcuts */
     --color-desktop: transparent;
 
     --color-shortcut-button: transparent;
     --color-shortcut-button-highlight: #bdbaba81;
 
+    /* Taskbar surface and its search bar / scrollbar accents */
     --color-taskbar: #343538c0;
     --color-taskbar-accent: #f0f0f0;
     --color-taskbar-shadow: #393d41;
@@ -28,33 +34,40 @@
 /*     Application  Colors        */
 /* ============================== */
 :root {
+    /* Window chrome (body + drop shadow) */
     --color-window: #3b3e3f;
     --color-window-accent: #6b7072;
     --color-window-shadow: #212529;
 
+    /* Window title/header bar */
     --color-header: #33475e;
     --color-header-accent: #606364;
     --color-header-shadow: #212529;
 
+    /* Header bar buttons (minimize/maximize/close) */
     --color-button-head: transparent;
     --color-button-head-highlight: #9796967e;
     --color-button-head-accent: #6a7077;
     --color-button-head-shadow: #212529;
 
+    /* Primary content pane background */
     --color-content-main: #415a77;
     --color-content-main-accent: #6a7077;
     --color-content-main-shadow: #212529;
 
+    /* Secondary/nested content pane background */
     --color-content-secondary: #2d3e52;
     --color-content-secondary-highlight: #445e7c;
     --color-content-secondary-accent: #717e8d;
     --color-content-secondary-shadow: #212529;
 
+    /* Buttons placed within window content */
     --color-button-content: transparent;
     --color-button-content-highlight: #9c9c9c8c;
     --color-button-content-accent: #f0f0f0;
     --color-button-content-shadow: #212529;
 
+    /* Email app compose area */
     --color-email-text-area: #414142;
     --color-email-text-accent: #717e8d;
     --color-email-text-shadow: #212529;
@@ -62,16 +75,19 @@
     --color-email-text-button: #414142;
     --color-email-text-button-highlight: #717e8d;
 
+    /* About-me skills section container */
     --color-skills-section: #2d3e52;
     --color-skills-section-highlight: #445e7c;
     --color-skills-section-accent: #717e8d;
     --color-skills-section-shadow: #212529;
 
+    /* Individual skill example chips */
     --color-skill-example: #676869;
     --color-skill-example-highlight: #949595;
     --color-skill-example-accent: #717e8d;
     --color-skill-example-shadow: #212529;
 
+    /* Project showcase overview panel */
     --color-project-overview-container-no-content: #212529c4;
 
     --color-project-overview-content: transparent;
@@ -80,9 +96,11 @@
     --color-project-overview-content-shadow: #212529;
     --color-project-overview-content-secondary: #676869;
 
+    /* Project image gallery items */
     --color-project-gallery-item-bg: #212529c4;
     --color-project-gallery-border: #212529;
 
+    /* Shared scrollbar styling for window content areas */
     --color-scrollbar-thumb-bg: #6c757d;
     --color-scrollbar-track-bg: #34383d;
 }
@@ -101,6 +119,7 @@
 
     --color-skill-text: #878686;
 
+    /* Taskbar clock */
     --color-clock-text: #e9e6e6;
     --color-clock-text-highlight: #f0f0f0;
     --color-clock-text-shadow: #212529;
@@ -111,12 +130,14 @@
     --color-body-text-highlight: #f0f0f0;
     --color-body-text-shadow: #212529;
 
+    /* Desktop icon labels */
     --color-shortcut-text: #c7c3c3;
     --color-shortcut-text-highlight: #f0f0f0;
     --color-shortcut-text-shadow: #000000;
 
     --color-searchbar-text: #f5f5f5;
 
+    /* Hyperlinks within window content */
     --color-link: #999999;
     --color-link-highlight: #f0f0f0;
     --color-link-shadow: #212529;

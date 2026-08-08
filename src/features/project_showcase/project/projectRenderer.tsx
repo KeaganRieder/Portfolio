@@ -2,12 +2,20 @@ import { ImageSection } from "../../../components/projectSections/image";
 import type { SectionType } from "../../../types/sectionType";
 import type { ProjectEntryProperties } from "./projectModels";
 
+/**
+ * Turns a project's declarative `content` array (a ProjectEntryProperties field)
+ * into concrete JSX. Each entry's `sectionInfo.type` selects the section
+ * component/tag to render, letting project pages be authored as data rather
+ * than hand-written markup.
+ */
 export const ProjectRenderer = (content?: { sectionInfo: SectionType; styleName?: string; }[], applicationInfo?: ProjectEntryProperties) => {
     if (!content) return null;
 
     return (
         <>
             {content.map(({ sectionInfo, styleName }, index) => {
+                // sectionInfo.type is a discriminated union tag; each case narrows
+                // sectionInfo to the matching SectionType variant's fields.
                 switch (sectionInfo.type) {
                     case 'header':
                         return <h2 key={index} className={styleName}>{sectionInfo.text}</h2>;

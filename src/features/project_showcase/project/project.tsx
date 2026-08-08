@@ -7,6 +7,7 @@ import { ImageSection } from "../../../components/projectSections/image";
 import "../projectBase.css";
 import "./projectSections.css";
 
+/** Resolves a ProjectTag to its display label, preferring an explicit name over a linked skill. */
 const formatProjectTag = (tag: ProjectTag): string => {
     if (tag.name) {
         return tag.name;
@@ -17,6 +18,12 @@ const formatProjectTag = (tag: ProjectTag): string => {
     return "Unknown";
 }
 
+/**
+ * Compact preview card for a project shown inside a category listing: gallery
+ * thumbnail, tags, description and links. If the project has detailed `content`
+ * sections it becomes clickable to open the full ProjectApp window; otherwise
+ * it renders as a static, non-interactive card.
+ */
 export const ProjectOverviewContainer = (projectInfo: ProjectEntryProperties) => {
     const onClick = () => {
         if (!projectInfo.controls?.openProject) {
@@ -25,6 +32,7 @@ export const ProjectOverviewContainer = (projectInfo: ProjectEntryProperties) =>
         }
         projectInfo.controls.openProject(projectInfo.id);
     }
+    /** Builds the shared overview markup: gallery, tags, description, and external links. */
     const overViewContent = () => {
         return (
             <>
@@ -64,8 +72,15 @@ export const ProjectOverviewContainer = (projectInfo: ProjectEntryProperties) =>
     );
 }
 
+/**
+ * Full-window Application for a single project. Prefers rendering the rich
+ * `content` sections via ProjectRenderer; falls back to the same overview
+ * layout used by ProjectOverviewContainer when no detailed content exists.
+ */
 export const ProjectApp: React.FC<ProjectEntryProperties> = (projectInfo: ProjectEntryProperties) => {
 
+    // Duplicated (not reused) from ProjectOverviewContainer's overViewContent
+    // fallback, intentionally kept local to this component.
     const overViewContent = () => {
         return (
             <>
@@ -92,6 +107,8 @@ export const ProjectApp: React.FC<ProjectEntryProperties> = (projectInfo: Projec
             </>
         );
     }
+    // Only pass applicationInfo through to ProjectRenderer (needed for image hover/
+    // fullscreen wiring) when this project actually has application data to give it.
     const body = () => {
         if (!projectInfo.content) {
             return overViewContent();

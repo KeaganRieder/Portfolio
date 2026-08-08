@@ -1,7 +1,8 @@
 @import url('../../style/color.css');
 @import url('../../style/font.css');
 
-
+/* Outer wrapper pinned to the left of the desktop; clips shortcuts vertically
+   while allowing multi-column wrap to overflow horizontally when needed. */
 #shortcut-container {
     position: relative;
     float: left;
@@ -16,6 +17,7 @@
     scrollbar-color: #adadad83 #1c1c1c00;
 }
 
+/* Column-flow flex grid the desktop shortcut icons wrap into once the column fills up. */
 .shortcut-scroll-container {
     display: flex;
     flex-wrap: wrap;
@@ -30,6 +32,7 @@
     scrollbar-color: #adadad83 #1c1c1c00;
 }
 
+/* Base look of a single desktop shortcut button (icon + label stacked). */
 .shortcut-scroll-container button {
     display: flex;
     flex-direction: column;
@@ -44,11 +47,13 @@
     transition: background-color 0.2s ease;
 }
 
+/* Hover highlight for a shortcut button. */
 .shortcut-scroll-container button:hover {
     background-color: var(--color-shortcut-button-highlight);
     color: var(--color-shortcut-text-highlight);
 }
 
+/* Pixel-art shortcut icons rendered crisp/unblurred at small sizes. */
 .shortcut-scroll-container img {
     max-width: 75px;
     object-fit: contain;
@@ -56,6 +61,7 @@
     image-rendering: crisp-edges;
 }
 
+/* Shortcut label text styling below the icon. */
 .shortcut-scroll-container h2 {
     font-family: var(--font-shortcut);
     font-size: 1rem;
@@ -69,11 +75,13 @@
     transition: color 0.2s ease;
 }
 
+/* Keep the label's highlight colors in sync with the button hover state. */
 .shortcut-scroll-container button:hover h2 {
     background-color: var(--color-shortcut-button-highlight);
     color: var(--color-shortcut-text-highlight);
 }
 
+/* Slightly larger icons on medium screens where fewer columns fit. */
 @media (max-width: 900px) {
     .shortcut-scroll-container img {
         max-width: 80px;
@@ -81,6 +89,8 @@
 }
 
 
+/* On small screens switch to a tall, vertically-scrollable single column
+   instead of the wide multi-column layout used on desktop. */
 @media (max-width: 400px) {
     #shortcut-container {
         overflow-y: auto;

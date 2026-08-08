@@ -1,6 +1,9 @@
+// Content/metadata entry for the "Plant Pot" 3D model project. Conforms to the
+// ProjectEntryProperties shape defined in projectModels.ts.
 import type { ProjectEntryProperties } from '../../../../features/project_showcase/project/projectModels';
 import { readImageGroup } from '../../../../types/sectionType';
 import icon from '../../../../assets/apps/icons/blender_icon.png';
+// Eagerly imports every PNG in this project's folder so they can be used as overview/gallery images.
 const images = import.meta.glob('./*.png', { eager: true, import: "default" });
 
 

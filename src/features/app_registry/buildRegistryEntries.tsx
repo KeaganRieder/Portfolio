@@ -14,17 +14,21 @@ import folderIcon from "../../assets/apps/icons/folder_icon.png";
 
 import type { RegistryEntry, RenderContext, ProjectHelpers } from "./registryTypes";
 
+// Callbacks (owned by ApplicationRegistry) that open a project/category window by id.
 interface BuildRegistryEntriesParams {
     openProject: (id: string) => void;
     openCategory: (id: string) => void;
 }
 
+// Everything ApplicationRegistry needs after building the registry: the flat entry
+// list to render, the derived categories, and helpers to hand down to apps.
 interface BuildRegistryEntriesResult {
     entries: RegistryEntry[];
     categories: ProjectCategoryEntry[];
     projectHelpers: ProjectHelpers;
 }
 
+// Generates matching desktop/taskbar shortcut definitions for an app window, keyed by its id.
 const buildShortcuts = (id: string, name: string, icon: string) => ({
     desktop: { id: id + "_shortcut", appName: name, iconPath: icon },
     taskbar: { id: id + "_shortcut", appName: name, iconPath: icon },
@@ -80,6 +84,14 @@ const buildCategories = (
     return Array.from(categoryMap.values());
 };
 
+/**
+ * Assembles the complete set of openable windows for the desktop UI by
+ * combining statically registered apps (AppsEntries) with entries derived
+ * from the project data (ProjectsEntries): one window per project, one per
+ * category, and the single "browse all" showcase window. This is the core
+ * of the app-registration system - "registering" an app just means
+ * appearing in the returned `entries` list with a render function.
+ */
 export const buildRegistryEntries = (controls: BuildRegistryEntriesParams): BuildRegistryEntriesResult => {
     const skillExamples = buildSkillExamples(ProjectsEntries);
     const projectHelpers: ProjectHelpers = {

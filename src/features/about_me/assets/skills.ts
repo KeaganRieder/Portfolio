@@ -1,5 +1,11 @@
 import type { SkillEntryInfo } from "../skillEntry";
 
+/**
+ * Flat list of skills shown in the About Me app. Each entry's categoryID
+ * groups it under a heading (e.g. "languages", "tools", "engines") in the
+ * UI, and the optional `hover` data (usage frequency, example projects)
+ * drives the hover popup rendered by SkillEntry.
+ */
 export const Skills: SkillEntryInfo[] = [
     {
         skill: {

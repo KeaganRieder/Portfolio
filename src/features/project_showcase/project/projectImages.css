@@ -1,13 +1,16 @@
 @import url('../../../style/color.css');
 @import url('../../../style/font.css');
 
+/* Modifier applied to images that should keep their crisp pixel-art look when scaled. */
 .pixelated-image {
   image-rendering: pixelated;
 }
+/* Modifier signaling an image can be clicked (e.g. to open a hover/lightbox view). */
 .clickable-image {
   cursor: pointer;
 }
 
+/* Overlay panel (e.g. caption) shown on top of an image, positioned absolutely within it. */
 .image-hover-body {
   position: absolute;
   z-index: 100;
@@ -17,12 +20,14 @@
   margin: 1px;
 }
 
+/* Caption text inside the image hover overlay. */
 .image-hover-body p {
   color: var(--color-body-text);
   font-family: var(--font-body);
   font-size: 1.2rem;
 }
 
+/* Flex-wrap masonry-style layout that packs landscape/portrait/square images together. */
 .gallery {
   background: var(--color-content-secondary);
   padding: 1px;
@@ -31,6 +36,7 @@
   justify-content: flex-start;
 }
 
+/* Shared tile styling for all gallery image aspect-ratio variants. */
 .landscape-image,
 .portrait-image,
 .square-image {
@@ -40,6 +46,7 @@
   position: relative;
 }
 
+/* Fill each gallery tile completely, cropping the source image as needed. */
 .landscape-image img,
 .portrait-image img,
 .square-image img {
@@ -48,6 +55,7 @@
   object-fit: cover;
 }
 
+/* Wide tile sizing/growth so landscape images claim more row width in the gallery flex-wrap. */
 .landscape-image {
   flex-grow: 2;
   flex-basis: 400px;
@@ -55,6 +63,7 @@
   max-width: 640px;
 }
 
+/* Tall tile sizing/growth so portrait images claim the most row width to compensate for height. */
 .portrait-image {
   flex-grow: 3;
   flex-basis: 600px;
@@ -62,6 +71,7 @@
   max-width: 960px;
 }
 
+/* Compact 1:1 tile sizing/growth for square images in the gallery flex-wrap. */
 .square-image {
   flex-grow: 1;
   flex-basis: 200px;

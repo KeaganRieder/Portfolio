@@ -1,6 +1,7 @@
 @import url('../../style/color.css');
 @import url('../../style/font.css');
 
+/* Bio section: text and profile image sit side-by-side in a row. */
 .biography {
     width: 100%;
     height: auto;
@@ -16,6 +17,7 @@
     font-size: 1.25rem;
 }
 
+/* Profile picture: fixed-ratio square, pixelated to keep pixel-art crisp when scaled. */
 .biography img {
     aspect-ratio: 1 / 1;
     width: 30%;
@@ -25,15 +27,18 @@
     image-rendering: pixelated;
 }
 
+/* Resume link styling within the biography text. */
 .biography a {
     font: var(--font-body);
     color: var(--color-link);
 }
 
+/* Resume link hover state. */
 .biography a:hover {
     color: var(--color-link-highlight);
 }
 
+/* Small windows: stack text above image instead of side-by-side. */
 @media (max-width: 768px) {
     .biography {
         flex-direction: column;

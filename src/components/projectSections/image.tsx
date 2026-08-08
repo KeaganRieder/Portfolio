@@ -3,6 +3,7 @@ import type { ImageData } from "../../types/sectionType";
 import type { VisibilityControls } from "../application/definition";
 import { Application } from "../application/application";
 import './image.css';
+/** Props for ImageSection: the image to show, its styling, and optional click-to-open-app behavior. */
 export interface ImageSectionProps {
     imageData: ImageData;
     styleOverride?: string;
@@ -20,6 +21,11 @@ export interface ImageSectionProps {
     };
 }
 
+/**
+ * Renders a single project image, optionally with a hover caption overlay
+ * and/or click-to-open behavior that spawns an Application window showing
+ * the image full-size (used e.g. in project galleries).
+ */
 export const ImageSection: React.FC<ImageSectionProps> = ({ imageData, styleOverride, inGallery, hoverConfigs, applicationData }) => {
     const [aspectStyle, setAspectStyle] = useState<string>('');
     const [isAppOpen, setIsAppOpen] = useState<boolean>(false);
@@ -29,6 +35,8 @@ export const ImageSection: React.FC<ImageSectionProps> = ({ imageData, styleOver
     const canHover = hoverConfigs?.canHover ?? true;
     const appId = hasApp ? `${imageData.name.replace(/\s+/g, '_')}_img_app` : undefined;
 
+    // Classifies the loaded image's aspect ratio so gallery layout CSS can
+    // size landscape/portrait/square images differently.
     const setImageConfigs = (img: HTMLImageElement) => {
         const aspectRatio = img.naturalWidth / img.naturalHeight;
         if (aspectRatio > 1) {
@@ -40,6 +48,7 @@ export const ImageSection: React.FC<ImageSectionProps> = ({ imageData, styleOver
         }
     };
 
+    // Builds the image wrapper's class list from its current state/props.
     const getStyle = () => {
         const classes: string[] = [];
         if (hasApp) {
@@ -60,6 +69,7 @@ export const ImageSection: React.FC<ImageSectionProps> = ({ imageData, styleOver
         return classes.join(' ');
     };
 
+    // Renders the caption overlay shown while hovering, if hover is enabled.
     const hoverBody = () => {
         if (canHover && isHovered) {
             return (
@@ -71,6 +81,7 @@ export const ImageSection: React.FC<ImageSectionProps> = ({ imageData, styleOver
         return (<></>);
     };
 
+    // Opens (and brings to front) the full-size image Application window.
     const handleImageClick = () => {
         if (!hasApp || !appId) return;
         const { RegistryControls } = applicationData!.visibilityControls;

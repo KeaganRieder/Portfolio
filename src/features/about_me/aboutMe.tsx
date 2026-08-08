@@ -14,7 +14,15 @@ import './skill.css'
 import profilePic from './assets/profile.gif';
 
 
+/**
+ * "About Me" desktop app: renders the biography section and a grid of
+ * skill categories, each skill wired up with example projects pulled from
+ * the project registry so hovering a skill can link out to real work.
+ */
 export const AboutMe: React.FC<ApplicationDefinition> = ({ info, visibilityControls, containers, projectRegistry, shortcuts }) => {
+    // Groups the flat Skills list into per-category buckets, and enriches
+    // each skill entry with the projects (from projectRegistry) that
+    // demonstrate it, so SkillEntry can render clickable examples on hover.
     const skillCategories = useMemo<SkillCategoryEntry[]>(() => {
         const categoryMap = new Map<string, SkillCategoryEntry>();
 
@@ -49,6 +57,7 @@ export const AboutMe: React.FC<ApplicationDefinition> = ({ info, visibilityContr
         return Array.from(categoryMap.values());
     }, [projectRegistry?.skillExamples?.examples, projectRegistry?.openProject]);
 
+    // Renders the "Skills" heading followed by one SkillCategory block per group.
     const skillsSection = () => {
         return (
             <section className="skills-section">
@@ -60,6 +69,7 @@ export const AboutMe: React.FC<ApplicationDefinition> = ({ info, visibilityContr
         );
     }
 
+    // Renders the biography text alongside the profile picture and a link to the resume site.
     const Bio = () => {
         return (
             <>
@@ -80,6 +90,7 @@ export const AboutMe: React.FC<ApplicationDefinition> = ({ info, visibilityContr
         );
     }
 
+    // Combines the bio and skills sections into the window's full body content.
     const aboutMeBodyContent = () => {
         return (
             <>

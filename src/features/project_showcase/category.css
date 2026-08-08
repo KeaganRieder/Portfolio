@@ -1,6 +1,7 @@
 @import url('../../style/color.css');
 @import url('../../style/font.css');
 
+/* Wrapping row of project-category folder buttons on the Projects app home screen. */
 .category-button-container {
     display: flex;
     flex-direction: row;
@@ -8,6 +9,7 @@
     gap: 1rem;
 }
 
+/* Base (borderless/transparent) styling for a category button. */
 .category-button-container button {
     font-family: var(--font-header);
     font-size: 1rem;
@@ -17,6 +19,7 @@
     border: transparent;
 }
 
+/* Square, pixelated folder icon for the category button. */
 .category-button-container button img {
     aspect-ratio: 1 / 1;
     width: 70%;
@@ -24,15 +27,18 @@
     image-rendering: pixelated;
 }
 
+/* Strip default heading spacing so the category name sits tight under its icon. */
 .category-button-container button h3 {
     padding: 0px;
     margin: 0px;
 }
 
+/* Hover highlight for a category button. */
 .category-button-container button:hover {
     background-color: var(--color-button-content-highlight);
 }
 
+/* Vertical stack of project overview cards inside an opened category window. */
 .project-list {
     display: flex;
     flex-direction: column;
@@ -41,6 +47,7 @@
 }
 
 
+/* Stack category buttons into a single column and shrink icons on small screens. */
 @media (max-width: 400px) {
     .category-button-container {
         flex-direction: column;

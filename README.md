@@ -6,23 +6,24 @@ A modern, interactive portfolio website built with React and TypeScript, featuri
 
 - **Desktop UI Experience**: Navigate through a computer desktop-like interface
 - **Project Showcase**: Organized project categories
-- **About Me Section**: Personal biography, skills, and artist statement
-- **Job Materials**: Direct access to resume and CV
+- **About Me Section**: Personal biography, skills, and a link to my resume
+- **Email App**: Send me a message directly from the desktop via EmailJS
 - **Responsive Design**: Optimized for various screen sizes
 - **Interactive Applications**: Each section opens as a desktop application window
 
 ##  Tech Stack
 
-- **Frontend**: React 19.1.0
-- **Language**: TypeScript 5.8.3
-- **Build Tool**: Vite 6.3.5
-- **Styling**: CSS3 with custom styling
-- **Linting**: ESLint with React hooks support
+- **Frontend**: React 19.2
+- **Language**: TypeScript 5.9
+- **Build Tool**: Vite 7.3
+- **Styling**: CSS3 with custom styling (semantic color/font custom properties in `src/style/`)
+- **Email**: EmailJS (`@emailjs/browser`) for the in-app Email application
+- **Linting**: ESLint with React hooks + TypeScript-ESLint support
 
 ##  Getting Started
 
 ### Prerequisites
-- Node.js (v14 or higher)
+- Node.js (v18 or higher)
 - npm or yarn package manager
 
 ### Installation
@@ -57,18 +58,27 @@ A modern, interactive portfolio website built with React and TypeScript, featuri
 
 ```
 src/
-├── components/
-│   ├── about_me/          # About Me application component
-│   ├── application/       # Reusable application window components
-│   ├── desktop/          # Desktop interface and taskbar
-│   └── projects/         # Project showcase components
-├── assets/
-│   ├── apps/             # Application icons and UI elements
-│   ├── job_mat/          # Resume and CV files
-│   ├── main/             # Main UI assets
-│   └── projects/         # Project screenshots and media
-├── styles/               # CSS styling for all components
-└── main.tsx             # Application entry point
+├── main.tsx                  # Application entry point — mounts <Desktop />
+├── main.css                  # Global reset (box-sizing, full-height html/body)
+├── style/                    # Shared design tokens
+│   ├── color.css             #   CSS custom properties for all UI colors
+│   └── font.css              #   Google Fonts imports + font-family variables
+├── types/                    # Shared TypeScript types (skills, sections, vectors)
+├── services/                 # Cross-cutting services (e.g. analyticService.ts)
+├── components/                # Reusable, feature-agnostic UI building blocks
+│   ├── application/          #   Draggable/resizable app window chrome + controls
+│   ├── search_bar/            #   Taskbar search input
+│   ├── shortcut/               #   Desktop/taskbar icon shortcuts
+│   └── projectSections/        #   Shared project-detail rendering pieces (e.g. images)
+├── features/                  # Self-contained app "features", each an installable app
+│   ├── desktop/                #   Root desktop surface + taskbar composition
+│   ├── app_registry/            #   Registers/opens/searches all installable apps
+│   ├── about_me/                 #   About Me app (biography, skills)
+│   ├── email/                     #   Email app (EmailJS contact form)
+│   └── project_showcase/           #   Project Showcase app (categories, project detail views)
+└── assets/
+    └── projects/                #   Per-project content (information.ts) + media, grouped
+                                  #   by category (video_games/, websites/, 3d_models/, etc.)
 ```
 
 ##  Design Philosophy

@@ -7,6 +7,11 @@ import type { ApplicationDefinition } from "../../components/application/definit
 
 import './email.css';
 
+/**
+ * "Email" desktop app: a contact form that sends messages directly from
+ * the browser via EmailJS (no backend server), with a honeypot field for
+ * basic bot protection and inline send/error status feedback.
+ */
 export const Email: React.FC<ApplicationDefinition> = ({ info, visibilityControls, containers, shortcuts }) => {
 
     const [fromName, setFromName] = useState("");
@@ -17,6 +22,8 @@ export const Email: React.FC<ApplicationDefinition> = ({ info, visibilityControl
     const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
+    // Submits the form via EmailJS. Silently aborts if the honeypot field was
+    // filled in (a real user would never see or fill it), which drops bot submissions.
     function sendEmail(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
 
@@ -56,6 +63,8 @@ export const Email: React.FC<ApplicationDefinition> = ({ info, visibilityControl
             });
     }
 
+    // Renders one labeled form field; switches between a <textarea> (for the
+    // message body) and a plain <input> for everything else.
     const bodySection = (
         header: string,
         type: string,
@@ -91,6 +100,7 @@ export const Email: React.FC<ApplicationDefinition> = ({ info, visibilityControl
         );
     };
 
+    // Full form body: honeypot field, name/email/subject/message inputs, and the submit button.
     const bodyContent = () => {
         return (
             <form className="email-form" onSubmit={sendEmail}>
