@@ -5,10 +5,9 @@ import emailjs from "@emailjs/browser";
 import { Application } from "../../components/application/application";
 import type { ApplicationDefinition } from "../../components/application/definition";
 
-import appIcon from "../../assets/apps/icons/mail_icon.png";
 import './email.css';
 
-export const Email: React.FC<ApplicationDefinition> = ({ info, visibilityControls, containers }) => {
+export const Email: React.FC<ApplicationDefinition> = ({ info, visibilityControls, containers, shortcuts }) => {
 
     const [fromName, setFromName] = useState("");
     const [fromEmail, setFromEmail] = useState("");
@@ -56,21 +55,6 @@ export const Email: React.FC<ApplicationDefinition> = ({ info, visibilityControl
                 setStatus("error");
             });
     }
-
-    const shortcut = () => {
-        return {
-            desktop: {
-                id: info.id + "_shortcut",
-                appName: info.appName,
-                iconPath: appIcon,
-            },
-            taskbar: {
-                id: info.id + "_shortcut",
-                appName: info.appName,
-                iconPath: appIcon,
-            },
-        };
-    };
 
     const bodySection = (
         header: string,
@@ -138,7 +122,7 @@ export const Email: React.FC<ApplicationDefinition> = ({ info, visibilityControl
             info={info}
             visibilityControls={visibilityControls}
             containers={containers}
-            shortcuts={shortcut()}
+            shortcuts={shortcuts}
             content={{ body: bodyContent() }}
         />
     );

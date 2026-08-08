@@ -12,10 +12,9 @@ import './styles/aboutMe.css'
 import './styles/skill.css'
 
 import profilePic from './assets/profile.gif';
-import textDocIcon from '../../assets/apps/icons/text_doc_icon.png';
 
 
-export const AboutMe: React.FC<ApplicationDefinition> = ({ info, visibilityControls, containers, projectRegistry }) => {
+export const AboutMe: React.FC<ApplicationDefinition> = ({ info, visibilityControls, containers, projectRegistry, shortcuts }) => {
     const skillCategories = useMemo<SkillCategoryEntry[]>(() => {
         const categoryMap = new Map<string, SkillCategoryEntry>();
 
@@ -49,23 +48,6 @@ export const AboutMe: React.FC<ApplicationDefinition> = ({ info, visibilityContr
 
         return Array.from(categoryMap.values());
     }, [projectRegistry?.skillExamples?.examples, projectRegistry?.openProject]);
-
-    const shortcut = () => {
-        return (
-            {
-                desktop: {
-                    id: info.id + "_shortcut",
-                    appName: info.appName,
-                    iconPath: textDocIcon,
-
-                }, taskbar: {
-                    id: info.id + "_shortcut",
-                    appName: info.appName,
-                    iconPath: textDocIcon,
-                }
-            }
-        );
-    };
 
     const skillsSection = () => {
         return (
@@ -112,7 +94,7 @@ export const AboutMe: React.FC<ApplicationDefinition> = ({ info, visibilityContr
             info={info}
             visibilityControls={visibilityControls}
             containers={containers}
-            shortcuts={shortcut()}
+            shortcuts={shortcuts}
             content={{ body: aboutMeBodyContent() }}
         />
 

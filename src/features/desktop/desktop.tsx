@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import './styles/desktop.css';
-import { ApplicationRegistry, type AppLookupResult } from "./appRegistry";
+import { ApplicationRegistry, type AppLookupResult } from "../app_registry/appRegistry";
 import SearchBar from "../../components/search_bar/searchBar";
 
 export const Desktop: React.FC = () => {
@@ -128,8 +128,7 @@ export const Desktop: React.FC = () => {
                     </section>
                 </section>
                 {appRegistry.CreateExternalApps()}
-                {appRegistry.createAppsFromRegistry()}
-                {appRegistry.createProjectsFromRegistry()}
+                {appRegistry.renderAll()}
             </>
         );
     };

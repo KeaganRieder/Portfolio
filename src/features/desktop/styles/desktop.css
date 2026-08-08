@@ -5,7 +5,7 @@
 @import url('./shortcut.css');
 
 :root {
-    --background-img-path: url(.././assets/background.png);
+    --background-img-path: url(../../../assets/main/background.png);
 
     --taskbar-height: clamp(80px, 9vh, 90px);
 

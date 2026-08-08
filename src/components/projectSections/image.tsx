@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import type { ImageData } from "../../types/sectionType";
 import type { VisibilityControls } from "../application/definition";
 import { Application } from "../application/application";
@@ -39,12 +39,6 @@ export const ImageSection: React.FC<ImageSectionProps> = ({ imageData, styleOver
             setAspectStyle('square-image');
         }
     };
-
-    useEffect(() => {
-        if (!hasApp) {
-            setIsAppOpen(false);
-        }
-    }, [hasApp]);
 
     const getStyle = () => {
         const classes: string[] = [];

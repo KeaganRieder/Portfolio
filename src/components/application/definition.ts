@@ -1,11 +1,6 @@
-import type { ApplicationRegistryControls } from "../../features/desktop/appRegistry";
-import type { ProjectRegistry } from "../../features/project_showcase/projectRegistry";
+import type { ApplicationRegistryControls } from "../../features/app_registry/appRegistry";
+import type { ProjectHelpers } from "../../features/app_registry/registryTypes";
 import type { ShortcutDefinition } from "../shortcut/definition";
-
-export interface ApplicationState {
-    value: any;
-    setValue: (id: string, value: any) => void;
-}
 
 export interface ApplicationBaseInfo {
     id: string;
@@ -26,7 +21,7 @@ export interface VisibilityControls {
 export interface ApplicationDefinition {
     info: ApplicationBaseInfo;
     visibilityControls: VisibilityControls;
-    projectRegistry?: ReturnType<typeof ProjectRegistry>;
+    projectRegistry?: ProjectHelpers;
 
     containers?: {
         appContainer?: HTMLElement | null;
