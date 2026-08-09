@@ -38,7 +38,6 @@ export const WindowVisibilityControls = (visibilityControls: VisibilityControls)
 
     const minimize = () => {
         setIsMinimized(true);
-        RegistryControls.closeAppWindow(appid);
     };
 
     return {

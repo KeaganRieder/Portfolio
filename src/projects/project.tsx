@@ -2,7 +2,7 @@ import { Application } from "@/system/window/application";
 import type { ProjectEntryProperties, ProjectTag } from "./models";
 
 import { ProjectRenderer } from "./renderer/renderer";
-import { ImageSection } from "@/projects/renderer/sections/image";
+import { ImageSection } from "@/projects/renderer/sections/images/image";
 
 import "./projectBase.css";
 import "./renderer/sections/projectSections.css";
@@ -36,6 +36,7 @@ export const ProjectOverviewContainer = (projectInfo: ProjectEntryProperties) =>
     const overViewContent = () => {
         return (
             <>
+                <h3 className="project-title">{projectInfo.name}</h3>
                 <div className="gallery">
                     {projectInfo.overviewContents.imagePaths?.map((path, index) => (
                         <ImageSection key={index} imageData={path} inGallery={true} hoverConfigs={{ canHover: false }} />
@@ -48,10 +49,12 @@ export const ProjectOverviewContainer = (projectInfo: ProjectEntryProperties) =>
                 </div>
                 <div className="project-description">
                     <p>{projectInfo.overviewContents.description}</p>
+                    {projectInfo.content && <h2>View Project</h2>}
+
                 </div>
                 <div className="project-links">
                     {projectInfo.overviewContents.links.map((link, index) => (
-                        <a key={index} href={link.url} target="_blank" rel="noopener noreferrer">{link.label}</a>
+                        <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>{link.label}</a>
                     ))}
                 </div></>
         );
@@ -85,6 +88,7 @@ export const ProjectApp: React.FC<ProjectEntryProperties> = (projectInfo: Projec
         return (
             <>
                 <div className="project-overview-noContent" >
+                    <h3 className="project-title">{projectInfo.name}</h3>
                     <div className="gallery">
                         {projectInfo.overviewContents.imagePaths?.map((path, index) => (
                             <ImageSection key={index} imageData={path} inGallery={true} hoverConfigs={{ canHover: false }} />

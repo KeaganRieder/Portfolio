@@ -18,5 +18,15 @@ export const UnderUsInfo: ProjectEntryProperties = {
         links: [
             { label: "GitHub", url: "https://github.com/KeaganRieder/UnderUs" },
         ]
-    }
+    },
+    content: [
+        { sectionInfo: { type: "subHeader", text: `About` } },
+        {
+            sectionInfo: {
+                type: "body", 
+                text: `A text-based adventure game created in C++ for CPSC 2720. Explore an immersive story-driven experience built with object-oriented programming principles.`
+            }
+        },
+        { sectionInfo: { type: "link", label: "Learn More", url: "https://github.com/KeaganRieder/UnderUs" } },
+    ]
 }

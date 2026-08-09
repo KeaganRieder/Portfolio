@@ -1,5 +1,5 @@
 import { ImageSection } from "./image";
-import type { ImageData } from "../../../shared/types/sectionType";
+import type { ImageData } from "../../../../shared/types/sectionType";
 import type { VisibilityControls } from "@/system/window/types";
 import './captionedImage.css';
 

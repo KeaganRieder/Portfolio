@@ -1,6 +1,3 @@
-﻿@import url('../../shared/style/color.css');
-@import url('../../shared/style/font.css');
-
 /* Outer wrapper pinned to the left of the desktop; clips shortcuts vertically
    while allowing multi-column wrap to overflow horizontally when needed. */
 #shortcut-container {
@@ -15,6 +12,14 @@
     overflow-y: hidden;
     overflow-x: visible;
     scrollbar-color: #adadad83 #1c1c1c00;
+
+    /* On small screens switch to a tall, vertically-scrollable single column
+       instead of the wide multi-column layout used on desktop. */
+    @media (max-width: 400px) {
+        overflow-y: auto;
+        scrollbar-width: thin;
+        min-width: 100px;
+    }
 }
 
 /* Column-flow flex grid the desktop shortcut icons wrap into once the column fills up. */
@@ -30,76 +35,62 @@
     max-height: 600px;
     width: auto;
     scrollbar-color: #adadad83 #1c1c1c00;
-}
 
-/* Base look of a single desktop shortcut button (icon + label stacked). */
-.shortcut-scroll-container button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    cursor: pointer;
-
-    border: none;
-    border-radius: 4px;
-
-    background-color: var(--color-shortcut-button);
-    transition: background-color 0.2s ease;
-}
-
-/* Hover highlight for a shortcut button. */
-.shortcut-scroll-container button:hover {
-    background-color: var(--color-shortcut-button-highlight);
-    color: var(--color-shortcut-text-highlight);
-}
-
-/* Pixel-art shortcut icons rendered crisp/unblurred at small sizes. */
-.shortcut-scroll-container img {
-    max-width: 75px;
-    object-fit: contain;
-    image-rendering: pixelated;
-    image-rendering: crisp-edges;
-}
-
-/* Shortcut label text styling below the icon. */
-.shortcut-scroll-container h2 {
-    font-family: var(--font-shortcut);
-    font-size: 1rem;
-
-    text-align: center;
-    white-space: nowrap;
-
-    color: var(--color-shortcut-text);
-    text-shadow: 4px 1px 4px var(--color-shortcut-text-shadow);
-
-    transition: color 0.2s ease;
-}
-
-/* Keep the label's highlight colors in sync with the button hover state. */
-.shortcut-scroll-container button:hover h2 {
-    background-color: var(--color-shortcut-button-highlight);
-    color: var(--color-shortcut-text-highlight);
-}
-
-/* Slightly larger icons on medium screens where fewer columns fit. */
-@media (max-width: 900px) {
-    .shortcut-scroll-container img {
-        max-width: 80px;
-    }
-}
-
-
-/* On small screens switch to a tall, vertically-scrollable single column
-   instead of the wide multi-column layout used on desktop. */
-@media (max-width: 400px) {
-    #shortcut-container {
-        overflow-y: auto;
-        scrollbar-width: thin;
-        scrollbar-color: #adadad83 #1c1c1c00;
-        min-width: 100px;
-    }
-
-    .shortcut-scroll-container {
+    @media (max-width: 400px) {
         max-height: 1000px;
+    }
+
+    /* Base look of a single desktop shortcut button (icon + label stacked). */
+    button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        cursor: pointer;
+
+        border: none;
+        border-radius: 4px;
+
+        background-color: var(--color-shortcut-button);
+        transition: background-color 0.2s ease;
+
+        /* Hover highlight for a shortcut button. */
+        &:hover {
+            background-color: var(--color-shortcut-button-highlight);
+            color: var(--color-shortcut-text-highlight);
+
+            /* Keep the label's highlight colors in sync with the button hover state. */
+            h2 {
+                background-color: var(--color-shortcut-button-highlight);
+                color: var(--color-shortcut-text-highlight);
+            }
+        }
+    }
+
+    /* Pixel-art shortcut icons rendered crisp/unblurred at small sizes. */
+    img {
+        max-width: 75px;
+        object-fit: contain;
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
+
+        /* Slightly larger icons on medium screens where fewer columns fit. */
+        @media (max-width: 900px) {
+            max-width: 80px;
+        }
+    }
+
+    /* Shortcut label text styling below the icon. */
+    h2 {
+        font-family: var(--font-shortcut);
+        font-size: 1rem;
+
+        text-align: center;
+        white-space: nowrap;
+
+        color: var(--color-shortcut-text);
+        text-shadow: 4px 1px 4px var(--color-shortcut-text-shadow);
+
+        transition: color 0.2s ease;
     }
 }

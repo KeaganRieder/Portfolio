@@ -16,7 +16,7 @@ export const PortfolioInfo: ProjectEntryProperties = {
         imagePaths: readImageGroup(images, false),
         description: "A personal portfolio website showcasing various projects and skills.",
         links: [
-            { label: "GitHub", url: "https://github.com/KeaganRieder/Portfolio" },
+            { label: "The Code", url: "https://github.com/KeaganRieder/Portfolio" },
         ]
     }
 }

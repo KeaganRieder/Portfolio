@@ -19,6 +19,20 @@ export const NQueensInfo: ProjectEntryProperties = {
     content: [
         {
             sectionInfo: { type: "video", src: "https://www.youtube.com/embed/-P1VA-zGbr0", alt: "N Queens Video" },
-        }
+        },
+        { sectionInfo: { type: "subHeader", text: `About` } },
+        {
+            sectionInfo: {
+                type: "body", text: `The n queens problem describe as when provided amount of queens represented as 'n' place them on a chessboard of size s x s, such that no two queens are threatening one another.
+
+                The solution for this problem is one in which place all n queens on a s x s board where no two queen are in the same column, row or diagonal. Which leads to the following restrictions about what s and n can equal in order to have a solution
+                
+                1. if s = 1 then n = 1
+                2. for all instances where s < 3, n < s
+                3. for all instances where s >= 4, n <= s
+
+                With the restrictions on n and s now in place, the solution fir this problem can be found through the use of the backtracking algorithm.` }
+        },
+        { sectionInfo: { type: "link", label: "Learn More", url: "https://github.com/KeaganRieder/N-Queens" } },
     ]
 }

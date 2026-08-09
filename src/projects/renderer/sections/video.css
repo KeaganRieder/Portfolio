@@ -1,8 +1,6 @@
-﻿@import url('../../../shared/style/color.css');
-@import url('../../../shared/style/font.css');
-
 /* Fixed-height, full-width embed sizing for a project's 'video' iframe section. */
 .project-video {
     width: 100%;
     height: 600px;
+    margin-bottom: 10px;
 }

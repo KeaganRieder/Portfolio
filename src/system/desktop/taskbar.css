@@ -1,6 +1,3 @@
-﻿@import url('../../shared/style/color.css');
-@import url('../../shared/style/font.css');
-
 /* Bar pinned to the bottom of the desktop holding search, clock, and open-app shortcuts. */
 #taskbar {
     position: absolute;
@@ -14,30 +11,40 @@
     box-shadow: 0 -4px 5px var(--color-taskbar-shadow);
 
     background-color: var(--color-taskbar);
+
+    /* On very small screens the taskbar is dropped entirely (desktop-height CSS
+       variable is adjusted accordingly in desktop.css to fill the freed space). */
+    @media (max-width: 400px) {
+        display: none;
+    }
+
+    /* The search input itself, styled to match the taskbar's dark chrome. */
+    .searchbar {
+        display: flex;
+
+        position: relative;
+        float: left;
+        background-color: var(--color-taskbar-searchbar-bg);
+        color: var(--color-searchbar-text);
+        width: 100%;
+        height: 100%;
+
+        margin-right: 10px;
+    }
 }
 
 /* Left-aligned slot in the taskbar that hosts the app search input. */
 #taskbar-searchbar-container {
     float: left;
     position: relative;
-    width: 20%;
     height: 100%;
     padding: 5px;
     width: var(--searchbar-width);
-}
 
-/* The search input itself, styled to match the taskbar's dark chrome. */
-#taskbar .searchbar {
-    display: flex;
-
-    position: relative;
-    float: left;
-    background-color: var(--color-taskbar-searchbar-bg);
-    color: var(--color-searchbar-text);
-    width: 100%;
-    height: 100%;
-
-    margin-right: 10px;
+    /* Hide the search bar on small/short viewports to leave room for shortcuts and clock. */
+    @media (max-width: 800px) or (max-height: 800px) {
+        display: none;
+    }
 }
 
 /* Dropdown of matching apps rendered above the search bar; positioned via
@@ -61,28 +68,28 @@
 
     scrollbar-width: thin;
     scrollbar-color: var(--color-taskbar-scrollbar-thumb-bg) var(--color-taskbar-scrollbar-track-bg);
-}
 
-/* A single clickable row in the search results dropdown. */
-#taskbar-search-results-container .search-result {
-    width: 100%;
-    text-align: left;
-    padding: 6px 8px;
-    z-index: 1000;
+    /* A single clickable row in the search results dropdown. */
+    .search-result {
+        width: 100%;
+        text-align: left;
+        padding: 6px 8px;
+        z-index: 1000;
 
-    font-family: var(--font-shortcut);
-    color: var(--color-searchbar-text);
+        font-family: var(--font-shortcut);
+        color: var(--color-searchbar-text);
 
-    border: 1px solid var(--color-taskbar-button-accent);
-    background-color: var(--color-taskbar-secondary);
-    cursor: pointer;
-    transition: background-color 0.15s ease, color 0.15s ease;
-}
+        border: 1px solid var(--color-taskbar-button-accent);
+        background-color: var(--color-taskbar-secondary);
+        cursor: pointer;
+        transition: background-color 0.15s ease, color 0.15s ease;
 
-/* Hover highlight for a search result row. */
-#taskbar-search-results-container .search-result:hover {
-    background-color: var(--color-taskbar-button-highlight);
-    color: var(--color-shortcut-text-highlight);
+        /* Hover highlight for a search result row. */
+        &:hover {
+            background-color: var(--color-taskbar-button-highlight);
+            color: var(--color-shortcut-text-highlight);
+        }
+    }
 }
 
 /* Scrollable row of shortcut buttons for currently-open apps; width is derived
@@ -96,66 +103,66 @@
     width: calc(100% - var(--clock-width) - var(--searchbar-width) - 50px);
     overflow-x: auto;
     overflow-y: hidden;
-}
 
-/* Tooltip-style label attached to a taskbar app shortcut. */
-#taskbar-shortcut-container .shortcut-info {
-    z-index: 1000;
-    background-color: var(--color-taskbar-secondary);
-}
+    /* Tooltip-style label attached to a taskbar app shortcut. */
+    .shortcut-info {
+        z-index: 1000;
+        background-color: var(--color-taskbar-secondary);
+    }
 
-/* Individual open-app button, styled with a beveled retro-OS border. */
-#taskbar-shortcut-container button {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /* Individual open-app button, styled with a beveled retro-OS border. */
+    button {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-    cursor: pointer;
-    height: 100%;
+        cursor: pointer;
+        height: 100%;
 
-    background-color: var(--color-taskbar-button);
-    transition: background-color 0.2s ease;
+        background-color: var(--color-taskbar-button);
+        transition: background-color 0.2s ease;
 
-    border-top: 2px solid var(--color-taskbar-button-accent);
-    border-left: 2px solid var(--color-taskbar-button-accent);
-    border-bottom: 2px solid var(--color-taskbar-button-shadow);
-    border-right: 2px solid var(--color-taskbar-button-shadow);
-}
+        border-top: 2px solid var(--color-taskbar-button-accent);
+        border-left: 2px solid var(--color-taskbar-button-accent);
+        border-bottom: 2px solid var(--color-taskbar-button-shadow);
+        border-right: 2px solid var(--color-taskbar-button-shadow);
 
-/* Hover state for a taskbar app button. */
-#taskbar-shortcut-container button:hover {
-    background-color: var(--color-taskbar-button-highlight);
-}
+        /* Hover state for a taskbar app button. */
+        &:hover {
+            background-color: var(--color-taskbar-button-highlight);
+        }
 
-/* Pressed/active state for a taskbar app button. */
-#taskbar-shortcut-container button:active {
-    background-color: var(--color-taskbar-button-active);
-}
+        /* Pressed/active state for a taskbar app button. */
+        &:active {
+            background-color: var(--color-taskbar-button-active);
+        }
 
-/* App name label inside a taskbar shortcut button. */
-#taskbar-shortcut-container button h2 {
-    font-family: var(--font-shortcut);
-    font-size: 1.25em;
+        /* App name label inside a taskbar shortcut button. */
+        h2 {
+            font-family: var(--font-shortcut);
+            font-size: 1.25em;
 
-    text-align: center;
-    white-space: nowrap;
+            text-align: center;
+            white-space: nowrap;
 
-    color: var(--color-shortcut-text);
-    text-shadow: 4px 1px 4px var(--color-shortcut-text-shadow);
+            color: var(--color-shortcut-text);
+            text-shadow: 4px 1px 4px var(--color-shortcut-text-shadow);
 
-    transition: color 0.2s ease;
-}
+            transition: color 0.2s ease;
 
-/* Label color change on hover, mirroring the button's own hover state. */
-#taskbar-shortcut-container button h2:hover {
-    color: var(--color-shortcut-text-highlight);
-}
+            /* Label color change on hover, mirroring the button's own hover state. */
+            &:hover {
+                color: var(--color-shortcut-text-highlight);
+            }
+        }
+    }
 
-/* App icon inside a taskbar shortcut button. */
-#taskbar-shortcut-container img {
-    max-width: 50px;
-    image-rendering: crisp-edges;
+    /* App icon inside a taskbar shortcut button. */
+    img {
+        max-width: 50px;
+        image-rendering: crisp-edges;
+    }
 }
 
 /* Floating tooltip shown above a taskbar shortcut (e.g. on hover); fixed-position
@@ -201,28 +208,13 @@
     border-left: 2px solid var(--color-taskbar-button-shadow);
     border-bottom: 2px solid var(--color-taskbar-button-accent);
     border-right: 2px solid var(--color-taskbar-button-accent);
-}
 
-/* Time/date line styling within the clock widget. */
-#taskbar-clock div {
-    font-family: var(--font-shortcut);
-    font-size: 1.2rem;
+    /* Time/date line styling within the clock widget. */
+    div {
+        font-family: var(--font-shortcut);
+        font-size: 1.2rem;
 
-    color: var(--color-clock-text);
-    padding-right: 2px;
-}
-
-/* Hide the search bar on small/short viewports to leave room for shortcuts and clock. */
-@media (max-width: 800px) or (max-height: 800px) {
-    #taskbar-searchbar-container {
-        display: none;
-    }
-}
-
-/* On very small screens the taskbar is dropped entirely (desktop-height CSS
-   variable is adjusted accordingly in desktop.css to fill the freed space). */
-@media (max-width: 400px)  {
-    #taskbar {
-        display: none;
+        color: var(--color-clock-text);
+        padding-right: 2px;
     }
 }

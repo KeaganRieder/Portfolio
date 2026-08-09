@@ -1,5 +1,5 @@
-import { ImageSection } from "@/projects/renderer/sections/image";
-import { CaptionedImageSection } from "@/projects/renderer/sections/captionedImage";
+import { ImageSection } from "@/projects/renderer/sections/images/image";
+import { CaptionedImageSection } from "@/projects/renderer/sections/images/captionedImage";
 import { EmbedSection } from "@/projects/renderer/sections/embed";
 import type { SectionType } from "@/shared/types/sectionType";
 import type { ProjectEntryProperties } from "../models";

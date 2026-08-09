@@ -1,5 +1,10 @@
 /* Global Styles */
 
+/* Design tokens (colors/fonts) loaded once here; every other stylesheet in
+   the app can reference the resulting variables without re-importing them. */
+@import url('./shared/style/color.css');
+@import url('./shared/style/font.css');
+
 /* Use border-box sizing everywhere so padding/border don't enlarge elements
    beyond their declared width/height. */
 *,

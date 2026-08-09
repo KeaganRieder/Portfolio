@@ -117,6 +117,9 @@
     --color-subheader-text-highlight: #f0f0f0;
     --color-subheader-text-shadow: #212529;
 
+    --color-subheader-text-2: #f5f3f3;
+
+
     --color-skill-text: #878686;
 
     /* Taskbar clock */
@@ -138,7 +141,7 @@
     --color-searchbar-text: #f5f5f5;
 
     /* Hyperlinks within window content */
-    --color-link: #999999;
-    --color-link-highlight: #f0f0f0;
+    --color-link: #d8d6d6;
+    --color-link-highlight: #c1e0e7;
     --color-link-shadow: #212529;
 }

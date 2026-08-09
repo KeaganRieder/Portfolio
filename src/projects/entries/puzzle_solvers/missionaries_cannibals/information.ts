@@ -10,7 +10,7 @@ export const MissionariesCannibalsInfo: ProjectEntryProperties = {
     id: "missionaries_cannibals",
     categoryID: "puzzle_solvers",
     name: "Missionaries & Cannibals Problem",
-    tags: [{skill: {id: "cpp", name: "C++"}}, {name: "Backtracking"}],
+    tags: [{ skill: { id: "cpp", name: "C++" } }, { name: "Backtracking" }],
     iconPath: icon,
     overviewContents: {
         imagePaths: readImageGroup(images, false),
@@ -22,6 +22,15 @@ export const MissionariesCannibalsInfo: ProjectEntryProperties = {
     content: [
         {
             sectionInfo: { type: "video", src: "https://www.youtube.com/embed/SS98yc4f5cU", alt: "Missionaries & Cannibals Problem Video" },
-        }
+        },
+        { sectionInfo: { type: "subHeader", text: `About` } },
+        {
+            sectionInfo: {
+                type: "body", text: `The Missionaries and Cannibals Problem, is stated as followed:
+        - 3 missionaries and 3 cannibals are on one side of the river and wish to cross it using the boat they found
+        - The boat can only hold 2 people at once and needs a driver (so 1 person must always go between sides)
+        - The missionaries can never be outnumbered by the cannibals` }
+        },
+        { sectionInfo: { type: "link", label: "Learn More", url: "https://github.com/KeaganRieder/Missionaries-and-Cannibals-Problem" } },
     ]
 }

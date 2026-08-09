@@ -21,7 +21,6 @@ export const SlimeClickerInfo: ProjectEntryProperties = {
         ]
     },
     content: [
-        { sectionInfo: { type: "header", text: "Play Slime Clicker" } },
         {
             sectionInfo: {
                 type: "embed",
@@ -29,6 +28,17 @@ export const SlimeClickerInfo: ProjectEntryProperties = {
                 title: "Slime Clicker",
                 height: 700,
             },
+        },
+         {sectionInfo: {
+                type: "link",
+                label: "GitHub",
+                url: "https://github.com/KeaganRieder/SlimeClicker" 
+            }
+        },
+        {sectionInfo: {
+                type: "link",
+                label: "The Site", url: "https://keaganrieder.github.io/SlimeClicker/"
+            }
         },
         { sectionInfo: { type: "subHeader", text: `About`, } },
         {

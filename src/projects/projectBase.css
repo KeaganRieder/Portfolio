@@ -1,12 +1,11 @@
-﻿@import url('../shared/style/color.css');
-@import url('../shared/style/font.css');
-
 /* Clickable project overview card (has detailed content behind it), beveled
    like a retro-OS panel via mismatched accent/shadow border colors. */
 .project-overview {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    cursor: pointer;
 
     gap: 1rem;
     padding: 1rem;
@@ -18,6 +17,11 @@
     border-left: 2px solid var(--color-project-overview-content-accent);
     border-bottom: 2px solid var(--color-project-overview-content-shadow);
     border-right: 2px solid var(--color-project-overview-content-shadow);
+
+    /* Hover highlight indicating the card is clickable/opens the full project. */
+    &:hover {
+        background-color: var(--color-project-overview-content-highlight);
+    }
 }
 
 /* Same card layout as .project-overview but for projects without detailed
@@ -34,48 +38,59 @@
     color: var(--color-body-text);
 }
 
-/* Row of tag chips shared by both card variants. */
-.project-overview .project-tags, .project-overview-noContent .project-tags {
-    display: flex;
-    gap: 0.5rem;
+/* Shared inner content (title, tags, description, links) for both card variants. */
+:is(.project-overview, .project-overview-noContent) {
+    /* Project name, shown above the gallery. */
+    .project-title {
+        margin: 0;
+        font: var(--font-header);
+        color: var(--color-header-text);
+        font-size: 1.5rem;
+    }
 
-    font: var(--font-body);
-    color: var(--color-body-text);
-    font-size: 1rem;
-}
+    /* Row of tag chips. */
+    .project-tags {
+        display: flex;
+        gap: 0.5rem;
 
-/* Individual pill-shaped tag chip. */
-.project-overview .project-tags span, .project-overview-noContent .project-tags span {
-    padding: 5px;
-    border-radius: 10px;
-    background-color: var(--color-project-overview-content-secondary);
-}
+        font: var(--font-body);
+        color: var(--color-body-text);
+        font-size: 1rem;
 
-/* Description text styling shared by both card variants. */
-.project-overview .project-description, .project-overview-noContent .project-description {
-    font: var(--font-body);
-    color: var(--color-body-text);
-    font-size: 1rem;
-}
+        /* Individual pill-shaped tag chip. */
+        span {
+            padding: 5px;
+            border-radius: 10px;
+            background-color: var(--color-project-overview-content-secondary);
+        }
+    }
 
-/* Row layout for external links (repo, live demo, etc.) shared by both card variants. */
-.project-overview .project-links, .project-overview-noContent .project-links {
-    display: flex;
-    gap: 1rem;
-}
+    /* Description text styling. */
+    .project-description {
+        font: var(--font-body);
+        color: var(--color-body-text);
+        font-size: 1rem;
 
-/* Link text styling shared by both card variants. */
-.project-overview .project-links a, .project-overview-noContent .project-links a {
-    font: var(--font-body);
-    color: var(--color-link);
-}
+        h2 {
+            font: var(--font-body);
+            color: var(--color-subheader-text-2);
+            font-size: 1rem;
+        }
+    }
 
-/* Link hover color shared by both card variants. */
-.project-overview .project-links a:hover, .project-overview-noContent .project-links a:hover {
-    color: var(--color-link-highlight);
-}
+    /* Row layout for external links (repo, live demo, etc.). */
+    .project-links {
+        display: flex;
+        gap: 1rem;
 
-/* Hover highlight indicating the card is clickable/opens the full project. */
-.project-overview:hover {
-    background-color: var(--color-project-overview-content-highlight);
+        /* Link text styling (and hover color). */
+        a {
+            font: var(--font-body);
+            color: var(--color-link);
+
+            &:hover {
+                color: var(--color-link-highlight);
+            }
+        }
+    }
 }

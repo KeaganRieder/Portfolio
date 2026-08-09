@@ -1,6 +1,3 @@
-﻿@import url('../../../shared/style/color.css');
-@import url('../../../shared/style/font.css');
-
 /* Full-size image rendered inside an Application window opened from an ImageSection. */
 .app-image {
     height: 100%;
