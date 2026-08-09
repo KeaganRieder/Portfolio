@@ -1,0 +1,14 @@
+﻿@import url('../../../shared/style/color.css');
+@import url('../../../shared/style/font.css');
+
+/* Full-size image rendered inside an Application window opened from an ImageSection. */
+.app-image {
+    height: 100%;
+}
+
+/* Centers the enlarged image horizontally within the app content area. */
+.app-image-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}

@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './main.css'
-import { Desktop } from './features/desktop/desktop'
+import { Desktop } from './system/desktop/desktop'
 
 /**
  * App entry point: mounts the entire desktop-simulation UI (taskbar,

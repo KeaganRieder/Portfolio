@@ -1,0 +1,34 @@
+﻿@import url('../../../shared/style/color.css');
+@import url('../../../shared/style/font.css');
+
+/* Body paragraph styling for rendered project 'body' sections. */
+.application-content p {
+    font: var(--font-body);
+    color: var(--color-body-text);
+    font-size: 1.25rem;
+}
+
+/* Section heading styling for rendered project 'header' sections. */
+.application-content h2 {
+    font: var(--font-secondary-header);
+    color: var(--color-subheader-text);
+    font-size: 1.75rem;
+}
+
+/* Sub-heading styling for rendered project 'subHeader' sections. */
+.application-content h3 {
+    font: var(--font-secondary-header);
+    color: var(--color-subheader-text);
+    font-size: 1.5rem;
+}
+
+/* Link styling for rendered project 'link'/'readMe' sections. */
+.application-content a {
+    font: var(--font-body);
+    color: var(--color-link);
+}
+
+/* Link hover color for rendered project link sections. */
+.application-content a:hover {
+    color: var(--color-link-highlight);
+}

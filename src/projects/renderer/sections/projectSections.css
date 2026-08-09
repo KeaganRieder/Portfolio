@@ -1,0 +1,8 @@
+﻿@import url('../../../shared/style/color.css');
+@import url('../../../shared/style/font.css');
+
+/* Aggregator: pulls in styling for the individual content section types
+   (text, images, video) that ProjectRenderer can render for a project. */
+@import url('./projectText.css');
+@import url('./projectImages.css');
+@import url('./projectVideo.css');

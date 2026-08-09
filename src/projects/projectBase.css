@@ -1,0 +1,81 @@
+﻿@import url('../shared/style/color.css');
+@import url('../shared/style/font.css');
+
+/* Clickable project overview card (has detailed content behind it), beveled
+   like a retro-OS panel via mismatched accent/shadow border colors. */
+.project-overview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--color-project-overview-content);
+    font: var(--font-body);
+    color: var(--color-body-text);
+
+    border-top: 2px solid var(--color-project-overview-content-accent);
+    border-left: 2px solid var(--color-project-overview-content-accent);
+    border-bottom: 2px solid var(--color-project-overview-content-shadow);
+    border-right: 2px solid var(--color-project-overview-content-shadow);
+}
+
+/* Same card layout as .project-overview but for projects without detailed
+   content (non-interactive, so no border/hover affordance). */
+.project-overview-noContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--color-project-overview-container-no-content);
+    font: var(--font-body);
+    color: var(--color-body-text);
+}
+
+/* Row of tag chips shared by both card variants. */
+.project-overview .project-tags, .project-overview-noContent .project-tags {
+    display: flex;
+    gap: 0.5rem;
+
+    font: var(--font-body);
+    color: var(--color-body-text);
+    font-size: 1rem;
+}
+
+/* Individual pill-shaped tag chip. */
+.project-overview .project-tags span, .project-overview-noContent .project-tags span {
+    padding: 5px;
+    border-radius: 10px;
+    background-color: var(--color-project-overview-content-secondary);
+}
+
+/* Description text styling shared by both card variants. */
+.project-overview .project-description, .project-overview-noContent .project-description {
+    font: var(--font-body);
+    color: var(--color-body-text);
+    font-size: 1rem;
+}
+
+/* Row layout for external links (repo, live demo, etc.) shared by both card variants. */
+.project-overview .project-links, .project-overview-noContent .project-links {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Link text styling shared by both card variants. */
+.project-overview .project-links a, .project-overview-noContent .project-links a {
+    font: var(--font-body);
+    color: var(--color-link);
+}
+
+/* Link hover color shared by both card variants. */
+.project-overview .project-links a:hover, .project-overview-noContent .project-links a:hover {
+    color: var(--color-link-highlight);
+}
+
+/* Hover highlight indicating the card is clickable/opens the full project. */
+.project-overview:hover {
+    background-color: var(--color-project-overview-content-highlight);
+}
