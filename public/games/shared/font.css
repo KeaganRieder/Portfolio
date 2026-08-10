@@ -1,0 +1,21 @@
+/* Google Fonts used across the desktop-simulation UI: Silkscreen for
+   pixel-style headers/shortcut labels, Roboto for readable body text. */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+
+/* ============================== */
+/*             FONTS              */
+/* ============================== */
+
+/* Semantic font-family variables so components reference roles
+   (header/body/shortcut/link) instead of hardcoding font names. */
+:root {
+    --font-header: 'Silkscreen', monospace;
+    --font-secondary-header: 'Roboto', sans-serif;
+
+    --font-body: 'Roboto', sans-serif;
+
+    --font-shortcut: 'Silkscreen', monospace;
+    --font-link: 'Roboto', sans-serif;
+}

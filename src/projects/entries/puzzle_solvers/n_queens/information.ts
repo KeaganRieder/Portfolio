@@ -1,7 +1,7 @@
 // Content/metadata entry for the "N Queens" C++ backtracking puzzle solver. Conforms to the
 // ProjectEntryProperties shape defined in projectModels.ts.
 import type { ProjectEntryProperties } from '@/projects/models';
-import icon from '@/assets/icons/text_doc_icon.png';
+import icon from '@/assets/icons/terminal_icon.png';
 
 export const NQueensInfo: ProjectEntryProperties = {
     id: "n_queens",
@@ -13,12 +13,17 @@ export const NQueensInfo: ProjectEntryProperties = {
         imagePaths: [],
         description: "A program that solves the N Queens puzzle using backtracking in C++.",
         links: [
-            { label: "GitHub", url: "https://github.com/KeaganRieder/NQueens" },
+            { label: "GitHub", url: "https://github.com/KeaganRieder/N-Queens" },
         ]
     },
     content: [
         {
-            sectionInfo: { type: "video", src: "https://www.youtube.com/embed/-P1VA-zGbr0", alt: "N Queens Video" },
+            sectionInfo: {
+                type: "embed",
+                src: `${import.meta.env.BASE_URL}games/n_queens/index.html`,
+                title: "N Queens Solver",
+                height: 600,
+            },
         },
         { sectionInfo: { type: "subHeader", text: `About` } },
         {
@@ -33,6 +38,6 @@ export const NQueensInfo: ProjectEntryProperties = {
 
                 With the restrictions on n and s now in place, the solution fir this problem can be found through the use of the backtracking algorithm.` }
         },
-        { sectionInfo: { type: "link", label: "Learn More", url: "https://github.com/KeaganRieder/N-Queens" } },
+        { sectionInfo: { type: "link", label: "The Code", url: "https://github.com/KeaganRieder/N-Queens" } },
     ]
 }

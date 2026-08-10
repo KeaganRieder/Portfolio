@@ -13,7 +13,7 @@
 
     background-color: var(--color-window);
     box-sizing: border-box;
-
+    
     border-top: 2px solid var(--color-window-accent);
     border-left: 2px solid var(--color-window-accent);
     border-bottom: 2px solid var(--color-window-shadow);
@@ -47,6 +47,8 @@
         align-items: center;
 
         height: 100%;
+        min-width: 0;
+        flex: 1 1 auto;
         box-sizing: border-box;
 
         padding: 0 10px;
@@ -57,9 +59,18 @@
 
         color: var(--color-header-text);
 
-        /* Small-screen adjustment: smaller title (mobile windows are typically full-screen). */
-        @media (max-width: 400px) {
+        /* Long app names truncate instead of overflowing into the button group. */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        /* Shrink the title on tablet/mobile widths so it doesn't dominate the header. */
+        @media (max-width: 768px) {
             font-size: 1.5rem;
+        }
+
+        @media (max-width: 400px) {
+            font-size: 1.1rem;
         }
     }
 }
@@ -68,6 +79,7 @@
 .header-button-group {
     position: relative;
     float: right;
+    flex-shrink: 0;
 
     display: flex;
     align-items: center;

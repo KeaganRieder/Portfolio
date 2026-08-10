@@ -2,7 +2,7 @@
 // Conforms to the ProjectEntryProperties shape defined in projectModels.ts.
 import type { ProjectEntryProperties } from '@/projects/models';
 import { readImageGroup } from '@/shared/types/sectionType';
-import icon from '@/assets/icons/text_doc_icon.png';
+import icon from '@/assets/icons/terminal_icon.png';
 // Eagerly imports every PNG in this project's folder so they can be used as overview/gallery images.
 const images = import.meta.glob('./*.png', { eager: true, import: "default" });
 
@@ -21,7 +21,12 @@ export const MissionariesCannibalsInfo: ProjectEntryProperties = {
     },
     content: [
         {
-            sectionInfo: { type: "video", src: "https://www.youtube.com/embed/SS98yc4f5cU", alt: "Missionaries & Cannibals Problem Video" },
+            sectionInfo: {
+                type: "embed",
+                src: `${import.meta.env.BASE_URL}games/missionaries_cannibals/index.html`,
+                title: "Missionaries & Cannibals Solver",
+                height: 500,
+            },
         },
         { sectionInfo: { type: "subHeader", text: `About` } },
         {

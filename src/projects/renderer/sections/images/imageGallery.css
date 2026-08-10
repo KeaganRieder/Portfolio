@@ -54,26 +54,25 @@
     }
 }
 
-/* Wide tile: claims more row width in the gallery flex-wrap. */
+/* Wide tile: claims more row width in the gallery flex-wrap. No max-width so
+   it can grow to soak up any leftover space on its row instead of leaving a
+   gap next to it. */
 .landscape-image {
     flex-grow: 2;
     flex-basis: 400px;
-    max-height: 320px;
-    max-width: 640px;
+    max-height: 500px;
 }
 
 /* Tall tile: claims the most row width to compensate for height. */
 .portrait-image {
     flex-grow: 3;
     flex-basis: 600px;
-    max-height: 320px;
-    max-width: 960px;
+    max-height: 400px;
 }
 
 /* Compact 1:1 tile. */
 .square-image {
     flex-grow: 1;
     flex-basis: 200px;
-    max-height: 320px;
-    max-width: 320px;
+    max-height: 400px;
 }

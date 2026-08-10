@@ -13,18 +13,18 @@
     --color-shortcut-button-highlight: #bdbaba81;
 
     /* Taskbar surface and its search bar / scrollbar accents */
-    --color-taskbar: #6a6d75;
-    --color-taskbar-accent: #c7c7c7;
-    --color-taskbar-shadow: #393d4177;
-    --color-taskbar-secondary: #4141427a;
+    --color-taskbar: #343538c0;
+    --color-taskbar-accent: #f0f0f0;
+    --color-taskbar-shadow: #393d41;
+    --color-taskbar-secondary: #414142b6;
 
-    --color-taskbar-searchbar-bg: #4141428a;
+    --color-taskbar-searchbar-bg: #414142b6;
 
     --color-taskbar-button: transparent;
     --color-taskbar-button-highlight: #bdbaba;
     --color-taskbar-button-active: #f0f0f0;
-    --color-taskbar-button-accent: #cccecf4f;
-    --color-taskbar-button-shadow: #2125297c;
+    --color-taskbar-button-accent: #cccecf;
+    --color-taskbar-button-shadow: #212529;
 
     --color-taskbar-scrollbar-thumb-bg: #79797ab6;
     --color-taskbar-scrollbar-track-bg: #414142b6;

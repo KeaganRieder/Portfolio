@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>N-Queens Solver (WASM)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <h1>N-Queens Solver</h1>
+    <p class="sub">Backtracking solver compiled from C++ to WebAssembly with Emscripten.</p>
+
+    <form id="solve-form">
+      <label>
+        Board size (N)
+        <input type="number" id="dimension" min="1" max="20" value="8" />
+      </label>
+      <label>
+        Queens
+        <input type="number" id="queens" min="1" max="20" value="8" />
+      </label>
+      <button type="submit" id="solve-btn" disabled>Loading…</button>
+    </form>
+
+    <div id="status">Loading WebAssembly module…</div>
+    <div id="board"></div>
+
+    <footer>Source: <a href="https://github.com/KeaganRieder/N-Queens" target="_blank" rel="noopener">N-Queens Solver</a> — C++ backtracking
+      algorithm, compiled with Emscripten.</footer>
+  </main>
+
+  <script src="nqueens.js"></script>
+  <script>
+    const statusEl = document.getElementById('status');
+    const boardEl = document.getElementById('board');
+    const form = document.getElementById('solve-form');
+    const solveBtn = document.getElementById('solve-btn');
+    const dimensionInput = document.getElementById('dimension');
+    const queensInput = document.getElementById('queens');
+
+    let solveNQueens = null;
+
+    createNQueensModule().then((module) => {
+      solveNQueens = module.solveNQueens;
+      statusEl.textContent = '';
+      solveBtn.disabled = false;
+      solveBtn.textContent = 'Solve';
+      runSolve();
+    }).catch((err) => {
+      statusEl.textContent = 'Failed to load WebAssembly module: ' + err;
+      statusEl.className = 'error';
+    });
+
+    function renderBoard(board, dimension) {
+      boardEl.style.gridTemplateColumns = `repeat(${dimension}, 1fr)`;
+      boardEl.innerHTML = '';
+      for (let row = 0; row < dimension; row++) {
+        for (let col = 0; col < dimension; col++) {
+          const cell = document.createElement('div');
+          const isQueen = board[row][col] === 1;
+          cell.className = 'cell ' + ((row + col) % 2 === 0 ? 'light' : 'dark') + (isQueen ? ' queen' : '');
+          if (isQueen) {
+            const icon = document.createElement('img');
+            icon.src = 'crown.png';
+            icon.alt = 'Queen';
+            icon.className = 'queen-icon';
+            cell.appendChild(icon);
+          }
+          boardEl.appendChild(cell);
+        }
+      }
+    }
+
+    function runSolve() {
+      if (!solveNQueens) return;
+
+      const dimension = parseInt(dimensionInput.value, 10);
+      const queens = parseInt(queensInput.value, 10);
+
+      solveBtn.disabled = true;
+      statusEl.className = '';
+      statusEl.textContent = 'Solving…';
+
+      // Let the UI paint the "Solving…" state before the (synchronous) wasm call.
+      requestAnimationFrame(() => {
+        const raw = solveNQueens(dimension, queens);
+        let result;
+        try {
+          result = JSON.parse(raw);
+        } catch (e) {
+          statusEl.textContent = 'Unexpected error parsing solver output.';
+          statusEl.className = 'error';
+          solveBtn.disabled = false;
+          return;
+        }
+
+        if (result.error) {
+          statusEl.textContent = result.error;
+          statusEl.className = 'error';
+          boardEl.innerHTML = '';
+        } else if (result.solved) {
+          statusEl.textContent = `Solution found for ${result.dimension} x ${result.dimension} board with ${result.totalQueens} queens.`;
+          statusEl.className = 'ok';
+          renderBoard(result.board, result.dimension);
+        } else {
+          statusEl.textContent = `No solution exists for a ${result.dimension} x ${result.dimension} board with ${result.totalQueens} queens.`;
+          statusEl.className = 'error';
+          boardEl.innerHTML = '';
+        }
+
+        solveBtn.disabled = false;
+      });
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      runSolve();
+    });
+  </script>
+</body>
+
+</html>

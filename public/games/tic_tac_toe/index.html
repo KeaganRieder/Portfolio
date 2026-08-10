@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="wrap">
+    <h1>&lt;&lt;&lt; Tic Tac Toe &gt;&gt;&gt;</h1>
+    <div id="terminal"></div>
+    <div class="input-row">
+      <input autocomplete="off" disabled id="stdinBox" placeholder="Loading...">
+      <button disabled id="stdinSend">Send</button>
+    </div>
+    <div id="status">Loading game engine…</div>
+  </div>
+  <script>
+    var terminalEl = document.getElementById("terminal"), stdinBox = document.getElementById("stdinBox"), stdinSend = document.getElementById("stdinSend"), statusEl = document.getElementById("status");
+    function ttt_writeOutput(t) { terminalEl.textContent += t, terminalEl.scrollTop = terminalEl.scrollHeight }
+    function ttt_submit() { var t = stdinBox.value; stdinBox.value = "", ttt_writeOutput("> " + t + "\n"), Module.ttt_pushInputLine(t) }
+    stdinSend.addEventListener("click", ttt_submit), stdinBox.addEventListener("keydown", (function (t) { "Enter" === t.key && (t.preventDefault(), ttt_submit()) }));
+    var Module = {
+      print: function (t) { ttt_writeOutput(t + "\n") },
+      printErr: function (t) { ttt_writeOutput(t + "\n") },
+      onRuntimeInitialized: function () { statusEl.textContent = "Ready.", stdinBox.disabled = !1, stdinSend.disabled = !1, stdinBox.placeholder = "Type your answer and press Enter", stdinBox.focus() },
+      onAbort: function (t) { statusEl.textContent = "Fatal error: " + t, stdinBox.disabled = !0, stdinSend.disabled = !0 }
+    }
+  </script>
+  <script async src="tictactoe.js"></script>
+</body>
+
+</html>

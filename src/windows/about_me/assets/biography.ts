@@ -10,7 +10,7 @@ media, and game design.
 
 I enjoy working with a variety of programming languages to design software solutions and 
 develop interactive experiences. Alongside coding, I create pixel art, tile sets, and 
-character models—skills that complement my interest in game development.
+character models which are Skills that complement my interest in game development.
 
 My passion for programming is rooted in a strong enjoyment of problem-solving and innovation. 
 This drive led me to computer science, where I focus on building technical skills, and later 
