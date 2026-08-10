@@ -1,21 +1,35 @@
 /* Global Styles */
+
+/* Design tokens (colors/fonts) loaded once here; every other stylesheet in
+   the app can reference the resulting variables without re-importing them. */
+@import url('./shared/style/color.css');
+@import url('./shared/style/font.css');
+
+/* Use border-box sizing everywhere so padding/border don't enlarge elements
+   beyond their declared width/height. */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/* React mount point: stretch to fill the viewport so children can size
+   themselves against 100% instead of the browser default (content-sized). */
 #root {
   width: 100%;
   height: 100%;
 }
 
+/* overflow: hidden disables page-level scrolling; the app is expected to
+   manage scrolling itself within internal containers. */
 html {
   overflow: hidden;
   width: 100%;
   height: 100%;
 }
 
+/* Remove default browser margin/padding and propagate full height from
+   html so the app can rely on 100% height chains working correctly. */
 body {
   width: 100%;
   height: 100%;

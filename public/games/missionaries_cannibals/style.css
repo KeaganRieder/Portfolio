@@ -1,0 +1,77 @@
+@import url(../shared/color.css);
+@import url(../shared/font.css);
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-content-secondary);
+    color: var(--color-body-text);
+    font-family: var(--font-body);
+    padding: 24px;
+}
+
+main {
+    width: 100%;
+    max-width: 640px;
+    background: var(--color-window);
+    border: 1px solid var(--color-window-shadow);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 16px var(--color-window-shadow);
+}
+
+h1 {
+    font-family: var(--font-header);
+    font-size: 1.25rem;
+    color: var(--color-header-text);
+    margin: 0 0 8px;
+}
+
+p.sub {
+    margin: 0 0 20px;
+    color: var(--color-skill-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+button {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 9px 18px;
+    border-radius: 8px;
+    border: none;
+    background: var(--color-content-main);
+    color: var(--color-header-text);
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+button:hover:not(:disabled) {
+    background: var(--color-content-secondary-highlight);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+pre {
+    margin-top: 16px;
+    background: var(--color-content-secondary);
+    color: var(--color-body-text);
+    border: 1px solid var(--color-content-secondary-shadow);
+    border-radius: 8px;
+    padding: 1rem;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}

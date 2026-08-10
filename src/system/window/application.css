@@ -1,0 +1,177 @@
+/* Shared sizing tokens: header takes a fixed % of window height, content
+   fills the rest minus a small gap. */
+:root {
+    --header-height: 10%;
+    --content-height: calc(100% - var(--header-height) - 10px);
+}
+
+/* The window frame itself: absolutely positioned/sized via inline styles
+   from windowRectControls, with a beveled border to mimic a retro OS window. */
+.application {
+    position: absolute;
+    overflow: hidden;
+
+    background-color: var(--color-window);
+    box-sizing: border-box;
+    
+    border-top: 2px solid var(--color-window-accent);
+    border-left: 2px solid var(--color-window-accent);
+    border-bottom: 2px solid var(--color-window-shadow);
+    border-right: 2px solid var(--color-window-shadow);
+
+    padding: 5px 5px 10px 5px;
+}
+
+/* Draggable title bar: flex row spacing the title from the button group. */
+.application-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: var(--header-height);
+    margin-bottom: 10px;
+    padding: 5px;
+    box-sizing: border-box;
+
+    background-color: var(--color-header);
+    border: 2px solid var(--color-header-accent);
+
+    cursor: grab;
+
+    h1 {
+        position: relative;
+        float: left;
+        display: flex;
+        align-items: center;
+
+        height: 100%;
+        min-width: 0;
+        flex: 1 1 auto;
+        box-sizing: border-box;
+
+        padding: 0 10px;
+        margin: 0;
+
+        font-family: var(--font-header);
+        font-size: 2rem;
+
+        color: var(--color-header-text);
+
+        /* Long app names truncate instead of overflowing into the button group. */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        /* Shrink the title on tablet/mobile widths so it doesn't dominate the header. */
+        @media (max-width: 768px) {
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 400px) {
+            font-size: 1.1rem;
+        }
+    }
+}
+
+/* Right-aligned row of header controls (custom buttons + minimize/close). */
+.header-button-group {
+    position: relative;
+    float: right;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+
+    height: 100%;
+    padding-right: 10px;
+    gap: 10px;
+
+    button {
+        aspect-ratio: 1 / 1;
+        height: 100%;
+        max-height: 40px;
+
+        padding: 2px;
+        display: grid;
+        place-items: center;
+
+        background-color: var(--color-button-head);
+        transition: background-color 0.2s ease;
+        border-top: 2px solid var(--color-button-head-accent);
+        border-left: 2px solid var(--color-button-head-accent);
+        border-bottom: 2px solid var(--color-button-head-shadow);
+        border-right: 2px solid var(--color-button-head-shadow);
+
+        cursor: pointer;
+
+        /* Highlight state on hover for header buttons. */
+        &:hover {
+            background-color: var(--color-button-head-highlight);
+        }
+
+        img {
+            aspect-ratio: 1 / 1;
+            height: 100%;
+
+            max-height: 32px;
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+        }
+
+        /* Small screens: borderless header buttons. */
+        @media (max-width: 400px) {
+            background-color: var(--color-button-head);
+            transition: background-color 0.2s ease;
+            border: none;
+
+            img {
+                aspect-ratio: 1 / 1;
+                height: 100%;
+            }
+        }
+    }
+}
+
+/* Scrollable content pane below the header; owns its own thin scrollbar theme. */
+.application-content {
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    height: var(--content-height);
+
+    box-sizing: border-box;
+    padding: 10px;
+    border: 2px solid var(--color-content-main-accent);
+
+    background-color: var(--color-content-main);
+
+    font-family: var(--font-body);
+    color: var(--color-body-text);
+    font-size: 1.25rem;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-scrollbar-thumb-bg) var(--color-scrollbar-track-bg);
+
+    a {
+        padding: 4px;
+    }
+}
+
+/* Inner wrapper that expands to fill (or exceed) the content pane for scrolling. */
+.application-content-scroll-container {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    box-sizing: border-box;
+    justify-content: left;
+}
+
+/* Small screens: hide the minimize button (mobile windows are typically full-screen). */
+@media (max-width: 400px) {
+    .minimize-button {
+        display: none;
+    }
+}

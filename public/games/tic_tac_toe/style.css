@@ -1,0 +1,95 @@
+@import url(../shared/color.css);
+@import url(../shared/font.css);
+
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    margin: 0;
+    height: 100%;
+    background: var(--color-content-secondary);
+    color: var(--color-body-text);
+    font-family: var(--font-body);
+}
+
+.wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px 16px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: var(--font-header);
+    font-size: 1.15rem;
+    font-weight: 400;
+    margin: 0 0 12px;
+    color: var(--color-header-text);
+}
+
+#terminal {
+    flex: 1;
+    min-height: 320px;
+    background: var(--color-window);
+    border: 1px solid var(--color-window-shadow);
+    border-radius: 8px;
+    padding: 12px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.input-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+#stdinBox {
+    flex: 1;
+    background: var(--color-window);
+    border: 1px solid var(--color-window-shadow);
+    border-radius: 6px;
+    color: var(--color-body-text);
+    padding: 8px 10px;
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+#stdinBox:disabled {
+    opacity: 0.5;
+}
+
+button {
+    background: var(--color-content-main);
+    color: var(--color-header-text);
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: var(--font-body);
+    transition: background-color 0.15s ease;
+}
+
+button:hover:not(:disabled) {
+    background: var(--color-content-secondary-highlight);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+#status {
+    font-size: 0.75rem;
+    color: var(--color-muted-status);
+    margin-top: 6px;
+}

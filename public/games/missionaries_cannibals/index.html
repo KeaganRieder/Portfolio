@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Missionaries and Cannibals Solver</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Missionaries and Cannibals Solver</h1>
+        <p class="sub">Breadth-first search solver for the classic river-crossing puzzle, compiled from C++ to WebAssembly.</p>
+        <button id="solve-btn" disabled>Loading solver…</button>
+        <pre id="output"></pre>
+    </main>
+
+    <script src="mc_solver.js"></script>
+    <script>
+        const btn = document.getElementById("solve-btn");
+        const output = document.getElementById("output");
+
+        createMCModule().then((Module) => {
+            btn.textContent = "Solve";
+            btn.disabled = false;
+            btn.addEventListener("click", () => {
+                output.textContent = Module.solve();
+            });
+        });
+    </script>
+</body>
+</html>

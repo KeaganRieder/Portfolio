@@ -1,0 +1,41 @@
+/* Styling for the content section types (text, image gallery, video) that
+   ProjectRenderer can render inside a project's application content pane. */
+
+@import url(video.css);
+@import url(embed.css);
+@import url(./images/imageGallery.css);
+
+/* ===== Text sections (body/header/subHeader/link) ===== */
+.application-content {
+    /* Body paragraph styling for rendered project 'body' sections. */
+    p {
+        font: var(--font-body);
+        color: var(--color-body-text);
+        font-size: 1.25rem;
+        white-space: pre-line;
+    }
+
+    /* Section heading styling for rendered project 'header' sections. */
+    h2 {
+        font: var(--font-secondary-header);
+        color: var(--color-subheader-text);
+        font-size: 1.75rem;
+    }
+
+    /* Sub-heading styling for rendered project 'subHeader' sections. */
+    h3 {
+        font: var(--font-secondary-header);
+        color: var(--color-subheader-text);
+        font-size: 1.5rem;
+    }
+
+    /* Link styling (and hover color) for rendered project 'link'/'readMe' sections. */
+    a {
+        font: var(--font-body);
+        color: var(--color-link);
+
+        &:hover {
+            color: var(--color-link-highlight);
+        }
+    }
+}

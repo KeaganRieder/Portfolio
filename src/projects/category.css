@@ -1,0 +1,73 @@
+/* Wrapping row of project-category folder buttons on the Projects app home screen. */
+.category-button-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    /* Stack category buttons into a single column on small screens. */
+    @media (max-width: 400px) {
+        flex-direction: column;
+    }
+
+    /* Base (borderless/transparent) styling for a category button. */
+    button {
+        font-family: var(--font-header);
+        font-size: 1rem;
+        color: var(--color-header-text);
+
+        background-color: transparent;
+        border: transparent;
+
+        /* Hover highlight for a category button. */
+        &:hover {
+            background-color: var(--color-button-content-highlight);
+        }
+
+        /* Square, pixelated folder icon for the category button. */
+        img {
+            aspect-ratio: 1 / 1;
+            width: 70%;
+            max-width: 200px;
+            image-rendering: pixelated;
+
+            /* Shrink icons on small screens. */
+            @media (max-width: 400px) {
+                max-width: 100px;
+            }
+        }
+
+        /* Strip default heading spacing so the category name sits tight under its icon. */
+        h3 {
+            padding: 0px;
+            margin: 0px;
+        }
+    }
+}
+
+/* Wrapping row of project overview cards inside an opened category window.
+   Cards grow to fill whichever row they land on, so a row with fewer than
+   the max column count scales its cards up to use the freed space. */
+.project-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+
+    > .project-overview,
+    > .project-overview-noContent {
+        /* Up to 4 cards per row on desktop; grow/shrink to fill the row. */
+        flex: 1 1 calc(25% - 0.75rem);
+        /* Allow shrinking below the gallery's intrinsic content width. */
+        min-width: 0;
+    }
+
+    /* Single, full-width card per row on mobile. */
+    @media (max-width: 768px) {
+        > .project-overview,
+        > .project-overview-noContent {
+            flex: 1 1 100%;
+        }
+    }
+}
